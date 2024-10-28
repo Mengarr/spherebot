@@ -1,0 +1,8 @@
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K In function ‘[01m[Kstd::pair<float, float>[01;32m[K computeJointVariables[m[K(float, float)[m[K’:
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:3:67:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+    3 | std::pair<float, float> computeJointVariables(float alpha, float u[01;36m[K)[m[K {
+      |                                                                   [01;36m[K^[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/motorControl.cpp:[m[K In member function ‘[01m[Kstd::pair<float, float> MOTOR_CONTROL::[01;32m[Kget_u_alpha[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/control_lib/src/motorControl.cpp:44:52:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+   44 | std::pair<float, float> MOTOR_CONTROL::get_u_alpha([01;36m[K)[m[K {
+      |                                                    [01;36m[K^[m[K

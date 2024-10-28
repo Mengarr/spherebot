@@ -1,0 +1,133 @@
+[0.000000] (-) TimerEvent: {}
+[0.000636] (-) JobUnselected: {'identifier': '10_dof_lib'}
+[0.001202] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.001552] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.001605] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.002015] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.002244] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.002292] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.002337] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.002395] (control_lib) JobQueued: {'identifier': 'control_lib', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib'})}
+[0.002466] (control_lib) JobStarted: {'identifier': 'control_lib'}
+[0.016207] (control_lib) JobProgress: {'identifier': 'control_lib', 'progress': 'cmake'}
+[0.016651] (control_lib) Command: {'cmd': ['/usr/bin/cmake', '/home/rohan/spherebot/src/control_lib', '-DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/control_lib'], 'cwd': '/home/rohan/spherebot/build/control_lib', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 57096 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/rohan/spherebot/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '6', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/gps_read_cpp:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/control_lib', 'SSH_CONNECTION': '192.168.0.19 57096 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/gps_read_cpp:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099332] (-) TimerEvent: {}
+[0.124998] (control_lib) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.2.0\n'}
+[0.199463] (-) TimerEvent: {}
+[0.231024] (control_lib) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.2.0\n'}
+[0.257536] (control_lib) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299593] (-) TimerEvent: {}
+[0.400191] (-) TimerEvent: {}
+[0.419165] (control_lib) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.435125] (control_lib) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.435453] (control_lib) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.436061] (control_lib) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.449886] (control_lib) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.500266] (-) TimerEvent: {}
+[0.600651] (-) TimerEvent: {}
+[0.631440] (control_lib) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.648416] (control_lib) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.648829] (control_lib) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.649491] (control_lib) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.653052] (control_lib) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.700749] (-) TimerEvent: {}
+[0.801117] (-) TimerEvent: {}
+[0.874720] (control_lib) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.901214] (-) TimerEvent: {}
+[1.001531] (-) TimerEvent: {}
+[1.030250] (control_lib) StdoutLine: {'line': b'-- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[1.079254] (control_lib) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[1.097856] (control_lib) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[1.101594] (-) TimerEvent: {}
+[1.120037] (control_lib) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.144680] (control_lib) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.201710] (-) TimerEvent: {}
+[1.302087] (-) TimerEvent: {}
+[1.305274] (control_lib) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[1.309218] (control_lib) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.402190] (-) TimerEvent: {}
+[1.436018] (control_lib) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[1.463187] (control_lib) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[1.498245] (control_lib) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.502267] (-) TimerEvent: {}
+[1.592054] (control_lib) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[1.602346] (-) TimerEvent: {}
+[1.666590] (control_lib) StdoutLine: {'line': b'-- Found i2c_lib: 0.0.1 (/home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake)\n'}
+[1.702460] (-) TimerEvent: {}
+[1.802838] (-) TimerEvent: {}
+[1.832331] (control_lib) StdoutLine: {'line': b'-- Configuring done (1.8s)\n'}
+[1.849485] (control_lib) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.852169] (control_lib) StdoutLine: {'line': b'-- Build files have been written to: /home/rohan/spherebot/build/control_lib\n'}
+[1.870070] (control_lib) CommandEnded: {'returncode': 0}
+[1.870855] (control_lib) JobProgress: {'identifier': 'control_lib', 'progress': 'build'}
+[1.871618] (control_lib) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/control_lib', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/control_lib', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 57096 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/rohan/spherebot/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '6', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/gps_read_cpp:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/control_lib', 'SSH_CONNECTION': '192.168.0.19 57096 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/gps_read_cpp:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[1.903369] (-) TimerEvent: {}
+[1.973729] (control_lib) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o\x1b[0m\n'}
+[1.974480] (control_lib) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/geodeticConverter.cpp.o\x1b[0m\n'}
+[1.974661] (control_lib) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/stanleyControl.cpp.o\x1b[0m\n'}
+[1.975588] (control_lib) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o\x1b[0m\n'}
+[2.003493] (-) TimerEvent: {}
+[2.105271] (-) TimerEvent: {}
+[2.206109] (-) TimerEvent: {}
+[2.306713] (-) TimerEvent: {}
+[2.408286] (-) TimerEvent: {}
+[2.510237] (-) TimerEvent: {}
+[2.611166] (-) TimerEvent: {}
+[2.657301] (control_lib) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o\x1b[0m\n'}
+[2.711439] (-) TimerEvent: {}
+[2.813875] (-) TimerEvent: {}
+[2.915229] (-) TimerEvent: {}
+[3.017693] (-) TimerEvent: {}
+[3.103902] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float>\x1b[01;32m\x1b[K computeJointVariables\x1b[m\x1b[K(float, float)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.105812] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:3:67:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kparameter passing for argument of type \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float>\x1b[m\x1b[K\xe2\x80\x99 when C++17 is enabled changed to match C++14 \x1b]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_base\x07in GCC 10.1\x1b]8;;\x07\n'}
+[3.107301] (control_lib) StderrLine: {'line': b'    3 | std::pair<float, float> computeJointVariables(float alpha, float u\x1b[01;36m\x1b[K)\x1b[m\x1b[K {\n'}
+[3.108842] (control_lib) StderrLine: {'line': b'      |                                                                   \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.117882] (-) TimerEvent: {}
+[3.218835] (-) TimerEvent: {}
+[3.319553] (-) TimerEvent: {}
+[3.394828] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/motorControl.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float> MOTOR_CONTROL::\x1b[01;32m\x1b[Kget_u_alpha\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.395330] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/motorControl.cpp:44:52:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kparameter passing for argument of type \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float>\x1b[m\x1b[K\xe2\x80\x99 when C++17 is enabled changed to match C++14 \x1b]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_base\x07in GCC 10.1\x1b]8;;\x07\n'}
+[3.395595] (control_lib) StderrLine: {'line': b'   44 | std::pair<float, float> MOTOR_CONTROL::get_u_alpha(\x1b[01;36m\x1b[K)\x1b[m\x1b[K {\n'}
+[3.395837] (control_lib) StderrLine: {'line': b'      |                                                    \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.419639] (-) TimerEvent: {}
+[3.519988] (-) TimerEvent: {}
+[3.549470] (control_lib) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX static library libcontrol_interfaces.a\x1b[0m\n'}
+[3.615194] (control_lib) StdoutLine: {'line': b'[100%] Built target control_interfaces\n'}
+[3.620078] (-) TimerEvent: {}
+[3.636704] (control_lib) CommandEnded: {'returncode': 0}
+[3.688673] (control_lib) JobProgress: {'identifier': 'control_lib', 'progress': 'install'}
+[3.705695] (control_lib) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/rohan/spherebot/build/control_lib'], 'cwd': '/home/rohan/spherebot/build/control_lib', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 57096 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/rohan/spherebot/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '6', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/gps_read_cpp:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/control_lib', 'SSH_CONNECTION': '192.168.0.19 57096 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/gps_read_cpp:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[3.720185] (-) TimerEvent: {}
+[3.720637] (control_lib) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.721012] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/lib/libcontrol_interfaces.a\n'}
+[3.721366] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/include/\n'}
+[3.722029] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/include//control_lib\n'}
+[3.722165] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/include//control_lib/stanleyControl.hpp\n'}
+[3.722258] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/include//control_lib/kinematic_transforms.hpp\n'}
+[3.722366] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/include//control_lib/geodeticConverter.hpp\n'}
+[3.722457] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/include//control_lib/auxilary_arduino.hpp\n'}
+[3.722549] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/include//control_lib/motorControl.hpp\n'}
+[3.722673] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/library_path.sh\n'}
+[3.722762] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/library_path.dsv\n'}
+[3.722935] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/package_run_dependencies/control_lib\n'}
+[3.723139] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/parent_prefix_path/control_lib\n'}
+[3.723302] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/ament_prefix_path.sh\n'}
+[3.723467] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/ament_prefix_path.dsv\n'}
+[3.723624] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/path.sh\n'}
+[3.723785] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/path.dsv\n'}
+[3.723942] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.bash\n'}
+[3.724100] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.sh\n'}
+[3.724256] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.zsh\n'}
+[3.724418] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.dsv\n'}
+[3.724564] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/package.dsv\n'}
+[3.724774] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/packages/control_lib\n'}
+[3.725000] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/export_control_libExport.cmake\n'}
+[3.725176] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/export_control_libExport-noconfig.cmake\n'}
+[3.725337] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[3.725489] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[3.725646] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/control_libConfig.cmake\n'}
+[3.725794] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/control_libConfig-version.cmake\n'}
+[3.725934] (control_lib) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/package.xml\n'}
+[3.728762] (control_lib) CommandEnded: {'returncode': 0}
+[3.804095] (control_lib) JobEnded: {'identifier': 'control_lib', 'rc': 0}
+[3.805278] (-) EventReactorShutdown: {}

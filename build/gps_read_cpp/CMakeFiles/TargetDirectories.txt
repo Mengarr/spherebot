@@ -1,0 +1,10 @@
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/uninstall.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/gps_read_cpp_uninstall.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/gps_read.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/test.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/edit_cache.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/rebuild_cache.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/list_install_components.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/install.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/install/local.dir
+/home/rohan/spherebot/build/gps_read_cpp/CMakeFiles/install/strip.dir

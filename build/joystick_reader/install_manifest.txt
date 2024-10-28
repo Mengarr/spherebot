@@ -1,0 +1,16 @@
+/home/rohan/spherebot/install/joystick_reader/lib/joystick_reader/joystick_reader_node
+/home/rohan/spherebot/install/joystick_reader/share/ament_index/resource_index/package_run_dependencies/joystick_reader
+/home/rohan/spherebot/install/joystick_reader/share/ament_index/resource_index/parent_prefix_path/joystick_reader
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/environment/ament_prefix_path.sh
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/environment/ament_prefix_path.dsv
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/environment/path.sh
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/environment/path.dsv
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/local_setup.bash
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/local_setup.sh
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/local_setup.zsh
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/local_setup.dsv
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/package.dsv
+/home/rohan/spherebot/install/joystick_reader/share/ament_index/resource_index/packages/joystick_reader
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/cmake/joystick_readerConfig.cmake
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/cmake/joystick_readerConfig-version.cmake
+/home/rohan/spherebot/install/joystick_reader/share/joystick_reader/package.xml

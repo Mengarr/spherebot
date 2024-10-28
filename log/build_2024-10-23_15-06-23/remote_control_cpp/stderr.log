@@ -1,0 +1,20 @@
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KgpsCallback[m[K(sensor_msgs::msg::NavSatFix_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:111:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst sensor_msgs::msg::NavSatFix_<std::allocator<void> >::SharedPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<sensor_msgs::msg::NavSatFix_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Klatitude[m[K’
+  111 |     _lat = msg.[01;31m[Klatitude[m[K;
+      |                [01;31m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:112:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst sensor_msgs::msg::NavSatFix_<std::allocator<void> >::SharedPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<sensor_msgs::msg::NavSatFix_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Klongitude[m[K’
+  112 |     _long = msg.[01;31m[Klongitude[m[K;
+      |                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:113:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst sensor_msgs::msg::NavSatFix_<std::allocator<void> >::SharedPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<sensor_msgs::msg::NavSatFix_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Kaltitude[m[K’
+  113 |     _alt = msg.[01;31m[Kaltitude[m[K;
+      |                [01;31m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:114:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst sensor_msgs::msg::NavSatFix_<std::allocator<void> >::SharedPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<sensor_msgs::msg::NavSatFix_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Kstatus[m[K’
+  114 |     if (msg.[01;31m[Kstatus[m[K.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX) {
+      |             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:139:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  139 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref[01;36m[K)[m[K;
+      |                                                                                                   [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,8 @@
+source;share/i2c_lib/hook/cmake_prefix_path.ps1
+source;share/i2c_lib/hook/cmake_prefix_path.dsv
+source;share/i2c_lib/hook/cmake_prefix_path.sh
+source;share/i2c_lib/local_setup.bash
+source;share/i2c_lib/local_setup.dsv
+source;share/i2c_lib/local_setup.ps1
+source;share/i2c_lib/local_setup.sh
+source;share/i2c_lib/local_setup.zsh

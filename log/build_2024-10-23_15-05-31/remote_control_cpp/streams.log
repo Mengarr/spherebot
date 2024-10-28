@@ -1,0 +1,20 @@
+[0.025s] Invoking command in '/home/rohan/spherebot/build/remote_control_cpp': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4
+[0.139s] [ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+[4.290s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:109:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid RemoteControlNode::[01;32m[KgpsCallback[m[K()[m[K’
+[4.290s]   109 | void [01;31m[KRemoteControlNode[m[K::gpsCallback()
+[4.290s]       |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[4.291s] In file included from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[4.291s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:25:10:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kvoid RemoteControlNode::[01;32m[KgpsCallback[m[K(sensor_msgs::msg::NavSatFix_<std::allocator<void> >::SharedPtr)[m[K’
+[4.291s]    25 |     void [01;36m[KgpsCallback[m[K(const sensor_msgs::msg::NavSatFix::SharedPtr msg);
+[4.291s]       |          [01;36m[K^~~~~~~~~~~[m[K
+[4.291s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:17:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass RemoteControlNode[m[K’ defined here
+[4.291s]    17 | class [01;36m[KRemoteControlNode[m[K : public rclcpp::Node
+[4.291s]       |       [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[9.041s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[9.041s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:139:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+[9.041s]   139 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref[01;36m[K)[m[K;
+[9.042s]       |                                                                                                   [01;36m[K^[m[K
+[9.162s] gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+[9.163s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+[9.163s] gmake: *** [Makefile:146: all] Error 2
+[9.166s] Invoked command in '/home/rohan/spherebot/build/remote_control_cpp' returned '2': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4

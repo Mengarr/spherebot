@@ -1,0 +1,17 @@
+/home/rohan/spherebot/install/remote_control_cpp/lib/remote_control_cpp/remote_control_node
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp//launch/remote_control_launch.py
+/home/rohan/spherebot/install/remote_control_cpp/share/ament_index/resource_index/package_run_dependencies/remote_control_cpp
+/home/rohan/spherebot/install/remote_control_cpp/share/ament_index/resource_index/parent_prefix_path/remote_control_cpp
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/environment/ament_prefix_path.sh
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/environment/ament_prefix_path.dsv
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/environment/path.sh
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/environment/path.dsv
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/local_setup.bash
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/local_setup.sh
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/local_setup.zsh
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/local_setup.dsv
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/package.dsv
+/home/rohan/spherebot/install/remote_control_cpp/share/ament_index/resource_index/packages/remote_control_cpp
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/cmake/remote_control_cppConfig.cmake
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/cmake/remote_control_cppConfig-version.cmake
+/home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/package.xml

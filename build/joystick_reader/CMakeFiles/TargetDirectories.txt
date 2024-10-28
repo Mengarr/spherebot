@@ -1,0 +1,10 @@
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/uninstall.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/joystick_reader_uninstall.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/joystick_reader_node.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/test.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/edit_cache.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/rebuild_cache.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/list_install_components.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/install.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/install/local.dir
+/home/rohan/spherebot/build/joystick_reader/CMakeFiles/install/strip.dir

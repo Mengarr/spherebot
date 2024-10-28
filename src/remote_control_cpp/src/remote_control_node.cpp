@@ -114,7 +114,7 @@ void RemoteControlNode::timerCallback()
     //     RCLCPP_INFO(this->get_logger(), "(x, y): (%.2f, %.2f)", coords.east, coords.north);
     // }
 
-    RCLCPP_INFO(this->get_logger(), "Adjusted Heading: %.2f", heading_);
+    // RCLCPP_INFO(this->get_logger(), "Adjusted Heading: %.2f", heading_);
 
     float alpha_dot_ref = 0.0;
     float u_dot_ref = 0.0;
@@ -132,10 +132,17 @@ void RemoteControlNode::timerCallback()
     // Set motor speeds based on joint variable transformation
     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref);
     
+    int32_t motorACount;
+    int32_t motorBCount;
+    motor.readMotorACount(&motorACount);
+    motor.readMotorBCount(&motorBCount);
+    std::pair<float,float> u_alpha = computeJointVariablesInverse(motorACount, motorBCount);
+    RCLCPP_INFO(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second*1000/12);
+
     // Limit switch logic, 
     arduino.readLimitSwitches(&limit_switch_states);
     if (limit_switch_states.first || limit_switch_states.second) {
-        RCLCPP_INFO(this->get_logger(), "Limit Switched Toggled");
+        // RCLCPP_INFO(this->get_logger(), "Limit Switched Toggled");
         motor.setMotorASpeed(0);
         motor.setMotorBSpeed(0);
     } else {
@@ -156,6 +163,9 @@ void RemoteControlNode::timerCallback()
         arduino.setMotorSpeedDir(0x00);
     }
 
+    // Calculate ENU stuff here
+    // ENU coords = _geodeticConverter.geodeticToENU(_lat, _long, _alt);
+    // RCLCPP_INFO(this->get_logger(), "X, Y: (%.2f, %.2f)", ENU.east, ENU.up);
 }
 
 

@@ -1,0 +1,26 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:137:27:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kuint32_t*[m[K’ {aka ‘[01m[Kunsigned int*[m[K’} to ‘[01m[Kint32_t*[m[K’ {aka ‘[01m[Kint*[m[K’} [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  137 |     motor.readMotorACount([01;31m[K&motorACount[m[K);
+      |                           [01;31m[K^~~~~~~~~~~~[m[K
+      |                           [01;31m[K|[m[K
+      |                           [01;31m[Kuint32_t* {aka unsigned int*}[m[K
+In file included from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:13[m[K,
+                 from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/install/control_lib/include/control_lib/motorControl.hpp:25:39:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid MOTOR_CONTROL::[01;32m[KreadMotorACount[m[K(int32_t*)[m[K’
+   25 |         void readMotorACount([01;36m[Kint32_t* val[m[K); // Reads the encoder count
+      |                              [01;36m[K~~~~~~~~~^~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:138:27:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kuint32_t*[m[K’ {aka ‘[01m[Kunsigned int*[m[K’} to ‘[01m[Kint32_t*[m[K’ {aka ‘[01m[Kint*[m[K’} [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  138 |     motor.readMotorBCount([01;31m[K&motorBCount[m[K);
+      |                           [01;31m[K^~~~~~~~~~~~[m[K
+      |                           [01;31m[K|[m[K
+      |                           [01;31m[Kuint32_t* {aka unsigned int*}[m[K
+[01m[K/home/rohan/spherebot/install/control_lib/include/control_lib/motorControl.hpp:26:39:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid MOTOR_CONTROL::[01;32m[KreadMotorBCount[m[K(int32_t*)[m[K’
+   26 |         void readMotorBCount([01;36m[Kint32_t* val[m[K);
+      |                              [01;36m[K~~~~~~~~~^~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:133:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  133 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref[01;36m[K)[m[K;
+      |                                                                                                   [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

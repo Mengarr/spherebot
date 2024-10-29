@@ -155,17 +155,15 @@ void RemoteControlNode::timerCallback()
     std::pair<bool, bool> limit_switch_states;
 
     // Apply deadzone to control inputs (SCALE THE MAPPED AXES HERE SO THAT THE OUTPUT is sensible)
-    if (fabs(mapped_axes1_) > 5.0) {
-        alpha_dot_ref = (mapped_axes1_ / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
-    }
 
-    if (fabs(mapped_axes3_) > 5.0) {
-        u_dot_ref = (mapped_axes3_ / RPM_TO_RPS)  / U_DOT_SCALE_FACTOR;
-    }
+    alpha_dot_ref = (mapped_axes1_ / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
+
+    u_dot_ref = (mapped_axes3_ / RPM_TO_RPS)  / U_DOT_SCALE_FACTOR;
 
     // Set motor speeds based on joint variable transformation
     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref);
     
+
     int32_t motorACount;
     int32_t motorBCount;
     motor.readMotorACount(&motorACount);

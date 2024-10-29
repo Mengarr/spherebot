@@ -202,10 +202,10 @@ void RemoteControlNode::timerCallback()
     {
         file << std::fixed << std::setprecision(2);
         file << time_in_seconds << "," 
-                << motorASpeed << "," 
-                << jointVariableVelocity.first << "," 
-                << motorBSpeed << "," 
-                << jointVariableVelocity.second << "\n";
+                << jointVariableVelocity.first<< "," 
+                << -motorASpeed << "," 
+                << jointVariableVelocity.second << "," 
+                << -motorBSpeed << "\n";
         file.close();
     } 
     else {

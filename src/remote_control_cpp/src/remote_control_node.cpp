@@ -44,6 +44,9 @@ RemoteControlNode::RemoteControlNode()
         std::bind(&RemoteControlNode::timerCallback, this)
     );
 
+    // Initialize CSV file
+    init_csv_file();
+
     RCLCPP_INFO(this->get_logger(), "Remote Control Node has been started.");
 }
 
@@ -96,6 +99,34 @@ void RemoteControlNode::gpsCallback(const sensor_msgs::msg::NavSatFix::SharedPtr
     _gps_fix = (msg->status.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX);
 }
 
+void RemoteControlNode::init_csv_file()
+{
+    std::string file_path = "/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv";
+    
+    // Check if the directory exists; if not, log an error
+    std::filesystem::path dir_path = "/home/rohan/spherebot/src/remote_control_cpp/data_logging";
+    if (!std::filesystem::exists(dir_path))
+    {
+        RCLCPP_ERROR(this->get_logger(), "Directory %s does not exist. CSV logging will not proceed.", dir_path.c_str());
+        return;
+    }
+
+    // Attempt to open file and write header if it’s a new file
+    std::ofstream file(file_path, std::ios::out | std::ios::app);
+    if (!file.is_open())
+    {
+        RCLCPP_ERROR(this->get_logger(), "Failed to open file: %s", file_path.c_str());
+    }
+    else if (file.tellp() == 0)  // New file, so write header
+    {
+        file << "Time,RefMotorASpeed,MotorASpeed,RefMotorBSpeed,MotorBSpeed\n";
+        RCLCPP_INFO(this->get_logger(), "CSV file %s created successfully with headers.", file_path.c_str());
+    }
+    file.close();
+
+    auto now = this->get_clock()->now();
+    t0_ = now.seconds();
+}
 
 void RemoteControlNode::timerCallback()
 {   
@@ -115,6 +146,9 @@ void RemoteControlNode::timerCallback()
     // }
 
     // RCLCPP_INFO(this->get_logger(), "Adjusted Heading: %.2f", heading_);
+
+
+
 
     float alpha_dot_ref = 0.0;
     float u_dot_ref = 0.0;
@@ -137,7 +171,7 @@ void RemoteControlNode::timerCallback()
     motor.readMotorACount(&motorACount);
     motor.readMotorBCount(&motorBCount);
     std::pair<float,float> u_alpha = computeJointVariablesInverse(motorACount, motorBCount);
-    RCLCPP_INFO(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second*1000/12);
+    // RCLCPP_INFO(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second*1000/12);
 
     // Limit switch logic, 
     arduino.readLimitSwitches(&limit_switch_states);
@@ -150,6 +184,34 @@ void RemoteControlNode::timerCallback()
         motor.setMotorBSpeed(jointVariableVelocity.second);
     }
     
+        
+    float motorASpeed;
+    float motorBSpeed;
+
+    motor.readMotorASpeed(&motorASpeed);
+    motor.readMotorBSpeed(&motorBSpeed);
+
+    // Data logging
+    // Retrieve the current time
+    auto now = this->get_clock()->now();
+    double time_in_seconds = now.seconds() - t0_;
+
+    // Log to CSV file
+    std::ofstream file("/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv", std::ios::out | std::ios::app);
+    if (file.is_open())
+    {
+        file << std::fixed << std::setprecision(2);
+        file << time_in_seconds << "," 
+                << motorASpeed << "," 
+                << jointVariableVelocity.first << "," 
+                << motorBSpeed << "," 
+                << jointVariableVelocity.second << "\n";
+        file.close();
+    } 
+    else {
+        RCLCPP_ERROR(this->get_logger(), "Failed to write to file: ../data_logging/motor_speed_data.csv");
+    }
+
     if (X_BUTTON_) {
         // Engaged
         if (O_BUTTON_) {
@@ -162,6 +224,9 @@ void RemoteControlNode::timerCallback()
     else {
         arduino.setMotorSpeedDir(0x00);
     }
+
+
+
 
     // Calculate ENU stuff here
     // ENU coords = _geodeticConverter.geodeticToENU(_lat, _long, _alt);

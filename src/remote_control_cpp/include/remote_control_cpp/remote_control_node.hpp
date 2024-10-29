@@ -9,6 +9,9 @@
 #include <sensor_msgs/msg/joy.hpp>
 #include "sensor_msgs/msg/nav_sat_fix.hpp"
 #include "std_msgs/msg/float32.hpp"
+#include <fstream>
+#include <iomanip>
+#include <filesystem> // C++17 library for directory handling
 #include "control_lib/auxilary_arduino.hpp"
 #include "control_lib/motorControl.hpp"
 #include "control_lib/kinematic_transforms.hpp"
@@ -32,6 +35,10 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr mag_sub_;
     rclcpp::TimerBase::SharedPtr timer_;
+
+    // Data logging 
+    void init_csv_file();
+    double t0_;
 
     // Heading data
     float heading_;

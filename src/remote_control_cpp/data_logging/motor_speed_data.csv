@@ -1,4 +1,4 @@
-Time,MotorSpeed1,MotorSpeed2,MotorSpeed3,MotorSpeed4
+Time,RefMotorASpeed,MotorASpeed,RefMotorBSpeed,MotorBSpeed
 0.10,0.00,0.00,0.00,0.00
 0.20,0.00,0.00,0.00,0.00
 0.30,0.00,0.00,0.00,0.00

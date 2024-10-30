@@ -16,6 +16,7 @@
 #include "control_lib/motorControl.hpp"
 #include "control_lib/kinematic_transforms.hpp"
 #include "control_lib/geodeticConverter.hpp"
+#include "control_lib/PID_controller.hpp"
 
 
 class RemoteControlNode : public rclcpp::Node
@@ -35,6 +36,10 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr mag_sub_;
     rclcpp::TimerBase::SharedPtr timer_;
+
+    // PID controller
+    double Kp_ = 0.1; double Ki_ = 0.06; double Kd_ = 0;
+    PIDController u_PID_;
 
     // Data logging 
     void init_csv_file();

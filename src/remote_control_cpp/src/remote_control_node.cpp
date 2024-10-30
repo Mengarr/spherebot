@@ -2,6 +2,7 @@
 
 RemoteControlNode::RemoteControlNode()
 : Node("remote_control_node"),
+  u_PID_(Kp_, Ki_, Kd_),
   mapped_axes1_(0.0),
   mapped_axes3_(0.0),
   X_BUTTON_(false),
@@ -47,6 +48,9 @@ RemoteControlNode::RemoteControlNode()
     // Initialize CSV file
     init_csv_file();
 
+    // PID controller
+    u_PID_.setOutputLimits(-0.7, 0.7);
+
     RCLCPP_INFO(this->get_logger(), "Remote Control Node has been started.");
 }
 
@@ -55,6 +59,10 @@ RemoteControlNode::~RemoteControlNode() {
     arduino.reset();
     RCLCPP_INFO(this->get_logger(), "Arduinos Succesfully Reset");
 }
+
+// void RemoteControlNode::phi_calibration() {
+//     // Function to calibrate phi based on IMU measurments
+// }
 
 void RemoteControlNode::joyCallback(const sensor_msgs::msg::Joy::SharedPtr msg)
 {
@@ -147,9 +155,6 @@ void RemoteControlNode::timerCallback()
 
     // RCLCPP_INFO(this->get_logger(), "Adjusted Heading: %.2f", heading_);
 
-
-
-
     float alpha_dot_ref = 0.0;
     float u_dot_ref = 0.0;
     std::pair<bool, bool> limit_switch_states;
@@ -163,6 +168,7 @@ void RemoteControlNode::timerCallback()
     // Set motor speeds based on joint variable transformation
     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref);
 
+    // Remove noisy signal from controller 
     if (fabs(jointVariableVelocity.first) < 0.08) {
         jointVariableVelocity.first = 0.0;
     }
@@ -171,14 +177,20 @@ void RemoteControlNode::timerCallback()
         jointVariableVelocity.second = 0.0;
     }
 
-    RCLCPP_INFO(this->get_logger(), "(phi_L, phi_R): (%.2f, %.2f)", jointVariableVelocity.first,  jointVariableVelocity.second);
+    //RCLCPP_INFO(this->get_logger(), "(phi_L, phi_R): (%.2f, %.2f)", jointVariableVelocity.first,  jointVariableVelocity.second);
 
     int32_t motorACount;
     int32_t motorBCount;
     motor.readMotorACount(&motorACount);
     motor.readMotorBCount(&motorBCount);
     std::pair<float,float> u_alpha = computeJointVariablesInverse(motorACount, motorBCount);
-    // RCLCPP_INFO(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second*1000/12);
+    u_alpha.second = u_alpha.second * (1000 / CPR); // convert to mm
+    RCLCPP_INFO(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second);
+
+    double u_output = u_PID_.compute(u_alpha.second);
+    RCLCPP_INFO(this->get_logger(), "u_output: %.2f", u_output);
+
+    jointVariableVelocity.first = jointVariableVelocity.first + u_output;
 
     // Limit switch logic, 
     arduino.readLimitSwitches(&limit_switch_states);
@@ -191,33 +203,41 @@ void RemoteControlNode::timerCallback()
         motor.setMotorBSpeed(jointVariableVelocity.second);
     }
     
-        
-    float motorASpeed;
-    float motorBSpeed;
+    // float motorASpeed;
+    // float motorBSpeed;
 
-    motor.readMotorASpeed(&motorASpeed);
-    motor.readMotorBSpeed(&motorBSpeed);
+    // motor.readMotorASpeed(&motorASpeed);
+    // motor.readMotorBSpeed(&motorBSpeed);
 
-    // Data logging
-    // Retrieve the current time
-    auto now = this->get_clock()->now();
-    double time_in_seconds = now.seconds() - t0_;
+    // // Assign direction to the measurments
+    // if (jointVariableVelocity.first < 0) {
+    //     motorASpeed = -motorASpeed;
+    // }
 
-    // Log to CSV file
-    std::ofstream file("/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv", std::ios::out | std::ios::app);
-    if (file.is_open())
-    {
-        file << std::fixed << std::setprecision(2);
-        file << time_in_seconds << "," 
-                << jointVariableVelocity.first<< "," 
-                << -motorASpeed << "," 
-                << jointVariableVelocity.second << "," 
-                << -motorBSpeed << "\n";
-        file.close();
-    } 
-    else {
-        RCLCPP_ERROR(this->get_logger(), "Failed to write to file: ../data_logging/motor_speed_data.csv");
-    }
+    // if (jointVariableVelocity.second < 0) {
+    //     motorBSpeed = -motorBSpeed;
+    // }
+
+    // // Data logging
+    // // Retrieve the current time
+    // auto now = this->get_clock()->now();
+    // double time_in_seconds = now.seconds() - t0_;
+
+    // // Log to CSV file
+    // std::ofstream file("/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv", std::ios::out | std::ios::app);
+    // if (file.is_open())
+    // {
+    //     file << std::fixed << std::setprecision(2);
+    //     file << time_in_seconds << "," 
+    //             << jointVariableVelocity.first<< "," 
+    //             << motorASpeed << "," 
+    //             << jointVariableVelocity.second << "," 
+    //             << motorBSpeed << "\n";
+    //     file.close();
+    // } 
+    // else {
+    //     RCLCPP_ERROR(this->get_logger(), "Failed to write to file: ../data_logging/motor_speed_data.csv");
+    // }
 
     if (X_BUTTON_) {
         // Engaged

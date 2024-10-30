@@ -127,7 +127,7 @@ void RemoteControlNode::init_csv_file()
     }
     else if (file.tellp() == 0)  // New file, so write header
     {
-        file << "Time,RefMotorASpeed,MotorASpeed,RefMotorBSpeed,MotorBSpeed\n";
+        file << "Time,MotorASpeedError,MotorBSpeedError,uError\n";
         RCLCPP_INFO(this->get_logger(), "CSV file %s created successfully with headers.", file_path.c_str());
     }
     file.close();
@@ -203,41 +203,40 @@ void RemoteControlNode::timerCallback()
         motor.setMotorBSpeed(jointVariableVelocity.second);
     }
     
-    // float motorASpeed;
-    // float motorBSpeed;
+    float motorASpeed;
+    float motorBSpeed;
 
-    // motor.readMotorASpeed(&motorASpeed);
-    // motor.readMotorBSpeed(&motorBSpeed);
+    motor.readMotorASpeed(&motorASpeed);
+    motor.readMotorBSpeed(&motorBSpeed);
 
-    // // Assign direction to the measurments
-    // if (jointVariableVelocity.first < 0) {
-    //     motorASpeed = -motorASpeed;
-    // }
+    // Assign direction to the measurments
+    if (jointVariableVelocity.first < 0) {
+        motorASpeed = -motorASpeed;
+    }
 
-    // if (jointVariableVelocity.second < 0) {
-    //     motorBSpeed = -motorBSpeed;
-    // }
+    if (jointVariableVelocity.second < 0) {
+        motorBSpeed = -motorBSpeed;
+    }
 
-    // // Data logging
-    // // Retrieve the current time
-    // auto now = this->get_clock()->now();
-    // double time_in_seconds = now.seconds() - t0_;
+    // Data logging
+    // Retrieve the current time
+    auto now = this->get_clock()->now();
+    double time_in_seconds = now.seconds() - t0_;
 
-    // // Log to CSV file
-    // std::ofstream file("/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv", std::ios::out | std::ios::app);
-    // if (file.is_open())
-    // {
-    //     file << std::fixed << std::setprecision(2);
-    //     file << time_in_seconds << "," 
-    //             << jointVariableVelocity.first<< "," 
-    //             << motorASpeed << "," 
-    //             << jointVariableVelocity.second << "," 
-    //             << motorBSpeed << "\n";
-    //     file.close();
-    // } 
-    // else {
-    //     RCLCPP_ERROR(this->get_logger(), "Failed to write to file: ../data_logging/motor_speed_data.csv");
-    // }
+    // Log to CSV file
+    std::ofstream file("/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv", std::ios::out | std::ios::app);
+    if (file.is_open())
+    {
+        file << std::fixed << std::setprecision(2);
+        file << time_in_seconds << "," 
+                << motorASpeed - jointVariableVelocity.first<< "," 
+                << motorBSpeed - jointVariableVelocity.second<< "," 
+                << u_alpha.second << "\n"; 
+        file.close();
+    } 
+    else {
+        RCLCPP_ERROR(this->get_logger(), "Failed to write to file: ../data_logging/motor_speed_data.csv");
+    }
 
     if (X_BUTTON_) {
         // Engaged

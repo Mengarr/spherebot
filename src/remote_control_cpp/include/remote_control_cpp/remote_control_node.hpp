@@ -1,8 +1,8 @@
 #ifndef REMOTE_CONTROL_NODE_HPP_
 #define REMOTE_CONTROL_NODE_HPP_
 
-#define ALPHA_DOT_SCALE_FACTOR 2.5
-#define U_DOT_SCALE_FACTOR 0.6
+#define ALPHA_DOT_SCALE_FACTOR 3.5
+#define U_DOT_SCALE_FACTOR 0.3
 #define RPM_TO_RPS 60 // RPM TO RPS = 60:1
 
 #include <rclcpp/rclcpp.hpp>

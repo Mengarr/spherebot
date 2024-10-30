@@ -162,7 +162,16 @@ void RemoteControlNode::timerCallback()
 
     // Set motor speeds based on joint variable transformation
     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref);
+
+    if (fabs(jointVariableVelocity.first) < 0.08) {
+        jointVariableVelocity.first = 0.0;
+    }
     
+    if (fabs(jointVariableVelocity.second) < 0.08) {
+        jointVariableVelocity.second = 0.0;
+    }
+
+    RCLCPP_INFO(this->get_logger(), "(phi_L, phi_R): (%.2f, %.2f)", jointVariableVelocity.first,  jointVariableVelocity.second);
 
     int32_t motorACount;
     int32_t motorBCount;

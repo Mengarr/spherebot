@@ -15,14 +15,19 @@ GPSread::~GPSread()
 }
 
 GPSread::GPSread()
-    : Node("gps_publisher")
+    : Node("gps_publisher"),
+    _geodeticConverter()
 {   
     RCLCPP_INFO(this->get_logger(), "GPS reading node has been started.");
 
-    gps_publisher_ = this->create_publisher<sensor_msgs::msg::NavSatFix>("gps/fix", 10);
+    gps_publisher_ = this->create_publisher<sensor_msgs::msg::NavSatFix>("gps/fix", 5);
+    coords_publisher_ = this->create_publisher<geometry_msgs::msg::Point>("gps/point_data", 5);
+
+    // Initialize a timer that runs at 1 Hz
     timer_ = this->create_wall_timer(
-            std::chrono::seconds(1),
-            [this]() { publish_GPS_data(); });
+        std::chrono::milliseconds(1000),  // 1000 ms interval corresponds to 1 Hz
+        std::bind(&GPSread::publish_data, this)
+    );
     
     // Start listening to UART port
     fd = open(PORT, O_RDWR | O_NOCTTY | O_NDELAY);
@@ -33,13 +38,15 @@ GPSread::GPSread()
     configurePort();
 } 
 
-void GPSread::publish_GPS_data() 
+void GPSread::publish_data() 
 {
   // Read gps data from UART:
   char c;
   while (read(fd, &c, 1) > 0) {
       gps.encode(c);
   }
+  // coords data
+  auto msg = geometry_msgs::msg::Point();
 
   // msg data
   auto msg = sensor_msgs::msg::NavSatFix();
@@ -53,22 +60,42 @@ void GPSread::publish_GPS_data()
   }
   msg.status.service = sensor_msgs::msg::NavSatStatus::SERVICE_GPS;
 
-  //
   if (gps.charsProcessed() < 10)
     RCLCPP_INFO(this->get_logger(), "WARNING: No GPS data.  Check wiring.");
 
-  msg.latitude = gps.location.lat();   // Example latitude
-  msg.longitude = gps.location.lng(); // Example longitude
-  msg.altitude = gps.altitude.meters();      // Example altitude
+  _lat = gps.location.lat();      // latitude
+  _long = gps.location.lng();     //  longitude
+  _alt = gps.altitude.meters();   //  altitude
 
-  // Optional: Set covariance
+  msg.latitude = _lat;
+  msg.longitude = _long;
+  msg.altitude = _alt;
+
+  // Set covariance
   msg.position_covariance[0] = 0.0;
   msg.position_covariance[4] = 0.0;
   msg.position_covariance[8] = 0.0;
   msg.position_covariance_type = sensor_msgs::msg::NavSatFix::COVARIANCE_TYPE_UNKNOWN;
 
+  // Conversion to enu coordinates
+  if (!init_ &&  msg.status.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX) {
+    _geodeticConverter.setReferenceOrigin(_lat, _long, _alt)
+    init_ = true;
+    coords_msg.x = 0.0;
+    coords_msg.y = 0.0;
+    coords_msg.z = 0.0;
+  } 
+
+  if (init_) {
+    ENU coords = _geodeticConverter.geodeticToENU(_lat, _long, _alt);
+    coords_msg.x = coords.east;
+    coords_msg.y = coords.north;
+    coords_msg.z = coords.up;
+  }
+
   // Publish the data
   gps_publisher_->publish(msg);
+  coords_publisher_->publish(coords_msg);
 }
 
 int main(int argc, char *argv[])

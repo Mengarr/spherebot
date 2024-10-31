@@ -4,7 +4,6 @@ AutonomousControlNodePID::AutonomousControlNodePID()
 : Node("remote_control_node"),
   _stanley(k_, k_s_, L_, tolerance_),
   _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/test_path.json"),
-  _geodeticConverter(),
   u_PID_(Kp_u_, Ki_u_, Kd_u_),
   phi_PID_(Kp_phi_, Ki_phi_, Kd_phi_),
   X_BUTTON_(false),
@@ -13,8 +12,7 @@ AutonomousControlNodePID::AutonomousControlNodePID()
   next_state_(STATES::INITIALIZING),
   motor(MOTORS_I2C_ADDR),
   arduino(AUX_ARDUINO_I2C_ADDR),
-  lpf_roll_pitch_(0.5f, static_cast<size_t>(2)),
-  lpf_heading_(0.5f, static_cast<size_t>(1))
+  lpf_roll_pitch_(0.5f, static_cast<size_t>(2))
 {   
     RCLCPP_INFO(this->get_logger(), "Motor Init:");
     motor.init();
@@ -30,11 +28,18 @@ AutonomousControlNodePID::AutonomousControlNodePID()
         std::bind(&AutonomousControlNodePID::joyCallback, this, std::placeholders::_1)
     );
 
-    // Initialize subscriber to "gps" topic
-    gps_sub_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
-        "/gps/fix",
+    // Initialize subscriber to gps latlong topic
+    gps_latlong_sub_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
+        "gps/fix",
         10,
-        std::bind(&AutonomousControlNodePID::gpsCallback, this, std::placeholders::_1)
+        std::bind(&AutonomousControlNodePID::gpsLatLongCallBack, this, std::placeholders::_1)
+    );
+
+    // Initialize subscriber to gps coords topic
+    gps_coords_sub_ = this->create_subscription<geometry_msgs::msg::Point>(
+        "gps/point_data",
+        10,
+        std::bind(&AutonomousControlNodePID::gpsCoordsCallBack, this, std::placeholders::_1)
     );
 
     // Initalize subscriber to heading topic
@@ -46,7 +51,7 @@ AutonomousControlNodePID::AutonomousControlNodePID()
 
     // Initalize subscriber to imu topic
     imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
-        "/imu/data",
+        "imu/data",
         10,
         std::bind(&AutonomousControlNodePID::imuCallback, this, std::placeholders::_1)
     );
@@ -98,20 +103,19 @@ void AutonomousControlNodePID::imuCallback(const sensor_msgs::msg::Imu::SharedPt
 
 void AutonomousControlNodePID::headingCallback(const std_msgs::msg::Float32::SharedPtr msg)
 {   
-    std::vector<float> filtered_heading = lpf_heading_.filter({msg->data});
-    _heading = filtered_heading[0];
+    _heading = msg->data;
 }
 
-void AutonomousControlNodePID::gpsCallBack()
+void AutonomousControlNodePID::gpsLatLongCallBack(const sensor_msgs::msg::NavSatFix::SharedPtr msg)
 {
-    _lat = msg.latitude;
-    _long = msg.longitude;
-    _alt = msg.altitude;
-    if (msg.status.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX) {
-        _gps_fix = true;
-    } else {
-        _gps_fix = false;
-    }
+    _gps_fix = (msg->status.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX);
+}
+
+void AutonomousControlNodePID::gpsCoordsCallBack(const geometry_msgs::msg::Point::SharedPtr msg)
+{
+    _pos_x = msg->x;
+    _pos_y = msg->y;
+    _pos_z = msg->z;
 }
 
 void AutonomousControlNodePID::controlLoop()
@@ -160,7 +164,6 @@ void AutonomousControlNodePID::nextStateLogic() {
                 RCLCPP_INFO(this->get_logger(), "Waiting for GPS fix");
             }
             RCLCPP_INFO(this->get_logger(), "GPS Fix!");
-            _geodeticConverter.setReferenceOrigin(_lat, _long, _alt); // set origin
 
             // Calibrate Phi and reccord u
             next_state_ = STATES::CALIBRATE_PHI;
@@ -184,9 +187,6 @@ void AutonomousControlNodePID::nextStateLogic() {
             break;
 
         case STATES::PATH_FOLLOWING:
-            // Determine current x and y coordinates:
-            ENU coords = _geodeticConverter.geodeticToENU(_lat, _long, _alt);
-
             // Determine dtheta ----
             float motorASpeed;
             float motorBSpeed;

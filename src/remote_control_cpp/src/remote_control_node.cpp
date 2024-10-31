@@ -24,12 +24,15 @@ RemoteControlNode::RemoteControlNode()
         std::bind(&RemoteControlNode::joyCallback, this, std::placeholders::_1)
     );
 
-    // Initialize subscriber to "gps" topic
+    // Initialize subscriber to gps lat long topic
     gps_sub_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
         "/gps/fix",
         10,
         std::bind(&RemoteControlNode::gpsCallback, this, std::placeholders::_1)
     );
+
+    // Init subscriber to gps x,y topic
+    
 
     // Initialize subscriber to "mag" topic
     mag_sub_ = this->create_subscription<std_msgs::msg::Float32>(

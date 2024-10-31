@@ -4,6 +4,7 @@
 #include "VCM5883L.h"
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float32.hpp"
+#include "control_lib/LowpassFilter.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 
 struct Orientation {
@@ -51,6 +52,10 @@ class MagnetometerPublisher : public rclcpp::Node
         // Functions
         float tilt_compensated_heading(float Mx, float My, float Mz, float ax, float ay, float az);
         std::vector<float> getCalibratedValues(float Mx, float My, float Mz);
+
+        // Low pass filter
+        LowPassFilter lpf_heading_; // (0.3f, static_cast<size_t>(1))
+        float _alpha = 1.0f;
 
         // Imu stuff
         float _AccelX, _AccelY, _AccelZ; // +- 1g

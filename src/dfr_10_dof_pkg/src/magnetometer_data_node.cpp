@@ -3,6 +3,7 @@
 MagnetometerPublisher::MagnetometerPublisher()
     : Node("imu_data"),
     magnetometer(VCM5883L_ADDRESS),
+    lpf_heading_(0.5f, static_cast<size_t>(1)),
     _AccelX(0),
     _AccelY(0),
     _AccelZ(1)
@@ -98,17 +99,18 @@ void MagnetometerPublisher::publish_data()
         -_AccelZ
     );
 
-    RCLCPP_INFO(this->get_logger(), "Compensated Heading : %.4f", compensatedHeading_);
+    // Low pass filter to remove high frequency noise
+    std::vector<float> filtered_heading = lpf_heading_.filter({compensatedHeading_})
 
-    // float headingDegrees = magnetometer.getHeadingDegrees();
-
-    // RCLCPP_INFO(this->get_logger(), "Adjusted Heading : %.4f", adjustedHeading);
-    // RCLCPP_INFO(this->get_logger(), "Unajusted Heading : %.4f", headingDegrees);
-
-    mag_msg.data = compensatedHeading_;
+    mag_msg.data = filtered_heading[0];
     
     // Publish the IMU data
     mag_publisher_->publish(mag_msg);
+
+    // RCLCPP_INFO(this->get_logger(), "Compensated Heading : %.4f", compensatedHeading_);
+    // float headingDegrees = magnetometer.getHeadingDegrees();
+    // RCLCPP_INFO(this->get_logger(), "Adjusted Heading : %.4f", adjustedHeading);
+    // RCLCPP_INFO(this->get_logger(), "Unajusted Heading : %.4f", headingDegrees);
 }
 
 float MagnetometerPublisher::tilt_compensated_heading(float Mx, float My, float Mz, float ax, float ay, float az)

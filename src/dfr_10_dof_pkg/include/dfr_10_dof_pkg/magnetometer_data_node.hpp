@@ -4,7 +4,7 @@
 #include "VCM5883L.h"
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float32.hpp"
-#include "control_lib/LowpassFilter.hpp"
+#include "control_lib/LowPassFilter.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 
 struct Orientation {
@@ -26,28 +26,24 @@ class MagnetometerPublisher : public rclcpp::Node
 
         float compensatedHeading_ = 0.0f;
 
-        // Hard iron offsets
-        float hard_iron_bias_x =  5.546126519735883;
-        float hard_iron_bias_y =  -2.1566405156685073;
-        float hard_iron_bias_z =  -8.016331894986969;
-        
-        // Soft iron offsets
-        float soft_iron_bias_xx =  3.260518828218278;
-        float soft_iron_bias_xy =  -0.03963877040661722;
-        float soft_iron_bias_xz =  -0.16006485672169196;
+        float hard_iron_bias_x = -6.432633835053031;
+        float hard_iron_bias_y = 5.2253566921278205;
+        float hard_iron_bias_z = 3.788405358792561;
 
+        float soft_iron_bias_xx = 2.53884825615019;
+        float soft_iron_bias_xy = -0.004782928012666182;
+        float soft_iron_bias_xz = -0.037274579675119185;
 
-        float soft_iron_bias_yx =  -0.03963877040661716;
-        float soft_iron_bias_yy =  2.6699307594697257;
-        float soft_iron_bias_yz =  0.15367305936821996;
+        float soft_iron_bias_yx = -0.004782928012666306;
+        float soft_iron_bias_yy = 2.455924582285725;
+        float soft_iron_bias_yz = 0.20887190823645405;
 
+        float soft_iron_bias_zx = -0.037274579675119233;
+        float soft_iron_bias_zy = 0.2088719082364538;
+        float soft_iron_bias_zz = 2.2948842404204663;
 
-        float soft_iron_bias_zx =  -0.16006485672169185;
-        float soft_iron_bias_zy =  0.15367305936822004;
-        float soft_iron_bias_zz =  2.172672993775984;
-        
         // conversion factor to convert +-8g to uT
-        float conv_factor = 0.0244140625;
+        const float conv_factor = 0.0244140625;
 
         // Functions
         float tilt_compensated_heading(float Mx, float My, float Mz, float ax, float ay, float az);
@@ -55,7 +51,6 @@ class MagnetometerPublisher : public rclcpp::Node
 
         // Low pass filter
         LowPassFilter lpf_heading_; // (0.3f, static_cast<size_t>(1))
-        float _alpha = 1.0f;
 
         // Imu stuff
         float _AccelX, _AccelY, _AccelZ; // +- 1g

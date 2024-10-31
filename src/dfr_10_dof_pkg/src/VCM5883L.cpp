@@ -22,11 +22,11 @@ void VCM5883L::init(void)
 sVector_t VCM5883L::readRaw(void)
 {
   _i2cBus.readmem(VCM5883L_REG_OUT_X_L, uint8_t(2), _buff);
-  v.XAxis = (((int16_t)_buff[0] << 8) | _buff[1]);
+  v.XAxis = (((int16_t)_buff[1] << 8) | _buff[0]);
   _i2cBus.readmem(VCM5883L_REG_OUT_Y_L, uint8_t(2), _buff);
-  v.YAxis = (((int16_t)_buff[0] << 8) | _buff[1]);
+  v.YAxis = (((int16_t)_buff[1] << 8) | _buff[0]);
   _i2cBus.readmem(VCM5883L_REG_OUT_Z_L, uint8_t(2), _buff);
-  v.ZAxis = (((int16_t)_buff[0] << 8) | _buff[1]);
+  v.ZAxis = (((int16_t)_buff[1] << 8) | _buff[0]);
 
   v.AngleXY = (atan2((double)v.YAxis,(double)v.XAxis) * (180 / 3.14159265) + 180);
   v.AngleXZ = (atan2((double)v.ZAxis,(double)v.XAxis) * (180 / 3.14159265) + 180);

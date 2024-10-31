@@ -27,9 +27,6 @@ RemoteControlNode::RemoteControlNode()
         std::bind(&RemoteControlNode::gpsCallback, this, std::placeholders::_1)
     );
 
-    // Init subscriber to gps x,y topic
-
-
     // Initialize subscriber to "mag" topic
     mag_sub_ = this->create_subscription<std_msgs::msg::Float32>(
         "compensated_heading",
@@ -40,6 +37,11 @@ RemoteControlNode::RemoteControlNode()
     // Initalize publisher to motor control node:
     joint_trajectory_pub_ = this->create_publisher<trajectory_msgs::msg::JointTrajectory>(
         "motor/joint_vars", 1
+    );
+    
+    // Initalize override publisher to motor control node:
+    bool_override_pub_ = this->create_publisher<std_msgs::msg::Bool>(
+        "overrides/u_override", 1
     );
 
     // Initialize a timer that runs at 10 Hz
@@ -102,6 +104,19 @@ void RemoteControlNode::gpsCallback(const sensor_msgs::msg::NavSatFix::SharedPtr
 
 void RemoteControlNode::timerCallback()
 {   
+    if (X_BUTTON_) {
+        // Engaged
+        if (O_BUTTON_) {
+            arduino.setMotorSpeedDir(0x0F);
+        }
+        else {
+            arduino.setMotorSpeedDir(0xF0);
+        }
+    }
+    else {
+        arduino.setMotorSpeedDir(0x00);
+    }
+
     float alpha_dot_ref = 0.0;
     float u_dot_ref = 0.0;
 
@@ -127,24 +142,19 @@ void RemoteControlNode::timerCallback()
     point.velocities.push_back(u_dot_ref);   // Velocity of joint u
     point.velocities.push_back(alpha_dot_ref); // Velocity of joint alpha
 
+    // Add PID efforts
+    point.effort.push_back(0.0);            // Kd
+    point.effort.push_back(0.06);           // Ki
+    point.effort.push_back(0.1);            // Kp
+
     // Add the point to the JointTrajectory message
     joint_vars_msg.points.push_back(point);
 
     joint_trajectory_pub_->publish(joint_vars_msg);
 
-    if (X_BUTTON_) {
-        // Engaged
-        if (O_BUTTON_) {
-            arduino.setMotorSpeedDir(0x0F);
-        }
-        else {
-            arduino.setMotorSpeedDir(0xF0);
-        }
-    }
-    else {
-        arduino.setMotorSpeedDir(0x00);
-    }
-
+    std_msgs::msg::Bool override_msg;
+    override_msg.data = true;
+    bool_override_pub_->publish(override_msg);
 }
 
 

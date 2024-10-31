@@ -8,6 +8,7 @@
 #include "control_lib/kinematic_transforms.hpp"
 #include "control_lib/PID_controller.hpp"
 #include "control_lib/auxilary_arduino.hpp"
+#include <std_msgs/msg/bool.hpp>
 
 class MotorControlNode : public rclcpp::Node
 {
@@ -18,6 +19,9 @@ public:
 private:
     // Subscriber callback for JointTrajectory messages
     void jointTrajectoryCallback(const trajectory_msgs::msg::JointTrajectory::SharedPtr msg);
+
+    // override callback
+    void uOverrideCallback(const std_msgs::msg::Bool::SharedPtr msg);
 
     // Timer callback for the 20Hz control loop (prototype, no code needed inside)
     void controlLoop();
@@ -34,10 +38,14 @@ private:
 
     // Subscriber and publisher
     rclcpp::Subscription<trajectory_msgs::msg::JointTrajectory>::SharedPtr joint_trajectory_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr bool_override_sub_;
     rclcpp::Publisher<control_msgs::msg::JointTrajectoryControllerState>::SharedPtr joint_state_pub_;
     
     // Timer for the control loop at 20Hz
     rclcpp::TimerBase::SharedPtr control_loop_timer_;
+
+    // u override
+    bool u_override_ = false;
 
     // Private vars for reference joint state:
     double u_ref_, alpha_ref_;

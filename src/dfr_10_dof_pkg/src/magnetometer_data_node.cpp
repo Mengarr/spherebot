@@ -3,7 +3,7 @@
 MagnetometerPublisher::MagnetometerPublisher()
     : Node("imu_data"),
     magnetometer(VCM5883L_ADDRESS),
-    lpf_heading_(_alpha, static_cast<size_t>(1)),
+    lpf_heading_(3), // window size of 3
     _AccelX(0),
     _AccelY(0),
     _AccelZ(1)
@@ -33,8 +33,8 @@ MagnetometerPublisher::MagnetometerPublisher()
     // Note that the declination angle is in rad
     // magnetometer.setDeclinationAngle(declinationAngle_); 
     // magnetometer.setHardIronOffsets(Xoffset_, Yoffset_, Zoffset_);
-    magnetometer.setMeasurementMode(VCM5883L_CONTINOUS);
-    magnetometer.setDataRate(VCM5883L_DATARATE_200HZ);
+    // magnetometer.setMeasurementMode(VCM5883L_CONTINOUS);
+    // magnetometer.setDataRate(VCM5883L_DATARATE_200HZ);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Sleep for one seccond
     RCLCPP_INFO(this->get_logger(), "Magnometer Node Initalisation Complete");
 }
@@ -88,6 +88,8 @@ void MagnetometerPublisher::publish_data()
     float My_uT = static_cast<float>(magData.YAxis) * conv_factor;
     float Mz_uT = static_cast<float>(magData.ZAxis) * conv_factor;
 
+    //RCLCPP_INFO(this->get_logger(), "Mx_uT, My_uT, Mz_uT: %.2f, %.2f, %.2f", Mx_uT, My_uT, Mz_uT);
+
     std::vector<float> calibratedValues = getCalibratedValues(Mx_uT, My_uT, Mz_uT);
 
     compensatedHeading_ = tilt_compensated_heading(
@@ -100,9 +102,11 @@ void MagnetometerPublisher::publish_data()
     );
 
     // Low pass filter to remove high frequency noise
-    std::vector<float> filtered_heading = lpf_heading_.filter({compensatedHeading_});
+    float filtered_heading = lpf_heading_.filter(compensatedHeading_);
 
-    mag_msg.data = filtered_heading[0];
+    mag_msg.data = filtered_heading;
+
+    // RCLCPP_INFO(this->get_logger(), "Filtered Heading: %.2f", filtered_heading[0]);
     
     // Publish the IMU data
     mag_publisher_->publish(mag_msg);
@@ -121,6 +125,7 @@ float MagnetometerPublisher::tilt_compensated_heading(float Mx, float My, float 
     // Step 1: Calculate Roll (φ) and Pitch (θ)
     float roll = std::atan2(ay, az + epsilon);
     float pitch = std::atan2(-ax, std::sqrt(ay * ay + az * az) + epsilon);
+    // RCLCPP_INFO(this->get_logger(), "Pitch, Roll: %.2f, %.2f", pitch * (180 / M_PI), roll*(180 / M_PI));
 
     // Step 2: Apply Tilt Compensation
     float x_mag_comp = Mx * std::cos(roll) 

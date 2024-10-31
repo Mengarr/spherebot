@@ -13,6 +13,7 @@ find_package(i2c_lib REQUIRED)
 find_package(control_lib REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(control_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 
 
 # List of executables
@@ -34,6 +35,7 @@ ament_target_dependencies(remote_control_node
   control_lib
   trajectory_msgs 
   control_msgs
+  std_msgs
 )
 
 install(TARGETS remote_control_node

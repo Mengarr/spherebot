@@ -114,11 +114,12 @@ def generate_launch_description():
 
     # Return the LaunchDescription with both nodes
     return LaunchDescription([
-        data_logger,
-        motor_control_node,
-        joystick_reader_node,
         remote_control_node,
+        motor_control_node,
+        data_logger,
+        joystick_reader_node,
         imu_data_node,
         magneometer_node,
-        gps_node,
+        gps_node
+   
     ])

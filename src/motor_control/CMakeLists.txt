@@ -12,6 +12,7 @@ find_package(i2c_lib REQUIRED)
 find_package(control_lib REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(control_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 
 # List of executables
 add_executable(motor_control_node src/motor_control_node.cpp src/motorControl.cpp)
@@ -31,6 +32,7 @@ ament_target_dependencies(motor_control_node
   control_lib
   trajectory_msgs 
   control_msgs
+  std_msgs
 )
 
 install(TARGETS motor_control_node

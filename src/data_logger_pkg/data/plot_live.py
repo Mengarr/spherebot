@@ -4,7 +4,7 @@ from matplotlib.animation import FuncAnimation
 import time
 
 # Path to the CSV file
-file_path = 'adjusted_heading.csv'
+file_path = 'compensated_heading.csv'
 
 # Set up the plot
 plt.style.use('seaborn')  # Optional: customize the plot style
@@ -18,8 +18,8 @@ line, = ax.plot([], [], lw=2)
 
 # Function to initialize the plot limits and line data
 def init():
-    ax.set_xlim(0, 10)  # Adjust based on expected range of `elapsed_time`
-    ax.set_ylim(0, 10)  # Adjust based on expected range of `data`
+    # ax.set_xlim(0, 10)  # Adjust based on expected range of `elapsed_time`
+    ax.set_ylim(0, 360)  # Adjust based on expected range of `data`
     line.set_data([], [])
     return line,
 

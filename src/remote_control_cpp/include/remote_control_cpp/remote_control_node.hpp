@@ -9,9 +9,7 @@
 #include <sensor_msgs/msg/joy.hpp>
 #include "sensor_msgs/msg/nav_sat_fix.hpp"
 #include "std_msgs/msg/float32.hpp"
-#include <fstream>
-#include <iomanip>
-#include <filesystem> // C++17 library for directory handling
+#include <std_msgs/msg/bool.hpp>
 #include "control_lib/auxilary_arduino.hpp"
 #include <trajectory_msgs/msg/joint_trajectory.hpp>
 #include <control_msgs/msg/joint_trajectory_controller_state.hpp>
@@ -20,7 +18,6 @@ class RemoteControlNode : public rclcpp::Node
 {
 public:
     RemoteControlNode();
-
 private:
     void joyCallback(const sensor_msgs::msg::Joy::SharedPtr msg);
     void gpsCallback(const sensor_msgs::msg::NavSatFix::SharedPtr msg);
@@ -28,18 +25,20 @@ private:
     void timerCallback();
     
     rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory>::SharedPtr joint_trajectory_pub_;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr bool_override_pub_;
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr mag_sub_;
+   
     rclcpp::TimerBase::SharedPtr timer_;
 
-    float _lat;
-    float _long;
-    float _alt;
-    bool _gps_fix;
+    float _lat = 0.0;
+    float _long = 0.0;
+    float _alt = 0.0;
+    bool _gps_fix = false;
 
     // Heading data
-    float heading_;
+    float heading_ = 0.0;
 
     // Mapped axes
     double mapped_axes1_;

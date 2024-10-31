@@ -26,7 +26,7 @@ class DataLoggerNode(Node):
         }
 
         self.topics_20hz = {
-            '/adjusted_heading': Float32
+            '/compensated_heading': Float32
         }
 
         # Initialize buffers for each topic

@@ -21,12 +21,17 @@ MotorControlNode::MotorControlNode() :
 
     // Subscriber for JointTrajectory messages
     joint_trajectory_sub_ = this->create_subscription<trajectory_msgs::msg::JointTrajectory>(
-        "motor/joint_vars", 10,
+        "motor/joint_vars", 5,
         std::bind(&MotorControlNode::jointTrajectoryCallback, this, std::placeholders::_1));
+
+    // Subscriber for u_control overide messages
+    bool_override_sub_ = this->create_subscription<std_msgs::msg::Bool>(
+        "overrides/u_override", 5,
+        std::bind(&MotorControlNode::uOverrideCallback, this, std::placeholders::_1));
 
     // Publisher for JointTrajectoryControllerState messages
     joint_state_pub_ = this->create_publisher<control_msgs::msg::JointTrajectoryControllerState>(
-        "motor/joint_vars_state", 10);
+        "motor/joint_vars_state", 5);
 
     // Timer for control loop at 15Hz (75ms interval)
     control_loop_timer_ = this->create_wall_timer(
@@ -40,10 +45,15 @@ MotorControlNode::~MotorControlNode() {
     RCLCPP_INFO(this->get_logger(), "Arduinos Reset");
 }
 
+void MotorControlNode::uOverrideCallback(const std_msgs::msg::Bool::SharedPtr msg) 
+{
+    u_override_ = msg->data; 
+}
+
 // Callback for receiving JointTrajectory message and updating state
 void MotorControlNode::jointTrajectoryCallback(const trajectory_msgs::msg::JointTrajectory::SharedPtr msg)
 {
-    if (msg->points.empty() || msg->points[0].positions.size() < 2 || msg->points[0].velocities.size() < 2) {
+    if (msg->points.empty() || msg->points[0].positions.size() < 2 || msg->points[0].velocities.size() < 2 || msg->points[0].effort.size() < 3) {
         RCLCPP_WARN(this->get_logger(), "Received invalid JointTrajectory message");
         return;
     }
@@ -53,6 +63,13 @@ void MotorControlNode::jointTrajectoryCallback(const trajectory_msgs::msg::Joint
     alpha_ref_ = msg->points[0].positions[1];
     udot_ref_ = msg->points[0].velocities[0];
     alphadot_ref_ = msg->points[0].velocities[1];
+
+    // Update PID gains from effort
+    Kd_ = msg->points[0].effort[0];
+    Ki_ = msg->points[0].effort[1];
+    Kp_ = msg->points[0].effort[2];
+
+    u_PID_.setGains(Kp_, Ki_, Kd_);
 
     // Create and populate the JointTrajectoryControllerState message
     control_msgs::msg::JointTrajectoryControllerState state_msg;
@@ -98,7 +115,9 @@ void MotorControlNode::controlLoop()
     double u_output = u_PID_.compute(u_alpha.second);
 
     // Apply PID motor control for u_meas_
-    jointVariableVelocity.first = jointVariableVelocity.first + u_output;
+    if (!u_override_) {
+        jointVariableVelocity.first = jointVariableVelocity.first + u_output;
+    }
 
     std::pair<bool, bool> limit_switch_states;
     arduino.readLimitSwitches(&limit_switch_states);

@@ -4,67 +4,61 @@ AutonomousControlNodePID::AutonomousControlNodePID()
 : Node("remote_control_node"),
   _stanley(k_, k_s_, L_, tolerance_),
   _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/test_path.json"),
-  u_PID_(Kp_u_, Ki_u_, Kd_u_),
-  phi_PID_(Kp_phi_, Ki_phi_, Kd_phi_),
   X_BUTTON_(false),
   prev_x_button_(false),
   current_state_(STATES::INITIALIZING),
   next_state_(STATES::INITIALIZING),
-  motor(MOTORS_I2C_ADDR),
-  arduino(AUX_ARDUINO_I2C_ADDR),
-  lpf_roll_pitch_(0.5f, static_cast<size_t>(2))
 {   
-    RCLCPP_INFO(this->get_logger(), "Motor Init:");
-    motor.init();
-    RCLCPP_INFO(this->get_logger(), "Auxilary Arduino Init:");
-    arduino.init();
-
-    RCLCPP_INFO(this->get_logger(), "Initalisation Complete");
-
     // Initialize subscriber to "joy" topic
     joy_sub_ = this->create_subscription<sensor_msgs::msg::Joy>(
         "joy",
-        10,
+        2,
         std::bind(&AutonomousControlNodePID::joyCallback, this, std::placeholders::_1)
     );
 
     // Initialize subscriber to gps latlong topic
     gps_latlong_sub_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
         "gps/fix",
-        10,
+        2,
         std::bind(&AutonomousControlNodePID::gpsLatLongCallBack, this, std::placeholders::_1)
     );
 
     // Initialize subscriber to gps coords topic
     gps_coords_sub_ = this->create_subscription<geometry_msgs::msg::Point>(
         "gps/point_data",
-        10,
+        2,
         std::bind(&AutonomousControlNodePID::gpsCoordsCallBack, this, std::placeholders::_1)
     );
 
     // Initalize subscriber to heading topic
     mag_sub_ = this->create_subscription<std_msgs::msg::Float32>(
         "compensated_heading",
-        10,
+        2,
         std::bind(&AutonomousControlNodePID::headingCallback, this, std::placeholders::_1)
     );
 
-    // Initalize subscriber to imu topic
-    imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
-        "imu/data",
-        10,
-        std::bind(&AutonomousControlNodePID::imuCallback, this, std::placeholders::_1)
+    // Initalize subscriber to joint trajectory state
+    joint_trajectory_state_sub_ = this->create_subscription<control_msgs::msg::JointTrajectoryControllerState>(
+        "motor/joint_vars_state",
+        2,
+        std::bind(&AutonomousControlNodePID::jointTrajectoryStateCallback, this, std::placeholders::_1)
     );
 
+    // Initalize publisher to joint trajectory 
+    joint_trajectory_pub_ = this->create_publisher<trajectory_msgs::msg::JointTrajectory>(
+        "motor/joint_vars", 1
+    );
+
+    // Initalize publisher to joint trajectory 
+    stanley_heading_ref_pub_ = this->create_publisher<std_msgs::msg::Float32>(
+        "heading_ref", 1
+    );
+    
     // Initialize control loop
     timer_ = this->create_wall_timer(
         std::chrono::milliseconds((1/controlLoopHZ)*1000), 
         std::bind(&AutonomousControlNodePID::controlLoop, this)
     );
-
-    // PID controllers limits
-    u_PID_.setOutputLimits(-0.7, 0.7);
-    phi_PID_.setOutputLimits(-0.7, 0.7);
 
     RCLCPP_INFO(this->get_logger(), "Autonomous Node has been started.");
 }
@@ -118,37 +112,56 @@ void AutonomousControlNodePID::gpsCoordsCallBack(const geometry_msgs::msg::Point
     _pos_z = msg->z;
 }
 
+void jointTrajectoryStateCallback(const control_msgs::msg::JointTrajectoryControllerState::SharedPtr msg) {
+    if (msg->points.empty() || msg->points[0].positions.size() < 2 || msg->points[0].velocities.size() < 2) {
+        RCLCPP_WARN(this->get_logger(), "Received invalid JointTrajectoryState message");
+        return;
+    }
+    // Update joint variables from the message
+    u_meas_ = msg->points[0].positions[0];
+    alpha_meas_ = msg->points[0].positions[1];
+    udot_meas_ = msg->points[0].velocities[0];
+    alphadot_meas_ = msg->points[0].velocities[1];
+}
+
 void AutonomousControlNodePID::controlLoop()
 {  
-    // Check limit switches havent been toggled and that the measured u isnt too close to limit.
-    // std::pair<float, float> u_alpha = motor.get_u_alpha();
-    // if (fabs(u_alpha.first)*1000 > U_LIM) {
-    //     RCLCPP_INFO(this->get_logger(), "U Limit reached!");
-    //     // set motor speed to zero
-    // }
-
     nextStateLogic();
 }
 
-std::pair<float, float> AutonomousControlNodePID::getUAlpha()
+void AutonomousControlNodePID::publishJointTrajectory()
 {
-    // Returns pair of floats corresponding to u, alpha in (mm), rad respectively
-    int32_t motorACount;
-    int32_t motorBCount;
-    motor.readMotorACount(&motorACount);
-    motor.readMotorBCount(&motorBCount);
-    std::pair<float,float> alpha_u = computeJointVariablesInverse(motorACount, motorBCount);
-    alpha_u.second = alpha_u.second * (1000 / CPR); // convert to mm
-    return std::make_pair(alpha_u.second, alpha_u.first);
+    // Create the JointTrajectory message
+    auto joint_vars_msg = trajectory_msgs::msg::JointTrajectory();
+
+    // Set the joint names for each joint
+    joint_vars_msg.joint_names = {"c_drive"}; 
+
+    // Create a JointTrajectoryPoint to hold the positions and velocities
+    trajectory_msgs::msg::JointTrajectoryPoint point;
+
+    // Set positions for each joint
+    point.positions.push_back(u_ref_);         // u_ref_ value
+    point.positions.push_back(0.0);            // alpha_ref value (not used)
+
+    // Set velocities for each joint
+    point.velocities.push_back(0.0);           // Velocity of joint u, must be 0.0
+    point.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
+
+    // Add PID efforts
+    point.effort.push_back(0.0);            // Kd
+    point.effort.push_back(0.06);           // Ki
+    point.effort.push_back(0.1);            // Kp
+
+    // Add the point to the JointTrajectory message
+    joint_vars_msg.points.push_back(point);
+
+    joint_trajectory_pub_->publish(joint_vars_msg);
 }
 
-// State machine with the following states
-// Initalising / zeroing state: to zero the c drive back to zero, will transsition to next state on button press
-// Path Following state: will follow given path autonomously, will transition to a sample state given a close enough proximity to a sample waypoint
-// Sample state: samples soil moisture
-// Finish State: All goal positions reached, node will exit
 void AutonomousControlNodePID::nextStateLogic() {
     static auto startTime = std::chrono::steady_clock::now();
+
     switch (current_state_) {
         case STATES::INITIALIZING:
             // Load json data and update stanley controller
@@ -159,83 +172,34 @@ void AutonomousControlNodePID::nextStateLogic() {
             _stanley.updateWaypoints(x_coords, y_coords);
 
             // Set reference GPS position
-            while (!_gps_fix) {
-                std::this_thread::sleep_for(std::chrono::milliseconds(1500));
-                RCLCPP_INFO(this->get_logger(), "Waiting for GPS fix");
+            if (!_gps_fix) {
+                // Send message ever 2 secconds
+                auto currentTime = std::chrono::steady_clock::now()
+                std::chrono::duration<float> elapsed = currentTime - startTime;
+                if (elapsed.duration() > 2) {
+                    RCLCPP_INFO(this->get_logger(), "Waiting for GPS fix");
+                    startTime = std::chrono::steady_clock::now();
+                }
+                next_state_ = STATES::INITIALIZING:
+            } else {
+                RCLCPP_INFO(this->get_logger(), "GPS Fix!");
+                next_state_ = STATES::PATH_FOLLOWING:
             }
-            RCLCPP_INFO(this->get_logger(), "GPS Fix!");
-
-            // Calibrate Phi and reccord u
-            next_state_ = STATES::CALIBRATE_PHI;
-            startTime = std::chrono::steady_clock::now()
-
-        case STATES::CALIBRATE_PHI:
-            auto currentTime = std::chrono::steady_clock::now()
-            std::chrono::duration<float> elapsed = currentTime - startTime;
-            if (_roll < phi_tolerance && elapsed.count() > t_hold_phi)
-            {   
-                std::pair<float, float> u_alpha = getUAlpha();
-                u_calib = u_alpha.first;
-                RCLCPP_INFO(this->get_logger(), "Phi calibrated with u_calib: %.2f", u_calib);
-                next_state_ = STATES::PATH_FOLLOWING;
-                break;
-            }
-            double output = phi_PID_.compute(_roll);
-            setSafeMotorSpeed(output, 0.0);
-            next_state_ = STATES::CALIBRATE_PHI;
-        case STATES::CALIBRATE_U:
-            break;
-
         case STATES::PATH_FOLLOWING:
-            // Determine dtheta ----
-            float motorASpeed;
-            float motorBSpeed;
-
-            motor.readMotorASpeed(&motorASpeed);
-            motor.readMotorBSpeed(&motorBSpeed);
-
-            std::pair<float, float> jointVariableVelocity = computeJointVariablesInverse(motorASpeed, motorBSpeed);
-            float dalpha = jointVariableVelocity.first;
-            float dtheta = dalpha; // Assume dtheta == dalpha
-
             // Compute steering angle ---
             double heading_error;
             double steering_angle;
-            // Go foward at set velocity, check limit switches, apply PID loop for u
-            if (!_stanley.computeSteering(coords.east, coords.north, _heading,  params.at("R") * dtheta, steering_angle, heading_error)) {
+
+            // Go foward at set velocity, assumes alphadot_meas_ = theatadot_meas_
+            if (!_stanley.computeSteering(coords.east, coords.north, _heading,  params.at("R") * alphadot_meas_, steering_angle, heading_error)) {
                 RCLCPP_ERROR(this->get_logger(), "Stanley Controller Error has Occured");
             }
 
-            // Calculate reference foward velocity ---
-            alpha_dot_ref = (alpha_dot_ref / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
-            float u_dot_ref = 0.0; // not relevent here as this is just for foward velocity control
-
-            // Set motor speeds based on joint variable transformation
-            std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref);
-
             // Determine Reference u ---
-            float rc =  params.at("R") * dtheta / steering_angle;                 // Compute radius of curviture
-            float uref = calculate_u_ref(0.0, 0.0, dtheta, rc, params);         // Compute reference u
+            float rc =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture
+            u_ref_ = calculate_u_ref(0.0, 0.0, alphadot_meas_, rc, params);               // Compute reference u
+            publishJointTrajectory(); // Command Motors
 
-            // use measured u and apply PID control
-            std::pair<float, float> u_alpha = getUAlpha();
-            u_calib = u_alpha.first;
-            u_PID_.setSetpoint(uref - u_calib);
-            double u_output = u_PID_.compute(u_alpha.second);
-
-            jointVariableVelocity.first += u_output; // Add controller foward velocity
-
-            // Remove noisy signals from controllers
-            if (fabs(jointVariableVelocity.first) < 0.08) {
-                jointVariableVelocity.first = 0.0;
-            }
-            
-            if (fabs(jointVariableVelocity.second) < 0.08) {
-                jointVariableVelocity.second = 0.0;
-            }
-
-            setSafeMotorSpeed(jointVariableVelocity.first, jointVariableVelocity.second);
-            
             // Check if the bot has reached the final waypoint
             if (_stanley.reachedFinal(coords.east, coords.north)){
                 next_state_ = STATES::FINISH;
@@ -249,25 +213,19 @@ void AutonomousControlNodePID::nextStateLogic() {
             break;
         case STATES::FINISH:
             // Stop the motors and hang the process
-
+            auto currentTime = std::chrono::steady_clock::now()
+            std::chrono::duration<float> elapsed = currentTime - startTime;
+            if (elapsed.duration() > 2) {
+                RCLCPP_INFO(this->get_logger(), "Final Waypoint Reached!");
+                startTime = std::chrono::steady_clock::now();
+            }
+            alphadot_ref_ = 0.0;
+            publishJointTrajectory(); // Command Motors
         default:
             current_state_ = STATES::FINISH;
     }
 
     current_state_ = next_state_;
-}
-
-
-void AutonomousControlNodePID::setSafeMotorSpeed(float phi_L, float phi_R) {
-    arduino.readLimitSwitches(&limit_switch_states);
-    if (limit_switch_states.first || limit_switch_states.second) {
-        // RCLCPP_INFO(this->get_logger(), "Limit Switched Toggled");
-        motor.setMotorASpeed(0);
-        motor.setMotorBSpeed(0);
-    } else {
-        motor.setMotorASpeed(phi_L);
-        motor.setMotorBSpeed(phi_R);
-    }
 }
 
 int main(int argc, char * argv[])
@@ -278,3 +236,21 @@ int main(int argc, char * argv[])
     rclcpp::shutdown();
     return 0;
 }
+
+
+        // case STATES::CALIBRATE_PHI:
+        //     auto currentTime = std::chrono::steady_clock::now()
+        //     std::chrono::duration<float> elapsed = currentTime - startTime;
+        //     if (_roll < phi_tolerance && elapsed.count() > t_hold_phi)
+        //     {   
+        //         std::pair<float, float> u_alpha = getUAlpha();
+        //         u_calib = u_alpha.first;
+        //         RCLCPP_INFO(this->get_logger(), "Phi calibrated with u_calib: %.2f", u_calib);
+        //         next_state_ = STATES::PATH_FOLLOWING;
+        //         break;
+        //     }
+        //     double output = phi_PID_.compute(_roll);
+        //     setSafeMotorSpeed(output, 0.0);
+        //     next_state_ = STATES::CALIBRATE_PHI;
+        // case STATES::CALIBRATE_U:
+        //     break;

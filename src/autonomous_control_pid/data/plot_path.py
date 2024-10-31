@@ -1,0 +1,1 @@
+# Script to plot the json paths by them selves

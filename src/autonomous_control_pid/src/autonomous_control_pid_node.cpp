@@ -2,7 +2,7 @@
 
 AutonomousControlNodePID::AutonomousControlNodePID()
 : Node("remote_control_node"),
-  _stanley(k_, k_s_, L_),
+  _stanley(k_, k_s_, L_, tolerance_),
   _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/test_path.json"),
   _geodeticConverter(),
   u_PID_(Kp_u_, Ki_u_, Kd_u_),
@@ -12,7 +12,9 @@ AutonomousControlNodePID::AutonomousControlNodePID()
   current_state_(STATES::INITIALIZING),
   next_state_(STATES::INITIALIZING),
   motor(MOTORS_I2C_ADDR),
-  arduino(AUX_ARDUINO_I2C_ADDR)
+  arduino(AUX_ARDUINO_I2C_ADDR),
+  lpf_roll_pitch_(0.5f, static_cast<size_t>(2)),
+  lpf_heading_(0.5f, static_cast<size_t>(1))
 {   
     RCLCPP_INFO(this->get_logger(), "Motor Init:");
     motor.init();
@@ -84,14 +86,20 @@ void AutonomousControlNodePID::imuCallback(const sensor_msgs::msg::Imu::SharedPt
     float AccelY = msg->linear_acceleration.y;
     float AccelZ = msg->linear_acceleration.z;
 
-    const float epsilon = 1e-8;
-    _roll = std::atan2(AccelX, -AccelZ + epsilon);
-    _pitch = std::atan2(-AccelY, std::sqrt(AccelX * AccelX + (-AccelZ) * (-AccelZ)) + epsilon);
+    const float epsilon = 1e-8; // To avoid div by 0
+    float roll = std::atan2(AccelX, -AccelZ + epsilon);
+    float pitch = std::atan2(-AccelY, std::sqrt(AccelX * AccelX + (-AccelZ) * (-AccelZ)) + epsilon);
+    
+    // Low pass filter
+    std::vector<float> filtered_roll_pitch = lpf_roll_pitch_.filter({roll, pitch});
+    _roll = filtered_roll_pitch[0];
+    _pitch = filtered_roll_pitch[1];
 }
 
 void AutonomousControlNodePID::headingCallback(const std_msgs::msg::Float32::SharedPtr msg)
-{
-    _heading = msg->data;
+{   
+    std::vector<float> filtered_heading = lpf_heading_.filter({msg->data});
+    _heading = filtered_heading[0];
 }
 
 void AutonomousControlNodePID::gpsCallBack()
@@ -171,7 +179,7 @@ void AutonomousControlNodePID::nextStateLogic() {
             }
             double output = phi_PID_.compute(_roll);
             setSafeMotorSpeed(output, 0.0);
-
+            next_state_ = STATES::CALIBRATE_PHI;
         case STATES::CALIBRATE_U:
             break;
 
@@ -179,27 +187,76 @@ void AutonomousControlNodePID::nextStateLogic() {
             // Determine current x and y coordinates:
             ENU coords = _geodeticConverter.geodeticToENU(_lat, _long, _alt);
 
+            // Determine dtheta ----
+            float motorASpeed;
+            float motorBSpeed;
+
+            motor.readMotorASpeed(&motorASpeed);
+            motor.readMotorBSpeed(&motorBSpeed);
+
+            std::pair<float, float> jointVariableVelocity = computeJointVariablesInverse(motorASpeed, motorBSpeed);
+            float dalpha = jointVariableVelocity.first;
+            float dtheta = dalpha; // Assume dtheta == dalpha
+
+            // Compute steering angle ---
             double heading_error;
             double steering_angle;
             // Go foward at set velocity, check limit switches, apply PID loop for u
-            if (!computeSteering(coords.east, coords.north, _heading, _vf, steering_angle, heading_error)) {
-                RCLCPP_INFO(this->get_logger(), "Stanley Controller Error has Occured");
+            if (!_stanley.computeSteering(coords.east, coords.north, _heading,  params.at("R") * dtheta, steering_angle, heading_error)) {
+                RCLCPP_ERROR(this->get_logger(), "Stanley Controller Error has Occured");
             }
 
-            // Compute u_ref
+            // Calculate reference foward velocity ---
+            alpha_dot_ref = (alpha_dot_ref / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
+            float u_dot_ref = 0.0; // not relevent here as this is just for foward velocity control
+
+            // Set motor speeds based on joint variable transformation
+            std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref);
+
+            // Determine Reference u ---
+            float rc =  params.at("R") * dtheta / steering_angle;                 // Compute radius of curviture
+            float uref = calculate_u_ref(0.0, 0.0, dtheta, rc, params);         // Compute reference u
+
             // use measured u and apply PID control
+            std::pair<float, float> u_alpha = getUAlpha();
+            u_calib = u_alpha.first;
+            u_PID_.setSetpoint(uref - u_calib);
+            double u_output = u_PID_.compute(u_alpha.second);
+
+            jointVariableVelocity.first += u_output; // Add controller foward velocity
+
+            // Remove noisy signals from controllers
+            if (fabs(jointVariableVelocity.first) < 0.08) {
+                jointVariableVelocity.first = 0.0;
+            }
             
+            if (fabs(jointVariableVelocity.second) < 0.08) {
+                jointVariableVelocity.second = 0.0;
+            }
+
+            setSafeMotorSpeed(jointVariableVelocity.first, jointVariableVelocity.second);
+            
+            // Check if the bot has reached the final waypoint
+            if (_stanley.reachedFinal(coords.east, coords.north)){
+                next_state_ = STATES::FINISH;
+                startTime = std::chrono::steady_clock::now()
+                RCLCPP_INFO(this->get_logger(), "Final Position Reached!");
+            } else {
+                next_state_ = STATES::PATH_FOLLOWING;
+            }
         case STATES::PROBE_SOIL:
             // Go foward slowly until IR sensor comes on, then stop, wait a few secconds, extend and retract probe whilst publishing soil moisuture data, go back to path following state
             break;
         case STATES::FINISH:
-            
+            // Stop the motors and hang the process
+
         default:
             current_state_ = STATES::FINISH;
     }
 
     current_state_ = next_state_;
 }
+
 
 void AutonomousControlNodePID::setSafeMotorSpeed(float phi_L, float phi_R) {
     arduino.readLimitSwitches(&limit_switch_states);

@@ -50,6 +50,8 @@ private:
     // PID controller gains
     double Kp_u_ = 0.1; double Ki_u_ = 0.06; double Kd_u_ = 0; // For u
     double Kp_phi_ = 0.1; double Ki_phi_ = 0.06; double Kd_phi_ = 0; // For phi
+    // Final point tolerance
+    double tolerance_ = 4; // 4m tolerance
     // Stanley control gains 
     double k_ = 0.1; double k_s_ = 0.01; double L_ = 1;
     
@@ -63,7 +65,7 @@ private:
     PIDController phi_PID_;
 
     // Publishers ---
-
+    
 
     // Subscribers ----
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
@@ -96,10 +98,20 @@ private:
     void nextStateLogic()
 
     // Lowpass filters
+    LowPassFilter lpf_roll_pitch_; // (0.3f, static_cast<size_t>(2))
+    LowPassFilter lpf_heading_; // (0.3f, static_cast<size_t>(1))
 
+    // Foward velocity control ----
+    float alpha_dot_ref = 100;
 
     // Data logging variables ----
-    
+    // Heading allready comes from mag node
+    double x_coord_ = 0.0;
+    double y_coord_ = 0.0;
+    double ref_heading = 0.0;
+    double u_error_ = 0.0;
+    double vf_error_ = 0.0;
+
     // Button states ----
     bool X_BUTTON_;
     bool prev_x_button_;     // Previous button states for edge detection

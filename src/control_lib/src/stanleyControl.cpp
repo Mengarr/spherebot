@@ -3,8 +3,8 @@
 // Constructor with waypoints
 StanleyController::StanleyController(const std::vector<double>& waypoints_x,
                                      const std::vector<double>& waypoints_y,
-                                     double k, double k_s, double L, double max_steer)
-    : k_(k), k_s_(k_s), L_(L), max_steer_(max_steer) {
+                                     double k, double k_s, double L, double max_steer, double tolerance)
+    : k_(k), k_s_(k_s), L_(L), max_steer_(max_steer), tolerance_(tolerance) {
     if (waypoints_x.size() != waypoints_y.size()) {
         throw std::invalid_argument("Waypoints x and y vectors must have the same size.");
     }
@@ -15,8 +15,8 @@ StanleyController::StanleyController(const std::vector<double>& waypoints_x,
 }
 
 // Default constructor
-StanleyController::StanleyController(double k, double k_s, double L, double max_steer)
-    : k_(k), k_s_(k_s), L_(L), max_steer_(max_steer) {}
+StanleyController::StanleyController(double k, double k_s, double L, double max_steer, double tolerance)
+    : k_(k), k_s_(k_s), L_(L), max_steer_(max_steer), tolerance_(tolerance) {}
 
 // Update waypoints using separate x and y vectors
 void StanleyController::updateWaypoints(const std::vector<double>& waypoints_x,
@@ -92,4 +92,21 @@ double StanleyController::normalizeAngle(double angle) {
 // Clamp a value between a minimum and maximum
 double StanleyController::clamp(double value, double min_val, double max_val) {
     return std::max(min_val, std::min(value, max_val));
+}
+
+// Function to check if the final waypoint is reached
+bool StanleyController::reachedFinal(double x, double y) const {
+    if (waypoints_.empty()) {
+        return false;
+    }
+
+    // Get the final waypoint
+    const Point& final_waypoint = waypoints_.back();
+
+    // Calculate the Euclidean distance to the final waypoint
+    double distance = std::sqrt(std::pow(final_waypoint.x - x, 2) +
+                                std::pow(final_waypoint.y - y, 2));
+
+    // Return true if within the tolerance
+    return distance < tolerance_;
 }

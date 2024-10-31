@@ -20,13 +20,15 @@ public:
                       double k = 1.0,
                       double k_s = 0.01,
                       double L = 1.0,
-                      double max_steer = M_PI / 4);
+                      double max_steer = M_PI / 4,
+                      double tolerance = 0.5);
 
     // Default constructor
     StanleyController(double k = 1.0,
                       double k_s = 0.01,
                       double L = 1.0,
-                      double max_steer = M_PI / 4);
+                      double max_steer = M_PI / 4,
+                      double tolerance = 0.5);
 
     // Update waypoints using separate x and y vectors
     void updateWaypoints(const std::vector<double>& waypoints_x,
@@ -39,12 +41,16 @@ public:
     bool computeSteering(double x, double y, double yaw, double v,
                          double& steering_angle, double& heading_error) const;
 
+    // Check if the final waypoint is reached
+    bool reachedFinal(double x, double y) const;
+
 private:
     std::vector<Point> waypoints_;
     double k_;         // Control gain
     double k_s_;       // Small gain to prevent division by zero
     double L_;         // Vehicle wheelbase
     double max_steer_; // Maximum steering angle in radians
+    double tolerance_;    // Tolerance distance to consider the final waypoint reached
 
     // Helper functions
     static double normalizeAngle(double angle);

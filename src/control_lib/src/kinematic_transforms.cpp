@@ -33,7 +33,7 @@ std::pair<float, float> computeJointVariablesInverse(float Psi_L, float Psi_R) {
     return std::make_pair(u, alpha);
 }
 
-float u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::string, float>& params) {
+float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::string, float>& params) {
     // Retrieve parameters from the map
     float g = params.at("g");
     float r = params.at("r");
@@ -57,4 +57,8 @@ float u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std
 
     // Return the result
     return numerator / denominator;
+}
+
+float u_phi_eq(float u, float r) {
+    return -std::atan(u / r);
 }

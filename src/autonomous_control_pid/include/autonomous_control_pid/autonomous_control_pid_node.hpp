@@ -14,8 +14,6 @@
 #include "sensor_msgs/msg/imu.hpp"
 #include "geometry_msgs/msg/point.hpp" // for x,y coordinates
 #include "control_lib/auxilary_arduino.hpp"
-#include "control_lib/motorControl.hpp"
-#include "control_lib/kinematic_transforms.hpp"
 #include "control_lib/PID_controller.hpp"
 #include "control_lib/load_path_json.cpp"
 #include "control_lib/LowpassFilter.hpp"
@@ -38,6 +36,9 @@ public:
     ~AutonomousControlNodePID() = default;
 
 private:
+    // Loop freqency
+    float controlLoopHZ = 20.0; // 20Hz
+
     // Callbacks ----
     void joyCallback(const sensor_msgs::msg::Joy::SharedPtr msg);
     void headingCallback(const geometry_msgs::msg::Point msg);
@@ -60,7 +61,6 @@ private:
     // Classes ----
     StanleyController _stanley;
     PathDataLoader _pathData;
-    MotorControl motor;
     AuxilaryArduino arduino;
     PIDController u_PID_;
     PIDController phi_PID_;
@@ -78,9 +78,9 @@ private:
 
     // Callback Data ----
     // float _AccelX, _AccelY, _AccelZ; // acceleromter callbackd data +- 1g
-    float _pitch, _roll;    // From accelerometer, in rad
-    float _pos_x, _pos_y; _pos_z;
-    float _heading;         // magnetometer heading
+    float _pitch, _roll;            // From accelerometer, in rad
+    float _pos_x, _pos_y; _pos_z;   // From gps in m (enu converted)
+    float _heading;                 // magnetometer heading
     bool _gps_fix = false;
 
     // Calibration ----

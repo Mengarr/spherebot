@@ -60,17 +60,8 @@ private:
     bool prev_x_button_;
     bool prev_o_button_;
 
-    // For motor control
-    MotorControl motor;
     AuxilaryArduino arduino;
 
-    // GPS Class
-    GeodeticConverter _geodeticConverter;
-    bool _gps_fix = false;
-    float _lat;
-    float _long;
-    float _alt;
-    bool init = false;
 };
 
 #endif // REMOTE_CONTROL_NODE_HPP_

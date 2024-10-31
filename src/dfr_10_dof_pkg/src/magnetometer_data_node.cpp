@@ -3,7 +3,7 @@
 MagnetometerPublisher::MagnetometerPublisher()
     : Node("imu_data"),
     magnetometer(VCM5883L_ADDRESS),
-    lpf_heading_(0.5f, static_cast<size_t>(1)),
+    lpf_heading_(_alpha, static_cast<size_t>(1)),
     _AccelX(0),
     _AccelY(0),
     _AccelZ(1)

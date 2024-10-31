@@ -1,5 +1,5 @@
 #include "i2c_lib/i2c_interface.hpp"
-#include "kinematic_transforms.hpp"
+#include "control_lib/kinematic_transforms.hpp"
 
 #ifndef MOTOR_CONTROL_H
 #define MOTOR_CONTROL_H

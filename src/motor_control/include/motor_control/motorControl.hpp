@@ -35,4 +35,4 @@ class MotorControl
         uint8_t __buff[6];
 };
 
-#endif // MotorControl_H
+#endif // MOTOR_CONTROL_H

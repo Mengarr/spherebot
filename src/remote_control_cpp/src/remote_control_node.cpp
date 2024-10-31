@@ -32,7 +32,7 @@ RemoteControlNode::RemoteControlNode()
     );
 
     // Init subscriber to gps x,y topic
-    
+
 
     // Initialize subscriber to "mag" topic
     mag_sub_ = this->create_subscription<std_msgs::msg::Float32>(
@@ -141,105 +141,17 @@ void RemoteControlNode::init_csv_file()
 
 void RemoteControlNode::timerCallback()
 {   
-    // if (!init) {
-    //         // Set reference GPS position
-    //     if (!_gps_fix) {
-    //         RCLCPP_INFO(this->get_logger(), "Waiting for GPS fix");
-    //         return;
-    //     } else {
-    //         init = true;
-    //         RCLCPP_INFO(this->get_logger(), "GPS Fix!");
-    //         _geodeticConverter.setReferenceOrigin(_lat, _long, _alt); // set origin
-    //     }
-    // } else {
-    //     ENU coords = _geodeticConverter.geodeticToENU(_lat, _long, _alt);
-    //     RCLCPP_INFO(this->get_logger(), "(x, y): (%.2f, %.2f)", coords.east, coords.north);
-    // }
-
-    // RCLCPP_INFO(this->get_logger(), "Adjusted Heading: %.2f", heading_);
-
     float alpha_dot_ref = 0.0;
     float u_dot_ref = 0.0;
     std::pair<bool, bool> limit_switch_states;
 
     // Apply deadzone to control inputs (SCALE THE MAPPED AXES HERE SO THAT THE OUTPUT is sensible)
-
     alpha_dot_ref = (mapped_axes1_ / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
 
     u_dot_ref = (mapped_axes3_ / RPM_TO_RPS)  / U_DOT_SCALE_FACTOR;
 
-    // Set motor speeds based on joint variable transformation
-    std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref);
-
-    // Remove noisy signal from controller 
-    if (fabs(jointVariableVelocity.first) < 0.08) {
-        jointVariableVelocity.first = 0.0;
-    }
     
-    if (fabs(jointVariableVelocity.second) < 0.08) {
-        jointVariableVelocity.second = 0.0;
-    }
 
-    //RCLCPP_INFO(this->get_logger(), "(phi_L, phi_R): (%.2f, %.2f)", jointVariableVelocity.first,  jointVariableVelocity.second);
-
-    int32_t motorACount;
-    int32_t motorBCount;
-    motor.readMotorACount(&motorACount);
-    motor.readMotorBCount(&motorBCount);
-    std::pair<float,float> u_alpha = computeJointVariablesInverse(motorACount, motorBCount);
-    u_alpha.second = u_alpha.second * (1000 / CPR); // convert to mm
-    //RCLCPP_INFO(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second);
-
-    double u_output = u_PID_.compute(u_alpha.second);
-    //RCLCPP_INFO(this->get_logger(), "u_output: %.2f", u_output);
-
-    // jointVariableVelocity.first = jointVariableVelocity.first + u_output;
-
-    // Limit switch logic, 
-    arduino.readLimitSwitches(&limit_switch_states);
-    if (limit_switch_states.first || limit_switch_states.second) {
-        // RCLCPP_INFO(this->get_logger(), "Limit Switched Toggled");
-        motor.setMotorASpeed(0);
-        motor.setMotorBSpeed(0);
-    } else {
-        motor.setMotorASpeed(jointVariableVelocity.first);
-        motor.setMotorBSpeed(jointVariableVelocity.second);
-    }
-    
-    // float motorASpeed;
-    // float motorBSpeed;
-
-    // motor.readMotorASpeed(&motorASpeed);
-    // motor.readMotorBSpeed(&motorBSpeed);
-
-    // // Assign direction to the measurments
-    // if (jointVariableVelocity.first < 0) {
-    //     motorASpeed = -motorASpeed;
-    // }
-
-    // if (jointVariableVelocity.second < 0) {
-    //     motorBSpeed = -motorBSpeed;
-    // }
-
-    // // Data logging
-    // // Retrieve the current time
-    // auto now = this->get_clock()->now();
-    // double time_in_seconds = now.seconds() - t0_;
-
-    // // Log to CSV file
-    // std::ofstream file("/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv", std::ios::out | std::ios::app);
-    // if (file.is_open())
-    // {
-    //     file << std::fixed << std::setprecision(2);
-    //     file << time_in_seconds << "," 
-    //             << motorASpeed - jointVariableVelocity.first<< "," 
-    //             << motorBSpeed - jointVariableVelocity.second<< "," 
-    //             << u_alpha.second << "\n"; 
-    //     file.close();
-    // } 
-    // else {
-    //     RCLCPP_ERROR(this->get_logger(), "Failed to write to file: ../data_logging/motor_speed_data.csv");
-    // }
 
     if (X_BUTTON_) {
         // Engaged
@@ -254,12 +166,6 @@ void RemoteControlNode::timerCallback()
         arduino.setMotorSpeedDir(0x00);
     }
 
-
-
-
-    // Calculate ENU stuff here
-    // ENU coords = _geodeticConverter.geodeticToENU(_lat, _long, _alt);
-    // RCLCPP_INFO(this->get_logger(), "X, Y: (%.2f, %.2f)", ENU.east, ENU.up);
 }
 
 

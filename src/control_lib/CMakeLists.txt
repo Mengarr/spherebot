@@ -17,7 +17,6 @@ add_library(control_interfaces
   src/geodeticConverter.cpp
   src/stanleyControl.cpp
   src/auxilary_arduino.cpp
-  src/motorControl.cpp
   src/kinematic_transforms.cpp
   src/PID_controller.cpp
   src/LowpassFilter.cpp

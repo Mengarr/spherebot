@@ -12,6 +12,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(i2c_lib REQUIRED)
+find_package(control_lib REQUIRED)
 
 # Declare C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -39,6 +40,7 @@ ament_target_dependencies(magneometer_node
   std_msgs
   sensor_msgs
   i2c_lib  # Ensure i2c_lib is a dependency
+  control_lib
 )
 
 # environmental data node

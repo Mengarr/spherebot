@@ -100,7 +100,7 @@ void MagnetometerPublisher::publish_data()
     );
 
     // Low pass filter to remove high frequency noise
-    std::vector<float> filtered_heading = lpf_heading_.filter({compensatedHeading_})
+    std::vector<float> filtered_heading = lpf_heading_.filter({compensatedHeading_});
 
     mag_msg.data = filtered_heading[0];
     

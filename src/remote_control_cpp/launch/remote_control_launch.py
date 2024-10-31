@@ -15,6 +15,10 @@ def generate_launch_description():
     # Define the gps package and executable
     gps_read_package = 'gps_read_cpp'
     gps_read_executable = 'gps_read'
+    
+    # Motor Control
+    motor_control_package = 'motor_control'
+    motor_control_executable = 'motor_control_node'
 
     # Define the joystick_reader package and executable
     joystick_reader_package = 'joystick_reader'
@@ -48,6 +52,17 @@ def generate_launch_description():
         package=imu_data_package,
         executable=imu_data_executable,
         name='imu_data_node',
+        output='screen',
+        parameters=[
+            # You can add parameters here if your node requires them
+        ]
+    )
+
+    # Motor control
+    motor_control_node = Node(
+        package=motor_control_package,
+        executable=motor_control_executable,
+        name='motor_control_node',
         output='screen',
         parameters=[
             # You can add parameters here if your node requires them
@@ -101,6 +116,7 @@ def generate_launch_description():
     # Return the LaunchDescription with both nodes
     return LaunchDescription([
         data_logger,
+        motor_control_node,
         joystick_reader_node,
         remote_control_node,
         imu_data_node,

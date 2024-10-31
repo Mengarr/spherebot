@@ -1,5 +1,7 @@
 #include <cmath> // For abs()
 #include <utility> // For pair
+#include <map> // for map
+#include <string> // for std::string
 
 #define BALL_SCREW_PITCH   70.0f // p
 #define GEAR_REDUCTION     2.4070175f // G  

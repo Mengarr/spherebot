@@ -8,11 +8,13 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(i2c_lib REQUIRED)
+find_package(control_lib REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(control_msgs REQUIRED)
 
 # List of executables
-add_executable(motor_control_node src/motor_control_node.cpp)
+add_executable(motor_control_node src/motor_control_node.cpp src/motorControl.cpp)
 
 # Targets
 target_include_directories(motor_control_node PUBLIC
@@ -23,10 +25,12 @@ target_include_directories(motor_control_node PUBLIC
 target_compile_features(motor_control_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
 # Dependencies
-ament_target_dependencies(remote_control_node 
+ament_target_dependencies(motor_control_node 
   rclcpp 
   i2c_lib
   control_lib
+  trajectory_msgs 
+  control_msgs
 )
 
 install(TARGETS motor_control_node

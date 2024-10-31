@@ -1,4 +1,4 @@
-#include "./include/control_lib/LowPassFilter.hpp"
+#include "../include/control_lib/LowpassFilter.hpp"
 
 // Constructor implementation
 LowPassFilter::LowPassFilter(float alpha, size_t size) 

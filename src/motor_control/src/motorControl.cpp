@@ -1,4 +1,4 @@
-#include "../include/control_lib/motorControl.hpp"
+#include "../include/motor_control/motorControl.hpp"
 
 MotorControl::MotorControl(uint8_t I2C_ADDR) 
     : _i2cBus(I2C_ADDR)

@@ -1,13 +1,14 @@
-#include "motor_control_node.hpp"
+#include "../include/motor_control/motor_control_node.hpp"
 
-MotorControlNode::MotorControlNode() : Node("motor_control"), 
+MotorControlNode::MotorControlNode() : 
+  Node("motor_control"), 
   u_PID_(Kp_, Ki_, Kd_),
   motor(MOTORS_I2C_ADDR),
   arduino(AUX_ARDUINO_I2C_ADDR),
   u_ref_(0.0), 
   alpha_ref_(0.0), 
   udot_ref_(0.0), 
-  alphadot_ref_(0.0)
+  alphadot_ref_(0.0),
   u_meas_(0.0), 
   alpha_meas_(0.0), 
   udot_meas_(0.0), 
@@ -47,11 +48,13 @@ void MotorControlNode::jointTrajectoryCallback(const trajectory_msgs::msg::Joint
     udot_ref_ = msg->points[0].velocities[0];
     alphadot_ref_ = msg->points[0].velocities[1];
 
-    // Publish the joint state
+    // Create and populate the JointTrajectoryControllerState message
     control_msgs::msg::JointTrajectoryControllerState state_msg;
     state_msg.joint_names = msg->joint_names;
-    state_msg.actual.positions = {u_meas_, alpha_meas_};
-    state_msg.actual.velocities = {udot_meas_, alphadot_meas_};
+
+    // Populate the feedback field with measured values
+    state_msg.feedback.positions = {u_meas_, alpha_meas_};
+    state_msg.feedback.velocities = {udot_meas_, alphadot_meas_};
 
     joint_state_pub_->publish(state_msg);
 }
@@ -81,10 +84,10 @@ void MotorControlNode::controlLoop()
     std::pair<float,float> u_alpha = computeJointVariablesInverse(motorACount, motorBCount);
     u_alpha.second = u_alpha.second * (1000 / CPR); // convert to mm
 
-    u_meas_ = u_alpha.second;
-    alpha_meas_ = u_alpha.first;
+    u_meas_ = static_cast<double>(u_alpha.second);
+    alpha_meas_ =  static_cast<double>(u_alpha.first);
 
-    u_PID_.setSetpoint(u_ref);
+    u_PID_.setSetpoint(u_ref_);
   
     double u_output = u_PID_.compute(u_alpha.second);
 
@@ -111,8 +114,8 @@ void MotorControlNode::controlLoop()
 
     std::pair<float,float> u_alpha_dot = computeJointVariablesInverse(motorASpeed, motorBSpeed);
     u_alpha_dot.second = u_alpha_dot.second * (1000 / CPR); // convert to mm/s
-    udot_meas_ = u_alpha_dot.second;
-    alphadot_meas_ = u_alpha_dot.first; // in rad/s
+    udot_meas_ =  static_cast<double>(u_alpha_dot.second);
+    alphadot_meas_ =  static_cast<double>(u_alpha_dot.first); // in rad/s
 }
 
 int main(int argc, char *argv[])

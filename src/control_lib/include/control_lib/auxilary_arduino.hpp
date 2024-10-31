@@ -15,7 +15,7 @@
 class AuxilaryArduino
 {   
     public:
-        AuxilaryArduino(uint8_t I2C_ADDR = AuxilaryArduino_I2C_ADDR);
+        AuxilaryArduino(uint8_t I2C_ADDR = AUX_ARDUINO_I2C_ADDR);
         void init();
         void reset();
         void readSoilMoisture(float* data);

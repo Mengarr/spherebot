@@ -10,9 +10,12 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
-  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
   <depend>i2c_lib</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>control_msgs</depend>
   <depend>control_lib</depend>
+  <depend>std_msgs</depend>
   <build_depend>launch</build_depend>
   <build_depend>launch_ros</build_depend>
   <exec_depend>launch</exec_depend>

@@ -1,8 +1,6 @@
 #ifndef AUTONOMOUS_CONTOL_NODE_PID_HPP_
 #define AUTONOMOUS_CONTOL_NODE_PID_HPP_
 
-#define controlLoopHZ 30 // 30Hz
-
 #define ALPHA_DOT_SCALE_FACTOR 1
 #define U_DOT_SCALE_FACTOR 1
 #define RPM_TO_RPS 60 // RPM TO RPS = 60:1
@@ -13,11 +11,17 @@
 #include "sensor_msgs/msg/nav_sat_fix.hpp"      // For gps fix
 #include "geometry_msgs/msg/point.hpp"          // for x,y coordinates
 #include "control_lib/auxilary_arduino.hpp"
-#include "control_lib/load_path_json.cpp"
+#include "control_lib/PathDataLoader.hpp"
+#include "control_lib/kinematic_transforms.hpp"
+#include "control_lib/stanleyControl.hpp"
 #include <trajectory_msgs/msg/joint_trajectory.hpp>                 // For controlling the motor
 #include <control_msgs/msg/joint_trajectory_controller_state.hpp>   // For reading motor data
 #include <cmath> // For abs()
 #include <utility> // For pair
+#include <chrono> // for time 
+#include <vector> // for vector
+#include <map>
+#include <string>
 
 typedef enum class STATES {
     INITIALIZING,
@@ -34,18 +38,18 @@ public:
 
 private:
     // Loop freqency
-    float controlLoopHZ = 20.0; // 20Hz
+    const float controlLoopHZ = 20.0; // 20Hz
 
     // Callbacks ----
     void joyCallback(const sensor_msgs::msg::Joy::SharedPtr msg);
-    void headingCallback(const geometry_msgs::msg::Point msg);
+    void headingCallback(const std_msgs::msg::Float32::SharedPtr msg);
     void gpsLatLongCallBack(const sensor_msgs::msg::NavSatFix::SharedPtr msg);
     void gpsCoordsCallBack(const geometry_msgs::msg::Point::SharedPtr msg);
     void jointTrajectoryStateCallback(const control_msgs::msg::JointTrajectoryControllerState::SharedPtr msg);
     
     // Functions ----
     void controlLoop(); // Control loop timer callback
-    void publishJointTrajectory() // Helper function to publish messages
+    void publishJointTrajectory(); // Helper function to publish messages
 
     // Controllers ----
     // Final point tolerance
@@ -65,13 +69,14 @@ private:
     // Subscribers ----
     rclcpp::Subscription<control_msgs::msg::JointTrajectoryControllerState>::SharedPtr joint_trajectory_state_sub_;
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
-    rclcpp::Subscription<geometry_msgs::msg::Point::NavSatFix>::SharedPtr gps_coords_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_latlong_sub_;
+    rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr gps_coords_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr mag_sub_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     // Callback Data ----
     // float _AccelX, _AccelY, _AccelZ; // acceleromter callbackd data +- 1g
-    float _pos_x, _pos_y; _pos_z;   // From gps in m (enu converted)
+    double _pos_x, _pos_y, _pos_z;   // From gps in m (enu converted)
     float _heading;                 // magnetometer heading
     bool _gps_fix = false;
 
@@ -82,10 +87,11 @@ private:
     // State machine ----
     STATES current_state_;
     STATES next_state_;
-    void nextStateLogic()
+    void nextStateLogic();
 
     // Foward velocity control ----
-    float alphadot_ref_ = (100 / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;;  // Good foward velocity
+    double u_ref_ = 0.0;
+    double alphadot_ref_ = (100 / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;  // Good foward velocity
     // Private variables for measured joint state:
     double u_meas_, alpha_meas_;        // Positions
     double udot_meas_, alphadot_meas_;  // Velocities
@@ -97,6 +103,9 @@ private:
     double ref_heading = 0.0;
     double u_error_ = 0.0;
     double vf_error_ = 0.0;
+
+    // Define the params map
+    std::map<std::string, float> params;
 
     // Button states ----
     bool X_BUTTON_;

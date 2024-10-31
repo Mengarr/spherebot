@@ -11,7 +11,6 @@ def generate_launch_description():
     remote_control_package = 'remote_control_cpp'
     remote_control_executable = 'remote_control_node'
 
-
     # Define the gps package and executable
     gps_read_package = 'gps_read_cpp'
     gps_read_executable = 'gps_read'

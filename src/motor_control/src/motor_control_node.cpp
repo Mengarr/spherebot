@@ -34,6 +34,12 @@ MotorControlNode::MotorControlNode() :
         std::bind(&MotorControlNode::controlLoop, this));
 }
 
+MotorControlNode::~MotorControlNode() {
+    motor.reset();
+    arduino.reset();
+    RCLCPP_INFO(this->get_logger(), "Arduinos Reset");
+}
+
 // Callback for receiving JointTrajectory message and updating state
 void MotorControlNode::jointTrajectoryCallback(const trajectory_msgs::msg::JointTrajectory::SharedPtr msg)
 {

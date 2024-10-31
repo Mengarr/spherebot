@@ -13,7 +13,8 @@ class MotorControlNode : public rclcpp::Node
 {
 public:
     MotorControlNode();
-
+    ~MotorControlNode();
+    
 private:
     // Subscriber callback for JointTrajectory messages
     void jointTrajectoryCallback(const trajectory_msgs::msg::JointTrajectory::SharedPtr msg);

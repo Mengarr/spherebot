@@ -46,7 +46,7 @@ void GPSread::publish_data()
       gps.encode(c);
   }
   // coords data
-  auto msg = geometry_msgs::msg::Point();
+  auto coords_msg = geometry_msgs::msg::Point();
 
   // msg data
   auto msg = sensor_msgs::msg::NavSatFix();
@@ -79,7 +79,7 @@ void GPSread::publish_data()
 
   // Conversion to enu coordinates
   if (!init_ &&  msg.status.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX) {
-    _geodeticConverter.setReferenceOrigin(_lat, _long, _alt)
+    _geodeticConverter.setReferenceOrigin(_lat, _long, _alt);
     init_ = true;
     coords_msg.x = 0.0;
     coords_msg.y = 0.0;

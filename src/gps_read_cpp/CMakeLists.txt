@@ -9,6 +9,8 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(i2c_lib REQUIRED)
+find_package(control_lib REQUIRED)
 
 # List of executables
 add_executable(gps_read src/gps_read.cpp src/TinyGPS++.cpp)
@@ -25,7 +27,7 @@ install(TARGETS gps_read
   DESTINATION lib/${PROJECT_NAME})
 
 # Dependencies
-ament_target_dependencies(gps_read rclcpp sensor_msgs)
+ament_target_dependencies(gps_read rclcpp sensor_msgs i2c_lib control_lib)
 
 
 install(TARGETS gps_read

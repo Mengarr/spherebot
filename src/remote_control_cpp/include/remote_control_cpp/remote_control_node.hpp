@@ -13,12 +13,13 @@
 #include <iomanip>
 #include <filesystem> // C++17 library for directory handling
 #include "control_lib/auxilary_arduino.hpp"
+#include <trajectory_msgs/msg/joint_trajectory.hpp>
+#include <control_msgs/msg/joint_trajectory_controller_state.hpp>
 
 class RemoteControlNode : public rclcpp::Node
 {
 public:
     RemoteControlNode();
-    ~RemoteControlNode();
 
 private:
     void joyCallback(const sensor_msgs::msg::Joy::SharedPtr msg);
@@ -26,14 +27,16 @@ private:
     void headingCallback(const std_msgs::msg::Float32::SharedPtr msg);
     void timerCallback();
     
+    rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory>::SharedPtr joint_trajectory_pub_;
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr mag_sub_;
     rclcpp::TimerBase::SharedPtr timer_;
 
-    // Data logging 
-    void init_csv_file();
-    double t0_;
+    float _lat;
+    float _long;
+    float _alt;
+    bool _gps_fix;
 
     // Heading data
     float heading_;

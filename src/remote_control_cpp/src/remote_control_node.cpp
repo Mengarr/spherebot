@@ -2,19 +2,15 @@
 
 RemoteControlNode::RemoteControlNode()
 : Node("remote_control_node"),
-  u_PID_(Kp_, Ki_, Kd_),
   mapped_axes1_(0.0),
   mapped_axes3_(0.0),
   X_BUTTON_(false),
   O_BUTTON_(false),
   prev_x_button_(false),
   prev_o_button_(false),
-  motor(MOTORS_I2C_ADDR),
-  arduino(AUX_ARDUINO_I2C_ADDR),
-  _geodeticConverter()
+  arduino(AUX_ARDUINO_I2C_ADDR)
 {   
-    RCLCPP_INFO(this->get_logger(), "Motor Init:");
-    motor.init();
+    RCLCPP_INFO(this->get_logger(), "Ardino Init:");
     arduino.init();
     RCLCPP_INFO(this->get_logger(), "Initalisation Complete");
     // Initialize subscriber to "joy" topic
@@ -41,6 +37,10 @@ RemoteControlNode::RemoteControlNode()
         std::bind(&RemoteControlNode::headingCallback, this, std::placeholders::_1)
     );
 
+    // Initalize publisher to motor control node:
+    joint_trajectory_pub_ = this->create_publisher<trajectory_msgs::msg::JointTrajectory>(
+        "motor/joint_vars", 1
+    );
 
     // Initialize a timer that runs at 10 Hz
     timer_ = this->create_wall_timer(
@@ -48,20 +48,10 @@ RemoteControlNode::RemoteControlNode()
         std::bind(&RemoteControlNode::timerCallback, this)
     );
 
-    // Initialize CSV file
-    init_csv_file();
-
-    // PID controller
-    u_PID_.setOutputLimits(-0.7, 0.7);
 
     RCLCPP_INFO(this->get_logger(), "Remote Control Node has been started.");
 }
 
-RemoteControlNode::~RemoteControlNode() {
-    motor.reset();
-    arduino.reset();
-    RCLCPP_INFO(this->get_logger(), "Arduinos Succesfully Reset");
-}
 
 // void RemoteControlNode::phi_calibration() {
 //     // Function to calibrate phi based on IMU measurments
@@ -110,48 +100,37 @@ void RemoteControlNode::gpsCallback(const sensor_msgs::msg::NavSatFix::SharedPtr
     _gps_fix = (msg->status.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX);
 }
 
-void RemoteControlNode::init_csv_file()
-{
-    std::string file_path = "/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv";
-    
-    // Check if the directory exists; if not, log an error
-    std::filesystem::path dir_path = "/home/rohan/spherebot/src/remote_control_cpp/data_logging";
-    if (!std::filesystem::exists(dir_path))
-    {
-        RCLCPP_ERROR(this->get_logger(), "Directory %s does not exist. CSV logging will not proceed.", dir_path.c_str());
-        return;
-    }
-
-    // Attempt to open file and write header if it’s a new file
-    std::ofstream file(file_path, std::ios::out | std::ios::app);
-    if (!file.is_open())
-    {
-        RCLCPP_ERROR(this->get_logger(), "Failed to open file: %s", file_path.c_str());
-    }
-    else if (file.tellp() == 0)  // New file, so write header
-    {
-        file << "Time,MotorASpeedError,MotorBSpeedError,uError\n";
-        RCLCPP_INFO(this->get_logger(), "CSV file %s created successfully with headers.", file_path.c_str());
-    }
-    file.close();
-
-    auto now = this->get_clock()->now();
-    t0_ = now.seconds();
-}
-
 void RemoteControlNode::timerCallback()
 {   
     float alpha_dot_ref = 0.0;
     float u_dot_ref = 0.0;
-    std::pair<bool, bool> limit_switch_states;
 
     // Apply deadzone to control inputs (SCALE THE MAPPED AXES HERE SO THAT THE OUTPUT is sensible)
     alpha_dot_ref = (mapped_axes1_ / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
 
     u_dot_ref = (mapped_axes3_ / RPM_TO_RPS)  / U_DOT_SCALE_FACTOR;
 
-    
+    // Create the JointTrajectory message
+    auto joint_vars_msg = trajectory_msgs::msg::JointTrajectory();
 
+    // Set the joint names for each joint
+    joint_vars_msg.joint_names = {"c_drive"}; 
+
+    // Create a JointTrajectoryPoint to hold the positions and velocities
+    trajectory_msgs::msg::JointTrajectoryPoint point;
+
+    // Set positions for each joint
+    point.positions.push_back(0.0);       // u_ref_ value
+    point.positions.push_back(0.0);       // alpha_ref value (or 0 if unused)
+
+    // Set velocities for each joint
+    point.velocities.push_back(u_dot_ref);   // Velocity of joint u
+    point.velocities.push_back(alpha_dot_ref); // Velocity of joint alpha
+
+    // Add the point to the JointTrajectory message
+    joint_vars_msg.points.push_back(point);
+
+    joint_trajectory_pub_->publish(joint_vars_msg);
 
     if (X_BUTTON_) {
         // Engaged

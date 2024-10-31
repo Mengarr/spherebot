@@ -11,6 +11,9 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(i2c_lib REQUIRED)
 find_package(control_lib REQUIRED)
+find_package(trajectory_msgs REQUIRED)
+find_package(control_msgs REQUIRED)
+
 
 # List of executables
 add_executable(remote_control_node src/remote_control_node.cpp)
@@ -29,6 +32,8 @@ ament_target_dependencies(remote_control_node
   sensor_msgs
   i2c_lib
   control_lib
+  trajectory_msgs 
+  control_msgs
 )
 
 install(TARGETS remote_control_node

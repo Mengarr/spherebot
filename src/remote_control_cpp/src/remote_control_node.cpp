@@ -33,7 +33,7 @@ RemoteControlNode::RemoteControlNode()
 
     // Initialize subscriber to "mag" topic
     mag_sub_ = this->create_subscription<std_msgs::msg::Float32>(
-        "adjusted_heading",
+        "compensated_heading",
         10,
         std::bind(&RemoteControlNode::headingCallback, this, std::placeholders::_1)
     );
@@ -185,12 +185,12 @@ void RemoteControlNode::timerCallback()
     motor.readMotorBCount(&motorBCount);
     std::pair<float,float> u_alpha = computeJointVariablesInverse(motorACount, motorBCount);
     u_alpha.second = u_alpha.second * (1000 / CPR); // convert to mm
-    RCLCPP_INFO(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second);
+    //RCLCPP_INFO(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second);
 
     double u_output = u_PID_.compute(u_alpha.second);
-    RCLCPP_INFO(this->get_logger(), "u_output: %.2f", u_output);
+    //RCLCPP_INFO(this->get_logger(), "u_output: %.2f", u_output);
 
-    jointVariableVelocity.first = jointVariableVelocity.first + u_output;
+    // jointVariableVelocity.first = jointVariableVelocity.first + u_output;
 
     // Limit switch logic, 
     arduino.readLimitSwitches(&limit_switch_states);
@@ -203,40 +203,40 @@ void RemoteControlNode::timerCallback()
         motor.setMotorBSpeed(jointVariableVelocity.second);
     }
     
-    float motorASpeed;
-    float motorBSpeed;
+    // float motorASpeed;
+    // float motorBSpeed;
 
-    motor.readMotorASpeed(&motorASpeed);
-    motor.readMotorBSpeed(&motorBSpeed);
+    // motor.readMotorASpeed(&motorASpeed);
+    // motor.readMotorBSpeed(&motorBSpeed);
 
-    // Assign direction to the measurments
-    if (jointVariableVelocity.first < 0) {
-        motorASpeed = -motorASpeed;
-    }
+    // // Assign direction to the measurments
+    // if (jointVariableVelocity.first < 0) {
+    //     motorASpeed = -motorASpeed;
+    // }
 
-    if (jointVariableVelocity.second < 0) {
-        motorBSpeed = -motorBSpeed;
-    }
+    // if (jointVariableVelocity.second < 0) {
+    //     motorBSpeed = -motorBSpeed;
+    // }
 
-    // Data logging
-    // Retrieve the current time
-    auto now = this->get_clock()->now();
-    double time_in_seconds = now.seconds() - t0_;
+    // // Data logging
+    // // Retrieve the current time
+    // auto now = this->get_clock()->now();
+    // double time_in_seconds = now.seconds() - t0_;
 
-    // Log to CSV file
-    std::ofstream file("/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv", std::ios::out | std::ios::app);
-    if (file.is_open())
-    {
-        file << std::fixed << std::setprecision(2);
-        file << time_in_seconds << "," 
-                << motorASpeed - jointVariableVelocity.first<< "," 
-                << motorBSpeed - jointVariableVelocity.second<< "," 
-                << u_alpha.second << "\n"; 
-        file.close();
-    } 
-    else {
-        RCLCPP_ERROR(this->get_logger(), "Failed to write to file: ../data_logging/motor_speed_data.csv");
-    }
+    // // Log to CSV file
+    // std::ofstream file("/home/rohan/spherebot/src/remote_control_cpp/data_logging/motor_speed_data.csv", std::ios::out | std::ios::app);
+    // if (file.is_open())
+    // {
+    //     file << std::fixed << std::setprecision(2);
+    //     file << time_in_seconds << "," 
+    //             << motorASpeed - jointVariableVelocity.first<< "," 
+    //             << motorBSpeed - jointVariableVelocity.second<< "," 
+    //             << u_alpha.second << "\n"; 
+    //     file.close();
+    // } 
+    // else {
+    //     RCLCPP_ERROR(this->get_logger(), "Failed to write to file: ../data_logging/motor_speed_data.csv");
+    // }
 
     if (X_BUTTON_) {
         // Engaged

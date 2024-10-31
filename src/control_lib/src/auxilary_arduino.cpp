@@ -1,34 +1,34 @@
 #include "../include/control_lib/auxilary_arduino.hpp"
 
-AUX_ARDUINO::AUX_ARDUINO(uint8_t I2C_ADDR) 
+AuxilaryArduino::AuxilaryArduino(uint8_t I2C_ADDR) 
     : _i2cBus(I2C_ADDR)
     {
 
     }
 
-void AUX_ARDUINO::init() {
+void AuxilaryArduino::init() {
     _i2cBus.writemem(CONTROL_REG, 0X0F);
 }
 
-void AUX_ARDUINO::reset() {
+void AuxilaryArduino::reset() {
     _i2cBus.writemem(CONTROL_REG, 0XFF);
 }
 
-void AUX_ARDUINO::readSoilMoisture(float* soil_mositure) {
+void AuxilaryArduino::readSoilMoisture(float* soil_mositure) {
     _i2cBus.readmem(SOIL_MOISTURE_REG,  uint8_t(4), __buff);
     memcpy(soil_mositure, __buff, sizeof(float));  
 }
 
-void AUX_ARDUINO::readHallEffect(uint8_t* data) {
+void AuxilaryArduino::readHallEffect(uint8_t* data) {
     _i2cBus.readmem(HALL_EFFECT_REG,  uint8_t(1), __buff);
     memcpy(data, __buff, sizeof(uint8_t));  
 }
 
-void AUX_ARDUINO::setMotorSpeedDir(uint8_t data) {
+void AuxilaryArduino::setMotorSpeedDir(uint8_t data) {
     _i2cBus.writemem(MOTOR_CONTROL_REG, data);
 }
 
-void AUX_ARDUINO::readLimitSwitches(std::pair<bool, bool>* limit_switch_states) {
+void AuxilaryArduino::readLimitSwitches(std::pair<bool, bool>* limit_switch_states) {
     uint8_t data;
     const uint8_t MASK1 = 0xF0;
     const uint8_t MASK2 = 0x0F;

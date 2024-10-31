@@ -28,6 +28,10 @@ def generate_launch_description():
     imu_data_package = 'dfr_10_dof_pkg'
     imu_data_executable = 'imu_data_node'
 
+    # Define the imu_data_node package and executable
+    data_logger_package = 'data_logger_pkg'
+    data_logger_executable = 'data_logger_node'
+
     # Create the Node action for magneometer_node
     magneometer_node = Node(
         package=mag_data_package,
@@ -83,11 +87,23 @@ def generate_launch_description():
         ]
     )
 
+    # Create the Node action for data logger
+    data_logger = Node(
+        package=data_logger_package,
+        executable=data_logger_executable,
+        name='data_logger_node',
+        output='screen',
+        parameters=[
+            # You can add parameters here if your node requires them
+        ]
+    )
+
     # Return the LaunchDescription with both nodes
     return LaunchDescription([
+        data_logger,
         joystick_reader_node,
         remote_control_node,
-        gps_node,
         imu_data_node,
-        magneometer_node
+        magneometer_node,
+        gps_node,
     ])

@@ -14,10 +14,10 @@
 #define MOTOR_A_COUNT_READ_REG  0x05
 #define MOTOR_B_COUNT_READ_REG  0x06
 
-class MOTOR_CONTROL
+class MotorControl
 {   
     public:
-        MOTOR_CONTROL(uint8_t I2C_ADDR = MOTORS_I2C_ADDR);
+        MotorControl(uint8_t I2C_ADDR = MOTORS_I2C_ADDR);
         void init();
         void reset();
         void readMotorASpeed(float* speed);
@@ -35,4 +35,4 @@ class MOTOR_CONTROL
         uint8_t __buff[6];
 };
 
-#endif // MOTOR_CONTROL_H
+#endif // MotorControl_H

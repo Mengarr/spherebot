@@ -2,9 +2,15 @@
 
 AutonomousControlNodePID::AutonomousControlNodePID()
 : Node("remote_control_node"),
+  _stanley(k_, k_s_, L_),
+  _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/test_path.json"),
+  _geodeticConverter(),
+  u_PID_(Kp_u_, Ki_u_, Kd_u_),
+  phi_PID_(Kp_phi_, Ki_phi_, Kd_phi_),
   X_BUTTON_(false),
   prev_x_button_(false),
   current_state_(STATES::INITIALIZING),
+  next_state_(STATES::INITIALIZING),
   motor(MOTORS_I2C_ADDR),
   arduino(AUX_ARDUINO_I2C_ADDR)
 {   
@@ -14,6 +20,7 @@ AutonomousControlNodePID::AutonomousControlNodePID()
     arduino.init();
 
     RCLCPP_INFO(this->get_logger(), "Initalisation Complete");
+
     // Initialize subscriber to "joy" topic
     joy_sub_ = this->create_subscription<sensor_msgs::msg::Joy>(
         "joy",
@@ -28,11 +35,29 @@ AutonomousControlNodePID::AutonomousControlNodePID()
         std::bind(&AutonomousControlNodePID::gpsCallback, this, std::placeholders::_1)
     );
 
+    // Initalize subscriber to heading topic
+    mag_sub_ = this->create_subscription<std_msgs::msg::Float32>(
+        "compensated_heading",
+        10,
+        std::bind(&AutonomousControlNodePID::headingCallback, this, std::placeholders::_1)
+    );
+
+    // Initalize subscriber to imu topic
+    imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
+        "/imu/data",
+        10,
+        std::bind(&AutonomousControlNodePID::imuCallback, this, std::placeholders::_1)
+    );
+
     // Initialize control loop
     timer_ = this->create_wall_timer(
         std::chrono::milliseconds((1/controlLoopHZ)*1000), 
         std::bind(&AutonomousControlNodePID::controlLoop, this)
     );
+
+    // PID controllers limits
+    u_PID_.setOutputLimits(-0.7, 0.7);
+    phi_PID_.setOutputLimits(-0.7, 0.7);
 
     RCLCPP_INFO(this->get_logger(), "Autonomous Node has been started.");
 }
@@ -54,12 +79,17 @@ void AutonomousControlNodePID::joyCallback(const sensor_msgs::msg::Joy::SharedPt
 
 }
 
-// void AutonomousControlNodePID::imuCallBack()
-// {
-     
-// }
+void AutonomousControlNodePID::imuCallback(const sensor_msgs::msg::Imu::SharedPtr msg){
+    float AccelX = msg->linear_acceleration.x;
+    float AccelY = msg->linear_acceleration.y;
+    float AccelZ = msg->linear_acceleration.z;
 
-void magnetometerCallBack(const std_msgs::msg::Float32::SharedPtr msg)
+    const float epsilon = 1e-8;
+    _roll = std::atan2(AccelX, -AccelZ + epsilon);
+    _pitch = std::atan2(-AccelY, std::sqrt(AccelX * AccelX + (-AccelZ) * (-AccelZ)) + epsilon);
+}
+
+void AutonomousControlNodePID::headingCallback(const std_msgs::msg::Float32::SharedPtr msg)
 {
     _heading = msg->data;
 }
@@ -79,13 +109,25 @@ void AutonomousControlNodePID::gpsCallBack()
 void AutonomousControlNodePID::controlLoop()
 {  
     // Check limit switches havent been toggled and that the measured u isnt too close to limit.
-    std::pair<float, float> u_alpha = motor.get_u_alpha();
-    if (fabs(u_alpha.first)*1000 > U_LIM) {
-        RCLCPP_INFO(this->get_logger(), "U Limit reached!");
-        // set motor speed to zero
-    }
+    // std::pair<float, float> u_alpha = motor.get_u_alpha();
+    // if (fabs(u_alpha.first)*1000 > U_LIM) {
+    //     RCLCPP_INFO(this->get_logger(), "U Limit reached!");
+    //     // set motor speed to zero
+    // }
 
     nextStateLogic();
+}
+
+std::pair<float, float> AutonomousControlNodePID::getUAlpha()
+{
+    // Returns pair of floats corresponding to u, alpha in (mm), rad respectively
+    int32_t motorACount;
+    int32_t motorBCount;
+    motor.readMotorACount(&motorACount);
+    motor.readMotorBCount(&motorBCount);
+    std::pair<float,float> alpha_u = computeJointVariablesInverse(motorACount, motorBCount);
+    alpha_u.second = alpha_u.second * (1000 / CPR); // convert to mm
+    return std::make_pair(alpha_u.second, alpha_u.first);
 }
 
 // State machine with the following states
@@ -94,6 +136,7 @@ void AutonomousControlNodePID::controlLoop()
 // Sample state: samples soil moisture
 // Finish State: All goal positions reached, node will exit
 void AutonomousControlNodePID::nextStateLogic() {
+    static auto startTime = std::chrono::steady_clock::now();
     switch (current_state_) {
         case STATES::INITIALIZING:
             // Load json data and update stanley controller
@@ -111,6 +154,27 @@ void AutonomousControlNodePID::nextStateLogic() {
             RCLCPP_INFO(this->get_logger(), "GPS Fix!");
             _geodeticConverter.setReferenceOrigin(_lat, _long, _alt); // set origin
 
+            // Calibrate Phi and reccord u
+            next_state_ = STATES::CALIBRATE_PHI;
+            startTime = std::chrono::steady_clock::now()
+
+        case STATES::CALIBRATE_PHI:
+            auto currentTime = std::chrono::steady_clock::now()
+            std::chrono::duration<float> elapsed = currentTime - startTime;
+            if (_roll < phi_tolerance && elapsed.count() > t_hold_phi)
+            {   
+                std::pair<float, float> u_alpha = getUAlpha();
+                u_calib = u_alpha.first;
+                RCLCPP_INFO(this->get_logger(), "Phi calibrated with u_calib: %.2f", u_calib);
+                next_state_ = STATES::PATH_FOLLOWING;
+                break;
+            }
+            double output = phi_PID_.compute(_roll);
+            setSafeMotorSpeed(output, 0.0);
+
+        case STATES::CALIBRATE_U:
+            break;
+
         case STATES::PATH_FOLLOWING:
             // Determine current x and y coordinates:
             ENU coords = _geodeticConverter.geodeticToENU(_lat, _long, _alt);
@@ -127,11 +191,25 @@ void AutonomousControlNodePID::nextStateLogic() {
             
         case STATES::PROBE_SOIL:
             // Go foward slowly until IR sensor comes on, then stop, wait a few secconds, extend and retract probe whilst publishing soil moisuture data, go back to path following state
-
+            break;
         case STATES::FINISH:
             
         default:
             current_state_ = STATES::FINISH;
+    }
+
+    current_state_ = next_state_;
+}
+
+void AutonomousControlNodePID::setSafeMotorSpeed(float phi_L, float phi_R) {
+    arduino.readLimitSwitches(&limit_switch_states);
+    if (limit_switch_states.first || limit_switch_states.second) {
+        // RCLCPP_INFO(this->get_logger(), "Limit Switched Toggled");
+        motor.setMotorASpeed(0);
+        motor.setMotorBSpeed(0);
+    } else {
+        motor.setMotorASpeed(phi_L);
+        motor.setMotorBSpeed(phi_R);
     }
 }
 

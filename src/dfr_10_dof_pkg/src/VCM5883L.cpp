@@ -111,7 +111,7 @@ void VCM5883L::setDeclinationAngle(float declinationAngle)
 
 float VCM5883L::getHeadingDegrees(void)
 {
-  float heading = atan2(v.YAxis ,v.XAxis);
+  float heading = atan2(static_cast<float>(v.YAxis) - Y_offset_, static_cast<float>(v.XAxis) - X_offset_);
   heading += this->ICdeclinationAngle;
   if(heading < 0)
     heading += 2*PI;
@@ -121,6 +121,11 @@ float VCM5883L::getHeadingDegrees(void)
   return v.HeadingDegress;
 }
 
+void VCM5883L::setHardIronOffsets(float x, float y, float z){
+  X_offset_ = x;
+  Y_offset_ = y;
+  Z_offset_ = z;
+}
 // void VCM5883L::writeRegister8(uint8_t reg, uint8_t value)
 // {
 //   _pWire->beginTransmission(this->_I2C_addr);

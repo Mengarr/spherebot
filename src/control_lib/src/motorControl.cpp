@@ -1,47 +1,47 @@
 #include "../include/control_lib/motorControl.hpp"
 
-MOTOR_CONTROL::MOTOR_CONTROL(uint8_t I2C_ADDR) 
+MotorControl::MotorControl(uint8_t I2C_ADDR) 
     : _i2cBus(I2C_ADDR)
     {
 
     }
-void MOTOR_CONTROL::init() {
+void MotorControl::init() {
     _i2cBus.writemem(CONTROL_REG, 0X0F);
 }
 
-void MOTOR_CONTROL::readMotorASpeed(float* speed) {
+void MotorControl::readMotorASpeed(float* speed) {
     _i2cBus.readmem(MOTOR_A_SPEED_READ_REG,  uint8_t(4), __buff);
     memcpy(speed, __buff, sizeof(float));  
 }
 
-void MOTOR_CONTROL::readMotorACount(int32_t* val) {
+void MotorControl::readMotorACount(int32_t* val) {
     _i2cBus.readmem(MOTOR_A_COUNT_READ_REG,  uint8_t(4), __buff);
     memcpy(val, __buff, sizeof(int32_t));  
 }
 
-void MOTOR_CONTROL::readMotorBCount(int32_t* val) {
+void MotorControl::readMotorBCount(int32_t* val) {
     _i2cBus.readmem(MOTOR_B_COUNT_READ_REG,  uint8_t(4), __buff);
     memcpy(val, __buff, sizeof(int32_t));  
 }
 
-void MOTOR_CONTROL::readMotorBSpeed(float* speed) {
+void MotorControl::readMotorBSpeed(float* speed) {
     _i2cBus.readmem(MOTOR_B_SPEED_READ_REG,  uint8_t(4), __buff);
     memcpy(speed, __buff, sizeof(float));  
 }
 
-void MOTOR_CONTROL::setMotorASpeed(float speed) {
+void MotorControl::setMotorASpeed(float speed) {
     _i2cBus.writemem_32f(MOTOR_A_SPEED_WRITE_REG, speed);
 }
 
-void MOTOR_CONTROL::setMotorBSpeed(float speed) {
+void MotorControl::setMotorBSpeed(float speed) {
     _i2cBus.writemem_32f(MOTOR_B_SPEED_WRITE_REG, speed);
 }
 
-void MOTOR_CONTROL::reset() {
+void MotorControl::reset() {
     _i2cBus.writemem(CONTROL_REG, 0XFF);
 }
 
-std::pair<float, float> MOTOR_CONTROL::get_u_alpha() {
+std::pair<float, float> MotorControl::get_u_alpha() {
     int32_t motorACount, motorBCount;
     readMotorACount(&motorACount);
     readMotorBCount(&motorBCount);
@@ -54,7 +54,7 @@ std::pair<float, float> MOTOR_CONTROL::get_u_alpha() {
     return u_alpha;
 }
 
-// void MOTOR_CONTROL::test(float* speed){
+// void MotorControl::test(float* speed){
 //     _i2cBus.readmem(0x08,  uint8_t(4), __buff);
 
 //     // Print individual buffer values using std::cout

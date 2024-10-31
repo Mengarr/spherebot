@@ -20,6 +20,7 @@ add_library(control_interfaces
   src/motorControl.cpp
   src/kinematic_transforms.cpp
   src/PID_controller.cpp
+  src/LowpassFilter.cpp
 )
 
 # Specify include directories for the library

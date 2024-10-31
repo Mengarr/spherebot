@@ -12,10 +12,10 @@
 #define LIMIT_SWITCH_REG        0x04 // Recieve 0x00 for none one, 0x01 for LHS on, 0x10 for RHS on (one hot encoding)
 
 
-class AUX_ARDUINO
+class AuxilaryArduino
 {   
     public:
-        AUX_ARDUINO(uint8_t I2C_ADDR = AUX_ARDUINO_I2C_ADDR);
+        AuxilaryArduino(uint8_t I2C_ADDR = AuxilaryArduino_I2C_ADDR);
         void init();
         void reset();
         void readSoilMoisture(float* data);

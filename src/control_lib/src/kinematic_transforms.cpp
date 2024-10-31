@@ -32,3 +32,29 @@ std::pair<float, float> computeJointVariablesInverse(float Psi_L, float Psi_R) {
     // Return the state variables as a pair (u, alpha)
     return std::make_pair(u, alpha);
 }
+
+float u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::string, float>& params) {
+    // Retrieve parameters from the map
+    float g = params.at("g");
+    float r = params.at("r");
+    float R = params.at("R");
+    float Is = params.at("Is");
+    float mp = params.at("mp");
+    float ms = params.at("ms");
+
+    // Calculate r_prime
+    float r_prime = r * std::cos(alpha - theta);
+
+    // Calculate numerator and denominator
+    float numerator = R * R * R * (ms + mp) * dtheta * dtheta 
+                    + Is * R * dtheta * dtheta 
+                    - mp * r_prime * R * R * dtheta * dtheta;
+    float denominator = mp * g * rc;
+
+    // Avoid div by 0 error at small foward velocities
+    const float epsilon = 1e-8;
+    denominator += epsilon;
+
+    // Return the result
+    return numerator / denominator;
+}

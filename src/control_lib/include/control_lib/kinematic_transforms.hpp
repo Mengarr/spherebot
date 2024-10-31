@@ -12,3 +12,4 @@
 std::pair<float, float> computeJointVariables(float alpha, float u); // Computes Phi_L and Phi_R
 
 std::pair<float, float> computeJointVariablesInverse(float Psi_L, float Psi_R); // Computes u and alpha in (m, rad)
+

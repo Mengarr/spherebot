@@ -226,6 +226,8 @@ class VCM5883L
      */
     void setDeclinationAngle(float declinationAngle);
 
+    void setHardIronOffsets(float x, float y, float z);
+
     /**
      * @fn getHeadingDegrees
      * @brief Set the sensor range
@@ -244,6 +246,13 @@ class VCM5883L
     // uint8_t readRegister8(uint8_t reg);
     // uint8_t fastRegister8(uint8_t reg);
     // int16_t readRegister16(uint8_t reg);
+    // Offsets
+    
+    float X_offset_ = 0.0;
+    float Y_offset_ = 0.0;
+    float Z_offset_ = 0.0;
+    
+    //
     uint8_t _I2C_addr;
     float ICdeclinationAngle;
     bool isHMC_;

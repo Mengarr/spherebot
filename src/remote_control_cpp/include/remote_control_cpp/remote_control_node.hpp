@@ -61,8 +61,8 @@ private:
     bool prev_o_button_;
 
     // For motor control
-    MOTOR_CONTROL motor;
-    AUX_ARDUINO arduino;
+    MotorControl motor;
+    AuxilaryArduino arduino;
 
     // GPS Class
     GeodeticConverter _geodeticConverter;

@@ -30,11 +30,12 @@ MagnetometerPublisher::MagnetometerPublisher()
     magnetometer.init();
     std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Sleep for one seccond
     declinationAngle_ = (12 + (50 / 60.0)) / (180 / PI); // In rad, from https://github.com/DFRobot/DFRobot_QMC5883/blob/master/examples/getCompassdata/getCompassdata.ino
+    declinationAngle_ = 0.0;
     // Note that the declination angle is in rad
     // magnetometer.setDeclinationAngle(declinationAngle_); 
     // magnetometer.setHardIronOffsets(Xoffset_, Yoffset_, Zoffset_);
-    // magnetometer.setMeasurementMode(VCM5883L_CONTINOUS);
-    // magnetometer.setDataRate(VCM5883L_DATARATE_200HZ);
+    magnetometer.setMeasurementMode(VCM5883L_CONTINOUS);
+    magnetometer.setDataRate(VCM5883L_DATARATE_200HZ);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Sleep for one seccond
     RCLCPP_INFO(this->get_logger(), "Magnometer Node Initalisation Complete");
 }
@@ -67,6 +68,7 @@ void MagnetometerPublisher::publish_data()
     // Magnometer data
     sVector_t magData = magnetometer.readRaw();
 
+    RCLCPP_INFO(this->get_logger(), "Mx, My, Mz: %d, %d, %d", magData.XAxis, magData.YAxis, magData.ZAxis);
     const int16_t INVALID_MAG_VALUE = -4096;
 
     // Check for invalid magnetometer values
@@ -84,13 +86,14 @@ void MagnetometerPublisher::publish_data()
     } 
 
     // Magnetometer values in uT
-    float Mx_uT = static_cast<float>(magData.XAxis) * conv_factor;
-    float My_uT = static_cast<float>(magData.YAxis) * conv_factor;
-    float Mz_uT = static_cast<float>(magData.ZAxis) * conv_factor;
-
-    //RCLCPP_INFO(this->get_logger(), "Mx_uT, My_uT, Mz_uT: %.2f, %.2f, %.2f", Mx_uT, My_uT, Mz_uT);
+    float Mx_uT = -static_cast<float>(magData.XAxis) * conv_factor;
+    float My_uT = -static_cast<float>(magData.YAxis) * conv_factor;
+    float Mz_uT = -static_cast<float>(magData.ZAxis) * conv_factor;
+    //RCLCPP_INFO(this->get_logger(), "Mx, My, Mz: %.2f, %.2f, %.2f", Mx_uT,My_uT, Mz_uT);
 
     std::vector<float> calibratedValues = getCalibratedValues(Mx_uT, My_uT, Mz_uT);
+
+    //RCLCPP_INFO(this->get_logger(), "Mx_u, My_uT, Mz_uT: %.2f, %.2f, %.2f", calibratedValues[0], calibratedValues[1], calibratedValues[2]);
 
     compensatedHeading_ = tilt_compensated_heading(
         calibratedValues[0],
@@ -106,7 +109,7 @@ void MagnetometerPublisher::publish_data()
 
     mag_msg.data = filtered_heading;
 
-    // RCLCPP_INFO(this->get_logger(), "Filtered Heading: %.2f", filtered_heading[0]);
+    //RCLCPP_INFO(this->get_logger(), "Un filtered Heading: %.2f", compensatedHeading_);
     
     // Publish the IMU data
     mag_publisher_->publish(mag_msg);
@@ -123,7 +126,7 @@ float MagnetometerPublisher::tilt_compensated_heading(float Mx, float My, float 
     const float epsilon = 1e-8;
 
     // Step 1: Calculate Roll (φ) and Pitch (θ)
-    float roll = std::atan2(ay, -az + epsilon);
+    float roll = std::atan2(ay, az + epsilon);
     float pitch = std::atan2(-ax, std::sqrt(ay * ay + az * az) + epsilon);
     //RCLCPP_INFO(this->get_logger(), "Pitch, Roll: %.2f, %.2f", pitch * (180 / M_PI), roll*(180 / M_PI));
 

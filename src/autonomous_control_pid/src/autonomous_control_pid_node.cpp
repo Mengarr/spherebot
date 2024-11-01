@@ -6,6 +6,7 @@ AutonomousControlNodePID::AutonomousControlNodePID()
   _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/path_north.json"),
   current_state_(STATES::INITIALIZING),
   next_state_(STATES::INITIALIZING),
+  motor_state_(MotorState::U_CONTROL),
   X_BUTTON_(false),
   prev_x_button_(false)
 {   
@@ -53,6 +54,11 @@ AutonomousControlNodePID::AutonomousControlNodePID()
     stanley_heading_ref_pub_ = this->create_publisher<std_msgs::msg::Float32>(
         "heading_ref", 1
     );
+        // 
+    state_pub_ = this->create_publisher<std_msgs::msg::Int8>(
+        "motor/motor_control_state", 1
+    );
+
     
     // Initialize control loop
     timer_ = this->create_wall_timer(
@@ -154,6 +160,7 @@ void AutonomousControlNodePID::publishJointTrajectory()
     // Set the joint names for each joint
     joint_vars_msg.joint_names = {"c_drive"}; 
 
+
     // Create a JointTrajectoryPoint to hold the positions and velocities
     trajectory_msgs::msg::JointTrajectoryPoint point;
 
@@ -162,7 +169,7 @@ void AutonomousControlNodePID::publishJointTrajectory()
     point.positions.push_back(0.0);            // alpha_ref value (not used)
 
     // Set velocities for each joint
-    point.velocities.push_back(0.0);           // Velocity of joint u, must be 0.0
+    point.velocities.push_back(u_dot_ref);           // Velocity of joint u, must be 0.0
     point.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
 
     // Add PID efforts
@@ -173,7 +180,29 @@ void AutonomousControlNodePID::publishJointTrajectory()
     // Add the point to the JointTrajectory message
     joint_vars_msg.points.push_back(point);
 
+    // Create a JointTrajectoryPoint to hold the positions and velocities
+    trajectory_msgs::msg::JointTrajectoryPoint point_phi;
+
+    // Set positions for each joint
+    point_phi.positions.push_back(phi_ref_);         // u_ref_ value
+    point_phi.positions.push_back(0.0);            // alpha_ref value (not used)
+
+    // Set velocities for each joint
+    point_phi.velocities.push_back(0.0);           // Velocity of joint u, must be 0.0
+    point_phi.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
+
+    // Add PID efforts
+    point_phi.effort.push_back(0.0);            // Kd
+    point_phi.effort.push_back(0.1);           // Ki
+    point_phi.effort.push_back(2);            // Kp
+
+    // Add the point to the JointTrajectory message
+    joint_vars_msg.points.push_back(point_phi);
     joint_trajectory_pub_->publish(joint_vars_msg);
+
+    std_msgs::msg::Int8 state_msg;
+    state_msg.data = static_cast<int8_t>(motor_state_);
+    state_pub_->publish(state_msg);
 }
 
 void AutonomousControlNodePID::nextStateLogic() {
@@ -222,6 +251,7 @@ void AutonomousControlNodePID::nextStateLogic() {
             // Determine Reference u ---
             float rc =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture
             u_ref_ = calculate_u_ref(0.0, 0.0, static_cast<float>(alphadot_meas_), rc, params);               // Compute reference u
+            phi_ref_ = u_phi_eq(u_ref_, param.at("r"));
             publishJointTrajectory(); // Command Motors
 
             // Check if the bot has reached the final waypoint

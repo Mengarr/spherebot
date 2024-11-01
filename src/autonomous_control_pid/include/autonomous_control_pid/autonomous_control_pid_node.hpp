@@ -22,6 +22,15 @@
 #include <vector> // for vector
 #include <map>
 #include <string>
+#include "std_msgs/msg/int8.hpp"
+
+
+enum class MotorState : int8_t {
+    MANUAL = 0,       // No phi or u control
+    PHI_CONTROL = 1,  // phi control
+    U_CONTROL = 2     // u control
+};
+
 
 typedef enum class STATES {
     INITIALIZING,
@@ -65,7 +74,7 @@ private:
     // Publishers ---
     rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory>::SharedPtr joint_trajectory_pub_; // For motor commands
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr stanley_heading_ref_pub_; // For stanley controller reference heading
-
+    rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr state_pub_; // for motor control state
     // Subscribers ----
     rclcpp::Subscription<control_msgs::msg::JointTrajectoryControllerState>::SharedPtr joint_trajectory_state_sub_;
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
@@ -88,8 +97,10 @@ private:
     STATES current_state_;
     STATES next_state_;
     void nextStateLogic();
+    MotorState motor_state_
 
     // Foward velocity control ----
+    double phi_ref_ = 0.0;
     double u_ref_ = 0.0;
     double alphadot_ref_ = (100 / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;  // Good foward velocity
     // Private variables for measured joint state:

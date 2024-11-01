@@ -119,7 +119,7 @@ void MotorControlNode::jointTrajectoryCallback(const trajectory_msgs::msg::Joint
     state_msg.joint_names = msg->joint_names;
 
     // Populate the feedback field with measured values
-    state_msg.feedback.positions = {u_meas_, alpha_meas_};
+    state_msg.feedback.positions = {u_meas_, alpha_meas_, roll_};
     state_msg.feedback.velocities = {udot_meas_, alphadot_meas_};
 
     joint_state_pub_->publish(state_msg);

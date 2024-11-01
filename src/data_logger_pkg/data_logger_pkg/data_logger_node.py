@@ -34,7 +34,7 @@ class DataLoggerNode(Node):
             '/compensated_heading': Float32,
             '/heading_ref': Float32,
             '/motor/joint_vars_state': JointTrajectoryControllerState,
-            '/motor/joint_vars': JointTrajectory
+            '/motor/joint_vars': JointTrajectory 
         }
 
         # Initialize buffers for each topic
@@ -79,9 +79,9 @@ class DataLoggerNode(Node):
         elif topic == '/gps/point_data':
             headers = ['elapsed_time', 'x', 'y', 'z']
         elif topic == '/motor/joint_vars_state':
-            headers = ['elapsed_time', 'u_meas (mm)', 'alphadot_meas (rad/s)']
+            headers = ['elapsed_time', 'u_meas (mm)', 'alphadot_meas (rad/s)', 'phi_meas (rad)']
         elif topic == '/motor/joint_vars':
-            headers = ['elapsed_time', 'u_ref (mm)', 'alphadot_ref (rad/s)']
+            headers = ['elapsed_time', 'u_ref (mm)', 'alphadot_ref (rad/s)', 'phi_ref (rad)']
         else:
             headers = ['elapsed_time', 'data']  # Fallback for other topics
 
@@ -109,12 +109,8 @@ class DataLoggerNode(Node):
         # Determine which buffer to use based on topic
         if topic in self.topics_5hz:
             self.data_buffers_5hz[topic].append([elapsed_time_formatted] + data)
-            #self.get_logger().debug(f"Received data on {topic} (5Hz): {data}")
         elif topic in self.topics_10hz:
             self.data_buffers_10hz[topic].append([elapsed_time_formatted] + data)
-            #self.get_logger().debug(f"Received data on {topic} (10hz): {data}")
-        # else:
-            # self.get_logger().warning(f"Received data on unknown topic: {topic}")
 
     def serialize_message(self, msg, topic):
         """
@@ -138,21 +134,20 @@ class DataLoggerNode(Node):
         elif isinstance(msg, Point):
             return [msg.x, msg.y, msg.z]
         elif isinstance(msg, JointTrajectoryControllerState):
-            # Save feedback.positions[0] as "u_meas (mm)"
-            # Save feedback.velocities[1] as "alphadot_meas (rad/s)"
             u_meas = msg.feedback.positions[0] if len(msg.feedback.positions) > 0 else 0.0
             alphadot_meas = msg.feedback.velocities[1] if len(msg.feedback.velocities) > 1 else 0.0
-            return [u_meas, alphadot_meas]
+            phi_meas = msg.feedback.positions[2] if len(msg.feedback.positions) > 2 else 0.0
+            return [u_meas, alphadot_meas, phi_meas]
         elif isinstance(msg, JointTrajectory):
-            # Save points[0].positions[0] as "u_ref (mm)"
-            # Save points[0].velocities[1] as "alphadot_ref (rad/s)"
-            if len(msg.points) > 0:
+            if len(msg.points) > 1:
                 u_ref = msg.points[0].positions[0] if len(msg.points[0].positions) > 0 else 0.0
                 alphadot_ref = msg.points[0].velocities[1] if len(msg.points[0].velocities) > 1 else 0.0
+                phi_ref = msg.points[1].positions[0] if len(msg.points[1].positions) > 0 else 0.0
             else:
                 u_ref = 0.0
                 alphadot_ref = 0.0
-            return [u_ref, alphadot_ref]
+                phi_ref = 0.0
+            return [u_ref, alphadot_ref, phi_ref]
         else:
             return [str(msg)]  # Fallback for other message types
 
@@ -160,14 +155,12 @@ class DataLoggerNode(Node):
         """
         Timer callback running at 5 Hz. Writes buffered data for 5 Hz topics to CSV files.
         """
-        #self.get_logger().debug("5 Hz timer triggered")
         self.write_to_csv(self.data_buffers_5hz, '5Hz')
 
     def timer_callback_10hz(self):
         """
         Timer callback running at 10 Hz. Writes buffered data for 10 Hz topics to CSV files.
         """
-        #self.get_logger().debug("10 Hz timer triggered")
         self.write_to_csv(self.data_buffers_10hz, '10Hz')
 
     def write_to_csv(self, buffer_dict, timer_label):
@@ -178,7 +171,6 @@ class DataLoggerNode(Node):
             if buffer:
                 self.csv_writers[topic].writerows(buffer)
                 self.csv_files[topic].flush()
-                #self.get_logger().info(f"Wrote {len(buffer)} entries to {topic} CSV ({timer_label})")
                 buffer.clear()
 
     def destroy_node(self):

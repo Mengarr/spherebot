@@ -21,16 +21,23 @@ void VCM5883L::init(void)
 
 sVector_t VCM5883L::readRaw(void)
 {
+  int16_t val = 0;
   _i2cBus.readmem(VCM5883L_REG_OUT_X_L, uint8_t(2), _buff);
-  v.XAxis = (((int16_t)_buff[1] << 8) | _buff[0]);
-  _i2cBus.readmem(VCM5883L_REG_OUT_Y_L, uint8_t(2), _buff);
-  v.YAxis = (((int16_t)_buff[1] << 8) | _buff[0]);
-  _i2cBus.readmem(VCM5883L_REG_OUT_Z_L, uint8_t(2), _buff);
-  v.ZAxis = (((int16_t)_buff[1] << 8) | _buff[0]);
+  val = _buff[1] << 8 | _buff[0];
+  v.XAxis = val;
+  val = 0;
 
-  v.AngleXY = (atan2((double)v.YAxis,(double)v.XAxis) * (180 / 3.14159265) + 180);
-  v.AngleXZ = (atan2((double)v.ZAxis,(double)v.XAxis) * (180 / 3.14159265) + 180);
-  v.AngleYZ = (atan2((double)v.ZAxis,(double)v.YAxis) * (180 / 3.14159265) + 180);
+  _i2cBus.readmem(VCM5883L_REG_OUT_Y_L, uint8_t(2), _buff);
+  val = _buff[1] << 8 | _buff[0];
+  v.YAxis = val;
+
+  val = 0;
+  _i2cBus.readmem(VCM5883L_REG_OUT_Z_L, uint8_t(2), _buff);
+  val = _buff[1] << 8 | _buff[0];
+  v.ZAxis = val;
+  // v.AngleXY = (atan2((double)v.YAxis,(double)v.XAxis) * (180 / 3.14159265) + 180);
+  // v.AngleXZ = (atan2((double)v.ZAxis,(double)v.XAxis) * (180 / 3.14159265) + 180);
+  // v.AngleYZ = (atan2((double)v.ZAxis,(double)v.YAxis) * (180 / 3.14159265) + 180);
   return v;
 }
 
@@ -82,26 +89,6 @@ eDataRate_t VCM5883L::getDataRate(void)
   value &= 0b00001100;
   value >>= 2;
   return (eDataRate_t)value;
-}
-
-void VCM5883L::setSamples(eSamples_t samples)
-{
-  uint8_t value;
-  _i2cBus.readmem(QMC5883_REG_CONFIG_1, uint8_t(1), _buff);
-  value = _buff[0];
-  value &= 0x3f;
-  value |= (samples << 6);
-  _i2cBus.writemem(QMC5883_REG_CONFIG_1, value);
-}
-
-eSamples_t VCM5883L::getSamples(void)
-{
-  uint8_t value=0;
-  _i2cBus.readmem(QMC5883_REG_CONFIG_1, uint8_t(1), _buff);
-  value = _buff[0];
-  value &= 0x3f;
-  value >>= 6;
-  return (eSamples_t)value;
 }
 
 void VCM5883L::setDeclinationAngle(float declinationAngle)

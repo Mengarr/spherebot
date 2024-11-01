@@ -7,12 +7,6 @@
 #include "control_lib/LowPassFilter.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 
-struct Orientation {
-    float roll;   // Rotation around X-axis in radians
-    float pitch;  // Rotation around Y-axis in radians
-    float yaw;    // Rotation around Z-axis in radians
-};
-
 class MagnetometerPublisher : public rclcpp::Node
 {
     public:
@@ -26,21 +20,37 @@ class MagnetometerPublisher : public rclcpp::Node
 
         float compensatedHeading_ = 0.0f;
 
-        float hard_iron_bias_x = -6.263105902035311;
-        float hard_iron_bias_y = 4.292579497477027;
-        float hard_iron_bias_z = 3.3543842551502108;
+        // float hard_iron_bias_x = -6.263105902035311;
+        // float hard_iron_bias_y = 4.292579497477027;
+        // float hard_iron_bias_z = 3.3543842551502108;
 
-        float soft_iron_bias_xx = 2.3912019992637563;
-        float soft_iron_bias_xy = -0.017923377264954937;
-        float soft_iron_bias_xz = -0.06794333395212657;
+        // float soft_iron_bias_xx = 2.3912019992637563;
+        // float soft_iron_bias_xy = -0.017923377264954937;
+        // float soft_iron_bias_xz = -0.06794333395212657;
 
-        float soft_iron_bias_yx = -0.01792337726495499;
-        float soft_iron_bias_yy = 2.3365235008621434;
-        float soft_iron_bias_yz = 0.1252346512198512;
+        // float soft_iron_bias_yx = -0.01792337726495499;
+        // float soft_iron_bias_yy = 2.3365235008621434;
+        // float soft_iron_bias_yz = 0.1252346512198512;
 
-        float soft_iron_bias_zx = -0.06794333395212654;
-        float soft_iron_bias_zy = 0.12523465121985125;
-        float soft_iron_bias_zz = 2.2155018362436585;
+        // float soft_iron_bias_zx = -0.06794333395212654;
+        // float soft_iron_bias_zy = 0.12523465121985125;
+        // float soft_iron_bias_zz = 2.2155018362436585;
+
+        float hard_iron_bias_x = -4.167842441428256;
+        float hard_iron_bias_y = -9.569898747781659;
+        float hard_iron_bias_z = 25.106024745932398;
+
+        float soft_iron_bias_xx = 2.47922351462819;
+        float soft_iron_bias_xy = -0.032118054883568545;
+        float soft_iron_bias_xz = 0.004917413394485149;
+
+        float soft_iron_bias_yx = -0.0321180548835687;
+        float soft_iron_bias_yy = 2.5356096459546005;
+        float soft_iron_bias_yz = 0.1641655446789155;
+
+        float soft_iron_bias_zx = 0.004917413394485104;
+        float soft_iron_bias_zy = 0.16416554467891525;
+        float soft_iron_bias_zz = 2.3692364611493066;
 
         // conversion factor to convert +-8g to uT
         const float conv_factor = 0.0244140625;

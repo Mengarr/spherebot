@@ -62,3 +62,18 @@ float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const st
 float u_phi_eq(float u, float r) {
     return -std::atan(u / r);
 }
+
+
+float wrapTo180(float heading) {
+    // Shift by 180, apply modulo 360, then shift back by -180
+    float wrapped = fmod(heading + 180.0f, 360.0f);
+    if (wrapped < 0) wrapped += 360.0f; // Ensure result is non-negative after fmod
+    return wrapped - 180.0f;
+}
+
+float wrapToPi(float angle) {
+    // Shift by π, apply modulo 2π, then shift back by -π
+    float wrapped = fmod(angle + M_PI, 2 * M_PI);
+    if (wrapped < 0) wrapped += 2 * M_PI; // Ensure result is non-negative after fmod
+    return wrapped - M_PI;
+}

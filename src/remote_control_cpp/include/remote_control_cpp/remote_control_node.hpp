@@ -22,6 +22,7 @@ private:
     void joyCallback(const sensor_msgs::msg::Joy::SharedPtr msg);
     void gpsCallback(const sensor_msgs::msg::NavSatFix::SharedPtr msg);
     void headingCallback(const std_msgs::msg::Float32::SharedPtr msg);
+    void jointTrajectoryStateCallback(const control_msgs::msg::JointTrajectoryControllerState::SharedPtr msg);
     void timerCallback();
     
     rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory>::SharedPtr joint_trajectory_pub_;
@@ -29,8 +30,11 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr mag_sub_;
+    rclcpp::Subscription<control_msgs::msg::JointTrajectoryControllerState>::SharedPtr joint_trajectory_state_sub_;
    
     rclcpp::TimerBase::SharedPtr timer_;
+
+    void publishJointTrajectory(); // Helper function to publish messages
 
     float _lat = 0.0;
     float _long = 0.0;
@@ -53,6 +57,14 @@ private:
     bool prev_o_button_;
 
     AuxilaryArduino arduino;
+    
+    double u_ref_ = 0.0;
+    double alphadot_ref_ = 0.0;
+    double u_dot_ref = 0.0;
+    
+    // Private variables for measured joint state:
+    double u_meas_, alpha_meas_;        // Positions
+    double udot_meas_, alphadot_meas_;  // Velocities
 
 };
 

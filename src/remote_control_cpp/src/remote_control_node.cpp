@@ -8,7 +8,11 @@ RemoteControlNode::RemoteControlNode()
   O_BUTTON_(false),
   prev_x_button_(false),
   prev_o_button_(false),
-  arduino(AUX_ARDUINO_I2C_ADDR)
+  arduino(AUX_ARDUINO_I2C_ADDR),
+  u_meas_(0.0),
+  alpha_meas_(0.0),
+  udot_meas_(0.0),
+  alphadot_meas_(0.0)
 {   
     RCLCPP_INFO(this->get_logger(), "Ardino Init:");
     arduino.init();
@@ -37,6 +41,13 @@ RemoteControlNode::RemoteControlNode()
     // Initalize publisher to motor control node:
     joint_trajectory_pub_ = this->create_publisher<trajectory_msgs::msg::JointTrajectory>(
         "motor/joint_vars", 1
+    );
+
+    // Initalize subscriber to joint trajectory state
+    joint_trajectory_state_sub_ = this->create_subscription<control_msgs::msg::JointTrajectoryControllerState>(
+        "motor/joint_vars_state",
+        2,
+        std::bind(&RemoteControlNode::jointTrajectoryStateCallback, this, std::placeholders::_1)
     );
     
     // Initalize override publisher to motor control node:
@@ -102,8 +113,65 @@ void RemoteControlNode::gpsCallback(const sensor_msgs::msg::NavSatFix::SharedPtr
     _gps_fix = (msg->status.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX);
 }
 
+void RemoteControlNode::jointTrajectoryStateCallback(const control_msgs::msg::JointTrajectoryControllerState::SharedPtr msg) {
+    // Check if the feedback has sufficient positions and velocities
+    if (msg->feedback.positions.size() < 2 || msg->feedback.velocities.size() < 2) {
+        RCLCPP_WARN(this->get_logger(), "Received invalid JointTrajectoryControllerState message");
+        return;
+    }
+
+    // Update joint variables from the feedback
+    u_meas_ = msg->feedback.positions[0];
+    alpha_meas_ = msg->feedback.positions[1];
+    udot_meas_ = msg->feedback.velocities[0];
+    alphadot_meas_ = msg->feedback.velocities[1];
+}
+
+
+void RemoteControlNode::publishJointTrajectory()
+{
+    // Create the JointTrajectory message
+    auto joint_vars_msg = trajectory_msgs::msg::JointTrajectory();
+
+    // Set the joint names for each joint
+    joint_vars_msg.joint_names = {"c_drive"}; 
+
+    // Create a JointTrajectoryPoint to hold the positions and velocities
+    trajectory_msgs::msg::JointTrajectoryPoint point;
+
+    // Set positions for each joint
+    point.positions.push_back(u_ref_);         // u_ref_ value
+    point.positions.push_back(0.0);            // alpha_ref value (not used)
+
+    // Set velocities for each joint
+    point.velocities.push_back(u_dot_ref);           // Velocity of joint u, must be 0.0
+    point.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
+
+    // Add PID efforts
+    point.effort.push_back(0.0);            // Kd
+    point.effort.push_back(0.06);           // Ki
+    point.effort.push_back(0.1);            // Kp
+
+    // Add the point to the JointTrajectory message
+    joint_vars_msg.points.push_back(point);
+
+    joint_trajectory_pub_->publish(joint_vars_msg);
+}
+
 void RemoteControlNode::timerCallback()
 {   
+    if (!X_BUTTON_) {
+
+        if (fabs(u_meas_) > 45) {
+            alphadot_ref_ = 0.0;
+            u_ref_ = 0.0;
+            u_dot_ref = 0.0;
+            publishJointTrajectory(); // Command Motors
+            RCLCPP_WARN(this->get_logger(), "Motor soft limits reached. haulting robot");
+            return;
+        }
+    }
+
     if (X_BUTTON_) {
         // Engaged
         if (O_BUTTON_) {
@@ -117,40 +185,15 @@ void RemoteControlNode::timerCallback()
         arduino.setMotorSpeedDir(0x00);
     }
 
-    float alpha_dot_ref = 0.0;
-    float u_dot_ref = 0.0;
+
 
     // Apply deadzone to control inputs (SCALE THE MAPPED AXES HERE SO THAT THE OUTPUT is sensible)
-    alpha_dot_ref = (mapped_axes1_ / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
+    alphadot_ref_ = (mapped_axes1_ / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
 
     u_dot_ref = (mapped_axes3_ / RPM_TO_RPS)  / U_DOT_SCALE_FACTOR;
 
-    // Create the JointTrajectory message
-    auto joint_vars_msg = trajectory_msgs::msg::JointTrajectory();
+    publishJointTrajectory(); // Command Motors
 
-    // Set the joint names for each joint
-    joint_vars_msg.joint_names = {"c_drive"}; 
-
-    // Create a JointTrajectoryPoint to hold the positions and velocities
-    trajectory_msgs::msg::JointTrajectoryPoint point;
-
-    // Set positions for each joint
-    point.positions.push_back(0.0);       // u_ref_ value
-    point.positions.push_back(0.0);       // alpha_ref value (or 0 if unused)
-
-    // Set velocities for each joint
-    point.velocities.push_back(u_dot_ref);   // Velocity of joint u
-    point.velocities.push_back(alpha_dot_ref); // Velocity of joint alpha
-
-    // Add PID efforts
-    point.effort.push_back(0.0);            // Kd
-    point.effort.push_back(0.06);           // Ki
-    point.effort.push_back(0.1);            // Kp
-
-    // Add the point to the JointTrajectory message
-    joint_vars_msg.points.push_back(point);
-
-    joint_trajectory_pub_->publish(joint_vars_msg);
 
     std_msgs::msg::Bool override_msg;
     override_msg.data = true;

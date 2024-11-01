@@ -1,14 +1,13 @@
 #include "../include/autonomous_control_pid/autonomous_control_pid_node.hpp"
 
 AutonomousControlNodePID::AutonomousControlNodePID()
-: Node("remote_control_node"),
+: Node("autonomous_control_node"),
   _stanley(k_, k_s_, L_, tolerance_),
   _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/test_path.json"),
   current_state_(STATES::INITIALIZING),
   next_state_(STATES::INITIALIZING),
   X_BUTTON_(false),
   prev_x_button_(false)
-
 {   
     // Initialize subscriber to "joy" topic
     joy_sub_ = this->create_subscription<sensor_msgs::msg::Joy>(
@@ -62,12 +61,12 @@ AutonomousControlNodePID::AutonomousControlNodePID()
     );
 
     // Populate the params map with values
-    params["g"] = 9.81f;     // Gravitational constant
-    params["r"] = 0.15f;     // Example radius
-    params["R"] = 0.428f;    // Another radius value
-    params["Is"] = 1.5f;     // Moment of inertia of the shell
-    params["mp"] = 2.0f;     // Mass of inernal pendulum
-    params["ms"] = 2.0f;     // Mass of sphere
+    params["g"] = -9.81f;     // Gravitational constant
+    params["r"] = 0.05f;      // CoM to x axes (in m)
+    params["R"] = 0.428f;    // Shell Radius 
+    params["Is"] = 1.0f;     // Moment of inertia of the shell
+    params["mp"] = 5.5f;     // Mass of inernal pendulum
+    params["ms"] = 1.8f;     // Mass of sphere
 
     RCLCPP_INFO(this->get_logger(), "Autonomous Node has been started.");
 }
@@ -137,7 +136,14 @@ void AutonomousControlNodePID::jointTrajectoryStateCallback(const control_msgs::
 
 void AutonomousControlNodePID::controlLoop()
 {  
-    nextStateLogic();
+    if (fabs(u_meas_) > 45) {
+        alphadot_ref_ = 0.0;
+        u_ref_ = 0.0;
+        publishJointTrajectory(); // Command Motors
+        RCLCPP_WARN(this->get_logger(), "Motor soft limits reached. haulting robot");
+    } else {
+        nextStateLogic();
+    }
 }
 
 void AutonomousControlNodePID::publishJointTrajectory()
@@ -182,17 +188,18 @@ void AutonomousControlNodePID::nextStateLogic() {
             _stanley.updateWaypoints(x_coords, y_coords);
 
             // Set reference GPS position
-            if (!_gps_fix) {
+            auto currentTime = std::chrono::steady_clock::now();
+            std::chrono::duration<float> elapsed = currentTime - startTime;
+            if (!_gps_fix && (elapsed.count() > 2)) {
                 // Send message ever 2 secconds
-                auto currentTime = std::chrono::steady_clock::now();
-                std::chrono::duration<float> elapsed = currentTime - startTime;
-                if (elapsed.count() > 2) {
-                    RCLCPP_INFO(this->get_logger(), "Waiting for GPS fix");
-                    startTime = std::chrono::steady_clock::now();
-                }
-                next_state_ = STATES::INITIALIZING;
-            } else {
+                RCLCPP_INFO(this->get_logger(), "Waiting for GPS fix");
+                startTime = std::chrono::steady_clock::now();
+            } else if (_gps_fix && (elapsed.count() > 2)) {
                 RCLCPP_INFO(this->get_logger(), "GPS Fix!");
+                startTime = std::chrono::steady_clock::now();
+            }
+
+            if (_gps_fix && X_BUTTON_){ // If button is pressed and gps fix then start!
                 next_state_ = STATES::PATH_FOLLOWING;
             }
             break;
@@ -202,8 +209,10 @@ void AutonomousControlNodePID::nextStateLogic() {
             double heading_error;
             double steering_angle;
 
+            double wrappedHeading =  static_cast<double>(wrapToPi(_heading));
+
             // Go foward at set velocity, assumes alphadot_meas_ = theatadot_meas_
-            if (!_stanley.computeSteering(_pos_x, _pos_y, static_cast<double>(_heading),  params.at("R") * alphadot_meas_, steering_angle, heading_error)) {
+            if (!_stanley.computeSteering(_pos_x, _pos_y, static_cast<double>(wrappedHeading),  params.at("R") * alphadot_meas_, steering_angle, heading_error)) {
                 RCLCPP_ERROR(this->get_logger(), "Stanley Controller Error has Occured");
             }
             auto stanley_msg = std_msgs::msg::Float32();
@@ -238,6 +247,7 @@ void AutonomousControlNodePID::nextStateLogic() {
                 startTime = std::chrono::steady_clock::now();
             }
             alphadot_ref_ = 0.0;
+            u_ref_ = 0.0;
             publishJointTrajectory(); // Command Motors
             next_state_ = STATES::FINISH;
             break;

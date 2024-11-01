@@ -7,8 +7,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Define the path to your package
-    autonomous_control_package = 'autonomous_control_PID'
-    autonomous_control_executable = 'autonomous_control_PID_node'
+    autonomous_control_package = 'autonomous_control_pid'
+    autonomous_control_executable = 'autonomous_control_pid_node'
 
     # Define the gps package and executable
     gps_read_package = 'gps_read_cpp'
@@ -32,7 +32,7 @@ def generate_launch_description():
 
     # Define the imu_data_node package and executable
     environment_data_package = 'dfr_10_dof_pkg'
-    environment_data_executable = 'environment_data_node'
+    environment_data_executable = 'environmental_node'
 
     # Define the imu_data_node package and executable
     data_logger_package = 'data_logger_pkg'

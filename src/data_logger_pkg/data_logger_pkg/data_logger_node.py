@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32  # Example message types
-from sensor_msgs.msg import Imu  # Import the Imu message type
+from std_msgs.msg import Float32
+from sensor_msgs.msg import Imu
+from geometry_msgs.msg import Point
+from control_msgs.msg import JointTrajectoryControllerState
+from trajectory_msgs.msg import JointTrajectory
 import os
 import csv
 from collections import defaultdict
-import time  # For high-precision elapsed time
+import time
 
 class DataLoggerNode(Node):
     def __init__(self):
@@ -22,16 +25,21 @@ class DataLoggerNode(Node):
         # Define the topics to subscribe to and their message types
         # Categorize topics based on desired logging rate
         self.topics_5hz = {
-            '/imu/data': Imu
+            '/temp_degrees': Float32,
+            '/pressure_pa': Float32,
+            '/gps/point_data': Point
         }
 
-        self.topics_20hz = {
-            '/compensated_heading': Float32
+        self.topics_10hz = {
+            '/compensated_heading': Float32,
+            '/heading_ref': Float32,
+            '/motor/joint_vars_state': JointTrajectoryControllerState,
+            '/motor/joint_vars': JointTrajectory
         }
 
         # Initialize buffers for each topic
         self.data_buffers_5hz = defaultdict(list)
-        self.data_buffers_20hz = defaultdict(list)
+        self.data_buffers_10hz = defaultdict(list)
 
         # Initialize CSV writers for each topic
         self.csv_files = {}
@@ -41,13 +49,13 @@ class DataLoggerNode(Node):
         for topic, msg_type in self.topics_5hz.items():
             self.setup_csv_and_subscriber(topic, msg_type, timer_rate='5hz')
 
-        # Initialize CSV files and subscribers for 20 Hz topics
-        for topic, msg_type in self.topics_20hz.items():
-            self.setup_csv_and_subscriber(topic, msg_type, timer_rate='20hz')
+        # Initialize CSV files and subscribers for 10 Hz topics
+        for topic, msg_type in self.topics_10hz.items():
+            self.setup_csv_and_subscriber(topic, msg_type, timer_rate='10hz')
 
-        # Create two timers: one at 5 Hz and another at 20 Hz
+        # Create two timers: one at 5 Hz and another at 10 Hz
         self.timer_5hz = self.create_timer(0.2, self.timer_callback_5hz)   # 5 Hz
-        self.timer_20hz = self.create_timer(0.05, self.timer_callback_20hz)  # 20 Hz
+        self.timer_10hz = self.create_timer(0.1, self.timer_callback_10hz)  # 10 Hz
 
     def setup_csv_and_subscriber(self, topic, msg_type, timer_rate):
         """
@@ -61,8 +69,22 @@ class DataLoggerNode(Node):
         self.csv_files[topic] = csv_file
         csv_writer = csv.writer(csv_file)
 
-        # Write the header
-        headers = ['elapsed_time', 'data']
+        # Define headers based on the topic
+        if topic == '/compensated_heading' or topic == '/heading_ref':
+            headers = ['elapsed_time', 'data']
+        elif topic == '/environment_data/temp_degrees':
+            headers = ['elapsed_time', 'temp_degrees']
+        elif topic == '/environment_data/pressure_pa':
+            headers = ['elapsed_time', 'pressure_pa']
+        elif topic == '/gps/point_data':
+            headers = ['elapsed_time', 'x', 'y', 'z']
+        elif topic == '/motor/joint_vars_state':
+            headers = ['elapsed_time', 'u_meas (mm)', 'alphadot_meas (rad/s)']
+        elif topic == '/motor/joint_vars':
+            headers = ['elapsed_time', 'u_ref (mm)', 'alphadot_ref (rad/s)']
+        else:
+            headers = ['elapsed_time', 'data']  # Fallback for other topics
+
         csv_writer.writerow(headers)
         self.csv_writers[topic] = csv_writer
 
@@ -82,21 +104,21 @@ class DataLoggerNode(Node):
         """
         elapsed_time = time.time() - self.start_time
         elapsed_time_formatted = f"{elapsed_time:.4f}"
-        data = self.serialize_message(msg)
+        data = self.serialize_message(msg, topic)
         
         # Determine which buffer to use based on topic
         if topic in self.topics_5hz:
-            self.data_buffers_5hz[topic].append([elapsed_time_formatted, data])
+            self.data_buffers_5hz[topic].append([elapsed_time_formatted] + data)
             #self.get_logger().debug(f"Received data on {topic} (5Hz): {data}")
-        elif topic in self.topics_20hz:
-            self.data_buffers_20hz[topic].append([elapsed_time_formatted, data])
-            #self.get_logger().debug(f"Received data on {topic} (20Hz): {data}")
+        elif topic in self.topics_10hz:
+            self.data_buffers_10hz[topic].append([elapsed_time_formatted] + data)
+            #self.get_logger().debug(f"Received data on {topic} (10hz): {data}")
         # else:
             # self.get_logger().warning(f"Received data on unknown topic: {topic}")
 
-    def serialize_message(self, msg):
+    def serialize_message(self, msg, topic):
         """
-        Serializes a ROS message into a string for CSV logging.
+        Serializes a ROS message into a list of values for CSV logging.
         Modify this method based on the structure of your messages.
         """
         if isinstance(msg, Imu):
@@ -105,19 +127,34 @@ class DataLoggerNode(Node):
             angular_velocity = msg.angular_velocity
             linear_acceleration = msg.linear_acceleration
 
-            # Format the data into a structured string
-            return (
-                f"orientation: [{orientation.x:.4f}, {orientation.y:.4f}, "
-                f"{orientation.z:.4f}, {orientation.w:.4f}], "
-                f"angular_velocity: [{angular_velocity.x:.4f}, {angular_velocity.y:.4f}, "
-                f"{angular_velocity.z:.4f}], "
-                f"linear_acceleration: [{linear_acceleration.x:.4f}, "
-                f"{linear_acceleration.y:.4f}, {linear_acceleration.z:.4f}]"
-            )
+            # Format the data into a structured list
+            return [
+                orientation.x, orientation.y, orientation.z, orientation.w,
+                angular_velocity.x, angular_velocity.y, angular_velocity.z,
+                linear_acceleration.x, linear_acceleration.y, linear_acceleration.z
+            ]
         elif isinstance(msg, Float32):
-            return str(msg.data)
+            return [msg.data]
+        elif isinstance(msg, Point):
+            return [msg.x, msg.y, msg.z]
+        elif isinstance(msg, JointTrajectoryControllerState):
+            # Save feedback.positions[0] as "u_meas (mm)"
+            # Save feedback.velocities[1] as "alphadot_meas (rad/s)"
+            u_meas = msg.feedback.positions[0] if len(msg.feedback.positions) > 0 else 0.0
+            alphadot_meas = msg.feedback.velocities[1] if len(msg.feedback.velocities) > 1 else 0.0
+            return [u_meas, alphadot_meas]
+        elif isinstance(msg, JointTrajectory):
+            # Save points[0].positions[0] as "u_ref (mm)"
+            # Save points[0].velocities[1] as "alphadot_ref (rad/s)"
+            if len(msg.points) > 0:
+                u_ref = msg.points[0].positions[0] if len(msg.points[0].positions) > 0 else 0.0
+                alphadot_ref = msg.points[0].velocities[1] if len(msg.points[0].velocities) > 1 else 0.0
+            else:
+                u_ref = 0.0
+                alphadot_ref = 0.0
+            return [u_ref, alphadot_ref]
         else:
-            return str(msg)  # Fallback for other message types
+            return [str(msg)]  # Fallback for other message types
 
     def timer_callback_5hz(self):
         """
@@ -126,12 +163,12 @@ class DataLoggerNode(Node):
         #self.get_logger().debug("5 Hz timer triggered")
         self.write_to_csv(self.data_buffers_5hz, '5Hz')
 
-    def timer_callback_20hz(self):
+    def timer_callback_10hz(self):
         """
-        Timer callback running at 20 Hz. Writes buffered data for 20 Hz topics to CSV files.
+        Timer callback running at 10 Hz. Writes buffered data for 10 Hz topics to CSV files.
         """
-        #self.get_logger().debug("20 Hz timer triggered")
-        self.write_to_csv(self.data_buffers_20hz, '20Hz')
+        #self.get_logger().debug("10 Hz timer triggered")
+        self.write_to_csv(self.data_buffers_10hz, '10Hz')
 
     def write_to_csv(self, buffer_dict, timer_label):
         """

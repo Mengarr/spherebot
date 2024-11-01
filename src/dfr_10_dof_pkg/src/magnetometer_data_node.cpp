@@ -29,7 +29,7 @@ MagnetometerPublisher::MagnetometerPublisher()
     RCLCPP_INFO(this->get_logger(), "Initalising magnetometer");
     magnetometer.init();
     std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Sleep for one seccond
-    declinationAngle_ = (12 + (50 / 60.0)) / (180 / PI); // from https://github.com/DFRobot/DFRobot_QMC5883/blob/master/examples/getCompassdata/getCompassdata.ino
+    declinationAngle_ = (12 + (50 / 60.0)) / (180 / PI); // In rad, from https://github.com/DFRobot/DFRobot_QMC5883/blob/master/examples/getCompassdata/getCompassdata.ino
     // Note that the declination angle is in rad
     // magnetometer.setDeclinationAngle(declinationAngle_); 
     // magnetometer.setHardIronOffsets(Xoffset_, Yoffset_, Zoffset_);

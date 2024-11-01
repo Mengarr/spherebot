@@ -6,10 +6,10 @@ EnvironmentalPublisher::EnvironmentalPublisher()
 {   
     RCLCPP_INFO(this->get_logger(), "Environmental Data Node has been Started");
     // Temp
-    temp_publisher_ = this->create_publisher<std_msgs::msg::Float32>("temp_degrees", 10);
+    temp_publisher_ = this->create_publisher<std_msgs::msg::Float32>("environment_data/temp_degrees", 10);
 
     // Pressure
-    pressure_publisher_ = this->create_publisher<std_msgs::msg::Float32>("pressure_pa", 10);
+    pressure_publisher_ = this->create_publisher<std_msgs::msg::Float32>("environment_data/pressure_pa", 10);
 
     // Timer for data publishing
     timer_ = this->create_wall_timer(

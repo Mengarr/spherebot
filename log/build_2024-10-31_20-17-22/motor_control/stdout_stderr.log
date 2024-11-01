@@ -1,0 +1,9 @@
+[ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o[0m
+In file included from [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:24:68:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   24 |     void uOverrideCallback(const std_msgs::msg::Bool::SharedPtr msg[01;31m[K)[m[K
+      |                                                                    [01;31m[K^[m[K
+      |                                                                     [32m[K;[m[K
+gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

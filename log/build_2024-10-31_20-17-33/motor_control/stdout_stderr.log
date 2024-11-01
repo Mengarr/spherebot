@@ -1,0 +1,13 @@
+[ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o[0m
+In file included from [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:24:68:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   24 |     void uOverrideCallback(const std_msgs::msg::Bool::SharedPtr msg[01;31m[K)[m[K
+      |                                                                    [01;31m[K^[m[K
+      |                                                                     [32m[K;[m[K
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::[01;32m[KcontrolLoop[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:89:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+   89 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alphadot_ref_, udot_ref_[01;36m[K)[m[K;
+      |                                                                                                   [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -210,6 +210,78 @@ control_interfaces/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/build
 .PHONY : control_interfaces/fast
 
+src/LowPassFilter.o: src/LowPassFilter.cpp.o
+.PHONY : src/LowPassFilter.o
+
+# target to build an object file
+src/LowPassFilter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o
+.PHONY : src/LowPassFilter.cpp.o
+
+src/LowPassFilter.i: src/LowPassFilter.cpp.i
+.PHONY : src/LowPassFilter.i
+
+# target to preprocess a source file
+src/LowPassFilter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.i
+.PHONY : src/LowPassFilter.cpp.i
+
+src/LowPassFilter.s: src/LowPassFilter.cpp.s
+.PHONY : src/LowPassFilter.s
+
+# target to generate assembly for a file
+src/LowPassFilter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.s
+.PHONY : src/LowPassFilter.cpp.s
+
+src/PID_controller.o: src/PID_controller.cpp.o
+.PHONY : src/PID_controller.o
+
+# target to build an object file
+src/PID_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o
+.PHONY : src/PID_controller.cpp.o
+
+src/PID_controller.i: src/PID_controller.cpp.i
+.PHONY : src/PID_controller.i
+
+# target to preprocess a source file
+src/PID_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.i
+.PHONY : src/PID_controller.cpp.i
+
+src/PID_controller.s: src/PID_controller.cpp.s
+.PHONY : src/PID_controller.s
+
+# target to generate assembly for a file
+src/PID_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.s
+.PHONY : src/PID_controller.cpp.s
+
+src/PathDataLoader.o: src/PathDataLoader.cpp.o
+.PHONY : src/PathDataLoader.o
+
+# target to build an object file
+src/PathDataLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o
+.PHONY : src/PathDataLoader.cpp.o
+
+src/PathDataLoader.i: src/PathDataLoader.cpp.i
+.PHONY : src/PathDataLoader.i
+
+# target to preprocess a source file
+src/PathDataLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.i
+.PHONY : src/PathDataLoader.cpp.i
+
+src/PathDataLoader.s: src/PathDataLoader.cpp.s
+.PHONY : src/PathDataLoader.s
+
+# target to generate assembly for a file
+src/PathDataLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.s
+.PHONY : src/PathDataLoader.cpp.s
+
 src/auxilary_arduino.o: src/auxilary_arduino.cpp.o
 .PHONY : src/auxilary_arduino.o
 
@@ -282,30 +354,6 @@ src/kinematic_transforms.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.s
 .PHONY : src/kinematic_transforms.cpp.s
 
-src/motorControl.o: src/motorControl.cpp.o
-.PHONY : src/motorControl.o
-
-# target to build an object file
-src/motorControl.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o
-.PHONY : src/motorControl.cpp.o
-
-src/motorControl.i: src/motorControl.cpp.i
-.PHONY : src/motorControl.i
-
-# target to preprocess a source file
-src/motorControl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/motorControl.cpp.i
-.PHONY : src/motorControl.cpp.i
-
-src/motorControl.s: src/motorControl.cpp.s
-.PHONY : src/motorControl.s
-
-# target to generate assembly for a file
-src/motorControl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_interfaces.dir/build.make CMakeFiles/control_interfaces.dir/src/motorControl.cpp.s
-.PHONY : src/motorControl.cpp.s
-
 src/stanleyControl.o: src/stanleyControl.cpp.o
 .PHONY : src/stanleyControl.o
 
@@ -346,6 +394,15 @@ help:
 	@echo "... control_lib_uninstall"
 	@echo "... uninstall"
 	@echo "... control_interfaces"
+	@echo "... src/LowPassFilter.o"
+	@echo "... src/LowPassFilter.i"
+	@echo "... src/LowPassFilter.s"
+	@echo "... src/PID_controller.o"
+	@echo "... src/PID_controller.i"
+	@echo "... src/PID_controller.s"
+	@echo "... src/PathDataLoader.o"
+	@echo "... src/PathDataLoader.i"
+	@echo "... src/PathDataLoader.s"
 	@echo "... src/auxilary_arduino.o"
 	@echo "... src/auxilary_arduino.i"
 	@echo "... src/auxilary_arduino.s"
@@ -355,9 +412,6 @@ help:
 	@echo "... src/kinematic_transforms.o"
 	@echo "... src/kinematic_transforms.i"
 	@echo "... src/kinematic_transforms.s"
-	@echo "... src/motorControl.o"
-	@echo "... src/motorControl.i"
-	@echo "... src/motorControl.s"
 	@echo "... src/stanleyControl.o"
 	@echo "... src/stanleyControl.i"
 	@echo "... src/stanleyControl.s"

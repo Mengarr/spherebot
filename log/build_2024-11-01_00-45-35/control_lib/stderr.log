@@ -1,0 +1,7 @@
+[01m[K/home/rohan/spherebot/src/control_lib/src/load_path_json.cpp:3:10:[m[K [01;31m[Kfatal error: [m[Knlohmann/json.hpp: No such file or directory
+    3 | #include [01;31m[K<nlohmann/json.hpp>[m[K  // Include the nlohmann json library
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:160: CMakeFiles/control_interfaces.dir/src/load_path_json.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control_interfaces.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

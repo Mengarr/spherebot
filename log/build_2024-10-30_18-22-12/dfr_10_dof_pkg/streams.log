@@ -1,0 +1,24 @@
+[0.021s] Invoking command in '/home/rohan/spherebot/build/dfr_10_dof_pkg': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4
+[0.161s] [ 70%] Built target imu_data_node
+[0.162s] [ 70%] Built target environmental_node
+[0.187s] [ 80%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[5.332s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kvoid MagnetometerPublisher::[01;32m[Kpublish_data[m[K()[m[K’:
+[5.333s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:54:54:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[5.333s]    54 | float MagnetometerPublisher::calculateAdjustedHeading[01;31m[K([m[Kint16_t mag_x, int16_t mag_y, int16_t mag_z,
+[5.333s]       |                                                      [01;31m[K^[m[K
+[5.334s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:134:1:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+[5.334s]   134 | [01;31m[K{[m[K
+[5.334s]       | [01;31m[K^[m[K
+[5.334s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:139:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[5.334s]   139 | }
+[5.335s]       |  [01;31m[K^[m[K
+[5.335s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:39:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[5.335s]    39 | [01;36m[K{[m[K
+[5.335s]       | [01;36m[K^[m[K
+[5.336s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:44:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KadjustedHeading[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[5.336s]    44 |     float [01;35m[KadjustedHeading[m[K = calculateAdjustedHeading(
+[5.336s]       |           [01;35m[K^~~~~~~~~~~~~~~[m[K
+[7.359s] gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1
+[7.360s] gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+[7.360s] gmake: *** [Makefile:146: all] Error 2
+[7.365s] Invoked command in '/home/rohan/spherebot/build/dfr_10_dof_pkg' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4

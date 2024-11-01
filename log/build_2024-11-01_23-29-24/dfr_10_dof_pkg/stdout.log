@@ -1,0 +1,4 @@
+[ 30%] Built target environmental_node
+[ 70%] Built target imu_data_node
+[ 90%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/VCM5883L.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m

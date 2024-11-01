@@ -1,0 +1,12 @@
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:4[m[K,
+                 from [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::[01;32m[KcontrolLoop[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:161:41:[m[K [01;35m[Kwarning: [m[Ktoo many arguments for format [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-extra-args-Wformat-extra-args]8;;[m[K]
+  161 |         RCLCPP_INFO(this->get_logger(), [01;35m[K"Ref, Roll, Cmd  %.2f, %.2f"[m[K, phi_ref_, roll_, phi_output);
+      |                                         [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:129:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  129 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alphadot_ref_, udot_ref_[01;36m[K)[m[K;
+      |                                                                                                   [01;36m[K^[m[K

@@ -1,0 +1,20 @@
+[0.021s] Invoking command in '/home/rohan/spherebot/build/motor_control': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/rohan/spherebot/src/motor_control -DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/motor_control
+[0.045s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.392s] -- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.469s] -- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.491s] -- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.507s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.525s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.627s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.631s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.758s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.838s] -- Found trajectory_msgs: 5.3.5 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
+[0.964s] -- Found control_msgs: 5.2.0 (/opt/ros/jazzy/share/control_msgs/cmake)
+[1.128s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):
+[1.128s]   ament_target_dependencies() the first argument must be a valid target name
+[1.128s] Call Stack (most recent call first):
+[1.128s]   CMakeLists.txt:26 (ament_target_dependencies)
+[1.128s] 
+[1.128s] [0m
+[1.128s] -- Configuring incomplete, errors occurred!
+[1.144s] Invoked command in '/home/rohan/spherebot/build/motor_control' returned '1': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/rohan/spherebot/src/motor_control -DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/motor_control

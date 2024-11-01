@@ -1,0 +1,35 @@
+[0.000000] (-) TimerEvent: {}
+[0.000412] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.000729] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.000899] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.001118] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.001249] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.001289] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.001314] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.001353] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001387] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001406] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.001429] (motor_control) JobQueued: {'identifier': 'motor_control', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.001709] (motor_control) JobStarted: {'identifier': 'motor_control'}
+[0.018195] (motor_control) JobProgress: {'identifier': 'motor_control', 'progress': 'cmake'}
+[0.019129] (motor_control) JobProgress: {'identifier': 'motor_control', 'progress': 'build'}
+[0.019933] (motor_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/motor_control', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/motor_control', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 50324 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan/spherebot/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '18', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'DISPLAY': 'localhost:10.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/motor_control', 'SSH_CONNECTION': '192.168.0.19 50324 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099696] (-) TimerEvent: {}
+[0.122133] (motor_control) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o\x1b[0m\n'}
+[0.199811] (-) TimerEvent: {}
+[0.300231] (-) TimerEvent: {}
+[0.400743] (-) TimerEvent: {}
+[0.501140] (-) TimerEvent: {}
+[0.601650] (-) TimerEvent: {}
+[0.629068] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:1\x1b[m\x1b[K:\n'}
+[0.629798] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:5:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Ktrajectory_msgs/msg/joint_trajectory.hpp: No such file or directory\n'}
+[0.629924] (motor_control) StderrLine: {'line': b'    5 | #include \x1b[01;31m\x1b[K<trajectory_msgs/msg/joint_trajectory.hpp>\x1b[m\x1b[K\n'}
+[0.630012] (motor_control) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.630099] (motor_control) StderrLine: {'line': b'compilation terminated.\n'}
+[0.636836] (motor_control) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o] Error 1\n'}
+[0.637462] (motor_control) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2\n'}
+[0.637913] (motor_control) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[0.641691] (motor_control) CommandEnded: {'returncode': 2}
+[0.693861] (motor_control) JobEnded: {'identifier': 'motor_control', 'rc': 2}
+[0.701724] (-) TimerEvent: {}
+[0.704521] (-) EventReactorShutdown: {}

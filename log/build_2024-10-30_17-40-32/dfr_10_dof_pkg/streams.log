@@ -1,0 +1,12 @@
+[0.021s] Invoking command in '/home/rohan/spherebot/build/dfr_10_dof_pkg': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4
+[0.168s] [ 30%] Built target environmental_node
+[0.171s] [ 70%] Built target imu_data_node
+[0.175s] [ 80%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[5.028s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kvoid MagnetometerPublisher::[01;32m[Kpublish_data[m[K()[m[K’:
+[5.028s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:45:9:[m[K [01;31m[Kerror: [m[K‘[01m[KmagData[m[K’ was not declared in this scope
+[5.028s]    45 |         [01;31m[KmagData[m[K.XAxis,
+[5.028s]       |         [01;31m[K^~~~~~~[m[K
+[7.083s] gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1
+[7.084s] gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+[7.084s] gmake: *** [Makefile:146: all] Error 2
+[7.087s] Invoked command in '/home/rohan/spherebot/build/dfr_10_dof_pkg' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4

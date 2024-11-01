@@ -1,0 +1,17 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:108:14:[m[K [01;31m[Kerror: [m[K‘[01m[Ku_meas_[m[K’ was not declared in this scope
+  108 |     if (fabs([01;31m[Ku_meas_[m[K) > 45) {
+      |              [01;31m[K^~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:109:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kalphadot_ref_[m[K’ was not declared in this scope
+  109 |         [01;31m[Kalphadot_ref_[m[K = 0.0;
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:110:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ku_ref_[m[K’ was not declared in this scope
+  110 |         [01;31m[Ku_ref_[m[K = 0.0;
+      |         [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:111:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpublishJointTrajectory[m[K’ was not declared in this scope
+  111 |         [01;31m[KpublishJointTrajectory[m[K(); // Command Motors
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

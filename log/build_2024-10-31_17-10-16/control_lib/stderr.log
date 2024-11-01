@@ -1,0 +1,11 @@
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K In function ‘[01m[Kstd::pair<float, float>[01;32m[K computeJointVariables[m[K(float, float)[m[K’:
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:3:67:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+    3 | std::pair<float, float> computeJointVariables(float alpha, float u[01;36m[K)[m[K {
+      |                                                                   [01;36m[K^[m[K
+In file included from [01m[K/home/rohan/spherebot/src/control_lib/src/auxilary_arduino.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/auxilary_arduino.hpp:18:44:[m[K [01;31m[Kerror: [m[K‘[01m[KAuxilaryArduino_I2C_ADDR[m[K’ was not declared in this scope
+   18 |         AuxilaryArduino(uint8_t I2C_ADDR = [01;31m[KAuxilaryArduino_I2C_ADDR[m[K);
+      |                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:104: CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control_interfaces.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,10 @@
+[0.021s] Invoking command in '/home/rohan/spherebot/build/control_lib': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/control_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/control_lib -- -j4 -l4
+[0.134s] [ 14%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o[0m
+[0.159s] [01m[K/home/rohan/spherebot/src/control_lib/src/LowpassFilter.cpp:1:10:[m[K [01;31m[Kfatal error: [m[K../include/control_lib/LowPassFilter.hpp: No such file or directory
+[0.159s]     1 | #include [01;31m[K"../include/control_lib/LowPassFilter.hpp"[m[K
+[0.159s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.159s] compilation terminated.
+[0.162s] gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:146: CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o] Error 1
+[0.162s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control_interfaces.dir/all] Error 2
+[0.163s] gmake: *** [Makefile:146: all] Error 2
+[0.168s] Invoked command in '/home/rohan/spherebot/build/control_lib' returned '2': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/control_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/control_lib -- -j4 -l4

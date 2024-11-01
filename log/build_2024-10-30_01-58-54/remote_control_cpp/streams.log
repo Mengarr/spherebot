@@ -1,0 +1,11 @@
+[0.020s] Invoking command in '/home/rohan/spherebot/build/remote_control_cpp': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4
+[0.142s] [ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+[0.662s] In file included from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[0.662s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:15:10:[m[K [01;31m[Kfatal error: [m[Kament_index_cpp/get_package_share_directory.hpp: No such file or directory
+[0.663s]    15 | #include [01;31m[K<ament_index_cpp/get_package_share_directory.hpp>[m[K
+[0.663s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.663s] compilation terminated.
+[0.671s] gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+[0.672s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+[0.672s] gmake: *** [Makefile:146: all] Error 2
+[0.676s] Invoked command in '/home/rohan/spherebot/build/remote_control_cpp' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4

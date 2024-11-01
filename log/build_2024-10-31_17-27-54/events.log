@@ -1,0 +1,138 @@
+[0.000000] (-) TimerEvent: {}
+[0.000696] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.001084] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.001110] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.001131] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.001290] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.001310] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.001546] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.001602] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001628] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001646] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.001668] (motor_control) JobQueued: {'identifier': 'motor_control', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.001705] (motor_control) JobStarted: {'identifier': 'motor_control'}
+[0.020661] (motor_control) JobProgress: {'identifier': 'motor_control', 'progress': 'cmake'}
+[0.021654] (motor_control) JobProgress: {'identifier': 'motor_control', 'progress': 'build'}
+[0.022534] (motor_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/motor_control', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/motor_control', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 50324 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan/spherebot/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '18', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'DISPLAY': 'localhost:10.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/motor_control', 'SSH_CONNECTION': '192.168.0.19 50324 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099331] (-) TimerEvent: {}
+[0.141350] (motor_control) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o\x1b[0m\n'}
+[0.199454] (-) TimerEvent: {}
+[0.299855] (-) TimerEvent: {}
+[0.400360] (-) TimerEvent: {}
+[0.500822] (-) TimerEvent: {}
+[0.601335] (-) TimerEvent: {}
+[0.701768] (-) TimerEvent: {}
+[0.802262] (-) TimerEvent: {}
+[0.902681] (-) TimerEvent: {}
+[1.003180] (-) TimerEvent: {}
+[1.103605] (-) TimerEvent: {}
+[1.204094] (-) TimerEvent: {}
+[1.304510] (-) TimerEvent: {}
+[1.404993] (-) TimerEvent: {}
+[1.505424] (-) TimerEvent: {}
+[1.605920] (-) TimerEvent: {}
+[1.706316] (-) TimerEvent: {}
+[1.806804] (-) TimerEvent: {}
+[1.907216] (-) TimerEvent: {}
+[2.007733] (-) TimerEvent: {}
+[2.108172] (-) TimerEvent: {}
+[2.208683] (-) TimerEvent: {}
+[2.309088] (-) TimerEvent: {}
+[2.409590] (-) TimerEvent: {}
+[2.509974] (-) TimerEvent: {}
+[2.610462] (-) TimerEvent: {}
+[2.710889] (-) TimerEvent: {}
+[2.811376] (-) TimerEvent: {}
+[2.911804] (-) TimerEvent: {}
+[3.012321] (-) TimerEvent: {}
+[3.112732] (-) TimerEvent: {}
+[3.213233] (-) TimerEvent: {}
+[3.313660] (-) TimerEvent: {}
+[3.414150] (-) TimerEvent: {}
+[3.514588] (-) TimerEvent: {}
+[3.615067] (-) TimerEvent: {}
+[3.715459] (-) TimerEvent: {}
+[3.815856] (-) TimerEvent: {}
+[3.916243] (-) TimerEvent: {}
+[4.016605] (-) TimerEvent: {}
+[4.116987] (-) TimerEvent: {}
+[4.217462] (-) TimerEvent: {}
+[4.317861] (-) TimerEvent: {}
+[4.418344] (-) TimerEvent: {}
+[4.518757] (-) TimerEvent: {}
+[4.619246] (-) TimerEvent: {}
+[4.719642] (-) TimerEvent: {}
+[4.820051] (-) TimerEvent: {}
+[4.920591] (-) TimerEvent: {}
+[5.021041] (-) TimerEvent: {}
+[5.121545] (-) TimerEvent: {}
+[5.210465] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MotorControlNode::\x1b[01;32m\x1b[KjointTrajectoryCallback\x1b[m\x1b[K(trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.211193] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:56:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct control_msgs::msg::JointTrajectoryControllerState_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kactual\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.211313] (motor_control) StderrLine: {'line': b'   56 |     state_msg.\x1b[01;31m\x1b[Kactual\x1b[m\x1b[K.positions = {u_meas_, alpha_meas_};\n'}
+[5.211428] (motor_control) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.211523] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:57:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct control_msgs::msg::JointTrajectoryControllerState_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kactual\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.211612] (motor_control) StderrLine: {'line': b'   57 |     state_msg.\x1b[01;31m\x1b[Kactual\x1b[m\x1b[K.velocities = {udot_meas_, alphadot_meas_};\n'}
+[5.211711] (motor_control) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.221648] (-) TimerEvent: {}
+[5.322069] (-) TimerEvent: {}
+[5.422452] (-) TimerEvent: {}
+[5.522855] (-) TimerEvent: {}
+[5.623368] (-) TimerEvent: {}
+[5.723858] (-) TimerEvent: {}
+[5.824250] (-) TimerEvent: {}
+[5.924762] (-) TimerEvent: {}
+[6.025159] (-) TimerEvent: {}
+[6.125665] (-) TimerEvent: {}
+[6.226071] (-) TimerEvent: {}
+[6.326568] (-) TimerEvent: {}
+[6.426970] (-) TimerEvent: {}
+[6.527464] (-) TimerEvent: {}
+[6.627858] (-) TimerEvent: {}
+[6.728345] (-) TimerEvent: {}
+[6.828747] (-) TimerEvent: {}
+[6.929273] (-) TimerEvent: {}
+[7.029732] (-) TimerEvent: {}
+[7.130227] (-) TimerEvent: {}
+[7.230656] (-) TimerEvent: {}
+[7.331150] (-) TimerEvent: {}
+[7.431568] (-) TimerEvent: {}
+[7.532052] (-) TimerEvent: {}
+[7.632469] (-) TimerEvent: {}
+[7.732940] (-) TimerEvent: {}
+[7.833325] (-) TimerEvent: {}
+[7.933840] (-) TimerEvent: {}
+[8.034230] (-) TimerEvent: {}
+[8.134750] (-) TimerEvent: {}
+[8.235107] (-) TimerEvent: {}
+[8.335462] (-) TimerEvent: {}
+[8.435875] (-) TimerEvent: {}
+[8.536355] (-) TimerEvent: {}
+[8.636780] (-) TimerEvent: {}
+[8.737257] (-) TimerEvent: {}
+[8.837662] (-) TimerEvent: {}
+[8.938149] (-) TimerEvent: {}
+[9.038573] (-) TimerEvent: {}
+[9.139059] (-) TimerEvent: {}
+[9.239475] (-) TimerEvent: {}
+[9.339972] (-) TimerEvent: {}
+[9.440439] (-) TimerEvent: {}
+[9.540955] (-) TimerEvent: {}
+[9.641352] (-) TimerEvent: {}
+[9.741831] (-) TimerEvent: {}
+[9.842213] (-) TimerEvent: {}
+[9.942715] (-) TimerEvent: {}
+[10.043129] (-) TimerEvent: {}
+[10.143647] (-) TimerEvent: {}
+[10.244073] (-) TimerEvent: {}
+[10.344471] (-) TimerEvent: {}
+[10.351702] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MotorControlNode::\x1b[01;32m\x1b[KcontrolLoop\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[10.352010] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:66:99:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kparameter passing for argument of type \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float>\x1b[m\x1b[K\xe2\x80\x99 when C++17 is enabled changed to match C++14 \x1b]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_base\x07in GCC 10.1\x1b]8;;\x07\n'}
+[10.352126] (motor_control) StderrLine: {'line': b'   66 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alphadot_ref_, udot_ref_\x1b[01;36m\x1b[K)\x1b[m\x1b[K;\n'}
+[10.352218] (motor_control) StderrLine: {'line': b'      |                                                                                                   \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[10.416967] (motor_control) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o] Error 1\n'}
+[10.417477] (motor_control) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2\n'}
+[10.417651] (motor_control) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[10.420800] (motor_control) CommandEnded: {'returncode': 2}
+[10.444567] (-) TimerEvent: {}
+[10.478525] (motor_control) JobEnded: {'identifier': 'motor_control', 'rc': 2}
+[10.489222] (-) EventReactorShutdown: {}

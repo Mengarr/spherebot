@@ -1,0 +1,71 @@
+[0.016s] Invoking command in '/home/rohan/spherebot/build/dfr_10_dof_pkg': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/rohan/spherebot/src/dfr_10_dof_pkg -DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/dfr_10_dof_pkg
+[0.213s] -- The C compiler identification is GNU 13.2.0
+[0.326s] -- The CXX compiler identification is GNU 13.2.0
+[0.363s] -- Detecting C compiler ABI info
+[0.570s] -- Detecting C compiler ABI info - done
+[0.587s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.589s] -- Detecting C compile features
+[0.590s] -- Detecting C compile features - done
+[0.607s] -- Detecting CXX compiler ABI info
+[0.788s] -- Detecting CXX compiler ABI info - done
+[0.805s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.806s] -- Detecting CXX compile features
+[0.806s] -- Detecting CXX compile features - done
+[0.818s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.055s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.257s] -- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.343s] -- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.370s] -- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.407s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.445s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.600s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.607s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.772s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.802s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.838s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.978s] -- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)
+[2.010s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[2.084s] -- Found i2c_lib: 0.0.1 (/home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake)
+[2.263s] -- Configuring done (2.2s)
+[2.294s] -- Generating done (0.0s)
+[2.297s] -- Build files have been written to: /home/rohan/spherebot/build/dfr_10_dof_pkg
+[2.317s] Invoked command in '/home/rohan/spherebot/build/dfr_10_dof_pkg' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/rohan/spherebot/src/dfr_10_dof_pkg -DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/dfr_10_dof_pkg
+[2.320s] Invoking command in '/home/rohan/spherebot/build/dfr_10_dof_pkg': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4
+[2.416s] [ 30%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[2.417s] [ 30%] [32mBuilding CXX object CMakeFiles/environmental_node.dir/src/BMP280.cpp.o[0m
+[2.417s] [ 40%] [32mBuilding CXX object CMakeFiles/environmental_node.dir/src/environmental_data_node.cpp.o[0m
+[2.420s] [ 30%] [32mBuilding CXX object CMakeFiles/imu_data_node.dir/src/imu_data_node.cpp.o[0m
+[4.353s] [ 50%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/VCM5883L.cpp.o[0m
+[5.982s] [ 60%] [32mBuilding CXX object CMakeFiles/imu_data_node.dir/src/FIMU_ITG3200.cpp.o[0m
+[7.446s] [ 70%] [32mBuilding CXX object CMakeFiles/imu_data_node.dir/src/FIMU_ADXL345.cpp.o[0m
+[16.432s] [ 80%] [32m[1mLinking CXX executable imu_data_node[0m
+[16.443s] [ 90%] [32m[1mLinking CXX executable environmental_node[0m
+[17.182s] [ 90%] Built target environmental_node
+[17.289s] [ 90%] Built target imu_data_node
+[17.689s] [100%] [32m[1mLinking CXX executable magneometer_node[0m
+[18.103s] [100%] Built target magneometer_node
+[18.126s] Invoked command in '/home/rohan/spherebot/build/dfr_10_dof_pkg' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4
+[18.202s] Invoking command in '/home/rohan/spherebot/build/dfr_10_dof_pkg': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/rohan/spherebot/build/dfr_10_dof_pkg
+[18.218s] -- Install configuration: ""
+[18.218s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/imu_data_node
+[18.222s] -- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/imu_data_node" to ""
+[18.222s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/magneometer_node
+[18.225s] -- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/magneometer_node" to ""
+[18.225s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/environmental_node
+[18.227s] -- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/environmental_node" to ""
+[18.228s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/ament_index/resource_index/package_run_dependencies/dfr_10_dof_pkg
+[18.228s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/ament_index/resource_index/parent_prefix_path/dfr_10_dof_pkg
+[18.228s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/environment/ament_prefix_path.sh
+[18.229s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/environment/ament_prefix_path.dsv
+[18.229s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/environment/path.sh
+[18.229s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/environment/path.dsv
+[18.229s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/local_setup.bash
+[18.229s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/local_setup.sh
+[18.229s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/local_setup.zsh
+[18.230s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/local_setup.dsv
+[18.230s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/package.dsv
+[18.230s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/ament_index/resource_index/packages/dfr_10_dof_pkg
+[18.230s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/cmake/dfr_10_dof_pkgConfig.cmake
+[18.231s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/cmake/dfr_10_dof_pkgConfig-version.cmake
+[18.231s] -- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/package.xml
+[18.234s] Invoked command in '/home/rohan/spherebot/build/dfr_10_dof_pkg' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/rohan/spherebot/build/dfr_10_dof_pkg

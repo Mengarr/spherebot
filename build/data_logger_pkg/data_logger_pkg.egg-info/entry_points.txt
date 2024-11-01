@@ -1,0 +1,2 @@
+[console_scripts]
+data_logger_node = data_logger_pkg.data_logger_node:main

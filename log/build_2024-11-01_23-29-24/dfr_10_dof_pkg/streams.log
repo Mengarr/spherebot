@@ -1,0 +1,18 @@
+[0.021s] Invoking command in '/home/rohan/spherebot/build/dfr_10_dof_pkg': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4
+[0.127s] [ 30%] Built target environmental_node
+[0.128s] [ 70%] Built target imu_data_node
+[0.138s] [ 90%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/VCM5883L.cpp.o[0m
+[0.139s] [ 90%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[0.943s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/VCM5883L.cpp:[m[K In member function ‘[01m[Kvoid VCM5883L::[01;32m[KsetSamples[m[K(eSamples_t)[m[K’:
+[0.943s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/VCM5883L.cpp:90:19:[m[K [01;31m[Kerror: [m[K‘[01m[KQMC5883_REG_CONFIG_1[m[K’ was not declared in this scope
+[0.943s]    90 |   _i2cBus.readmem([01;31m[KQMC5883_REG_CONFIG_1[m[K, uint8_t(1), _buff);
+[0.944s]       |                   [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[0.955s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/VCM5883L.cpp:[m[K In member function ‘[01m[KeSamples_t VCM5883L::[01;32m[KgetSamples[m[K()[m[K’:
+[0.955s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/VCM5883L.cpp:100:19:[m[K [01;31m[Kerror: [m[K‘[01m[KQMC5883_REG_CONFIG_1[m[K’ was not declared in this scope
+[0.956s]   100 |   _i2cBus.readmem([01;31m[KQMC5883_REG_CONFIG_1[m[K, uint8_t(1), _buff);
+[0.956s]       |                   [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1.087s] gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:90: CMakeFiles/magneometer_node.dir/src/VCM5883L.cpp.o] Error 1
+[1.087s] gmake[2]: *** Waiting for unfinished jobs....
+[13.855s] gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+[13.856s] gmake: *** [Makefile:146: all] Error 2
+[13.859s] Invoked command in '/home/rohan/spherebot/build/dfr_10_dof_pkg' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4

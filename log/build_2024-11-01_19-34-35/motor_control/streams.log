@@ -1,0 +1,87 @@
+[0.019s] Invoking command in '/home/rohan/spherebot/build/motor_control': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/motor_control -- -j4 -l4
+[0.133s] [ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o[0m
+[4.159s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In constructor ‘[01m[KMotorControlNode::[01;32m[KMotorControlNode[m[K()[m[K’:
+[4.159s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:32:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kstate_sub[m[K’ was not declared in this scope; did you mean ‘[01m[Kstate_sub_[m[K’?
+[4.159s]    32 |     [01;31m[Kstate_sub[m[K = this->create_subscription<std_msgs::msg::Int8>(
+[4.159s]       |     [01;31m[K^~~~~~~~~[m[K
+[4.159s]       |     [32m[Kstate_sub_[m[K
+[4.197s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::[01;32m[KjointTrajectoryCallback[m[K(trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >::SharedPtr)[m[K’:
+[4.197s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:96:39:[m[K [01;31m[Kerror: [m[K‘[01m[KK_u_d_[m[K’ was not declared in this scope
+[4.197s]    96 |         u_PID_.setGains(Kp_u_, Ki_u_, [01;31m[KK_u_d_[m[K);
+[4.197s]       |                                       [01;31m[K^~~~~~[m[K
+[4.201s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::[01;32m[KcontrolLoop[m[K()[m[K’:
+[4.201s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:153:9:[m[K [01;31m[Kerror: [m[Kcontinue statement not within a loop
+[4.201s]   153 |         [01;31m[Kcontinue[m[K;
+[4.201s]       |         [01;31m[K^~~~~~~~[m[K
+[4.204s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[4.204s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+[4.204s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[4.204s]                  from [01m[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:4[m[K,
+[4.204s]                  from [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:1[m[K:
+[4.204s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:163:72:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ was not declared in this scope
+[4.205s]   163 |         RCLCPP_ERROR(this->get_logger(), "Received unknown state: %d", [01;31m[Kmsg[m[K->data);
+[4.205s]       |                                                                        [01;31m[K^~~[m[K
+[4.205s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:163:72:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[4.205s] In file included from [01m[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:156[m[K,
+[4.205s]                  from [01m[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp:7[m[K,
+[4.205s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:21[m[K:
+[4.205s] [01m[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:30:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+[4.205s]    30 | namespace [01;36m[Kmsg[m[K
+[4.205s]       |           [01;36m[K^~~[m[K
+[4.205s] In file included from [01m[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:23[m[K,
+[4.205s]                  from [01m[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:267[m[K:
+[4.206s] [01m[K/opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:30:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+[4.206s]    30 | namespace [01;36m[Kmsg[m[K
+[4.206s]       |           [01;36m[K^~~[m[K
+[4.206s] [01m[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:34:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kservice_msgs::msg[m[K’
+[4.206s]    34 | namespace [01;36m[Kmsg[m[K
+[4.206s]       |           [01;36m[K^~~[m[K
+[4.206s] In file included from [01m[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:26[m[K,
+[4.206s]                  from [01m[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+[4.206s]                  from [01m[K/opt/ros/jazzy/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+[4.206s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+[4.206s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[4.207s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[4.207s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[4.207s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[4.207s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22[m[K,
+[4.207s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38[m[K,
+[4.207s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[4.207s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[4.207s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K:
+[4.207s] [01m[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:30:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+[4.207s]    30 | namespace [01;36m[Kmsg[m[K
+[4.207s]       |           [01;36m[K^~~[m[K
+[4.207s] In file included from [01m[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:23[m[K,
+[4.208s]                  from [01m[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/joint_trajectory.hpp:7[m[K,
+[4.208s]                  from [01m[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:5[m[K:
+[4.208s] [01m[K/opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:34:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd_msgs::msg[m[K’
+[4.208s]    34 | namespace [01;36m[Kmsg[m[K
+[4.208s]       |           [01;36m[K^~~[m[K
+[4.208s] In file included from [01m[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:25[m[K:
+[4.208s] [01m[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.hpp:34:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Ktrajectory_msgs::msg[m[K’
+[4.208s]    34 | namespace [01;36m[Kmsg[m[K
+[4.208s]       |           [01;36m[K^~~[m[K
+[4.208s] In file included from [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:23[m[K,
+[4.209s]                  from [01m[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory_point__struct.hpp:23[m[K,
+[4.209s]                  from [01m[K/opt/ros/jazzy/include/control_msgs/control_msgs/msg/detail/joint_trajectory_controller_state__struct.hpp:33[m[K,
+[4.209s]                  from [01m[K/opt/ros/jazzy/include/control_msgs/control_msgs/msg/joint_trajectory_controller_state.hpp:7[m[K,
+[4.209s]                  from [01m[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:6[m[K:
+[4.209s] [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:30:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kgeometry_msgs::msg[m[K’
+[4.209s]    30 | namespace [01;36m[Kmsg[m[K
+[4.209s]       |           [01;36m[K^~~[m[K
+[4.209s] [01m[K/opt/ros/jazzy/include/control_msgs/control_msgs/msg/detail/joint_trajectory_controller_state__struct.hpp:44:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcontrol_msgs::msg[m[K’
+[4.209s]    44 | namespace [01;36m[Kmsg[m[K
+[4.209s]       |           [01;36m[K^~~[m[K
+[4.209s] In file included from [01m[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/imu.hpp:7[m[K,
+[4.209s]                  from [01m[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:11[m[K:
+[4.210s] [01m[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp:39:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Ksensor_msgs::msg[m[K’
+[4.210s]    39 | namespace [01;36m[Kmsg[m[K
+[4.210s]       |           [01;36m[K^~~[m[K
+[10.315s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:127:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+[10.315s]   127 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alphadot_ref_, udot_ref_[01;36m[K)[m[K;
+[10.315s]       |                                                                                                   [01;36m[K^[m[K
+[10.402s] gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o] Error 1
+[10.403s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+[10.403s] gmake: *** [Makefile:146: all] Error 2
+[10.406s] Invoked command in '/home/rohan/spherebot/build/motor_control' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/motor_control -- -j4 -l4

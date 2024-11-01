@@ -1,0 +1,286 @@
+[0.000000] (-) TimerEvent: {}
+[0.000357] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.000706] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.000740] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.000918] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.000940] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.001138] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.001158] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001176] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001289] (-) JobUnselected: {'identifier': 'motor_control'}
+[0.001308] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.001331] (autonomous_control_pid) JobQueued: {'identifier': 'autonomous_control_pid', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.001366] (autonomous_control_pid) JobStarted: {'identifier': 'autonomous_control_pid'}
+[0.018735] (autonomous_control_pid) JobProgress: {'identifier': 'autonomous_control_pid', 'progress': 'cmake'}
+[0.019794] (autonomous_control_pid) JobProgress: {'identifier': 'autonomous_control_pid', 'progress': 'build'}
+[0.020787] (autonomous_control_pid) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/autonomous_control_pid', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/autonomous_control_pid', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 50280 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/rohan/spherebot/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'DISPLAY': 'localhost:10.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/autonomous_control_pid', 'SSH_CONNECTION': '192.168.0.19 50280 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/rohan/spherebot/install/data_logger_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy'}), 'shell': False}
+[0.099608] (-) TimerEvent: {}
+[0.141885] (autonomous_control_pid) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/autonomous_control_pid_node.dir/src/autonomous_control_pid_node.cpp.o\x1b[0m\n'}
+[0.199716] (-) TimerEvent: {}
+[0.300079] (-) TimerEvent: {}
+[0.400438] (-) TimerEvent: {}
+[0.500824] (-) TimerEvent: {}
+[0.601219] (-) TimerEvent: {}
+[0.701629] (-) TimerEvent: {}
+[0.802034] (-) TimerEvent: {}
+[0.902440] (-) TimerEvent: {}
+[1.002859] (-) TimerEvent: {}
+[1.103241] (-) TimerEvent: {}
+[1.203660] (-) TimerEvent: {}
+[1.304053] (-) TimerEvent: {}
+[1.404441] (-) TimerEvent: {}
+[1.504839] (-) TimerEvent: {}
+[1.605221] (-) TimerEvent: {}
+[1.705634] (-) TimerEvent: {}
+[1.806034] (-) TimerEvent: {}
+[1.906427] (-) TimerEvent: {}
+[2.006814] (-) TimerEvent: {}
+[2.107196] (-) TimerEvent: {}
+[2.207595] (-) TimerEvent: {}
+[2.307958] (-) TimerEvent: {}
+[2.408342] (-) TimerEvent: {}
+[2.508729] (-) TimerEvent: {}
+[2.609098] (-) TimerEvent: {}
+[2.709484] (-) TimerEvent: {}
+[2.809881] (-) TimerEvent: {}
+[2.910299] (-) TimerEvent: {}
+[3.010697] (-) TimerEvent: {}
+[3.111102] (-) TimerEvent: {}
+[3.211462] (-) TimerEvent: {}
+[3.311838] (-) TimerEvent: {}
+[3.412216] (-) TimerEvent: {}
+[3.512616] (-) TimerEvent: {}
+[3.612999] (-) TimerEvent: {}
+[3.713378] (-) TimerEvent: {}
+[3.813779] (-) TimerEvent: {}
+[3.914168] (-) TimerEvent: {}
+[4.014576] (-) TimerEvent: {}
+[4.114975] (-) TimerEvent: {}
+[4.215357] (-) TimerEvent: {}
+[4.315779] (-) TimerEvent: {}
+[4.416162] (-) TimerEvent: {}
+[4.516542] (-) TimerEvent: {}
+[4.616928] (-) TimerEvent: {}
+[4.717341] (-) TimerEvent: {}
+[4.817756] (-) TimerEvent: {}
+[4.844866] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid AutonomousControlNodePID::\x1b[01;32m\x1b[KnextStateLogic\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.845244] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:171:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass PathDataLoader\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[KloadJsonData\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.845366] (autonomous_control_pid) StderrLine: {'line': b'  171 |             _pathData.\x1b[01;31m\x1b[KloadJsonData\x1b[m\x1b[K(_jsonfn);\n'}
+[4.845516] (autonomous_control_pid) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.856666] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:171:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K_jsonfn\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.856939] (autonomous_control_pid) StderrLine: {'line': b'  171 |             _pathData.loadJsonData(\x1b[01;31m\x1b[K_jsonfn\x1b[m\x1b[K);\n'}
+[4.857053] (autonomous_control_pid) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[4.857238] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:181:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.857358] (autonomous_control_pid) StderrLine: {'line': b'  181 |                 \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::chrono::duration<float> elapsed = currentTime - startTime;\n'}
+[4.857509] (autonomous_control_pid) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.867858] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:182:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kelapsed\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.868089] (autonomous_control_pid) StderrLine: {'line': b'  182 |                 if (\x1b[01;31m\x1b[Kelapsed\x1b[m\x1b[K.duration() > 2) {\n'}
+[4.868191] (autonomous_control_pid) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[4.869349] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:192:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kjump to case label\n'}
+[4.869983] (autonomous_control_pid) StderrLine: {'line': b'  192 |         case STATES::\x1b[01;31m\x1b[KPATH_FOLLOWING\x1b[m\x1b[K:\n'}
+[4.870091] (autonomous_control_pid) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.870173] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:174:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> probing_indicies\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.870258] (autonomous_control_pid) StderrLine: {'line': b'  174 |             std::vector<int> \x1b[01;36m\x1b[Kprobing_indicies\x1b[m\x1b[K = _pathData.getProbingIndices();\n'}
+[4.870339] (autonomous_control_pid) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.870441] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:173:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<double, std::allocator<double> > y_coords\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.870532] (autonomous_control_pid) StderrLine: {'line': b'  173 |             std::vector<double> \x1b[01;36m\x1b[Ky_coords\x1b[m\x1b[K = _pathData.getYCoords();\n'}
+[4.870618] (autonomous_control_pid) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.870697] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:172:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<double, std::allocator<double> > x_coords\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.870805] (autonomous_control_pid) StderrLine: {'line': b'  172 |             std::vector<double> \x1b[01;36m\x1b[Kx_coords\x1b[m\x1b[K = _pathData.getXCoords();\n'}
+[4.870886] (autonomous_control_pid) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.879789] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:198:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcoords\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Ky_coords\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.880074] (autonomous_control_pid) StderrLine: {'line': b'  198 |             if (!_stanley.computeSteering(\x1b[01;31m\x1b[Kcoords\x1b[m\x1b[K.east, coords.north, static_cast<double>(_heading),  params.at("R") * alphadot_meas_, steering_angle, heading_error)) {\n'}
+[4.880193] (autonomous_control_pid) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.880284] (autonomous_control_pid) StderrLine: {'line': b'      |                                           \x1b[32m\x1b[Ky_coords\x1b[m\x1b[K\n'}
+[4.890128] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:198:102:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kparams\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.890347] (autonomous_control_pid) StderrLine: {'line': b'  198 |             if (!_stanley.computeSteering(coords.east, coords.north, static_cast<double>(_heading),  \x1b[01;31m\x1b[Kparams\x1b[m\x1b[K.at("R") * alphadot_meas_, steering_angle, heading_error)) {\n'}
+[4.890469] (autonomous_control_pid) StderrLine: {'line': b'      |                                                                                                      \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.902217] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:206:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kparams\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.902483] (autonomous_control_pid) StderrLine: {'line': b'  206 |             float rc =  \x1b[01;31m\x1b[Kparams\x1b[m\x1b[K.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture\n'}
+[4.902604] (autonomous_control_pid) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.917840] (-) TimerEvent: {}
+[4.918965] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:207:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcalculate_u_ref\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.919185] (autonomous_control_pid) StderrLine: {'line': b'  207 |             u_ref_ = \x1b[01;31m\x1b[Kcalculate_u_ref\x1b[m\x1b[K(0.0, 0.0, alphadot_meas_, rc, params);               // Compute reference u\n'}
+[4.919290] (autonomous_control_pid) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.929099] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:211:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcoords\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Ky_coords\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.929406] (autonomous_control_pid) StderrLine: {'line': b'  211 |             if (_stanley.reachedFinal(\x1b[01;31m\x1b[Kcoords\x1b[m\x1b[K.east, coords.north)){\n'}
+[4.929549] (autonomous_control_pid) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.929667] (autonomous_control_pid) StderrLine: {'line': b'      |                                       \x1b[32m\x1b[Ky_coords\x1b[m\x1b[K\n'}
+[4.930088] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:218:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kjump to case label\n'}
+[4.930215] (autonomous_control_pid) StderrLine: {'line': b'  218 |         case STATES::\x1b[01;31m\x1b[KPROBE_SOIL\x1b[m\x1b[K:\n'}
+[4.930299] (autonomous_control_pid) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.930394] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:206:19:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kfloat rc\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.930503] (autonomous_control_pid) StderrLine: {'line': b'  206 |             float \x1b[01;36m\x1b[Krc\x1b[m\x1b[K =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture\n'}
+[4.930590] (autonomous_control_pid) StderrLine: {'line': b'      |                   \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[4.930672] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:201:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32_<std::allocator<void> > stanley_msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.930765] (autonomous_control_pid) StderrLine: {'line': b'  201 |             auto \x1b[01;36m\x1b[Kstanley_msg\x1b[m\x1b[K = std_msgs::msg::Float32();\n'}
+[4.930848] (autonomous_control_pid) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.931089] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:174:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> probing_indicies\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.931245] (autonomous_control_pid) StderrLine: {'line': b'  174 |             std::vector<int> \x1b[01;36m\x1b[Kprobing_indicies\x1b[m\x1b[K = _pathData.getProbingIndices();\n'}
+[4.931347] (autonomous_control_pid) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.931455] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:173:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<double, std::allocator<double> > y_coords\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.931565] (autonomous_control_pid) StderrLine: {'line': b'  173 |             std::vector<double> \x1b[01;36m\x1b[Ky_coords\x1b[m\x1b[K = _pathData.getYCoords();\n'}
+[4.931652] (autonomous_control_pid) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.931736] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:172:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<double, std::allocator<double> > x_coords\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.931821] (autonomous_control_pid) StderrLine: {'line': b'  172 |             std::vector<double> \x1b[01;36m\x1b[Kx_coords\x1b[m\x1b[K = _pathData.getXCoords();\n'}
+[4.931902] (autonomous_control_pid) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.931983] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:221:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kjump to case label\n'}
+[4.932081] (autonomous_control_pid) StderrLine: {'line': b'  221 |         case STATES::\x1b[01;31m\x1b[KFINISH\x1b[m\x1b[K:\n'}
+[4.932161] (autonomous_control_pid) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.932240] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:206:19:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kfloat rc\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.932322] (autonomous_control_pid) StderrLine: {'line': b'  206 |             float \x1b[01;36m\x1b[Krc\x1b[m\x1b[K =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture\n'}
+[4.932444] (autonomous_control_pid) StderrLine: {'line': b'      |                   \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[4.932540] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:201:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32_<std::allocator<void> > stanley_msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.932639] (autonomous_control_pid) StderrLine: {'line': b'  201 |             auto \x1b[01;36m\x1b[Kstanley_msg\x1b[m\x1b[K = std_msgs::msg::Float32();\n'}
+[4.932719] (autonomous_control_pid) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.932796] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:174:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> probing_indicies\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.932876] (autonomous_control_pid) StderrLine: {'line': b'  174 |             std::vector<int> \x1b[01;36m\x1b[Kprobing_indicies\x1b[m\x1b[K = _pathData.getProbingIndices();\n'}
+[4.932954] (autonomous_control_pid) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.933031] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:173:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<double, std::allocator<double> > y_coords\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.933110] (autonomous_control_pid) StderrLine: {'line': b'  173 |             std::vector<double> \x1b[01;36m\x1b[Ky_coords\x1b[m\x1b[K = _pathData.getYCoords();\n'}
+[4.933187] (autonomous_control_pid) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.933264] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:172:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<double, std::allocator<double> > x_coords\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.933342] (autonomous_control_pid) StderrLine: {'line': b'  172 |             std::vector<double> \x1b[01;36m\x1b[Kx_coords\x1b[m\x1b[K = _pathData.getXCoords();\n'}
+[4.933480] (autonomous_control_pid) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.933574] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:224:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.933665] (autonomous_control_pid) StderrLine: {'line': b'  224 |             \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::chrono::duration<float> elapsed = currentTime - startTime;\n'}
+[4.933761] (autonomous_control_pid) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.941505] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:225:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kelapsed\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.941698] (autonomous_control_pid) StderrLine: {'line': b'  225 |             if (\x1b[01;31m\x1b[Kelapsed\x1b[m\x1b[K.duration() > 2) {\n'}
+[4.941791] (autonomous_control_pid) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[4.942549] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:232:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kjump to case label\n'}
+[4.942744] (autonomous_control_pid) StderrLine: {'line': b'  232 |         \x1b[01;31m\x1b[Kdefault\x1b[m\x1b[K:\n'}
+[4.942834] (autonomous_control_pid) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[4.942916] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:223:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long int, std::ratio<1, 1000000000> > > currentTime\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.943024] (autonomous_control_pid) StderrLine: {'line': b'  223 |             auto \x1b[01;36m\x1b[KcurrentTime\x1b[m\x1b[K = std::chrono::steady_clock::now()\n'}
+[4.943112] (autonomous_control_pid) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.943191] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:206:19:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kfloat rc\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.943275] (autonomous_control_pid) StderrLine: {'line': b'  206 |             float \x1b[01;36m\x1b[Krc\x1b[m\x1b[K =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture\n'}
+[4.943359] (autonomous_control_pid) StderrLine: {'line': b'      |                   \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[4.943468] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:201:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32_<std::allocator<void> > stanley_msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.943555] (autonomous_control_pid) StderrLine: {'line': b'  201 |             auto \x1b[01;36m\x1b[Kstanley_msg\x1b[m\x1b[K = std_msgs::msg::Float32();\n'}
+[4.943634] (autonomous_control_pid) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.943711] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:174:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> probing_indicies\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.943791] (autonomous_control_pid) StderrLine: {'line': b'  174 |             std::vector<int> \x1b[01;36m\x1b[Kprobing_indicies\x1b[m\x1b[K = _pathData.getProbingIndices();\n'}
+[4.943868] (autonomous_control_pid) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.943962] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:173:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<double, std::allocator<double> > y_coords\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.944075] (autonomous_control_pid) StderrLine: {'line': b'  173 |             std::vector<double> \x1b[01;36m\x1b[Ky_coords\x1b[m\x1b[K = _pathData.getYCoords();\n'}
+[4.944154] (autonomous_control_pid) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.944231] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:172:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  crosses initialization of \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<double, std::allocator<double> > x_coords\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.944311] (autonomous_control_pid) StderrLine: {'line': b'  172 |             std::vector<double> \x1b[01;36m\x1b[Kx_coords\x1b[m\x1b[K = _pathData.getXCoords();\n'}
+[4.944395] (autonomous_control_pid) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.944577] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:168:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kenumeration value \xe2\x80\x98\x1b[01m\x1b[KPATH_FOLLOWING\x1b[m\x1b[K\xe2\x80\x99 not handled in switch [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch\x07-Wswitch\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.944731] (autonomous_control_pid) StderrLine: {'line': b'  168 |     switch \x1b[01;35m\x1b[K(\x1b[m\x1b[Kcurrent_state_) {\n'}
+[4.944818] (autonomous_control_pid) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[4.944904] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:168:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kenumeration value \xe2\x80\x98\x1b[01m\x1b[KPROBE_SOIL\x1b[m\x1b[K\xe2\x80\x99 not handled in switch [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch\x07-Wswitch\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.944993] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:168:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kenumeration value \xe2\x80\x98\x1b[01m\x1b[KFINISH\x1b[m\x1b[K\xe2\x80\x99 not handled in switch [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch\x07-Wswitch\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.017957] (-) TimerEvent: {}
+[5.118402] (-) TimerEvent: {}
+[5.218762] (-) TimerEvent: {}
+[5.319128] (-) TimerEvent: {}
+[5.419537] (-) TimerEvent: {}
+[5.519930] (-) TimerEvent: {}
+[5.620318] (-) TimerEvent: {}
+[5.720751] (-) TimerEvent: {}
+[5.821163] (-) TimerEvent: {}
+[5.921574] (-) TimerEvent: {}
+[6.022033] (-) TimerEvent: {}
+[6.122476] (-) TimerEvent: {}
+[6.222835] (-) TimerEvent: {}
+[6.323239] (-) TimerEvent: {}
+[6.423638] (-) TimerEvent: {}
+[6.524012] (-) TimerEvent: {}
+[6.624440] (-) TimerEvent: {}
+[6.724852] (-) TimerEvent: {}
+[6.825235] (-) TimerEvent: {}
+[6.925658] (-) TimerEvent: {}
+[7.026073] (-) TimerEvent: {}
+[7.126463] (-) TimerEvent: {}
+[7.226833] (-) TimerEvent: {}
+[7.327213] (-) TimerEvent: {}
+[7.427607] (-) TimerEvent: {}
+[7.527986] (-) TimerEvent: {}
+[7.628375] (-) TimerEvent: {}
+[7.728771] (-) TimerEvent: {}
+[7.829147] (-) TimerEvent: {}
+[7.929627] (-) TimerEvent: {}
+[8.030021] (-) TimerEvent: {}
+[8.130419] (-) TimerEvent: {}
+[8.230851] (-) TimerEvent: {}
+[8.331233] (-) TimerEvent: {}
+[8.431624] (-) TimerEvent: {}
+[8.532045] (-) TimerEvent: {}
+[8.632460] (-) TimerEvent: {}
+[8.732827] (-) TimerEvent: {}
+[8.833228] (-) TimerEvent: {}
+[8.933626] (-) TimerEvent: {}
+[9.034008] (-) TimerEvent: {}
+[9.134428] (-) TimerEvent: {}
+[9.234843] (-) TimerEvent: {}
+[9.335217] (-) TimerEvent: {}
+[9.435620] (-) TimerEvent: {}
+[9.536071] (-) TimerEvent: {}
+[9.636467] (-) TimerEvent: {}
+[9.736861] (-) TimerEvent: {}
+[9.837282] (-) TimerEvent: {}
+[9.937671] (-) TimerEvent: {}
+[10.038066] (-) TimerEvent: {}
+[10.138534] (-) TimerEvent: {}
+[10.238907] (-) TimerEvent: {}
+[10.339306] (-) TimerEvent: {}
+[10.439773] (-) TimerEvent: {}
+[10.540149] (-) TimerEvent: {}
+[10.640547] (-) TimerEvent: {}
+[10.740990] (-) TimerEvent: {}
+[10.841440] (-) TimerEvent: {}
+[10.941996] (-) TimerEvent: {}
+[11.042394] (-) TimerEvent: {}
+[11.142757] (-) TimerEvent: {}
+[11.243138] (-) TimerEvent: {}
+[11.343556] (-) TimerEvent: {}
+[11.443927] (-) TimerEvent: {}
+[11.544313] (-) TimerEvent: {}
+[11.644762] (-) TimerEvent: {}
+[11.745151] (-) TimerEvent: {}
+[11.845584] (-) TimerEvent: {}
+[11.946031] (-) TimerEvent: {}
+[12.046423] (-) TimerEvent: {}
+[12.146803] (-) TimerEvent: {}
+[12.247221] (-) TimerEvent: {}
+[12.347596] (-) TimerEvent: {}
+[12.447959] (-) TimerEvent: {}
+[12.548415] (-) TimerEvent: {}
+[12.648795] (-) TimerEvent: {}
+[12.749175] (-) TimerEvent: {}
+[12.849584] (-) TimerEvent: {}
+[12.949968] (-) TimerEvent: {}
+[13.050351] (-) TimerEvent: {}
+[13.150778] (-) TimerEvent: {}
+[13.251183] (-) TimerEvent: {}
+[13.351580] (-) TimerEvent: {}
+[13.451986] (-) TimerEvent: {}
+[13.552411] (-) TimerEvent: {}
+[13.652903] (-) TimerEvent: {}
+[13.753300] (-) TimerEvent: {}
+[13.853699] (-) TimerEvent: {}
+[13.954063] (-) TimerEvent: {}
+[14.054471] (-) TimerEvent: {}
+[14.154865] (-) TimerEvent: {}
+[14.255231] (-) TimerEvent: {}
+[14.355785] (-) TimerEvent: {}
+[14.456598] (-) TimerEvent: {}
+[14.557023] (-) TimerEvent: {}
+[14.657441] (-) TimerEvent: {}
+[14.757822] (-) TimerEvent: {}
+[14.858249] (-) TimerEvent: {}
+[14.958681] (-) TimerEvent: {}
+[15.059082] (-) TimerEvent: {}
+[15.159515] (-) TimerEvent: {}
+[15.259936] (-) TimerEvent: {}
+[15.360374] (-) TimerEvent: {}
+[15.369647] (autonomous_control_pid) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/autonomous_control_pid_node.dir/build.make:76: CMakeFiles/autonomous_control_pid_node.dir/src/autonomous_control_pid_node.cpp.o] Error 1\n'}
+[15.370028] (autonomous_control_pid) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/autonomous_control_pid_node.dir/all] Error 2\n'}
+[15.370248] (autonomous_control_pid) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[15.373500] (autonomous_control_pid) CommandEnded: {'returncode': 2}
+[15.425560] (autonomous_control_pid) JobEnded: {'identifier': 'autonomous_control_pid', 'rc': 2}
+[15.436304] (-) EventReactorShutdown: {}

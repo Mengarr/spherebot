@@ -1,0 +1,19 @@
+[31mCMake Error at /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/export_control_libExport.cmake:61 (set_target_properties):
+  The link interface of target "control_lib::control_interfaces" contains:
+
+    i2c_lib::i2c_interface
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+Call Stack (most recent call first):
+  /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/ament_cmake_export_targets-extras.cmake:9 (include)
+  /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/control_libConfig.cmake:41 (include)
+  CMakeLists.txt:12 (find_package)
+
+[0m
+[0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+gmake: *** [Makefile:294: cmake_check_build_system] Error 1

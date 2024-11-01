@@ -1,0 +1,16 @@
+[0.019s] Invoking command in '/home/rohan/spherebot/build/dfr_10_dof_pkg': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4
+[0.137s] [ 40%] Built target imu_data_node
+[0.144s] [ 70%] Built target environmental_node
+[0.163s] [ 80%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[5.051s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kvoid MagnetometerPublisher::[01;32m[Kpublish_data[m[K()[m[K’:
+[5.051s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:42:5:[m[K [01;31m[Kerror: [m[K‘[01m[KVector_t[m[K’ was not declared in this scope; did you mean ‘[01m[KsVector_t[m[K’?
+[5.051s]    42 |     [01;31m[KVector_t[m[K magData = magnetometer.readRaw();
+[5.051s]       |     [01;31m[K^~~~~~~~[m[K
+[5.051s]       |     [32m[KsVector_t[m[K
+[5.061s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:45:9:[m[K [01;31m[Kerror: [m[K‘[01m[KmagData[m[K’ was not declared in this scope
+[5.061s]    45 |         [01;31m[KmagData[m[K.XAxis,
+[5.061s]       |         [01;31m[K^~~~~~~[m[K
+[7.130s] gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1
+[7.131s] gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+[7.132s] gmake: *** [Makefile:146: all] Error 2
+[7.139s] Invoked command in '/home/rohan/spherebot/build/dfr_10_dof_pkg' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4

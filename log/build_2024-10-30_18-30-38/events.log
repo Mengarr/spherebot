@@ -1,0 +1,98 @@
+[0.000000] (-) TimerEvent: {}
+[0.001057] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.001464] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.001850] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.002148] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.002268] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.002322] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.002375] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.002420] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.002943] (dfr_10_dof_pkg) JobQueued: {'identifier': 'dfr_10_dof_pkg', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib'})}
+[0.003017] (dfr_10_dof_pkg) JobStarted: {'identifier': 'dfr_10_dof_pkg'}
+[0.019510] (dfr_10_dof_pkg) JobProgress: {'identifier': 'dfr_10_dof_pkg', 'progress': 'cmake'}
+[0.020446] (dfr_10_dof_pkg) JobProgress: {'identifier': 'dfr_10_dof_pkg', 'progress': 'build'}
+[0.021207] (dfr_10_dof_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/dfr_10_dof_pkg', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/dfr_10_dof_pkg', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 51502 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan/spherebot/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '2', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/dfr_10_dof_pkg', 'SSH_CONNECTION': '192.168.0.19 51502 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099277] (-) TimerEvent: {}
+[0.166191] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 70%] Built target environmental_node\n'}
+[0.168321] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 70%] Built target imu_data_node\n'}
+[0.188925] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o\x1b[0m\n'}
+[0.199407] (-) TimerEvent: {}
+[0.299913] (-) TimerEvent: {}
+[0.400332] (-) TimerEvent: {}
+[0.500806] (-) TimerEvent: {}
+[0.601204] (-) TimerEvent: {}
+[0.701720] (-) TimerEvent: {}
+[0.802145] (-) TimerEvent: {}
+[0.902630] (-) TimerEvent: {}
+[1.003062] (-) TimerEvent: {}
+[1.103577] (-) TimerEvent: {}
+[1.204001] (-) TimerEvent: {}
+[1.304548] (-) TimerEvent: {}
+[1.405043] (-) TimerEvent: {}
+[1.505459] (-) TimerEvent: {}
+[1.605954] (-) TimerEvent: {}
+[1.706342] (-) TimerEvent: {}
+[1.806738] (-) TimerEvent: {}
+[1.907260] (-) TimerEvent: {}
+[2.007680] (-) TimerEvent: {}
+[2.108184] (-) TimerEvent: {}
+[2.208597] (-) TimerEvent: {}
+[2.309112] (-) TimerEvent: {}
+[2.409495] (-) TimerEvent: {}
+[2.509903] (-) TimerEvent: {}
+[2.610448] (-) TimerEvent: {}
+[2.710885] (-) TimerEvent: {}
+[2.811427] (-) TimerEvent: {}
+[2.911866] (-) TimerEvent: {}
+[3.012397] (-) TimerEvent: {}
+[3.112773] (-) TimerEvent: {}
+[3.213152] (-) TimerEvent: {}
+[3.313525] (-) TimerEvent: {}
+[3.413914] (-) TimerEvent: {}
+[3.514301] (-) TimerEvent: {}
+[3.614684] (-) TimerEvent: {}
+[3.715075] (-) TimerEvent: {}
+[3.815501] (-) TimerEvent: {}
+[3.915998] (-) TimerEvent: {}
+[4.016405] (-) TimerEvent: {}
+[4.116895] (-) TimerEvent: {}
+[4.217274] (-) TimerEvent: {}
+[4.317650] (-) TimerEvent: {}
+[4.418029] (-) TimerEvent: {}
+[4.518422] (-) TimerEvent: {}
+[4.618791] (-) TimerEvent: {}
+[4.719182] (-) TimerEvent: {}
+[4.819604] (-) TimerEvent: {}
+[4.920121] (-) TimerEvent: {}
+[4.963033] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KMagnetometerPublisher::\x1b[01;32m\x1b[KMagnetometerPublisher\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.963648] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:24:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KRemoteControlNode\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[4.963922] (dfr_10_dof_pkg) StderrLine: {'line': b'   24 |         std::bind(&\x1b[01;31m\x1b[KRemoteControlNode\x1b[m\x1b[K::imuCallback, this, std::placeholders::_1)\n'}
+[4.964188] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.020277] (-) TimerEvent: {}
+[5.120754] (-) TimerEvent: {}
+[5.221184] (-) TimerEvent: {}
+[5.321684] (-) TimerEvent: {}
+[5.422058] (-) TimerEvent: {}
+[5.522437] (-) TimerEvent: {}
+[5.622814] (-) TimerEvent: {}
+[5.723218] (-) TimerEvent: {}
+[5.823719] (-) TimerEvent: {}
+[5.924110] (-) TimerEvent: {}
+[6.024521] (-) TimerEvent: {}
+[6.125005] (-) TimerEvent: {}
+[6.225390] (-) TimerEvent: {}
+[6.325786] (-) TimerEvent: {}
+[6.426296] (-) TimerEvent: {}
+[6.526667] (-) TimerEvent: {}
+[6.627053] (-) TimerEvent: {}
+[6.727499] (-) TimerEvent: {}
+[6.828066] (-) TimerEvent: {}
+[6.928482] (-) TimerEvent: {}
+[7.029056] (-) TimerEvent: {}
+[7.067124] (dfr_10_dof_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1\n'}
+[7.067494] (dfr_10_dof_pkg) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2\n'}
+[7.067981] (dfr_10_dof_pkg) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.071807] (dfr_10_dof_pkg) CommandEnded: {'returncode': 2}
+[7.129249] (-) TimerEvent: {}
+[7.143989] (dfr_10_dof_pkg) JobEnded: {'identifier': 'dfr_10_dof_pkg', 'rc': 2}
+[7.154500] (-) EventReactorShutdown: {}

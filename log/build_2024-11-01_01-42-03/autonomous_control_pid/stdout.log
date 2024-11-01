@@ -1,0 +1,23 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/autonomous_control_pid_node.dir/src/autonomous_control_pid_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable autonomous_control_pid_node[0m
+[100%] Built target autonomous_control_pid_node
+-- Install configuration: ""
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/lib/autonomous_control_pid/autonomous_control_pid_node
+-- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/autonomous_control_pid/lib/autonomous_control_pid/autonomous_control_pid_node" to ""
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid//launch
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid//launch/autonomous_control_PID_launch.py
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/ament_index/resource_index/package_run_dependencies/autonomous_control_pid
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/ament_index/resource_index/parent_prefix_path/autonomous_control_pid
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/environment/ament_prefix_path.sh
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/environment/ament_prefix_path.dsv
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/environment/path.sh
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/environment/path.dsv
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/local_setup.bash
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/local_setup.sh
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/local_setup.zsh
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/local_setup.dsv
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/package.dsv
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/ament_index/resource_index/packages/autonomous_control_pid
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/cmake/autonomous_control_pidConfig.cmake
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/cmake/autonomous_control_pidConfig-version.cmake
+-- Installing: /home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/package.xml

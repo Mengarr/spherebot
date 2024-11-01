@@ -1,0 +1,22 @@
+[ 70%] Built target imu_data_node
+[ 70%] Built target environmental_node
+[ 80%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kvoid MagnetometerPublisher::[01;32m[Kpublish_data[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:54:54:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+   54 | float MagnetometerPublisher::calculateAdjustedHeading[01;31m[K([m[Kint16_t mag_x, int16_t mag_y, int16_t mag_z,
+      |                                                      [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:134:1:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+  134 | [01;31m[K{[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:139:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  139 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:39:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   39 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:44:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KadjustedHeading[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   44 |     float [01;35m[KadjustedHeading[m[K = calculateAdjustedHeading(
+      |           [01;35m[K^~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,27 @@
+[0.023s] Invoking command in '/home/rohan/spherebot/build/remote_control_cpp': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4
+[0.137s] [ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+[4.500s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In constructor ‘[01m[KRemoteControlNode::[01;32m[KRemoteControlNode[m[K()[m[K’:
+[4.500s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:52:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ku_PID[m[K’ was not declared in this scope; did you mean ‘[01m[Ku_PID_[m[K’?
+[4.500s]    52 |     [01;31m[Ku_PID[m[K.setOutputLimits(-0.5, 0.5);
+[4.500s]       |     [01;31m[K^~~~~[m[K
+[4.500s]       |     [32m[Ku_PID_[m[K
+[4.519s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+[4.519s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[4.519s]                  from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:8[m[K,
+[4.519s]                  from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[4.520s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[4.520s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:183:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kdo[m[K’
+[4.520s]   183 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second);
+[4.520s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[4.528s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:185:23:[m[K [01;31m[Kerror: [m[K‘[01m[Ku_PID[m[K’ was not declared in this scope; did you mean ‘[01m[Ku_PID_[m[K’?
+[4.528s]   185 |     double u_output = [01;31m[Ku_PID[m[K.compute(u_alpha.second);
+[4.528s]       |                       [01;31m[K^~~~~[m[K
+[4.529s]       |                       [32m[Ku_PID_[m[K
+[11.488s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:165:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+[11.489s]   165 | r<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref[01;36m[K)[m[K;
+[11.489s]       |                                                                                       [01;36m[K^[m[K
+[11.489s] 
+[11.583s] gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+[11.583s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+[11.583s] gmake: *** [Makefile:146: all] Error 2
+[11.590s] Invoked command in '/home/rohan/spherebot/build/remote_control_cpp' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4

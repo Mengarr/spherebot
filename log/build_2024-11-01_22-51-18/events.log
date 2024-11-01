@@ -1,0 +1,196 @@
+[0.000000] (-) TimerEvent: {}
+[0.000441] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.000774] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.000948] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.000971] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.000992] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.001012] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.001030] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001048] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001066] (-) JobUnselected: {'identifier': 'motor_control'}
+[0.001084] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.001106] (dfr_10_dof_pkg) JobQueued: {'identifier': 'dfr_10_dof_pkg', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.001375] (dfr_10_dof_pkg) JobStarted: {'identifier': 'dfr_10_dof_pkg'}
+[0.018638] (dfr_10_dof_pkg) JobProgress: {'identifier': 'dfr_10_dof_pkg', 'progress': 'cmake'}
+[0.020252] (dfr_10_dof_pkg) JobProgress: {'identifier': 'dfr_10_dof_pkg', 'progress': 'build'}
+[0.021259] (dfr_10_dof_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/dfr_10_dof_pkg', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/dfr_10_dof_pkg', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.112.109 55934 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/dfr_10_dof_pkg', 'SSH_CONNECTION': '192.168.112.109 55934 192.168.112.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099745] (-) TimerEvent: {}
+[0.158791] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 40%] Built target imu_data_node\n'}
+[0.159448] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 70%] Built target environmental_node\n'}
+[0.192570] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o\x1b[0m\n'}
+[0.199871] (-) TimerEvent: {}
+[0.300258] (-) TimerEvent: {}
+[0.400616] (-) TimerEvent: {}
+[0.501003] (-) TimerEvent: {}
+[0.601388] (-) TimerEvent: {}
+[0.701792] (-) TimerEvent: {}
+[0.802177] (-) TimerEvent: {}
+[0.902565] (-) TimerEvent: {}
+[1.002960] (-) TimerEvent: {}
+[1.103367] (-) TimerEvent: {}
+[1.203786] (-) TimerEvent: {}
+[1.304153] (-) TimerEvent: {}
+[1.404513] (-) TimerEvent: {}
+[1.504893] (-) TimerEvent: {}
+[1.605312] (-) TimerEvent: {}
+[1.705698] (-) TimerEvent: {}
+[1.806067] (-) TimerEvent: {}
+[1.906440] (-) TimerEvent: {}
+[2.006846] (-) TimerEvent: {}
+[2.107247] (-) TimerEvent: {}
+[2.207626] (-) TimerEvent: {}
+[2.308029] (-) TimerEvent: {}
+[2.408394] (-) TimerEvent: {}
+[2.508791] (-) TimerEvent: {}
+[2.609196] (-) TimerEvent: {}
+[2.709551] (-) TimerEvent: {}
+[2.809939] (-) TimerEvent: {}
+[2.910305] (-) TimerEvent: {}
+[3.010698] (-) TimerEvent: {}
+[3.111067] (-) TimerEvent: {}
+[3.211419] (-) TimerEvent: {}
+[3.311785] (-) TimerEvent: {}
+[3.412144] (-) TimerEvent: {}
+[3.512504] (-) TimerEvent: {}
+[3.612881] (-) TimerEvent: {}
+[3.713252] (-) TimerEvent: {}
+[3.813651] (-) TimerEvent: {}
+[3.914043] (-) TimerEvent: {}
+[4.014421] (-) TimerEvent: {}
+[4.114823] (-) TimerEvent: {}
+[4.215209] (-) TimerEvent: {}
+[4.315578] (-) TimerEvent: {}
+[4.415957] (-) TimerEvent: {}
+[4.516328] (-) TimerEvent: {}
+[4.616710] (-) TimerEvent: {}
+[4.717085] (-) TimerEvent: {}
+[4.817452] (-) TimerEvent: {}
+[4.917832] (-) TimerEvent: {}
+[5.018210] (-) TimerEvent: {}
+[5.118569] (-) TimerEvent: {}
+[5.218949] (-) TimerEvent: {}
+[5.319327] (-) TimerEvent: {}
+[5.419704] (-) TimerEvent: {}
+[5.520074] (-) TimerEvent: {}
+[5.620445] (-) TimerEvent: {}
+[5.720817] (-) TimerEvent: {}
+[5.821181] (-) TimerEvent: {}
+[5.921540] (-) TimerEvent: {}
+[6.021906] (-) TimerEvent: {}
+[6.122256] (-) TimerEvent: {}
+[6.222608] (-) TimerEvent: {}
+[6.322992] (-) TimerEvent: {}
+[6.423336] (-) TimerEvent: {}
+[6.523704] (-) TimerEvent: {}
+[6.624088] (-) TimerEvent: {}
+[6.724461] (-) TimerEvent: {}
+[6.824844] (-) TimerEvent: {}
+[6.925225] (-) TimerEvent: {}
+[7.025598] (-) TimerEvent: {}
+[7.125977] (-) TimerEvent: {}
+[7.226356] (-) TimerEvent: {}
+[7.326738] (-) TimerEvent: {}
+[7.427078] (-) TimerEvent: {}
+[7.527428] (-) TimerEvent: {}
+[7.627825] (-) TimerEvent: {}
+[7.728213] (-) TimerEvent: {}
+[7.828617] (-) TimerEvent: {}
+[7.929031] (-) TimerEvent: {}
+[8.029407] (-) TimerEvent: {}
+[8.129807] (-) TimerEvent: {}
+[8.230195] (-) TimerEvent: {}
+[8.330581] (-) TimerEvent: {}
+[8.430983] (-) TimerEvent: {}
+[8.531360] (-) TimerEvent: {}
+[8.631746] (-) TimerEvent: {}
+[8.732191] (-) TimerEvent: {}
+[8.832692] (-) TimerEvent: {}
+[8.933073] (-) TimerEvent: {}
+[9.033440] (-) TimerEvent: {}
+[9.133822] (-) TimerEvent: {}
+[9.234182] (-) TimerEvent: {}
+[9.334557] (-) TimerEvent: {}
+[9.434945] (-) TimerEvent: {}
+[9.535312] (-) TimerEvent: {}
+[9.635686] (-) TimerEvent: {}
+[9.736069] (-) TimerEvent: {}
+[9.836444] (-) TimerEvent: {}
+[9.936808] (-) TimerEvent: {}
+[10.037170] (-) TimerEvent: {}
+[10.137533] (-) TimerEvent: {}
+[10.237906] (-) TimerEvent: {}
+[10.338259] (-) TimerEvent: {}
+[10.438636] (-) TimerEvent: {}
+[10.539006] (-) TimerEvent: {}
+[10.639385] (-) TimerEvent: {}
+[10.739748] (-) TimerEvent: {}
+[10.840091] (-) TimerEvent: {}
+[10.940451] (-) TimerEvent: {}
+[11.040828] (-) TimerEvent: {}
+[11.141205] (-) TimerEvent: {}
+[11.241577] (-) TimerEvent: {}
+[11.341955] (-) TimerEvent: {}
+[11.442298] (-) TimerEvent: {}
+[11.542675] (-) TimerEvent: {}
+[11.643030] (-) TimerEvent: {}
+[11.743385] (-) TimerEvent: {}
+[11.843740] (-) TimerEvent: {}
+[11.944102] (-) TimerEvent: {}
+[12.044469] (-) TimerEvent: {}
+[12.144849] (-) TimerEvent: {}
+[12.245211] (-) TimerEvent: {}
+[12.345587] (-) TimerEvent: {}
+[12.445981] (-) TimerEvent: {}
+[12.546334] (-) TimerEvent: {}
+[12.646709] (-) TimerEvent: {}
+[12.747093] (-) TimerEvent: {}
+[12.847486] (-) TimerEvent: {}
+[12.947883] (-) TimerEvent: {}
+[13.048259] (-) TimerEvent: {}
+[13.148687] (-) TimerEvent: {}
+[13.249117] (-) TimerEvent: {}
+[13.349564] (-) TimerEvent: {}
+[13.450026] (-) TimerEvent: {}
+[13.550459] (-) TimerEvent: {}
+[13.650925] (-) TimerEvent: {}
+[13.751395] (-) TimerEvent: {}
+[13.852142] (-) TimerEvent: {}
+[13.952977] (-) TimerEvent: {}
+[13.957408] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX executable magneometer_node\x1b[0m\n'}
+[14.053131] (-) TimerEvent: {}
+[14.153784] (-) TimerEvent: {}
+[14.254536] (-) TimerEvent: {}
+[14.355421] (-) TimerEvent: {}
+[14.455974] (-) TimerEvent: {}
+[14.556469] (-) TimerEvent: {}
+[14.656857] (-) TimerEvent: {}
+[14.743886] (dfr_10_dof_pkg) StdoutLine: {'line': b'[100%] Built target magneometer_node\n'}
+[14.756974] (-) TimerEvent: {}
+[14.765215] (dfr_10_dof_pkg) CommandEnded: {'returncode': 0}
+[14.822771] (dfr_10_dof_pkg) JobProgress: {'identifier': 'dfr_10_dof_pkg', 'progress': 'install'}
+[14.841407] (dfr_10_dof_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/rohan/spherebot/build/dfr_10_dof_pkg'], 'cwd': '/home/rohan/spherebot/build/dfr_10_dof_pkg', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.112.109 55934 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/dfr_10_dof_pkg', 'SSH_CONNECTION': '192.168.112.109 55934 192.168.112.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[14.855282] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[14.855526] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/imu_data_node\n'}
+[14.855788] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/magneometer_node\n'}
+[14.857031] (-) TimerEvent: {}
+[14.870527] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/magneometer_node" to ""\n'}
+[14.870850] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/lib/dfr_10_dof_pkg/environmental_node\n'}
+[14.871025] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/ament_index/resource_index/package_run_dependencies/dfr_10_dof_pkg\n'}
+[14.871158] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/ament_index/resource_index/parent_prefix_path/dfr_10_dof_pkg\n'}
+[14.871301] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/environment/ament_prefix_path.sh\n'}
+[14.871400] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/environment/ament_prefix_path.dsv\n'}
+[14.871529] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/environment/path.sh\n'}
+[14.871634] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/environment/path.dsv\n'}
+[14.871769] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/local_setup.bash\n'}
+[14.871863] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/local_setup.sh\n'}
+[14.871954] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/local_setup.zsh\n'}
+[14.872080] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/local_setup.dsv\n'}
+[14.872169] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/package.dsv\n'}
+[14.872270] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/ament_index/resource_index/packages/dfr_10_dof_pkg\n'}
+[14.872373] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/cmake/dfr_10_dof_pkgConfig.cmake\n'}
+[14.872457] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/cmake/dfr_10_dof_pkgConfig-version.cmake\n'}
+[14.872539] (dfr_10_dof_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/dfr_10_dof_pkg/share/dfr_10_dof_pkg/package.xml\n'}
+[14.874789] (dfr_10_dof_pkg) CommandEnded: {'returncode': 0}
+[14.956480] (dfr_10_dof_pkg) JobEnded: {'identifier': 'dfr_10_dof_pkg', 'rc': 0}
+[14.957653] (-) TimerEvent: {}
+[14.957772] (-) EventReactorShutdown: {}

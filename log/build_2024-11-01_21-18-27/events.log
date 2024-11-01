@@ -1,0 +1,347 @@
+[0.000000] (-) TimerEvent: {}
+[0.000554] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.000769] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.000960] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.000982] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.001002] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.001021] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.001040] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.001151] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001170] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001188] (-) JobUnselected: {'identifier': 'motor_control'}
+[0.001212] (remote_control_cpp) JobQueued: {'identifier': 'remote_control_cpp', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.001247] (remote_control_cpp) JobStarted: {'identifier': 'remote_control_cpp'}
+[0.016262] (remote_control_cpp) JobProgress: {'identifier': 'remote_control_cpp', 'progress': 'cmake'}
+[0.017228] (remote_control_cpp) JobProgress: {'identifier': 'remote_control_cpp', 'progress': 'build'}
+[0.018055] (remote_control_cpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/remote_control_cpp', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/remote_control_cpp', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.112.109 55934 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/remote_control_cpp', 'SSH_CONNECTION': '192.168.112.109 55934 192.168.112.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099592] (-) TimerEvent: {}
+[0.131491] (remote_control_cpp) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o\x1b[0m\n'}
+[0.199715] (-) TimerEvent: {}
+[0.300076] (-) TimerEvent: {}
+[0.400509] (-) TimerEvent: {}
+[0.500879] (-) TimerEvent: {}
+[0.601281] (-) TimerEvent: {}
+[0.701694] (-) TimerEvent: {}
+[0.802085] (-) TimerEvent: {}
+[0.902463] (-) TimerEvent: {}
+[1.002844] (-) TimerEvent: {}
+[1.103219] (-) TimerEvent: {}
+[1.203618] (-) TimerEvent: {}
+[1.303997] (-) TimerEvent: {}
+[1.404426] (-) TimerEvent: {}
+[1.504806] (-) TimerEvent: {}
+[1.605186] (-) TimerEvent: {}
+[1.705570] (-) TimerEvent: {}
+[1.805984] (-) TimerEvent: {}
+[1.906345] (-) TimerEvent: {}
+[2.006714] (-) TimerEvent: {}
+[2.107083] (-) TimerEvent: {}
+[2.207465] (-) TimerEvent: {}
+[2.307858] (-) TimerEvent: {}
+[2.408221] (-) TimerEvent: {}
+[2.508601] (-) TimerEvent: {}
+[2.608994] (-) TimerEvent: {}
+[2.709379] (-) TimerEvent: {}
+[2.809753] (-) TimerEvent: {}
+[2.910131] (-) TimerEvent: {}
+[3.010491] (-) TimerEvent: {}
+[3.110886] (-) TimerEvent: {}
+[3.211264] (-) TimerEvent: {}
+[3.311623] (-) TimerEvent: {}
+[3.411994] (-) TimerEvent: {}
+[3.512352] (-) TimerEvent: {}
+[3.612726] (-) TimerEvent: {}
+[3.713092] (-) TimerEvent: {}
+[3.813465] (-) TimerEvent: {}
+[3.913856] (-) TimerEvent: {}
+[4.014235] (-) TimerEvent: {}
+[4.114624] (-) TimerEvent: {}
+[4.215010] (-) TimerEvent: {}
+[4.315393] (-) TimerEvent: {}
+[4.415806] (-) TimerEvent: {}
+[4.516200] (-) TimerEvent: {}
+[4.616584] (-) TimerEvent: {}
+[4.716942] (-) TimerEvent: {}
+[4.817319] (-) TimerEvent: {}
+[4.917706] (-) TimerEvent: {}
+[5.018107] (-) TimerEvent: {}
+[5.118510] (-) TimerEvent: {}
+[5.218920] (-) TimerEvent: {}
+[5.319302] (-) TimerEvent: {}
+[5.419699] (-) TimerEvent: {}
+[5.520084] (-) TimerEvent: {}
+[5.620461] (-) TimerEvent: {}
+[5.720859] (-) TimerEvent: {}
+[5.821231] (-) TimerEvent: {}
+[5.921608] (-) TimerEvent: {}
+[6.021987] (-) TimerEvent: {}
+[6.122373] (-) TimerEvent: {}
+[6.222723] (-) TimerEvent: {}
+[6.323076] (-) TimerEvent: {}
+[6.423429] (-) TimerEvent: {}
+[6.523792] (-) TimerEvent: {}
+[6.624155] (-) TimerEvent: {}
+[6.724504] (-) TimerEvent: {}
+[6.824884] (-) TimerEvent: {}
+[6.925259] (-) TimerEvent: {}
+[7.025635] (-) TimerEvent: {}
+[7.126025] (-) TimerEvent: {}
+[7.226402] (-) TimerEvent: {}
+[7.326820] (-) TimerEvent: {}
+[7.427214] (-) TimerEvent: {}
+[7.527585] (-) TimerEvent: {}
+[7.627970] (-) TimerEvent: {}
+[7.728322] (-) TimerEvent: {}
+[7.828698] (-) TimerEvent: {}
+[7.929057] (-) TimerEvent: {}
+[8.029432] (-) TimerEvent: {}
+[8.129816] (-) TimerEvent: {}
+[8.230184] (-) TimerEvent: {}
+[8.330576] (-) TimerEvent: {}
+[8.430958] (-) TimerEvent: {}
+[8.531330] (-) TimerEvent: {}
+[8.631712] (-) TimerEvent: {}
+[8.732094] (-) TimerEvent: {}
+[8.832465] (-) TimerEvent: {}
+[8.932848] (-) TimerEvent: {}
+[9.033230] (-) TimerEvent: {}
+[9.133604] (-) TimerEvent: {}
+[9.234011] (-) TimerEvent: {}
+[9.334392] (-) TimerEvent: {}
+[9.434796] (-) TimerEvent: {}
+[9.535165] (-) TimerEvent: {}
+[9.635537] (-) TimerEvent: {}
+[9.735932] (-) TimerEvent: {}
+[9.836346] (-) TimerEvent: {}
+[9.936721] (-) TimerEvent: {}
+[10.037112] (-) TimerEvent: {}
+[10.137476] (-) TimerEvent: {}
+[10.237886] (-) TimerEvent: {}
+[10.338252] (-) TimerEvent: {}
+[10.438625] (-) TimerEvent: {}
+[10.538994] (-) TimerEvent: {}
+[10.639359] (-) TimerEvent: {}
+[10.739729] (-) TimerEvent: {}
+[10.840114] (-) TimerEvent: {}
+[10.940481] (-) TimerEvent: {}
+[11.040859] (-) TimerEvent: {}
+[11.141194] (-) TimerEvent: {}
+[11.241544] (-) TimerEvent: {}
+[11.341899] (-) TimerEvent: {}
+[11.442239] (-) TimerEvent: {}
+[11.542587] (-) TimerEvent: {}
+[11.642955] (-) TimerEvent: {}
+[11.743335] (-) TimerEvent: {}
+[11.843692] (-) TimerEvent: {}
+[11.944043] (-) TimerEvent: {}
+[12.044394] (-) TimerEvent: {}
+[12.144748] (-) TimerEvent: {}
+[12.245102] (-) TimerEvent: {}
+[12.345463] (-) TimerEvent: {}
+[12.445852] (-) TimerEvent: {}
+[12.546210] (-) TimerEvent: {}
+[12.646566] (-) TimerEvent: {}
+[12.746965] (-) TimerEvent: {}
+[12.847406] (-) TimerEvent: {}
+[12.947802] (-) TimerEvent: {}
+[13.048188] (-) TimerEvent: {}
+[13.148587] (-) TimerEvent: {}
+[13.248991] (-) TimerEvent: {}
+[13.349382] (-) TimerEvent: {}
+[13.449769] (-) TimerEvent: {}
+[13.550161] (-) TimerEvent: {}
+[13.650524] (-) TimerEvent: {}
+[13.750930] (-) TimerEvent: {}
+[13.851295] (-) TimerEvent: {}
+[13.951694] (-) TimerEvent: {}
+[14.052073] (-) TimerEvent: {}
+[14.152451] (-) TimerEvent: {}
+[14.252836] (-) TimerEvent: {}
+[14.353219] (-) TimerEvent: {}
+[14.453585] (-) TimerEvent: {}
+[14.553967] (-) TimerEvent: {}
+[14.654347] (-) TimerEvent: {}
+[14.754716] (-) TimerEvent: {}
+[14.855077] (-) TimerEvent: {}
+[14.955431] (-) TimerEvent: {}
+[15.055808] (-) TimerEvent: {}
+[15.156200] (-) TimerEvent: {}
+[15.256577] (-) TimerEvent: {}
+[15.356984] (-) TimerEvent: {}
+[15.457404] (-) TimerEvent: {}
+[15.557887] (-) TimerEvent: {}
+[15.658272] (-) TimerEvent: {}
+[15.758610] (-) TimerEvent: {}
+[15.859054] (-) TimerEvent: {}
+[15.959468] (-) TimerEvent: {}
+[16.059829] (-) TimerEvent: {}
+[16.160189] (-) TimerEvent: {}
+[16.260515] (-) TimerEvent: {}
+[16.360884] (-) TimerEvent: {}
+[16.461234] (-) TimerEvent: {}
+[16.561575] (-) TimerEvent: {}
+[16.661959] (-) TimerEvent: {}
+[16.762312] (-) TimerEvent: {}
+[16.862692] (-) TimerEvent: {}
+[16.963065] (-) TimerEvent: {}
+[17.063418] (-) TimerEvent: {}
+[17.163790] (-) TimerEvent: {}
+[17.264134] (-) TimerEvent: {}
+[17.364480] (-) TimerEvent: {}
+[17.464865] (-) TimerEvent: {}
+[17.565213] (-) TimerEvent: {}
+[17.665565] (-) TimerEvent: {}
+[17.765919] (-) TimerEvent: {}
+[17.866288] (-) TimerEvent: {}
+[17.966638] (-) TimerEvent: {}
+[18.067005] (-) TimerEvent: {}
+[18.167361] (-) TimerEvent: {}
+[18.267729] (-) TimerEvent: {}
+[18.368087] (-) TimerEvent: {}
+[18.468440] (-) TimerEvent: {}
+[18.568820] (-) TimerEvent: {}
+[18.669184] (-) TimerEvent: {}
+[18.769554] (-) TimerEvent: {}
+[18.869981] (-) TimerEvent: {}
+[18.970331] (-) TimerEvent: {}
+[19.070689] (-) TimerEvent: {}
+[19.171058] (-) TimerEvent: {}
+[19.271418] (-) TimerEvent: {}
+[19.371785] (-) TimerEvent: {}
+[19.472135] (-) TimerEvent: {}
+[19.572495] (-) TimerEvent: {}
+[19.672886] (-) TimerEvent: {}
+[19.773238] (-) TimerEvent: {}
+[19.873616] (-) TimerEvent: {}
+[19.973974] (-) TimerEvent: {}
+[20.074327] (-) TimerEvent: {}
+[20.174707] (-) TimerEvent: {}
+[20.275057] (-) TimerEvent: {}
+[20.375413] (-) TimerEvent: {}
+[20.475782] (-) TimerEvent: {}
+[20.576135] (-) TimerEvent: {}
+[20.676505] (-) TimerEvent: {}
+[20.776893] (-) TimerEvent: {}
+[20.877237] (-) TimerEvent: {}
+[20.977589] (-) TimerEvent: {}
+[21.077948] (-) TimerEvent: {}
+[21.178318] (-) TimerEvent: {}
+[21.278687] (-) TimerEvent: {}
+[21.379034] (-) TimerEvent: {}
+[21.479381] (-) TimerEvent: {}
+[21.579736] (-) TimerEvent: {}
+[21.680080] (-) TimerEvent: {}
+[21.780434] (-) TimerEvent: {}
+[21.880814] (-) TimerEvent: {}
+[21.981168] (-) TimerEvent: {}
+[22.081530] (-) TimerEvent: {}
+[22.181901] (-) TimerEvent: {}
+[22.282251] (-) TimerEvent: {}
+[22.382597] (-) TimerEvent: {}
+[22.482958] (-) TimerEvent: {}
+[22.583313] (-) TimerEvent: {}
+[22.683678] (-) TimerEvent: {}
+[22.784015] (-) TimerEvent: {}
+[22.884385] (-) TimerEvent: {}
+[22.984747] (-) TimerEvent: {}
+[23.085097] (-) TimerEvent: {}
+[23.185460] (-) TimerEvent: {}
+[23.285837] (-) TimerEvent: {}
+[23.386200] (-) TimerEvent: {}
+[23.486573] (-) TimerEvent: {}
+[23.586939] (-) TimerEvent: {}
+[23.687296] (-) TimerEvent: {}
+[23.787683] (-) TimerEvent: {}
+[23.888047] (-) TimerEvent: {}
+[23.988405] (-) TimerEvent: {}
+[24.088756] (-) TimerEvent: {}
+[24.189114] (-) TimerEvent: {}
+[24.289475] (-) TimerEvent: {}
+[24.389858] (-) TimerEvent: {}
+[24.490218] (-) TimerEvent: {}
+[24.590574] (-) TimerEvent: {}
+[24.690945] (-) TimerEvent: {}
+[24.791302] (-) TimerEvent: {}
+[24.891700] (-) TimerEvent: {}
+[24.992078] (-) TimerEvent: {}
+[25.092459] (-) TimerEvent: {}
+[25.192859] (-) TimerEvent: {}
+[25.309199] (-) TimerEvent: {}
+[25.409586] (-) TimerEvent: {}
+[25.509983] (-) TimerEvent: {}
+[25.610354] (-) TimerEvent: {}
+[25.710727] (-) TimerEvent: {}
+[25.811120] (-) TimerEvent: {}
+[25.911560] (-) TimerEvent: {}
+[26.012003] (-) TimerEvent: {}
+[26.112451] (-) TimerEvent: {}
+[26.212885] (-) TimerEvent: {}
+[26.313305] (-) TimerEvent: {}
+[26.413733] (-) TimerEvent: {}
+[26.514155] (-) TimerEvent: {}
+[26.614563] (-) TimerEvent: {}
+[26.714982] (-) TimerEvent: {}
+[26.815437] (-) TimerEvent: {}
+[26.915870] (-) TimerEvent: {}
+[27.016314] (-) TimerEvent: {}
+[27.116728] (-) TimerEvent: {}
+[27.217166] (-) TimerEvent: {}
+[27.317692] (-) TimerEvent: {}
+[27.418097] (-) TimerEvent: {}
+[27.518552] (-) TimerEvent: {}
+[27.619035] (-) TimerEvent: {}
+[27.719735] (-) TimerEvent: {}
+[27.820170] (-) TimerEvent: {}
+[27.920619] (-) TimerEvent: {}
+[28.021030] (-) TimerEvent: {}
+[28.102962] (remote_control_cpp) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable remote_control_node\x1b[0m\n'}
+[28.121131] (-) TimerEvent: {}
+[28.221503] (-) TimerEvent: {}
+[28.321991] (-) TimerEvent: {}
+[28.422429] (-) TimerEvent: {}
+[28.523098] (-) TimerEvent: {}
+[28.624042] (-) TimerEvent: {}
+[28.724927] (-) TimerEvent: {}
+[28.825850] (-) TimerEvent: {}
+[28.926373] (-) TimerEvent: {}
+[29.026924] (-) TimerEvent: {}
+[29.127480] (-) TimerEvent: {}
+[29.227952] (-) TimerEvent: {}
+[29.328598] (-) TimerEvent: {}
+[29.429516] (-) TimerEvent: {}
+[29.530010] (-) TimerEvent: {}
+[29.630511] (-) TimerEvent: {}
+[29.730887] (-) TimerEvent: {}
+[29.831239] (-) TimerEvent: {}
+[29.931571] (-) TimerEvent: {}
+[30.032167] (-) TimerEvent: {}
+[30.089948] (remote_control_cpp) StdoutLine: {'line': b'[100%] Built target remote_control_node\n'}
+[30.110029] (remote_control_cpp) CommandEnded: {'returncode': 0}
+[30.132241] (-) TimerEvent: {}
+[30.146597] (remote_control_cpp) JobProgress: {'identifier': 'remote_control_cpp', 'progress': 'install'}
+[30.163566] (remote_control_cpp) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/rohan/spherebot/build/remote_control_cpp'], 'cwd': '/home/rohan/spherebot/build/remote_control_cpp', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.112.109 55934 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/remote_control_cpp', 'SSH_CONNECTION': '192.168.112.109 55934 192.168.112.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[30.179104] (remote_control_cpp) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[30.179378] (remote_control_cpp) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/remote_control_cpp/lib/remote_control_cpp/remote_control_node\n'}
+[30.226086] (remote_control_cpp) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/remote_control_cpp/lib/remote_control_cpp/remote_control_node" to ""\n'}
+[30.226430] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp//launch\n'}
+[30.226605] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp//launch/remote_control_launch.py\n'}
+[30.226770] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/ament_index/resource_index/package_run_dependencies/remote_control_cpp\n'}
+[30.226871] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/ament_index/resource_index/parent_prefix_path/remote_control_cpp\n'}
+[30.226960] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/environment/ament_prefix_path.sh\n'}
+[30.227131] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/environment/ament_prefix_path.dsv\n'}
+[30.227246] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/environment/path.sh\n'}
+[30.227343] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/environment/path.dsv\n'}
+[30.227485] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/local_setup.bash\n'}
+[30.227571] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/local_setup.sh\n'}
+[30.227664] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/local_setup.zsh\n'}
+[30.227763] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/local_setup.dsv\n'}
+[30.227848] (remote_control_cpp) StdoutLine: {'line': b'-- Installing: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/package.dsv\n'}
+[30.227945] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/ament_index/resource_index/packages/remote_control_cpp\n'}
+[30.228034] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/cmake/remote_control_cppConfig.cmake\n'}
+[30.228118] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/cmake/remote_control_cppConfig-version.cmake\n'}
+[30.228205] (remote_control_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/rohan/spherebot/install/remote_control_cpp/share/remote_control_cpp/package.xml\n'}
+[30.229939] (remote_control_cpp) CommandEnded: {'returncode': 0}
+[30.232301] (-) TimerEvent: {}
+[30.332606] (-) TimerEvent: {}
+[30.355733] (remote_control_cpp) JobEnded: {'identifier': 'remote_control_cpp', 'rc': 0}
+[30.358046] (-) EventReactorShutdown: {}

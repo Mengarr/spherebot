@@ -1,0 +1,227 @@
+[0.156s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'autonomous_control_pid']
+[0.156s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['autonomous_control_pid'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffffbcd82c60>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffbcea9970>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffbcea9970>>, mixin_verb=('build',))
+[0.209s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.210s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/rohan/spherebot'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extensions ['ignore', 'ignore_ament_install']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extension 'ignore'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extension 'ignore_ament_install'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extensions ['colcon_pkg']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extension 'colcon_pkg'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extensions ['colcon_meta']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extension 'colcon_meta'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extensions ['ros']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_lqg) by extension 'ros'
+[0.258s] DEBUG:colcon.colcon_core.package_identification:Package 'src/autonomous_control_lqg' with type 'ros.ament_cmake' and name 'autonomous_control_lqg'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extensions ['ignore', 'ignore_ament_install']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extension 'ignore'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extension 'ignore_ament_install'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extensions ['colcon_pkg']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extension 'colcon_pkg'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extensions ['colcon_meta']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extension 'colcon_meta'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extensions ['ros']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/autonomous_control_pid) by extension 'ros'
+[0.260s] DEBUG:colcon.colcon_core.package_identification:Package 'src/autonomous_control_pid' with type 'ros.ament_cmake' and name 'autonomous_control_pid'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extensions ['ignore', 'ignore_ament_install']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extension 'ignore'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extension 'ignore_ament_install'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extensions ['colcon_pkg']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extension 'colcon_pkg'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extensions ['colcon_meta']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extension 'colcon_meta'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extensions ['ros']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_lib) by extension 'ros'
+[0.261s] DEBUG:colcon.colcon_core.package_identification:Package 'src/control_lib' with type 'ros.ament_cmake' and name 'control_lib'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'ignore_ament_install'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extensions ['colcon_pkg']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'colcon_pkg'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extensions ['colcon_meta']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'colcon_meta'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extensions ['ros']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'ros'
+[0.262s] DEBUG:colcon.colcon_core.package_identification:Package 'src/custom_interfaces' with type 'ros.ament_cmake' and name 'custom_interfaces'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extension 'ignore'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extension 'ignore_ament_install'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extensions ['colcon_pkg']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extension 'colcon_pkg'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extensions ['colcon_meta']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extension 'colcon_meta'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extensions ['ros']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_logger_pkg) by extension 'ros'
+[0.263s] DEBUG:colcon.colcon_core.package_identification:Package 'src/data_logger_pkg' with type 'ros.ament_python' and name 'data_logger_pkg'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extension 'ignore'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extension 'ignore_ament_install'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extensions ['colcon_pkg']
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extension 'colcon_pkg'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extensions ['colcon_meta']
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extension 'colcon_meta'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extensions ['ros']
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/dfr_10_dof_pkg) by extension 'ros'
+[0.264s] DEBUG:colcon.colcon_core.package_identification:Package 'src/dfr_10_dof_pkg' with type 'ros.ament_cmake' and name 'dfr_10_dof_pkg'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extensions ['ignore', 'ignore_ament_install']
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extension 'ignore'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extension 'ignore_ament_install'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extensions ['colcon_pkg']
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extension 'colcon_pkg'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extensions ['colcon_meta']
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extension 'colcon_meta'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extensions ['ros']
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps_read_cpp) by extension 'ros'
+[0.266s] DEBUG:colcon.colcon_core.package_identification:Package 'src/gps_read_cpp' with type 'ros.ament_cmake' and name 'gps_read_cpp'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extensions ['ignore', 'ignore_ament_install']
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extension 'ignore'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extension 'ignore_ament_install'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extensions ['colcon_pkg']
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extension 'colcon_pkg'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extensions ['colcon_meta']
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extension 'colcon_meta'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extensions ['ros']
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_lib) by extension 'ros'
+[0.267s] DEBUG:colcon.colcon_core.package_identification:Package 'src/i2c_lib' with type 'ros.ament_cmake' and name 'i2c_lib'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extensions ['ignore', 'ignore_ament_install']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extension 'ignore'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extension 'ignore_ament_install'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extensions ['colcon_pkg']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extension 'colcon_pkg'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extensions ['colcon_meta']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extension 'colcon_meta'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extensions ['ros']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/joystick_reader) by extension 'ros'
+[0.268s] DEBUG:colcon.colcon_core.package_identification:Package 'src/joystick_reader' with type 'ros.ament_cmake' and name 'joystick_reader'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extensions ['ignore', 'ignore_ament_install']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extension 'ignore'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extension 'ignore_ament_install'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extensions ['colcon_pkg']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extension 'colcon_pkg'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extensions ['colcon_meta']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extension 'colcon_meta'
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extensions ['ros']
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/motor_control) by extension 'ros'
+[0.270s] DEBUG:colcon.colcon_core.package_identification:Package 'src/motor_control' with type 'ros.ament_cmake' and name 'motor_control'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extensions ['ignore', 'ignore_ament_install']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extension 'ignore'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extension 'ignore_ament_install'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extensions ['colcon_pkg']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extension 'colcon_pkg'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extensions ['colcon_meta']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extension 'colcon_meta'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extensions ['ros']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/remote_control_cpp) by extension 'ros'
+[0.271s] DEBUG:colcon.colcon_core.package_identification:Package 'src/remote_control_cpp' with type 'ros.ament_cmake' and name 'remote_control_cpp'
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'autonomous_control_lqg' in 'src/autonomous_control_lqg'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'custom_interfaces' in 'src/custom_interfaces'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'data_logger_pkg' in 'src/data_logger_pkg'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'i2c_lib' in 'src/i2c_lib'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'joystick_reader' in 'src/joystick_reader'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'control_lib' in 'src/control_lib'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dfr_10_dof_pkg' in 'src/dfr_10_dof_pkg'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'gps_read_cpp' in 'src/gps_read_cpp'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'motor_control' in 'src/motor_control'
+[0.298s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'remote_control_cpp' in 'src/remote_control_cpp'
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.302s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/rohan/spherebot/install
+[0.304s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 324 installed packages in /opt/ros/jazzy
+[0.307s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'cmake_args' from command line to 'None'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'cmake_target' from command line to 'None'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'cmake_clean_cache' from command line to 'False'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'cmake_clean_first' from command line to 'False'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'cmake_force_configure' from command line to 'False'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'ament_cmake_args' from command line to 'None'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'catkin_cmake_args' from command line to 'None'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'autonomous_control_pid' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.376s] DEBUG:colcon.colcon_core.verb:Building package 'autonomous_control_pid' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rohan/spherebot/build/autonomous_control_pid', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rohan/spherebot/install/autonomous_control_pid', 'merge_install': False, 'path': '/home/rohan/spherebot/src/autonomous_control_pid', 'symlink_install': False, 'test_result_base': None}
+[0.376s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.378s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.378s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rohan/spherebot/src/autonomous_control_pid' with build type 'ament_cmake'
+[0.379s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rohan/spherebot/src/autonomous_control_pid'
+[0.381s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.382s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.382s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.401s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rohan/spherebot/build/autonomous_control_pid': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/autonomous_control_pid -- -j4 -l4
+[15.710s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rohan/spherebot/build/autonomous_control_pid' returned '2': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/autonomous_control_pid -- -j4 -l4
+[15.749s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(autonomous_control_pid)
+[15.752s] Level 1:colcon.colcon_core.environment:checking '/home/rohan/spherebot/install/autonomous_control_pid' for CMake module files
+[15.753s] Level 1:colcon.colcon_core.environment:checking '/home/rohan/spherebot/install/autonomous_control_pid' for CMake config files
+[15.754s] Level 1:colcon.colcon_core.environment:checking '/home/rohan/spherebot/install/autonomous_control_pid/bin'
+[15.754s] Level 1:colcon.colcon_core.environment:checking '/home/rohan/spherebot/install/autonomous_control_pid/lib/pkgconfig/autonomous_control_pid.pc'
+[15.754s] Level 1:colcon.colcon_core.environment:checking '/home/rohan/spherebot/install/autonomous_control_pid/lib/python3.12/site-packages'
+[15.754s] Level 1:colcon.colcon_core.environment:checking '/home/rohan/spherebot/install/autonomous_control_pid/bin'
+[15.755s] INFO:colcon.colcon_core.shell:Creating package script '/home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/package.ps1'
+[15.756s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/package.dsv'
+[15.757s] INFO:colcon.colcon_core.shell:Creating package script '/home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/package.sh'
+[15.759s] INFO:colcon.colcon_core.shell:Creating package script '/home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/package.bash'
+[15.760s] INFO:colcon.colcon_core.shell:Creating package script '/home/rohan/spherebot/install/autonomous_control_pid/share/autonomous_control_pid/package.zsh'
+[15.761s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rohan/spherebot/install/autonomous_control_pid/share/colcon-core/packages/autonomous_control_pid)
+[15.772s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[15.772s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[15.773s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[15.773s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[15.783s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[15.783s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[15.783s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[15.784s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[15.785s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[15.785s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rohan/spherebot/install/local_setup.ps1'
+[15.786s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rohan/spherebot/install/_local_setup_util_ps1.py'
+[15.788s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rohan/spherebot/install/setup.ps1'
+[15.789s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rohan/spherebot/install/local_setup.sh'
+[15.791s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rohan/spherebot/install/_local_setup_util_sh.py'
+[15.793s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rohan/spherebot/install/setup.sh'
+[15.795s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rohan/spherebot/install/local_setup.bash'
+[15.796s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rohan/spherebot/install/setup.bash'
+[15.798s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rohan/spherebot/install/local_setup.zsh'
+[15.801s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rohan/spherebot/install/setup.zsh'

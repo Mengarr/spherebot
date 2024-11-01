@@ -1,9 +1,11 @@
 /home/rohan/spherebot/install/control_lib/lib/libcontrol_interfaces.a
 /home/rohan/spherebot/install/control_lib/include//control_lib/stanleyControl.hpp
 /home/rohan/spherebot/install/control_lib/include//control_lib/kinematic_transforms.hpp
+/home/rohan/spherebot/install/control_lib/include//control_lib/PathDataLoader.hpp
 /home/rohan/spherebot/install/control_lib/include//control_lib/geodeticConverter.hpp
 /home/rohan/spherebot/install/control_lib/include//control_lib/auxilary_arduino.hpp
-/home/rohan/spherebot/install/control_lib/include//control_lib/motorControl.hpp
+/home/rohan/spherebot/install/control_lib/include//control_lib/LowPassFilter.hpp
+/home/rohan/spherebot/install/control_lib/include//control_lib/PID_controller.hpp
 /home/rohan/spherebot/install/control_lib/share/control_lib/environment/library_path.sh
 /home/rohan/spherebot/install/control_lib/share/control_lib/environment/library_path.dsv
 /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/package_run_dependencies/control_lib

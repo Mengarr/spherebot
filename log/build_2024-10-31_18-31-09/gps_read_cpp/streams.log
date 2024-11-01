@@ -1,0 +1,26 @@
+[0.022s] Invoking command in '/home/rohan/spherebot/build/gps_read_cpp': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/gps_read_cpp -- -j4 -l4
+[0.136s] [ 33%] [32mBuilding CXX object CMakeFiles/gps_read.dir/src/gps_read.cpp.o[0m
+[12.047s] [ 66%] [32m[1mLinking CXX executable gps_read[0m
+[12.553s] [100%] Built target gps_read
+[12.577s] Invoked command in '/home/rohan/spherebot/build/gps_read_cpp' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/gps_read_cpp -- -j4 -l4
+[12.638s] Invoking command in '/home/rohan/spherebot/build/gps_read_cpp': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/rohan/spherebot/build/gps_read_cpp
+[12.663s] -- Install configuration: ""
+[12.665s] -- Installing: /home/rohan/spherebot/install/gps_read_cpp/lib/gps_read_cpp/gps_read
+[12.671s] -- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/gps_read_cpp/lib/gps_read_cpp/gps_read" to ""
+[12.672s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/lib/gps_read_cpp/gps_read
+[12.672s] -- Installing: /home/rohan/spherebot/install/gps_read_cpp/share/ament_index/resource_index/package_run_dependencies/gps_read_cpp
+[12.673s] -- Installing: /home/rohan/spherebot/install/gps_read_cpp/share/ament_index/resource_index/parent_prefix_path/gps_read_cpp
+[12.673s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/environment/ament_prefix_path.sh
+[12.673s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/environment/ament_prefix_path.dsv
+[12.673s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/environment/path.sh
+[12.673s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/environment/path.dsv
+[12.673s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/local_setup.bash
+[12.674s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/local_setup.sh
+[12.674s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/local_setup.zsh
+[12.674s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/local_setup.dsv
+[12.674s] -- Installing: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/package.dsv
+[12.674s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/ament_index/resource_index/packages/gps_read_cpp
+[12.674s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/cmake/gps_read_cppConfig.cmake
+[12.674s] -- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/cmake/gps_read_cppConfig-version.cmake
+[12.674s] -- Installing: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/package.xml
+[12.677s] Invoked command in '/home/rohan/spherebot/build/gps_read_cpp' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/rohan/spherebot/build/gps_read_cpp

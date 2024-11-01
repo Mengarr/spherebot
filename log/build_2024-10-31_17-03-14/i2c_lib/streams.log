@@ -1,0 +1,32 @@
+[0.018s] Invoking command in '/home/rohan/spherebot/build/i2c_lib': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/i2c_lib -- -j4 -l4
+[0.150s] [100%] Built target i2c_interface
+[0.170s] Invoked command in '/home/rohan/spherebot/build/i2c_lib' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/i2c_lib -- -j4 -l4
+[0.226s] Invoking command in '/home/rohan/spherebot/build/i2c_lib': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/rohan/spherebot/build/i2c_lib
+[0.242s] -- Install configuration: ""
+[0.242s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/lib/libi2c_interface.a
+[0.242s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/include/
+[0.242s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/include//i2c_lib
+[0.242s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/include//i2c_lib/i2c_interface.hpp
+[0.242s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/environment/library_path.sh
+[0.242s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/environment/library_path.dsv
+[0.242s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/ament_index/resource_index/package_run_dependencies/i2c_lib
+[0.242s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/ament_index/resource_index/parent_prefix_path/i2c_lib
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/environment/ament_prefix_path.sh
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/environment/ament_prefix_path.dsv
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/environment/path.sh
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/environment/path.dsv
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/local_setup.bash
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/local_setup.sh
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/local_setup.zsh
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/local_setup.dsv
+[0.243s] -- Installing: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/package.dsv
+[0.243s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/ament_index/resource_index/packages/i2c_lib
+[0.244s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake/export_i2c_libExport.cmake
+[0.244s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake/export_i2c_libExport-noconfig.cmake
+[0.244s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake/ament_cmake_export_targets-extras.cmake
+[0.244s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.244s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake/ament_cmake_export_libraries-extras.cmake
+[0.244s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake/i2c_libConfig.cmake
+[0.244s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake/i2c_libConfig-version.cmake
+[0.244s] -- Up-to-date: /home/rohan/spherebot/install/i2c_lib/share/i2c_lib/package.xml
+[0.248s] Invoked command in '/home/rohan/spherebot/build/i2c_lib' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/rohan/spherebot/build/i2c_lib

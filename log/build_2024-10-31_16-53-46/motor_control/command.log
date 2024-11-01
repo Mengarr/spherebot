@@ -1,0 +1,2 @@
+Invoking command in '/home/rohan/spherebot/build/motor_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/rohan/spherebot/src/motor_control -DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/motor_control
+Invoked command in '/home/rohan/spherebot/build/motor_control' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/rohan/spherebot/src/motor_control -DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/motor_control

@@ -1,0 +1,32 @@
+-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Found control_lib: 0.0.0 (/home/rohan/spherebot/install/control_lib/share/control_lib/cmake)
+-- Configuring done (1.1s)
+[31mCMake Error at /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/export_control_libExport.cmake:61 (set_target_properties):
+  The link interface of target "control_lib::control_interfaces" contains:
+
+    i2c_lib::i2c_interface
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+Call Stack (most recent call first):
+  /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/ament_cmake_export_targets-extras.cmake:9 (include)
+  /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/control_libConfig.cmake:41 (include)
+  CMakeLists.txt:12 (find_package)
+
+[0m
+-- Generating done (0.0s)
+[0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+gmake: *** [Makefile:294: cmake_check_build_system] Error 1

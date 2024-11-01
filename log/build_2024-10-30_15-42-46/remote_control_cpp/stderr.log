@@ -1,0 +1,4 @@
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:165:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  165 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref[01;36m[K)[m[K;
+      |                                                                                                   [01;36m[K^[m[K

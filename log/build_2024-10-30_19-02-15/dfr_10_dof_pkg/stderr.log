@@ -1,0 +1,3 @@
+gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

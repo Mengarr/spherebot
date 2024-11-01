@@ -1,0 +1,21 @@
+[ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable motor_control_node[0m
+[100%] Built target motor_control_node
+-- Install configuration: ""
+-- Installing: /home/rohan/spherebot/install/motor_control/lib/motor_control/motor_control_node
+-- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/motor_control/lib/motor_control/motor_control_node" to ""
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/ament_index/resource_index/package_run_dependencies/motor_control
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/ament_index/resource_index/parent_prefix_path/motor_control
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/environment/ament_prefix_path.sh
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/environment/path.sh
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/environment/path.dsv
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/local_setup.bash
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/local_setup.sh
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/local_setup.zsh
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/local_setup.dsv
+-- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/package.dsv
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/ament_index/resource_index/packages/motor_control
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/cmake/motor_controlConfig.cmake
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/cmake/motor_controlConfig-version.cmake
+-- Up-to-date: /home/rohan/spherebot/install/motor_control/share/motor_control/package.xml

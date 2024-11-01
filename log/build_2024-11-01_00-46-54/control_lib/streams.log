@@ -1,0 +1,38 @@
+[0.019s] Invoking command in '/home/rohan/spherebot/build/control_lib': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/control_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/control_lib -- -j4 -l4
+[0.115s] [ 12%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/load_path_json.cpp.o[0m
+[2.697s] [ 25%] [32m[1mLinking CXX static library libcontrol_interfaces.a[0m
+[2.786s] [100%] Built target control_interfaces
+[2.808s] Invoked command in '/home/rohan/spherebot/build/control_lib' returned '0': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/control_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/control_lib -- -j4 -l4
+[2.885s] Invoking command in '/home/rohan/spherebot/build/control_lib': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/control_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/rohan/spherebot/build/control_lib
+[2.899s] -- Install configuration: ""
+[2.899s] -- Installing: /home/rohan/spherebot/install/control_lib/lib/libcontrol_interfaces.a
+[2.899s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include/
+[2.899s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib
+[2.899s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/stanleyControl.hpp
+[2.900s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/kinematic_transforms.hpp
+[2.900s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/geodeticConverter.hpp
+[2.900s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/auxilary_arduino.hpp
+[2.900s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/LowPassFilter.hpp
+[2.900s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/PID_controller.hpp
+[2.900s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/library_path.sh
+[2.900s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/library_path.dsv
+[2.900s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/package_run_dependencies/control_lib
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/parent_prefix_path/control_lib
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/ament_prefix_path.sh
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/ament_prefix_path.dsv
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/path.sh
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/path.dsv
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.bash
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.sh
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.zsh
+[2.901s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.dsv
+[2.902s] -- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/package.dsv
+[2.902s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/packages/control_lib
+[2.902s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/export_control_libExport.cmake
+[2.902s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/export_control_libExport-noconfig.cmake
+[2.902s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/ament_cmake_export_targets-extras.cmake
+[2.902s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/ament_cmake_export_libraries-extras.cmake
+[2.902s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/control_libConfig.cmake
+[2.902s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/control_libConfig-version.cmake
+[2.902s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/package.xml
+[2.905s] Invoked command in '/home/rohan/spherebot/build/control_lib' returned '0': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/control_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/rohan/spherebot/build/control_lib

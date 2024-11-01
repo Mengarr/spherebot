@@ -1,0 +1,2 @@
+Invoking command in '/home/rohan/spherebot/build/gps_read_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/gps_read_cpp -- -j4 -l4
+Invoked command in '/home/rohan/spherebot/build/gps_read_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/gps_read_cpp -- -j4 -l4

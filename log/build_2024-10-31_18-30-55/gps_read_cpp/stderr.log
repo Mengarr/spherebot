@@ -1,0 +1,10 @@
+[01m[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:[m[K In member function ‘[01m[Kvoid GPSread::[01;32m[Kpublish_data[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:82:61:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kinit_[m[K’
+   82 |     _geodeticConverter.setReferenceOrigin(_lat, _long, _alt)
+      |                                                             [01;31m[K^[m[K
+      |                                                             [32m[K;[m[K
+   83 |     [32m[Kinit_[m[K = true;
+      |     [32m[K~~~~~[m[K                                                    
+gmake[2]: *** [CMakeFiles/gps_read.dir/build.make:76: CMakeFiles/gps_read.dir/src/gps_read.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_read.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

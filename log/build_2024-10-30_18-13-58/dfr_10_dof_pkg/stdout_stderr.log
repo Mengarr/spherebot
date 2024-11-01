@@ -1,0 +1,16 @@
+[ 30%] Built target environmental_node
+[ 70%] Built target imu_data_node
+[ 80%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In function ‘[01m[Kfloat[01;32m[K calculateAdjustedHeading[m[K(int16_t, int16_t, int16_t, float, float, float, float)[m[K’:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:93:23:[m[K [01;31m[Kerror: [m[K‘[01m[KXoffset_[m[K’ was not declared in this scope
+   93 |         last_mag_x -= [01;31m[KXoffset_[m[K;
+      |                       [01;31m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:94:23:[m[K [01;31m[Kerror: [m[K‘[01m[KYoffset_[m[K’ was not declared in this scope
+   94 |         last_mag_y -= [01;31m[KYoffset_[m[K;
+      |                       [01;31m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:95:23:[m[K [01;31m[Kerror: [m[K‘[01m[KZoffset_[m[K’ was not declared in this scope
+   95 |         last_mag_z -= [01;31m[KZoffset_[m[K;
+      |                       [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

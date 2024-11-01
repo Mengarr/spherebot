@@ -1,0 +1,183 @@
+[0.000000] (-) TimerEvent: {}
+[0.000407] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.000724] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.000894] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.000917] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.001112] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.001230] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.001251] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001269] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001298] (-) JobUnselected: {'identifier': 'motor_control'}
+[0.001317] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.001358] (autonomous_control_pid) JobQueued: {'identifier': 'autonomous_control_pid', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.001407] (autonomous_control_pid) JobStarted: {'identifier': 'autonomous_control_pid'}
+[0.017973] (autonomous_control_pid) JobProgress: {'identifier': 'autonomous_control_pid', 'progress': 'cmake'}
+[0.018860] (autonomous_control_pid) JobProgress: {'identifier': 'autonomous_control_pid', 'progress': 'build'}
+[0.019615] (autonomous_control_pid) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/autonomous_control_pid', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/autonomous_control_pid', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 50280 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/rohan/spherebot/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'DISPLAY': 'localhost:10.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/autonomous_control_pid', 'SSH_CONNECTION': '192.168.0.19 50280 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/rohan/spherebot/install/data_logger_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy'}), 'shell': False}
+[0.099673] (-) TimerEvent: {}
+[0.142090] (autonomous_control_pid) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/autonomous_control_pid_node.dir/src/autonomous_control_pid_node.cpp.o\x1b[0m\n'}
+[0.199787] (-) TimerEvent: {}
+[0.300166] (-) TimerEvent: {}
+[0.400530] (-) TimerEvent: {}
+[0.500958] (-) TimerEvent: {}
+[0.601373] (-) TimerEvent: {}
+[0.701756] (-) TimerEvent: {}
+[0.802146] (-) TimerEvent: {}
+[0.902547] (-) TimerEvent: {}
+[1.002978] (-) TimerEvent: {}
+[1.103350] (-) TimerEvent: {}
+[1.203737] (-) TimerEvent: {}
+[1.304111] (-) TimerEvent: {}
+[1.404494] (-) TimerEvent: {}
+[1.504889] (-) TimerEvent: {}
+[1.605270] (-) TimerEvent: {}
+[1.705643] (-) TimerEvent: {}
+[1.806062] (-) TimerEvent: {}
+[1.906446] (-) TimerEvent: {}
+[2.006834] (-) TimerEvent: {}
+[2.107214] (-) TimerEvent: {}
+[2.207582] (-) TimerEvent: {}
+[2.307982] (-) TimerEvent: {}
+[2.408362] (-) TimerEvent: {}
+[2.508760] (-) TimerEvent: {}
+[2.609134] (-) TimerEvent: {}
+[2.709515] (-) TimerEvent: {}
+[2.809915] (-) TimerEvent: {}
+[2.910285] (-) TimerEvent: {}
+[3.010678] (-) TimerEvent: {}
+[3.111073] (-) TimerEvent: {}
+[3.211459] (-) TimerEvent: {}
+[3.311833] (-) TimerEvent: {}
+[3.412205] (-) TimerEvent: {}
+[3.512582] (-) TimerEvent: {}
+[3.612970] (-) TimerEvent: {}
+[3.713361] (-) TimerEvent: {}
+[3.813759] (-) TimerEvent: {}
+[3.914136] (-) TimerEvent: {}
+[4.014499] (-) TimerEvent: {}
+[4.114897] (-) TimerEvent: {}
+[4.215271] (-) TimerEvent: {}
+[4.315644] (-) TimerEvent: {}
+[4.416027] (-) TimerEvent: {}
+[4.516423] (-) TimerEvent: {}
+[4.616848] (-) TimerEvent: {}
+[4.717220] (-) TimerEvent: {}
+[4.817603] (-) TimerEvent: {}
+[4.918005] (-) TimerEvent: {}
+[4.944065] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid AutonomousControlNodePID::\x1b[01;32m\x1b[KnextStateLogic\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.944442] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:235:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.944577] (autonomous_control_pid) StderrLine: {'line': b'  235 |             \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::chrono::duration<float> elapsed = currentTime - startTime;\n'}
+[4.944745] (autonomous_control_pid) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.955409] (autonomous_control_pid) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:236:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kelapsed\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.955708] (autonomous_control_pid) StderrLine: {'line': b'  236 |             if (\x1b[01;31m\x1b[Kelapsed\x1b[m\x1b[K.duration() > 2) {\n'}
+[4.955837] (autonomous_control_pid) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.018116] (-) TimerEvent: {}
+[5.118469] (-) TimerEvent: {}
+[5.218851] (-) TimerEvent: {}
+[5.319229] (-) TimerEvent: {}
+[5.419606] (-) TimerEvent: {}
+[5.519997] (-) TimerEvent: {}
+[5.620372] (-) TimerEvent: {}
+[5.720761] (-) TimerEvent: {}
+[5.821121] (-) TimerEvent: {}
+[5.921495] (-) TimerEvent: {}
+[6.021930] (-) TimerEvent: {}
+[6.122290] (-) TimerEvent: {}
+[6.222651] (-) TimerEvent: {}
+[6.323026] (-) TimerEvent: {}
+[6.423395] (-) TimerEvent: {}
+[6.523776] (-) TimerEvent: {}
+[6.624133] (-) TimerEvent: {}
+[6.724506] (-) TimerEvent: {}
+[6.824913] (-) TimerEvent: {}
+[6.925289] (-) TimerEvent: {}
+[7.025667] (-) TimerEvent: {}
+[7.126056] (-) TimerEvent: {}
+[7.226428] (-) TimerEvent: {}
+[7.326802] (-) TimerEvent: {}
+[7.427163] (-) TimerEvent: {}
+[7.527539] (-) TimerEvent: {}
+[7.627933] (-) TimerEvent: {}
+[7.728294] (-) TimerEvent: {}
+[7.828676] (-) TimerEvent: {}
+[7.929062] (-) TimerEvent: {}
+[8.029449] (-) TimerEvent: {}
+[8.129865] (-) TimerEvent: {}
+[8.230266] (-) TimerEvent: {}
+[8.330652] (-) TimerEvent: {}
+[8.431049] (-) TimerEvent: {}
+[8.531432] (-) TimerEvent: {}
+[8.631793] (-) TimerEvent: {}
+[8.732152] (-) TimerEvent: {}
+[8.832525] (-) TimerEvent: {}
+[8.932904] (-) TimerEvent: {}
+[9.033274] (-) TimerEvent: {}
+[9.133660] (-) TimerEvent: {}
+[9.234041] (-) TimerEvent: {}
+[9.334416] (-) TimerEvent: {}
+[9.434797] (-) TimerEvent: {}
+[9.535167] (-) TimerEvent: {}
+[9.635545] (-) TimerEvent: {}
+[9.735939] (-) TimerEvent: {}
+[9.836314] (-) TimerEvent: {}
+[9.936684] (-) TimerEvent: {}
+[10.037069] (-) TimerEvent: {}
+[10.137432] (-) TimerEvent: {}
+[10.237793] (-) TimerEvent: {}
+[10.338173] (-) TimerEvent: {}
+[10.438557] (-) TimerEvent: {}
+[10.538965] (-) TimerEvent: {}
+[10.639344] (-) TimerEvent: {}
+[10.739770] (-) TimerEvent: {}
+[10.840226] (-) TimerEvent: {}
+[10.940585] (-) TimerEvent: {}
+[11.040960] (-) TimerEvent: {}
+[11.141318] (-) TimerEvent: {}
+[11.241702] (-) TimerEvent: {}
+[11.342067] (-) TimerEvent: {}
+[11.442441] (-) TimerEvent: {}
+[11.542839] (-) TimerEvent: {}
+[11.643209] (-) TimerEvent: {}
+[11.743597] (-) TimerEvent: {}
+[11.844062] (-) TimerEvent: {}
+[11.944437] (-) TimerEvent: {}
+[12.044807] (-) TimerEvent: {}
+[12.145184] (-) TimerEvent: {}
+[12.245549] (-) TimerEvent: {}
+[12.345934] (-) TimerEvent: {}
+[12.446314] (-) TimerEvent: {}
+[12.546713] (-) TimerEvent: {}
+[12.647073] (-) TimerEvent: {}
+[12.747467] (-) TimerEvent: {}
+[12.847863] (-) TimerEvent: {}
+[12.948242] (-) TimerEvent: {}
+[13.048613] (-) TimerEvent: {}
+[13.148998] (-) TimerEvent: {}
+[13.249380] (-) TimerEvent: {}
+[13.349760] (-) TimerEvent: {}
+[13.450139] (-) TimerEvent: {}
+[13.550505] (-) TimerEvent: {}
+[13.650901] (-) TimerEvent: {}
+[13.751252] (-) TimerEvent: {}
+[13.851616] (-) TimerEvent: {}
+[13.951975] (-) TimerEvent: {}
+[14.052302] (-) TimerEvent: {}
+[14.152663] (-) TimerEvent: {}
+[14.253073] (-) TimerEvent: {}
+[14.353442] (-) TimerEvent: {}
+[14.453859] (-) TimerEvent: {}
+[14.554248] (-) TimerEvent: {}
+[14.654653] (-) TimerEvent: {}
+[14.755075] (-) TimerEvent: {}
+[14.855466] (-) TimerEvent: {}
+[14.955858] (-) TimerEvent: {}
+[15.056246] (-) TimerEvent: {}
+[15.156659] (-) TimerEvent: {}
+[15.257117] (-) TimerEvent: {}
+[15.357557] (-) TimerEvent: {}
+[15.369206] (autonomous_control_pid) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/autonomous_control_pid_node.dir/build.make:76: CMakeFiles/autonomous_control_pid_node.dir/src/autonomous_control_pid_node.cpp.o] Error 1\n'}
+[15.369755] (autonomous_control_pid) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/autonomous_control_pid_node.dir/all] Error 2\n'}
+[15.369981] (autonomous_control_pid) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[15.373795] (autonomous_control_pid) CommandEnded: {'returncode': 2}
+[15.426843] (autonomous_control_pid) JobEnded: {'identifier': 'autonomous_control_pid', 'rc': 2}
+[15.437667] (-) EventReactorShutdown: {}

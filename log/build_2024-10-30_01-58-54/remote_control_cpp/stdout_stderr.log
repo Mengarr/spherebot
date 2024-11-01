@@ -1,0 +1,9 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+In file included from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:15:10:[m[K [01;31m[Kfatal error: [m[Kament_index_cpp/get_package_share_directory.hpp: No such file or directory
+   15 | #include [01;31m[K<ament_index_cpp/get_package_share_directory.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

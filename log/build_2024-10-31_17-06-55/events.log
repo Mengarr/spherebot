@@ -1,0 +1,105 @@
+[0.000000] (-) TimerEvent: {}
+[0.000415] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.000712] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.000739] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.000759] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.000908] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.000929] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.001118] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001138] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001157] (-) JobUnselected: {'identifier': 'motor_control'}
+[0.001208] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.001304] (control_lib) JobQueued: {'identifier': 'control_lib', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib'})}
+[0.001338] (control_lib) JobStarted: {'identifier': 'control_lib'}
+[0.015409] (control_lib) JobProgress: {'identifier': 'control_lib', 'progress': 'cmake'}
+[0.018206] (control_lib) JobProgress: {'identifier': 'control_lib', 'progress': 'build'}
+[0.019012] (control_lib) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/control_lib', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/control_lib', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 50324 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan/spherebot/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '18', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'DISPLAY': 'localhost:10.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/control_lib', 'SSH_CONNECTION': '192.168.0.19 50324 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.069059] (control_lib) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099654] (-) TimerEvent: {}
+[0.200013] (-) TimerEvent: {}
+[0.300368] (-) TimerEvent: {}
+[0.400718] (-) TimerEvent: {}
+[0.418075] (control_lib) StdoutLine: {'line': b'-- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.496006] (control_lib) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.500805] (-) TimerEvent: {}
+[0.514582] (control_lib) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.530618] (control_lib) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.549384] (control_lib) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.600927] (-) TimerEvent: {}
+[0.664835] (control_lib) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.669179] (control_lib) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.701071] (-) TimerEvent: {}
+[0.783647] (control_lib) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.801149] (-) TimerEvent: {}
+[0.864959] (control_lib) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[0.901261] (-) TimerEvent: {}
+[0.992605] (control_lib) StdoutLine: {'line': b'-- Found i2c_lib: 0.0.1 (/home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake)\n'}
+[1.001346] (-) TimerEvent: {}
+[1.101627] (-) TimerEvent: {}
+[1.174813] (control_lib) StdoutLine: {'line': b'-- Configuring done (1.1s)\n'}
+[1.201741] (-) TimerEvent: {}
+[1.209588] (control_lib) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.223945] (control_lib) StdoutLine: {'line': b'-- Build files have been written to: /home/rohan/spherebot/build/control_lib\n'}
+[1.302765] (-) TimerEvent: {}
+[1.308262] (control_lib) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o\x1b[0m\n'}
+[1.311491] (control_lib) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o\x1b[0m\n'}
+[1.312131] (control_lib) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o\x1b[0m\n'}
+[1.313799] (control_lib) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/stanleyControl.cpp.o\x1b[0m\n'}
+[1.360469] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/LowpassFilter.cpp:1:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[K./include/control_lib/LowPassFilter.hpp: No such file or directory\n'}
+[1.361041] (control_lib) StderrLine: {'line': b'    1 | #include \x1b[01;31m\x1b[K"./include/control_lib/LowPassFilter.hpp"\x1b[m\x1b[K\n'}
+[1.361337] (control_lib) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.361561] (control_lib) StderrLine: {'line': b'compilation terminated.\n'}
+[1.368978] (control_lib) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:146: CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o] Error 1\n'}
+[1.370316] (control_lib) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[1.402902] (-) TimerEvent: {}
+[1.504031] (-) TimerEvent: {}
+[1.604715] (-) TimerEvent: {}
+[1.662328] (control_lib) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:1\x1b[m\x1b[K:\n'}
+[1.663243] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:16:84:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmap\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[1.663466] (control_lib) StderrLine: {'line': b'   16 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::\x1b[01;31m\x1b[Kmap\x1b[m\x1b[K<std::string, float>& params); // Computes reference u based on rc\n'}
+[1.663621] (control_lib) StderrLine: {'line': b'      |                                                                                    \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[1.665000] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:3:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd::map\x1b[m\x1b[K\xe2\x80\x99 is defined in header \xe2\x80\x98\x1b[01m\x1b[K<map>\x1b[m\x1b[K\xe2\x80\x99; did you forget to \xe2\x80\x98\x1b[01m\x1b[K#include <map>\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[1.666131] (control_lib) StderrLine: {'line': b'    2 | #include <utility> // For pair\n'}
+[1.667385] (control_lib) StderrLine: {'line': b'  +++ |+\x1b[32m\x1b[K#include <map>\x1b[m\x1b[K\n'}
+[1.668300] (control_lib) StderrLine: {'line': b'    3 | \n'}
+[1.669221] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:16:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K<\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[1.670096] (control_lib) StderrLine: {'line': b'   16 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map\x1b[01;31m\x1b[K<\x1b[m\x1b[Kstd::string, float>& params); // Computes reference u based on rc\n'}
+[1.671217] (control_lib) StderrLine: {'line': b'      |                                                                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[1.672301] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float>\x1b[01;32m\x1b[K computeJointVariables\x1b[m\x1b[K(float, float)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.673157] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:3:67:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kparameter passing for argument of type \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float>\x1b[m\x1b[K\xe2\x80\x99 when C++17 is enabled changed to match C++14 \x1b]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_base\x07in GCC 10.1\x1b]8;;\x07\n'}
+[1.674138] (control_lib) StderrLine: {'line': b'    3 | std::pair<float, float> computeJointVariables(float alpha, float u\x1b[01;36m\x1b[K)\x1b[m\x1b[K {\n'}
+[1.675109] (control_lib) StderrLine: {'line': b'      |                                                                   \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[1.675986] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:\x1b[m\x1b[K At global scope:\n'}
+[1.676692] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:84:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmap\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[1.676986] (control_lib) StderrLine: {'line': b'   36 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::\x1b[01;31m\x1b[Kmap\x1b[m\x1b[K<std::string, float>& params) {\n'}
+[1.677230] (control_lib) StderrLine: {'line': b'      |                                                                                    \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[1.677446] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:2:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd::map\x1b[m\x1b[K\xe2\x80\x99 is defined in header \xe2\x80\x98\x1b[01m\x1b[K<map>\x1b[m\x1b[K\xe2\x80\x99; did you forget to \xe2\x80\x98\x1b[01m\x1b[K#include <map>\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[1.677601] (control_lib) StderrLine: {'line': b'    1 | #include "../include/control_lib/kinematic_transforms.hpp"\n'}
+[1.677724] (control_lib) StderrLine: {'line': b'  +++ |+\x1b[32m\x1b[K#include <map>\x1b[m\x1b[K\n'}
+[1.677837] (control_lib) StderrLine: {'line': b'    2 | \n'}
+[1.677988] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K<\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[1.678138] (control_lib) StderrLine: {'line': b'   36 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map\x1b[01;31m\x1b[K<\x1b[m\x1b[Kstd::string, float>& params) {\n'}
+[1.681025] (control_lib) StderrLine: {'line': b'      |                                                                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[1.681872] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kfloat\x1b[01;32m\x1b[K calculate_u_ref\x1b[m\x1b[K(float, float, float, float, int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.682768] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:38:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kparams\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[1.683612] (control_lib) StderrLine: {'line': b'   38 |     float g = \x1b[01;31m\x1b[Kparams\x1b[m\x1b[K.at("g");\n'}
+[1.684549] (control_lib) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.704833] (-) TimerEvent: {}
+[1.780022] (control_lib) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:118: CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o] Error 1\n'}
+[1.804979] (-) TimerEvent: {}
+[1.906113] (-) TimerEvent: {}
+[2.006736] (-) TimerEvent: {}
+[2.107595] (-) TimerEvent: {}
+[2.208747] (-) TimerEvent: {}
+[2.251031] (control_lib) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/auxilary_arduino.cpp:1\x1b[m\x1b[K:\n'}
+[2.251338] (control_lib) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/auxilary_arduino.hpp:18:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KAuxilaryArduino_I2C_ADDR\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.251444] (control_lib) StderrLine: {'line': b'   18 |         AuxilaryArduino(uint8_t I2C_ADDR = \x1b[01;31m\x1b[KAuxilaryArduino_I2C_ADDR\x1b[m\x1b[K);\n'}
+[2.251537] (control_lib) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.308922] (-) TimerEvent: {}
+[2.337918] (control_lib) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:104: CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o] Error 1\n'}
+[2.409097] (-) TimerEvent: {}
+[2.425171] (control_lib) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control_interfaces.dir/all] Error 2\n'}
+[2.425692] (control_lib) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[2.429680] (control_lib) CommandEnded: {'returncode': 2}
+[2.495520] (control_lib) JobEnded: {'identifier': 'control_lib', 'rc': 2}
+[2.506155] (-) EventReactorShutdown: {}

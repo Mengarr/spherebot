@@ -1,0 +1,63 @@
+[01m[K/home/rohan/spherebot/src/control_lib/src/LowpassFilter.cpp:1:10:[m[K [01;31m[Kfatal error: [m[K../include/control_lib/LowPassFilter.hpp: No such file or directory
+    1 | #include [01;31m[K"../include/control_lib/LowPassFilter.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:146: CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+In file included from [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:17:93:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   17 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::[01;31m[Kstring[m[K, float>& params); // Computes reference u based on rc
+      |                                                                                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:4:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+    3 | #include <map> // for map
+  +++ |+[32m[K#include <string>[m[K
+    4 | 
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:17:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   17 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::string, float[01;31m[K>[m[K& params); // Computes reference u based on rc
+      |                                                                                                          [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:17:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:17:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K In function ‘[01m[Kstd::pair<float, float>[01;32m[K computeJointVariables[m[K(float, float)[m[K’:
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:3:67:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+    3 | std::pair<float, float> computeJointVariables(float alpha, float u[01;36m[K)[m[K {
+      |                                                                   [01;36m[K^[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K At global scope:
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:93:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   36 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::[01;31m[Kstring[m[K, float>& params) {
+      |                                                                                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:2:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+    1 | #include "../include/control_lib/kinematic_transforms.hpp"
+  +++ |+[32m[K#include <string>[m[K
+    2 | 
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   36 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::string, float[01;31m[K>[m[K& params) {
+      |                                                                                                          [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K In function ‘[01m[Kfloat[01;32m[K calculate_u_ref[m[K(float, float, float, float, const int&)[m[K’:
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:38:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   38 |     float g = params.[01;31m[Kat[m[K("g");
+      |                      [01;31m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:39:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   39 |     float r = params.[01;31m[Kat[m[K("r");
+      |                      [01;31m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:40:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   40 |     float R = params.[01;31m[Kat[m[K("R");
+      |                      [01;31m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:41:23:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   41 |     float Is = params.[01;31m[Kat[m[K("Is");
+      |                       [01;31m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:42:23:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   42 |     float mp = params.[01;31m[Kat[m[K("mp");
+      |                       [01;31m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:43:23:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   43 |     float ms = params.[01;31m[Kat[m[K("ms");
+      |                       [01;31m[K^~[m[K
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:118: CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o] Error 1
+In file included from [01m[K/home/rohan/spherebot/src/control_lib/src/auxilary_arduino.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/auxilary_arduino.hpp:18:44:[m[K [01;31m[Kerror: [m[K‘[01m[KAuxilaryArduino_I2C_ADDR[m[K’ was not declared in this scope
+   18 |         AuxilaryArduino(uint8_t I2C_ADDR = [01;31m[KAuxilaryArduino_I2C_ADDR[m[K);
+      |                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:104: CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control_interfaces.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

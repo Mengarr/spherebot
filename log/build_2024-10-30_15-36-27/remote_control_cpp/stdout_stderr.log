@@ -1,0 +1,16 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:8[m[K,
+                 from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:183:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kdo[m[K’
+  183 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "(alpha (rad), u (mm)), (%.2f, %.2f)", u_alpha.first, u_alpha.second);
+      |     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:165:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  165 | r<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref[01;36m[K)[m[K;
+      |                                                                                       [01;36m[K^[m[K
+
+gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

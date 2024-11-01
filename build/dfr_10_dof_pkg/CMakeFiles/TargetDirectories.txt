@@ -1,0 +1,12 @@
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/uninstall.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/dfr_10_dof_pkg_uninstall.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/imu_data_node.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/magneometer_node.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/environmental_node.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/test.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/edit_cache.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/rebuild_cache.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/list_install_components.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/install.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/install/local.dir
+/home/rohan/spherebot/build/dfr_10_dof_pkg/CMakeFiles/install/strip.dir

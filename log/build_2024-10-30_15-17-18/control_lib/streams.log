@@ -1,0 +1,52 @@
+[0.030s] Invoking command in '/home/rohan/spherebot/build/control_lib': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/control_lib -- -j4 -l4
+[0.140s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.535s] -- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.599s] -- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.620s] -- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.648s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.679s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.809s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.814s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.977s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.102s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.213s] -- Found i2c_lib: 0.0.1 (/home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake)
+[1.441s] -- Configuring done (1.3s)
+[1.490s] -- Generating done (0.0s)
+[1.501s] -- Build files have been written to: /home/rohan/spherebot/build/control_lib
+[1.580s] [ 14%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o[0m
+[1.897s] [ 28%] [32m[1mLinking CXX static library libcontrol_interfaces.a[0m
+[1.979s] [100%] Built target control_interfaces
+[1.999s] Invoked command in '/home/rohan/spherebot/build/control_lib' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/control_lib -- -j4 -l4
+[2.069s] Invoking command in '/home/rohan/spherebot/build/control_lib': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/rohan/spherebot/build/control_lib
+[2.083s] -- Install configuration: ""
+[2.083s] -- Installing: /home/rohan/spherebot/install/control_lib/lib/libcontrol_interfaces.a
+[2.084s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include/
+[2.084s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib
+[2.084s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/stanleyControl.hpp
+[2.084s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/kinematic_transforms.hpp
+[2.085s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/geodeticConverter.hpp
+[2.085s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/auxilary_arduino.hpp
+[2.085s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/include//control_lib/motorControl.hpp
+[2.085s] -- Installing: /home/rohan/spherebot/install/control_lib/include//control_lib/PID_controller.hpp
+[2.085s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/library_path.sh
+[2.085s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/library_path.dsv
+[2.085s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/package_run_dependencies/control_lib
+[2.086s] -- Installing: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/parent_prefix_path/control_lib
+[2.086s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/ament_prefix_path.sh
+[2.086s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/ament_prefix_path.dsv
+[2.086s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/path.sh
+[2.086s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/environment/path.dsv
+[2.086s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.bash
+[2.086s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.sh
+[2.086s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.zsh
+[2.086s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/local_setup.dsv
+[2.087s] -- Installing: /home/rohan/spherebot/install/control_lib/share/control_lib/package.dsv
+[2.087s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/ament_index/resource_index/packages/control_lib
+[2.087s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/export_control_libExport.cmake
+[2.088s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/export_control_libExport-noconfig.cmake
+[2.088s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/ament_cmake_export_targets-extras.cmake
+[2.088s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/ament_cmake_export_libraries-extras.cmake
+[2.089s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/control_libConfig.cmake
+[2.089s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/cmake/control_libConfig-version.cmake
+[2.089s] -- Up-to-date: /home/rohan/spherebot/install/control_lib/share/control_lib/package.xml
+[2.091s] Invoked command in '/home/rohan/spherebot/build/control_lib' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/rohan/spherebot/build/control_lib

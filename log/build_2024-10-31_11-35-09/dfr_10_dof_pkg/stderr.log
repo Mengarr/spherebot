@@ -1,0 +1,94 @@
+In file included from [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:34:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kfloat[m[K’
+   34 |         [01;31m[Kfloat[m[K hard_iron_bias_y =  -2.1566405156685073
+      |         [01;31m[K^~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kstd::vector<float> MagnetometerPublisher::[01;32m[KgetCalibratedValues[m[K(float, float, float)[m[K’:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:52:25:[m[K [01;31m[Kerror: [m[K‘[01m[Khard_iron_bias_y[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+   52 |     float ym_off = My - [01;31m[Khard_iron_bias_y[m[K;
+      |                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                         [32m[Khard_iron_bias_x[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:53:25:[m[K [01;31m[Kerror: [m[K‘[01m[Khard_iron_bias_z[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+   53 |     float zm_off = Mz - [01;31m[Khard_iron_bias_z[m[K;
+      |                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                         [32m[Khard_iron_bias_x[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_xx[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+   55 |     float xm_cal = xm_off * [01;31m[Ksoft_iron_bias_xx[m[K + ym_off * soft_iron_bias_yx + zm_off * soft_iron_bias_zx;
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                             [32m[Khard_iron_bias_x[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_yx[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+   55 |     float xm_cal = xm_off * soft_iron_bias_xx + ym_off * [01;31m[Ksoft_iron_bias_yx[m[K + zm_off * soft_iron_bias_zx;
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                                          [32m[Khard_iron_bias_x[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:87:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_zx[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+   55 |     float xm_cal = xm_off * soft_iron_bias_xx + ym_off * soft_iron_bias_yx + zm_off * [01;31m[Ksoft_iron_bias_zx[m[K;
+      |                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                                                                       [32m[Khard_iron_bias_x[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_xy[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+   56 |     float ym_cal = xm_off * [01;31m[Ksoft_iron_bias_xy[m[K + ym_off * soft_iron_bias_yy + zm_off * soft_iron_bias_zy;
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                             [32m[Khard_iron_bias_x[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_yy[m[K’ was not declared in this scope
+   56 |     float ym_cal = xm_off * soft_iron_bias_xy + ym_off * [01;31m[Ksoft_iron_bias_yy[m[K + zm_off * soft_iron_bias_zy;
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:87:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_zy[m[K’ was not declared in this scope
+   56 |     float ym_cal = xm_off * soft_iron_bias_xy + ym_off * soft_iron_bias_yy + zm_off * [01;31m[Ksoft_iron_bias_zy[m[K;
+      |                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_xz[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+   57 |     float zm_cal = xm_off * [01;31m[Ksoft_iron_bias_xz[m[K + ym_off * soft_iron_bias_yz + zm_off * soft_iron_bias_zz;
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                             [32m[Khard_iron_bias_x[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_yz[m[K’ was not declared in this scope
+   57 |     float zm_cal = xm_off * soft_iron_bias_xz + ym_off * [01;31m[Ksoft_iron_bias_yz[m[K + zm_off * soft_iron_bias_zz;
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:87:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_zz[m[K’ was not declared in this scope
+   57 |     float zm_cal = xm_off * soft_iron_bias_xz + ym_off * soft_iron_bias_yz + zm_off * [01;31m[Ksoft_iron_bias_zz[m[K;
+      |                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kvoid MagnetometerPublisher::[01;32m[Kpublish_data[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:83:5:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K}[m[K’ token
+   83 |     [01;31m[K}[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:82:15:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+   82 |         return
+      |               [01;31m[K^[m[K
+      |               [32m[K;[m[K
+   83 |     [32m[K}[m[K
+      |     [32m[K~[m[K          
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:86:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kconv_factor[m[K’ was not declared in this scope
+   86 |     float Mx_uT = static_cast<float>(magData.XAxis) * [01;31m[Kconv_factor[m[K;
+      |                                                       [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:95:28:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K_AccelY[m[K’
+   95 |         calibratedValues[2]
+      |                            [01;31m[K^[m[K
+      |                            [32m[K)[m[K
+   96 |         [32m[K_AccelY[m[K,
+      |         [32m[K~~~~~~~[m[K             
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:92:51:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+   92 |     compensatedHeading_ = tilt_compensated_heading[01;36m[K([m[K
+      |                                                   [01;36m[K^[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:92:51:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KMagnetometerPublisher::tilt_compensated_heading(__gnu_cxx::__alloc_traits<std::allocator<float>, float>::value_type&, __gnu_cxx::__alloc_traits<std::allocator<float>, float>::value_type&, __gnu_cxx::__alloc_traits<std::allocator<float>, float>::value_type&, float&, float)[m[K’
+   92 |     compensatedHeading_ = [01;31m[Ktilt_compensated_heading([m[K
+      |                           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   93 | [01;31m[K        calibratedValues[0],[m[K
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~~[m[K                       
+   94 | [01;31m[K        calibratedValues[1],[m[K
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~~[m[K                       
+   95 | [01;31m[K        calibratedValues[2][m[K
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~[m[K                        
+   96 | [01;31m[K        _AccelY,[m[K
+      |         [01;31m[K~~~~~~~~[m[K                                   
+   97 | [01;31m[K        _AccelX,[m[K
+      |         [01;31m[K~~~~~~~~[m[K                                   
+   98 | [01;31m[K        -_AccelZ[m[K
+      |         [01;31m[K~~~~~~~~[m[K                                   
+   99 | [01;31m[K    )[m[K;
+      |     [01;31m[K~[m[K                                              
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:56:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kfloat MagnetometerPublisher::[01;32m[Ktilt_compensated_heading[m[K(float, float, float, float, float, float)[m[K’
+   56 |         float [01;36m[Ktilt_compensated_heading[m[K(float Mx, float My, float Mz, float ax, float ay, float az);
+      |               [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:56:15:[m[K [01;36m[Knote: [m[K  candidate expects 6 arguments, 5 provided
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:108:20:[m[K [01;31m[Kerror: [m[K‘[01m[KheadingDegrees[m[K’ was not declared in this scope
+  108 |     mag_msg.data = [01;31m[KheadingDegrees[m[K;
+      |                    [01;31m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

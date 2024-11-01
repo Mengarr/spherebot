@@ -10,6 +10,8 @@
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
+  <depend>i2c_lib</depend>
+  <depend>control_lib</depend>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

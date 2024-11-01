@@ -1,5 +1,7 @@
 #include <cmath> // For abs()
 #include <utility> // For pair
+#include <map> // for map
+#include <string> // for std::string
 
 #define BALL_SCREW_PITCH   70.0f // p
 #define GEAR_REDUCTION     2.4070175f // G  
@@ -12,3 +14,12 @@
 std::pair<float, float> computeJointVariables(float alpha, float u); // Computes Phi_L and Phi_R
 
 std::pair<float, float> computeJointVariablesInverse(float Psi_L, float Psi_R); // Computes u and alpha in (m, rad)
+
+float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::string, float>& params); // Computes reference u based on rc
+
+float u_phi_eq(float u, float r); // computes equilibrium phi
+
+
+float wrapTo180(float heading);
+
+float wrapToPi(float angle);

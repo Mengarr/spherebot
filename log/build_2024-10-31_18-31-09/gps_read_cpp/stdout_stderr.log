@@ -1,0 +1,22 @@
+[ 33%] [32mBuilding CXX object CMakeFiles/gps_read.dir/src/gps_read.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable gps_read[0m
+[100%] Built target gps_read
+-- Install configuration: ""
+-- Installing: /home/rohan/spherebot/install/gps_read_cpp/lib/gps_read_cpp/gps_read
+-- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/gps_read_cpp/lib/gps_read_cpp/gps_read" to ""
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/lib/gps_read_cpp/gps_read
+-- Installing: /home/rohan/spherebot/install/gps_read_cpp/share/ament_index/resource_index/package_run_dependencies/gps_read_cpp
+-- Installing: /home/rohan/spherebot/install/gps_read_cpp/share/ament_index/resource_index/parent_prefix_path/gps_read_cpp
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/environment/ament_prefix_path.sh
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/environment/path.sh
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/environment/path.dsv
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/local_setup.bash
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/local_setup.sh
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/local_setup.zsh
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/local_setup.dsv
+-- Installing: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/package.dsv
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/ament_index/resource_index/packages/gps_read_cpp
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/cmake/gps_read_cppConfig.cmake
+-- Up-to-date: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/cmake/gps_read_cppConfig-version.cmake
+-- Installing: /home/rohan/spherebot/install/gps_read_cpp/share/gps_read_cpp/package.xml

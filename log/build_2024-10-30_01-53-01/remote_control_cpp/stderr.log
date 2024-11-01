@@ -1,0 +1,29 @@
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[Kinit_csv_file[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:107:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kpath[m[K’ is not a member of ‘[01m[Kstd::filesystem[m[K’; did you mean ‘[01m[Krcpputils::fs::path[m[K’?
+  107 |     std::filesystem::[01;31m[Kpath[m[K dir_path = "../data_logging";
+      |                      [01;31m[K^~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:26[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:26[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:8[m[K,
+                 from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[01m[K/opt/ros/jazzy/include/rcpputils/rcpputils/filesystem_helper.hpp:75:7:[m[K [01;36m[Knote: [m[K‘[01m[Krcpputils::fs::path[m[K’ declared here
+   75 | class [01;36m[Kpath[m[K
+      |       [01;36m[K^~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:108:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kexists[m[K’ is not a member of ‘[01m[Kstd::filesystem[m[K’; did you mean ‘[01m[Krcpputils::fs::exists[m[K’?
+  108 |     if (!std::filesystem::[01;31m[Kexists[m[K(dir_path))
+      |                           [01;31m[K^~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rcpputils/rcpputils/filesystem_helper.hpp:260:23:[m[K [01;36m[Knote: [m[K‘[01m[Krcpputils::fs::exists[m[K’ declared here
+  260 | RCPPUTILS_PUBLIC bool [01;36m[Kexists[m[K(const path & path_to_check);
+      |                       [01;36m[K^~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:108:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kdir_path[m[K’ was not declared in this scope; did you mean ‘[01m[Kfile_path[m[K’?
+  108 |     if (!std::filesystem::exists([01;31m[Kdir_path[m[K))
+      |                                  [01;31m[K^~~~~~~~[m[K
+      |                                  [32m[Kfile_path[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:164:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  164 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alpha_dot_ref, u_dot_ref[01;36m[K)[m[K;
+      |                                                                                                   [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

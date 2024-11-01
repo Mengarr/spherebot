@@ -1,0 +1,30 @@
+[0.017s] Invoking command in '/home/rohan/spherebot/build/motor_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/rohan/spherebot/src/motor_control -DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/motor_control
+[0.038s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.379s] -- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.456s] -- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.484s] -- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.500s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.519s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.624s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.628s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.750s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.831s] -- Found trajectory_msgs: 5.3.5 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
+[0.962s] [31mCMake Error at CMakeLists.txt:12 (find_package):
+[0.962s]   By not providing "Findcontrol_msgs.cmake" in CMAKE_MODULE_PATH this project
+[0.962s]   has asked CMake to find a package configuration file provided by
+[0.962s]   "control_msgs", but CMake did not find one.
+[0.962s] 
+[0.962s]   Could not find a package configuration file provided by "control_msgs" with
+[0.962s]   any of the following names:
+[0.962s] 
+[0.962s]     control_msgsConfig.cmake
+[0.963s]     control_msgs-config.cmake
+[0.963s] 
+[0.963s]   Add the installation prefix of "control_msgs" to CMAKE_PREFIX_PATH or set
+[0.963s]   "control_msgs_DIR" to a directory containing one of the above files.  If
+[0.963s]   "control_msgs" provides a separate development package or SDK, be sure it
+[0.963s]   has been installed.
+[0.963s] 
+[0.963s] [0m
+[0.963s] -- Configuring incomplete, errors occurred!
+[0.974s] Invoked command in '/home/rohan/spherebot/build/motor_control' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/rohan/spherebot/src/motor_control -DCMAKE_INSTALL_PREFIX=/home/rohan/spherebot/install/motor_control

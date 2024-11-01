@@ -1,0 +1,7 @@
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:[m[K In member function ‘[01m[Kvoid AutonomousControlNodePID::[01;32m[KnextStateLogic[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:236:25:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kstd::chrono::duration<float>::duration[m[K’
+  236 |             if (elapsed.[01;31m[Kduration[m[K() > 2) {
+      |                         [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/autonomous_control_pid_node.dir/build.make:76: CMakeFiles/autonomous_control_pid_node.dir/src/autonomous_control_pid_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/autonomous_control_pid_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

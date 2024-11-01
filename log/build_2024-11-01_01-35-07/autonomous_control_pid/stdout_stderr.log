@@ -1,0 +1,89 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/autonomous_control_pid_node.dir/src/autonomous_control_pid_node.cpp.o[0m
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:[m[K In member function ‘[01m[Kvoid AutonomousControlNodePID::[01;32m[KnextStateLogic[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:198:22:[m[K [01;31m[Kerror: [m[Kjump to case label
+  198 |         case STATES::[01;31m[KPATH_FOLLOWING[m[K:
+      |                      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:181:30:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<int> probing_indicies[m[K’
+  181 |             std::vector<int> [01;36m[Kprobing_indicies[m[K = _pathData.getProbingIndices();
+      |                              [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:180:33:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<double, std::allocator<double> > y_coords[m[K’
+  180 |             std::vector<double> [01;36m[Ky_coords[m[K = _pathData.getYCoords();
+      |                                 [01;36m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:179:33:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<double, std::allocator<double> > x_coords[m[K’
+  179 |             std::vector<double> [01;36m[Kx_coords[m[K = _pathData.getXCoords();
+      |                                 [01;36m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:217:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kcoords[m[K’ was not declared in this scope; did you mean ‘[01m[Ky_coords[m[K’?
+  217 |             if (_stanley.reachedFinal([01;31m[Kcoords[m[K.east, coords.north)){
+      |                                       [01;31m[K^~~~~~[m[K
+      |                                       [32m[Ky_coords[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:224:22:[m[K [01;31m[Kerror: [m[Kjump to case label
+  224 |         case STATES::[01;31m[KPROBE_SOIL[m[K:
+      |                      [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:212:19:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kfloat rc[m[K’
+  212 |             float [01;36m[Krc[m[K =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture
+      |                   [01;36m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:207:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd_msgs::msg::Float32_<std::allocator<void> > stanley_msg[m[K’
+  207 |             auto [01;36m[Kstanley_msg[m[K = std_msgs::msg::Float32();
+      |                  [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:181:30:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<int> probing_indicies[m[K’
+  181 |             std::vector<int> [01;36m[Kprobing_indicies[m[K = _pathData.getProbingIndices();
+      |                              [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:180:33:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<double, std::allocator<double> > y_coords[m[K’
+  180 |             std::vector<double> [01;36m[Ky_coords[m[K = _pathData.getYCoords();
+      |                                 [01;36m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:179:33:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<double, std::allocator<double> > x_coords[m[K’
+  179 |             std::vector<double> [01;36m[Kx_coords[m[K = _pathData.getXCoords();
+      |                                 [01;36m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:227:22:[m[K [01;31m[Kerror: [m[Kjump to case label
+  227 |         case STATES::[01;31m[KFINISH[m[K:
+      |                      [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:212:19:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kfloat rc[m[K’
+  212 |             float [01;36m[Krc[m[K =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture
+      |                   [01;36m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:207:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd_msgs::msg::Float32_<std::allocator<void> > stanley_msg[m[K’
+  207 |             auto [01;36m[Kstanley_msg[m[K = std_msgs::msg::Float32();
+      |                  [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:181:30:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<int> probing_indicies[m[K’
+  181 |             std::vector<int> [01;36m[Kprobing_indicies[m[K = _pathData.getProbingIndices();
+      |                              [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:180:33:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<double, std::allocator<double> > y_coords[m[K’
+  180 |             std::vector<double> [01;36m[Ky_coords[m[K = _pathData.getYCoords();
+      |                                 [01;36m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:179:33:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<double, std::allocator<double> > x_coords[m[K’
+  179 |             std::vector<double> [01;36m[Kx_coords[m[K = _pathData.getXCoords();
+      |                                 [01;36m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:230:13:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[Kstd[m[K’
+  230 |             [01;31m[Kstd[m[K::chrono::duration<float> elapsed = currentTime - startTime;
+      |             [01;31m[K^~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:231:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kelapsed[m[K’ was not declared in this scope
+  231 |             if ([01;31m[Kelapsed[m[K.duration() > 2) {
+      |                 [01;31m[K^~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:238:9:[m[K [01;31m[Kerror: [m[Kjump to case label
+  238 |         [01;31m[Kdefault[m[K:
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:229:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long int, std::ratio<1, 1000000000> > > currentTime[m[K’
+  229 |             auto [01;36m[KcurrentTime[m[K = std::chrono::steady_clock::now()
+      |                  [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:212:19:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kfloat rc[m[K’
+  212 |             float [01;36m[Krc[m[K =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture
+      |                   [01;36m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:207:18:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd_msgs::msg::Float32_<std::allocator<void> > stanley_msg[m[K’
+  207 |             auto [01;36m[Kstanley_msg[m[K = std_msgs::msg::Float32();
+      |                  [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:181:30:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<int> probing_indicies[m[K’
+  181 |             std::vector<int> [01;36m[Kprobing_indicies[m[K = _pathData.getProbingIndices();
+      |                              [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:180:33:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<double, std::allocator<double> > y_coords[m[K’
+  180 |             std::vector<double> [01;36m[Ky_coords[m[K = _pathData.getYCoords();
+      |                                 [01;36m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:179:33:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd::vector<double, std::allocator<double> > x_coords[m[K’
+  179 |             std::vector<double> [01;36m[Kx_coords[m[K = _pathData.getXCoords();
+      |                                 [01;36m[K^~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:176:12:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KPATH_FOLLOWING[m[K’ not handled in switch [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch-Wswitch]8;;[m[K]
+  176 |     switch [01;35m[K([m[Kcurrent_state_) {
+      |            [01;35m[K^[m[K
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:176:12:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KPROBE_SOIL[m[K’ not handled in switch [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch-Wswitch]8;;[m[K]
+[01m[K/home/rohan/spherebot/src/autonomous_control_pid/src/autonomous_control_pid_node.cpp:176:12:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KFINISH[m[K’ not handled in switch [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch-Wswitch]8;;[m[K]
+gmake[2]: *** [CMakeFiles/autonomous_control_pid_node.dir/build.make:76: CMakeFiles/autonomous_control_pid_node.dir/src/autonomous_control_pid_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/autonomous_control_pid_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -111,24 +111,10 @@ CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rohan/spherebot/src/control_lib/src/auxilary_arduino.cpp -o CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.s
 
-CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o: CMakeFiles/control_interfaces.dir/flags.make
-CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o: /home/rohan/spherebot/src/control_lib/src/motorControl.cpp
-CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o: CMakeFiles/control_interfaces.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rohan/spherebot/build/control_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o -MF CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o.d -o CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o -c /home/rohan/spherebot/src/control_lib/src/motorControl.cpp
-
-CMakeFiles/control_interfaces.dir/src/motorControl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/control_interfaces.dir/src/motorControl.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rohan/spherebot/src/control_lib/src/motorControl.cpp > CMakeFiles/control_interfaces.dir/src/motorControl.cpp.i
-
-CMakeFiles/control_interfaces.dir/src/motorControl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/control_interfaces.dir/src/motorControl.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rohan/spherebot/src/control_lib/src/motorControl.cpp -o CMakeFiles/control_interfaces.dir/src/motorControl.cpp.s
-
 CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o: CMakeFiles/control_interfaces.dir/flags.make
 CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o: /home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp
 CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o: CMakeFiles/control_interfaces.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rohan/spherebot/build/control_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rohan/spherebot/build/control_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o -MF CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o.d -o CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o -c /home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp
 
 CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.i: cmake_force
@@ -139,13 +125,57 @@ CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp -o CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.s
 
+CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o: CMakeFiles/control_interfaces.dir/flags.make
+CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o: /home/rohan/spherebot/src/control_lib/src/PID_controller.cpp
+CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o: CMakeFiles/control_interfaces.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rohan/spherebot/build/control_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o -MF CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o.d -o CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o -c /home/rohan/spherebot/src/control_lib/src/PID_controller.cpp
+
+CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rohan/spherebot/src/control_lib/src/PID_controller.cpp > CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.i
+
+CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rohan/spherebot/src/control_lib/src/PID_controller.cpp -o CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.s
+
+CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o: CMakeFiles/control_interfaces.dir/flags.make
+CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o: /home/rohan/spherebot/src/control_lib/src/LowPassFilter.cpp
+CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o: CMakeFiles/control_interfaces.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rohan/spherebot/build/control_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o -MF CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o.d -o CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o -c /home/rohan/spherebot/src/control_lib/src/LowPassFilter.cpp
+
+CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rohan/spherebot/src/control_lib/src/LowPassFilter.cpp > CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.i
+
+CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rohan/spherebot/src/control_lib/src/LowPassFilter.cpp -o CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.s
+
+CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o: CMakeFiles/control_interfaces.dir/flags.make
+CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o: /home/rohan/spherebot/src/control_lib/src/PathDataLoader.cpp
+CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o: CMakeFiles/control_interfaces.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rohan/spherebot/build/control_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o -MF CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o.d -o CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o -c /home/rohan/spherebot/src/control_lib/src/PathDataLoader.cpp
+
+CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rohan/spherebot/src/control_lib/src/PathDataLoader.cpp > CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.i
+
+CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rohan/spherebot/src/control_lib/src/PathDataLoader.cpp -o CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.s
+
 # Object files for target control_interfaces
 control_interfaces_OBJECTS = \
 "CMakeFiles/control_interfaces.dir/src/geodeticConverter.cpp.o" \
 "CMakeFiles/control_interfaces.dir/src/stanleyControl.cpp.o" \
 "CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o" \
-"CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o" \
-"CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o"
+"CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o" \
+"CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o" \
+"CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o" \
+"CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o"
 
 # External object files for target control_interfaces
 control_interfaces_EXTERNAL_OBJECTS =
@@ -153,11 +183,13 @@ control_interfaces_EXTERNAL_OBJECTS =
 libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/src/geodeticConverter.cpp.o
 libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/src/stanleyControl.cpp.o
 libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o
-libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/src/motorControl.cpp.o
 libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o
+libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/src/PID_controller.cpp.o
+libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/src/LowPassFilter.cpp.o
+libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/src/PathDataLoader.cpp.o
 libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/build.make
 libcontrol_interfaces.a: CMakeFiles/control_interfaces.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rohan/spherebot/build/control_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libcontrol_interfaces.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rohan/spherebot/build/control_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libcontrol_interfaces.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/control_interfaces.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/control_interfaces.dir/link.txt --verbose=$(VERBOSE)
 

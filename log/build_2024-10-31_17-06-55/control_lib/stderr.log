@@ -1,0 +1,44 @@
+[01m[K/home/rohan/spherebot/src/control_lib/src/LowpassFilter.cpp:1:10:[m[K [01;31m[Kfatal error: [m[K./include/control_lib/LowPassFilter.hpp: No such file or directory
+    1 | #include [01;31m[K"./include/control_lib/LowPassFilter.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:146: CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+In file included from [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:16:84:[m[K [01;31m[Kerror: [m[K‘[01m[Kmap[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a template type
+   16 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::[01;31m[Kmap[m[K<std::string, float>& params); // Computes reference u based on rc
+      |                                                                                    [01;31m[K^~~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:3:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::map[m[K’ is defined in header ‘[01m[K<map>[m[K’; did you forget to ‘[01m[K#include <map>[m[K’?
+    2 | #include <utility> // For pair
+  +++ |+[32m[K#include <map>[m[K
+    3 | 
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:16:87:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K<[m[K’ token
+   16 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map[01;31m[K<[m[Kstd::string, float>& params); // Computes reference u based on rc
+      |                                                                                       [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K In function ‘[01m[Kstd::pair<float, float>[01;32m[K computeJointVariables[m[K(float, float)[m[K’:
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:3:67:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+    3 | std::pair<float, float> computeJointVariables(float alpha, float u[01;36m[K)[m[K {
+      |                                                                   [01;36m[K^[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K At global scope:
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:84:[m[K [01;31m[Kerror: [m[K‘[01m[Kmap[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a template type
+   36 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::[01;31m[Kmap[m[K<std::string, float>& params) {
+      |                                                                                    [01;31m[K^~~[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:2:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::map[m[K’ is defined in header ‘[01m[K<map>[m[K’; did you forget to ‘[01m[K#include <map>[m[K’?
+    1 | #include "../include/control_lib/kinematic_transforms.hpp"
+  +++ |+[32m[K#include <map>[m[K
+    2 | 
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:87:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K<[m[K’ token
+   36 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map[01;31m[K<[m[Kstd::string, float>& params) {
+      |                                                                                       [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K In function ‘[01m[Kfloat[01;32m[K calculate_u_ref[m[K(float, float, float, float, int)[m[K’:
+[01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:38:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kparams[m[K’ was not declared in this scope
+   38 |     float g = [01;31m[Kparams[m[K.at("g");
+      |               [01;31m[K^~~~~~[m[K
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:118: CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o] Error 1
+In file included from [01m[K/home/rohan/spherebot/src/control_lib/src/auxilary_arduino.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/auxilary_arduino.hpp:18:44:[m[K [01;31m[Kerror: [m[K‘[01m[KAuxilaryArduino_I2C_ADDR[m[K’ was not declared in this scope
+   18 |         AuxilaryArduino(uint8_t I2C_ADDR = [01;31m[KAuxilaryArduino_I2C_ADDR[m[K);
+      |                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:104: CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control_interfaces.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

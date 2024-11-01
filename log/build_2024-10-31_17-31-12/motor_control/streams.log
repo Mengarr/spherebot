@@ -1,0 +1,29 @@
+[0.021s] Invoking command in '/home/rohan/spherebot/build/motor_control': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/motor_control -- -j4 -l4
+[0.137s] [ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o[0m
+[10.484s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::[01;32m[KcontrolLoop[m[K()[m[K’:
+[10.484s] [01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:66:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+[10.485s]    66 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alphadot_ref_, udot_ref_[01;36m[K)[m[K;
+[10.485s]       |                                                                                                   [01;36m[K^[m[K
+[18.478s] [ 66%] [32m[1mLinking CXX executable motor_control_node[0m
+[19.653s] [100%] Built target motor_control_node
+[19.674s] Invoked command in '/home/rohan/spherebot/build/motor_control' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/motor_control -- -j4 -l4
+[19.733s] Invoking command in '/home/rohan/spherebot/build/motor_control': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/rohan/spherebot/build/motor_control
+[19.748s] -- Install configuration: ""
+[19.748s] -- Installing: /home/rohan/spherebot/install/motor_control/lib/motor_control/motor_control_node
+[19.759s] -- Set non-toolchain portion of runtime path of "/home/rohan/spherebot/install/motor_control/lib/motor_control/motor_control_node" to ""
+[19.760s] -- Installing: /home/rohan/spherebot/install/motor_control/share/ament_index/resource_index/package_run_dependencies/motor_control
+[19.760s] -- Installing: /home/rohan/spherebot/install/motor_control/share/ament_index/resource_index/parent_prefix_path/motor_control
+[19.760s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/environment/ament_prefix_path.sh
+[19.760s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/environment/ament_prefix_path.dsv
+[19.760s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/environment/path.sh
+[19.760s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/environment/path.dsv
+[19.761s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/local_setup.bash
+[19.761s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/local_setup.sh
+[19.761s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/local_setup.zsh
+[19.761s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/local_setup.dsv
+[19.761s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/package.dsv
+[19.762s] -- Installing: /home/rohan/spherebot/install/motor_control/share/ament_index/resource_index/packages/motor_control
+[19.762s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/cmake/motor_controlConfig.cmake
+[19.762s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/cmake/motor_controlConfig-version.cmake
+[19.762s] -- Installing: /home/rohan/spherebot/install/motor_control/share/motor_control/package.xml
+[19.765s] Invoked command in '/home/rohan/spherebot/build/motor_control' returned '0': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/rohan/spherebot/build/motor_control

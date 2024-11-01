@@ -1,0 +1,224 @@
+[0.000000] (-) TimerEvent: {}
+[0.000685] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.001308] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.001961] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.002268] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.002363] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.002445] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.002500] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.002546] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.003083] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.003293] (dfr_10_dof_pkg) JobQueued: {'identifier': 'dfr_10_dof_pkg', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib'})}
+[0.003367] (dfr_10_dof_pkg) JobStarted: {'identifier': 'dfr_10_dof_pkg'}
+[0.020085] (dfr_10_dof_pkg) JobProgress: {'identifier': 'dfr_10_dof_pkg', 'progress': 'cmake'}
+[0.021003] (dfr_10_dof_pkg) JobProgress: {'identifier': 'dfr_10_dof_pkg', 'progress': 'build'}
+[0.021766] (dfr_10_dof_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/dfr_10_dof_pkg', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/dfr_10_dof_pkg', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 50302 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '5', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'DISPLAY': 'localhost:11.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/dfr_10_dof_pkg', 'SSH_CONNECTION': '192.168.0.19 50302 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099668] (-) TimerEvent: {}
+[0.137261] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o\x1b[0m\n'}
+[0.138810] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 40%] Built target environmental_node\n'}
+[0.139641] (dfr_10_dof_pkg) StdoutLine: {'line': b'[ 80%] Built target imu_data_node\n'}
+[0.199763] (-) TimerEvent: {}
+[0.300168] (-) TimerEvent: {}
+[0.400689] (-) TimerEvent: {}
+[0.501212] (-) TimerEvent: {}
+[0.601627] (-) TimerEvent: {}
+[0.702119] (-) TimerEvent: {}
+[0.802536] (-) TimerEvent: {}
+[0.903094] (-) TimerEvent: {}
+[1.003579] (-) TimerEvent: {}
+[1.103971] (-) TimerEvent: {}
+[1.204485] (-) TimerEvent: {}
+[1.304899] (-) TimerEvent: {}
+[1.405400] (-) TimerEvent: {}
+[1.505812] (-) TimerEvent: {}
+[1.606349] (-) TimerEvent: {}
+[1.706753] (-) TimerEvent: {}
+[1.807274] (-) TimerEvent: {}
+[1.907690] (-) TimerEvent: {}
+[2.008189] (-) TimerEvent: {}
+[2.108603] (-) TimerEvent: {}
+[2.209101] (-) TimerEvent: {}
+[2.309516] (-) TimerEvent: {}
+[2.410032] (-) TimerEvent: {}
+[2.510467] (-) TimerEvent: {}
+[2.610951] (-) TimerEvent: {}
+[2.711371] (-) TimerEvent: {}
+[2.811849] (-) TimerEvent: {}
+[2.912269] (-) TimerEvent: {}
+[3.012756] (-) TimerEvent: {}
+[3.113163] (-) TimerEvent: {}
+[3.213647] (-) TimerEvent: {}
+[3.314070] (-) TimerEvent: {}
+[3.414533] (-) TimerEvent: {}
+[3.514946] (-) TimerEvent: {}
+[3.615461] (-) TimerEvent: {}
+[3.715871] (-) TimerEvent: {}
+[3.816396] (-) TimerEvent: {}
+[3.916837] (-) TimerEvent: {}
+[4.017355] (-) TimerEvent: {}
+[4.117750] (-) TimerEvent: {}
+[4.218249] (-) TimerEvent: {}
+[4.318636] (-) TimerEvent: {}
+[4.419119] (-) TimerEvent: {}
+[4.519500] (-) TimerEvent: {}
+[4.619896] (-) TimerEvent: {}
+[4.720410] (-) TimerEvent: {}
+[4.820829] (-) TimerEvent: {}
+[4.921352] (-) TimerEvent: {}
+[5.021767] (-) TimerEvent: {}
+[5.122297] (-) TimerEvent: {}
+[5.222703] (-) TimerEvent: {}
+[5.283565] (dfr_10_dof_pkg) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.284835] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:30:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kfloat\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.285138] (dfr_10_dof_pkg) StderrLine: {'line': b'   30 |         \x1b[01;31m\x1b[Kfloat\x1b[m\x1b[K hard_iron_bias_y =  -2.1566405156685073\n'}
+[5.285377] (dfr_10_dof_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.322786] (-) TimerEvent: {}
+[5.334637] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<float> MagnetometerPublisher::\x1b[01;32m\x1b[KgetCalibratedValues\x1b[m\x1b[K(float, float, float)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.334942] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:52:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_y\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.335094] (dfr_10_dof_pkg) StderrLine: {'line': b'   52 |     float ym_off = My - \x1b[01;31m\x1b[Khard_iron_bias_y\x1b[m\x1b[K;\n'}
+[5.335223] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.335316] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                         \x1b[32m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\n'}
+[5.343924] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:53:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_z\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.344133] (dfr_10_dof_pkg) StderrLine: {'line': b'   53 |     float zm_off = Mz - \x1b[01;31m\x1b[Khard_iron_bias_z\x1b[m\x1b[K;\n'}
+[5.344239] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.344336] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                         \x1b[32m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\n'}
+[5.358590] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_xx\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.358878] (dfr_10_dof_pkg) StderrLine: {'line': b'   55 |     float xm_cal = xm_off * \x1b[01;31m\x1b[Ksoft_iron_bias_xx\x1b[m\x1b[K + ym_off * soft_iron_bias_yx + zm_off * soft_iron_bias_zx;\n'}
+[5.359041] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.359157] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                             \x1b[32m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\n'}
+[5.373203] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_yx\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.373476] (dfr_10_dof_pkg) StderrLine: {'line': b'   55 |     float xm_cal = xm_off * soft_iron_bias_xx + ym_off * \x1b[01;31m\x1b[Ksoft_iron_bias_yx\x1b[m\x1b[K + zm_off * soft_iron_bias_zx;\n'}
+[5.373586] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.373677] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                          \x1b[32m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\n'}
+[5.387431] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_zx\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.387663] (dfr_10_dof_pkg) StderrLine: {'line': b'   55 |     float xm_cal = xm_off * soft_iron_bias_xx + ym_off * soft_iron_bias_yx + zm_off * \x1b[01;31m\x1b[Ksoft_iron_bias_zx\x1b[m\x1b[K;\n'}
+[5.387777] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                                                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.387875] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                                                       \x1b[32m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\n'}
+[5.401634] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_xy\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.401883] (dfr_10_dof_pkg) StderrLine: {'line': b'   56 |     float ym_cal = xm_off * \x1b[01;31m\x1b[Ksoft_iron_bias_xy\x1b[m\x1b[K + ym_off * soft_iron_bias_yy + zm_off * soft_iron_bias_zy;\n'}
+[5.401988] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.402094] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                             \x1b[32m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\n'}
+[5.422889] (-) TimerEvent: {}
+[5.434545] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_yy\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.435077] (dfr_10_dof_pkg) StderrLine: {'line': b'   56 |     float ym_cal = xm_off * soft_iron_bias_xy + ym_off * \x1b[01;31m\x1b[Ksoft_iron_bias_yy\x1b[m\x1b[K + zm_off * soft_iron_bias_zy;\n'}
+[5.435392] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.473992] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_zy\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.474377] (dfr_10_dof_pkg) StderrLine: {'line': b'   56 |     float ym_cal = xm_off * soft_iron_bias_xy + ym_off * soft_iron_bias_yy + zm_off * \x1b[01;31m\x1b[Ksoft_iron_bias_zy\x1b[m\x1b[K;\n'}
+[5.474605] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                                                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.503835] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_xz\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.504194] (dfr_10_dof_pkg) StderrLine: {'line': b'   57 |     float zm_cal = xm_off * \x1b[01;31m\x1b[Ksoft_iron_bias_xz\x1b[m\x1b[K + ym_off * soft_iron_bias_yz + zm_off * soft_iron_bias_zz;\n'}
+[5.504420] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.504614] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                             \x1b[32m\x1b[Khard_iron_bias_x\x1b[m\x1b[K\n'}
+[5.522964] (-) TimerEvent: {}
+[5.524737] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_yz\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.524949] (dfr_10_dof_pkg) StderrLine: {'line': b'   57 |     float zm_cal = xm_off * soft_iron_bias_xz + ym_off * \x1b[01;31m\x1b[Ksoft_iron_bias_yz\x1b[m\x1b[K + zm_off * soft_iron_bias_zz;\n'}
+[5.525062] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.542980] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksoft_iron_bias_zz\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.543219] (dfr_10_dof_pkg) StderrLine: {'line': b'   57 |     float zm_cal = xm_off * soft_iron_bias_xz + ym_off * soft_iron_bias_yz + zm_off * \x1b[01;31m\x1b[Ksoft_iron_bias_zz\x1b[m\x1b[K;\n'}
+[5.543318] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                                                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.545009] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MagnetometerPublisher::\x1b[01;32m\x1b[Kpublish_data\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.545153] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:83:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[5.545250] (dfr_10_dof_pkg) StderrLine: {'line': b'   83 |     \x1b[01;31m\x1b[K}\x1b[m\x1b[K\n'}
+[5.545337] (dfr_10_dof_pkg) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.545422] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:82:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[5.545504] (dfr_10_dof_pkg) StderrLine: {'line': b'   82 |         return\n'}
+[5.545584] (dfr_10_dof_pkg) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.545663] (dfr_10_dof_pkg) StderrLine: {'line': b'      |               \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[5.545743] (dfr_10_dof_pkg) StderrLine: {'line': b'   83 |     \x1b[32m\x1b[K}\x1b[m\x1b[K\n'}
+[5.545821] (dfr_10_dof_pkg) StderrLine: {'line': b'      |     \x1b[32m\x1b[K~\x1b[m\x1b[K          \n'}
+[5.557874] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:86:55:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconv_factor\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.558098] (dfr_10_dof_pkg) StderrLine: {'line': b'   86 |     float Mx_uT = static_cast<float>(magData.XAxis) * \x1b[01;31m\x1b[Kconv_factor\x1b[m\x1b[K;\n'}
+[5.558270] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                       \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.558470] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:95:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K_AccelY\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.558560] (dfr_10_dof_pkg) StderrLine: {'line': b'   95 |         calibratedValues[2]\n'}
+[5.558644] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.558724] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                            \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[5.558804] (dfr_10_dof_pkg) StderrLine: {'line': b'   96 |         \x1b[32m\x1b[K_AccelY\x1b[m\x1b[K,\n'}
+[5.558883] (dfr_10_dof_pkg) StderrLine: {'line': b'      |         \x1b[32m\x1b[K~~~~~~~\x1b[m\x1b[K             \n'}
+[5.558962] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:92:51:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K(\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.559064] (dfr_10_dof_pkg) StderrLine: {'line': b'   92 |     compensatedHeading_ = tilt_compensated_heading\x1b[01;36m\x1b[K(\x1b[m\x1b[K\n'}
+[5.559156] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                                                   \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[5.559241] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:92:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KMagnetometerPublisher::tilt_compensated_heading(__gnu_cxx::__alloc_traits<std::allocator<float>, float>::value_type&, __gnu_cxx::__alloc_traits<std::allocator<float>, float>::value_type&, __gnu_cxx::__alloc_traits<std::allocator<float>, float>::value_type&, float&, float)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.559372] (dfr_10_dof_pkg) StderrLine: {'line': b'   92 |     compensatedHeading_ = \x1b[01;31m\x1b[Ktilt_compensated_heading(\x1b[m\x1b[K\n'}
+[5.559459] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[5.559540] (dfr_10_dof_pkg) StderrLine: {'line': b'   93 | \x1b[01;31m\x1b[K        calibratedValues[0],\x1b[m\x1b[K\n'}
+[5.559620] (dfr_10_dof_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K                       \n'}
+[5.559697] (dfr_10_dof_pkg) StderrLine: {'line': b'   94 | \x1b[01;31m\x1b[K        calibratedValues[1],\x1b[m\x1b[K\n'}
+[5.559775] (dfr_10_dof_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K                       \n'}
+[5.559853] (dfr_10_dof_pkg) StderrLine: {'line': b'   95 | \x1b[01;31m\x1b[K        calibratedValues[2]\x1b[m\x1b[K\n'}
+[5.559930] (dfr_10_dof_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K                        \n'}
+[5.560008] (dfr_10_dof_pkg) StderrLine: {'line': b'   96 | \x1b[01;31m\x1b[K        _AccelY,\x1b[m\x1b[K\n'}
+[5.560104] (dfr_10_dof_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~\x1b[m\x1b[K                                   \n'}
+[5.560187] (dfr_10_dof_pkg) StderrLine: {'line': b'   97 | \x1b[01;31m\x1b[K        _AccelX,\x1b[m\x1b[K\n'}
+[5.560265] (dfr_10_dof_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~\x1b[m\x1b[K                                   \n'}
+[5.560342] (dfr_10_dof_pkg) StderrLine: {'line': b'   98 | \x1b[01;31m\x1b[K        -_AccelZ\x1b[m\x1b[K\n'}
+[5.560420] (dfr_10_dof_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~\x1b[m\x1b[K                                   \n'}
+[5.560497] (dfr_10_dof_pkg) StderrLine: {'line': b'   99 | \x1b[01;31m\x1b[K    )\x1b[m\x1b[K;\n'}
+[5.560574] (dfr_10_dof_pkg) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K~\x1b[m\x1b[K                                              \n'}
+[5.560651] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:52:15:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kfloat MagnetometerPublisher::\x1b[01;32m\x1b[Ktilt_compensated_heading\x1b[m\x1b[K(float, float, float, float, float, float)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.560733] (dfr_10_dof_pkg) StderrLine: {'line': b'   52 |         float \x1b[01;36m\x1b[Ktilt_compensated_heading\x1b[m\x1b[K(float Mx, float My, float Mz, float ax, float ay, float az);\n'}
+[5.560812] (dfr_10_dof_pkg) StderrLine: {'line': b'      |               \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.560893] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:52:15:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 6 arguments, 5 provided\n'}
+[5.574706] (dfr_10_dof_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:108:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KheadingDegrees\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.574912] (dfr_10_dof_pkg) StderrLine: {'line': b'  108 |     mag_msg.data = \x1b[01;31m\x1b[KheadingDegrees\x1b[m\x1b[K;\n'}
+[5.575009] (dfr_10_dof_pkg) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.623098] (-) TimerEvent: {}
+[5.723524] (-) TimerEvent: {}
+[5.823919] (-) TimerEvent: {}
+[5.924427] (-) TimerEvent: {}
+[6.024824] (-) TimerEvent: {}
+[6.125337] (-) TimerEvent: {}
+[6.225753] (-) TimerEvent: {}
+[6.326305] (-) TimerEvent: {}
+[6.426785] (-) TimerEvent: {}
+[6.527207] (-) TimerEvent: {}
+[6.627776] (-) TimerEvent: {}
+[6.728294] (-) TimerEvent: {}
+[6.828803] (-) TimerEvent: {}
+[6.929241] (-) TimerEvent: {}
+[7.029734] (-) TimerEvent: {}
+[7.130147] (-) TimerEvent: {}
+[7.230639] (-) TimerEvent: {}
+[7.331062] (-) TimerEvent: {}
+[7.431537] (-) TimerEvent: {}
+[7.531946] (-) TimerEvent: {}
+[7.632450] (-) TimerEvent: {}
+[7.732844] (-) TimerEvent: {}
+[7.833426] (-) TimerEvent: {}
+[7.933914] (-) TimerEvent: {}
+[8.034362] (-) TimerEvent: {}
+[8.134903] (-) TimerEvent: {}
+[8.235314] (-) TimerEvent: {}
+[8.335828] (-) TimerEvent: {}
+[8.436330] (-) TimerEvent: {}
+[8.536722] (-) TimerEvent: {}
+[8.637226] (-) TimerEvent: {}
+[8.737615] (-) TimerEvent: {}
+[8.838095] (-) TimerEvent: {}
+[8.938493] (-) TimerEvent: {}
+[9.038971] (-) TimerEvent: {}
+[9.139384] (-) TimerEvent: {}
+[9.239869] (-) TimerEvent: {}
+[9.340289] (-) TimerEvent: {}
+[9.440778] (-) TimerEvent: {}
+[9.541206] (-) TimerEvent: {}
+[9.641682] (-) TimerEvent: {}
+[9.742111] (-) TimerEvent: {}
+[9.842588] (-) TimerEvent: {}
+[9.942993] (-) TimerEvent: {}
+[10.043503] (-) TimerEvent: {}
+[10.143921] (-) TimerEvent: {}
+[10.244414] (-) TimerEvent: {}
+[10.344800] (-) TimerEvent: {}
+[10.445323] (-) TimerEvent: {}
+[10.545763] (-) TimerEvent: {}
+[10.646293] (-) TimerEvent: {}
+[10.746731] (-) TimerEvent: {}
+[10.847261] (-) TimerEvent: {}
+[10.909081] (dfr_10_dof_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1\n'}
+[10.909469] (dfr_10_dof_pkg) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2\n'}
+[10.909688] (dfr_10_dof_pkg) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[10.912762] (dfr_10_dof_pkg) CommandEnded: {'returncode': 2}
+[10.947358] (-) TimerEvent: {}
+[10.986593] (dfr_10_dof_pkg) JobEnded: {'identifier': 'dfr_10_dof_pkg', 'rc': 2}
+[10.997209] (-) EventReactorShutdown: {}

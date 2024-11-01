@@ -1,0 +1,18 @@
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:5[m[K,
+                 from [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kvoid MagnetometerPublisher::[01;32m[Kpublish_data[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:91:78:[m[K [01;31m[Kerror: [m[K‘[01m[KMx[m[K’ was not declared in this scope
+   91 |     RCLCPP_INFO(this->get_logger(), "Mx_uT, My_uT, Mz_uT: %.2f, %.2f, %.2f", [01;31m[KMx[m[K, My, Mz);
+      |                                                                              [01;31m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:91:82:[m[K [01;31m[Kerror: [m[K‘[01m[KMy[m[K’ was not declared in this scope
+   91 |     RCLCPP_INFO(this->get_logger(), "Mx_uT, My_uT, Mz_uT: %.2f, %.2f, %.2f", Mx, [01;31m[KMy[m[K, Mz);
+      |                                                                                  [01;31m[K^~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:91:86:[m[K [01;31m[Kerror: [m[K‘[01m[KMz[m[K’ was not declared in this scope
+   91 |     RCLCPP_INFO(this->get_logger(), "Mx_uT, My_uT, Mz_uT: %.2f, %.2f, %.2f", Mx, My, [01;31m[KMz[m[K);
+      |                                                                                      [01;31m[K^~[m[K
+gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

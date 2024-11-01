@@ -1,0 +1,69 @@
+[0.022s] Invoking command in '/home/rohan/spherebot/build/dfr_10_dof_pkg': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4
+[0.140s] [ 70%] Built target environmental_node
+[0.140s] [ 70%] Built target imu_data_node
+[0.149s] [ 80%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[5.264s] In file included from [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:1[m[K:
+[5.264s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:30:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kfloat[m[K’
+[5.264s]    30 |         [01;31m[Kfloat[m[K hard_iron_bias_y =  -2.1566405156685073
+[5.265s]       |         [01;31m[K^~~~~[m[K
+[5.343s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kstd::vector<float> MagnetometerPublisher::[01;32m[KgetCalibratedValues[m[K(float, float, float)[m[K’:
+[5.343s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:52:25:[m[K [01;31m[Kerror: [m[K‘[01m[Khard_iron_bias_y[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+[5.343s]    52 |     float ym_off = My - [01;31m[Khard_iron_bias_y[m[K;
+[5.343s]       |                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[5.344s]       |                         [32m[Khard_iron_bias_x[m[K
+[5.360s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:53:25:[m[K [01;31m[Kerror: [m[K‘[01m[Khard_iron_bias_z[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+[5.361s]    53 |     float zm_off = Mz - [01;31m[Khard_iron_bias_z[m[K;
+[5.361s]       |                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[5.361s]       |                         [32m[Khard_iron_bias_x[m[K
+[5.391s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_xx[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+[5.391s]    55 |     float xm_cal = xm_off * [01;31m[Ksoft_iron_bias_xx[m[K + ym_off * soft_iron_bias_yx + zm_off * soft_iron_bias_zx;
+[5.391s]       |                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.391s]       |                             [32m[Khard_iron_bias_x[m[K
+[5.421s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_yx[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+[5.422s]    55 |     float xm_cal = xm_off * soft_iron_bias_xx + ym_off * [01;31m[Ksoft_iron_bias_yx[m[K + zm_off * soft_iron_bias_zx;
+[5.422s]       |                                                          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.422s]       |                                                          [32m[Khard_iron_bias_x[m[K
+[5.452s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:55:87:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_zx[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+[5.452s]    55 |     float xm_cal = xm_off * soft_iron_bias_xx + ym_off * soft_iron_bias_yx + zm_off * [01;31m[Ksoft_iron_bias_zx[m[K;
+[5.452s]       |                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.452s]       |                                                                                       [32m[Khard_iron_bias_x[m[K
+[5.473s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_xy[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+[5.473s]    56 |     float ym_cal = xm_off * [01;31m[Ksoft_iron_bias_xy[m[K + ym_off * soft_iron_bias_yy + zm_off * soft_iron_bias_zy;
+[5.473s]       |                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.473s]       |                             [32m[Khard_iron_bias_x[m[K
+[5.491s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_yy[m[K’ was not declared in this scope
+[5.491s]    56 |     float ym_cal = xm_off * soft_iron_bias_xy + ym_off * [01;31m[Ksoft_iron_bias_yy[m[K + zm_off * soft_iron_bias_zy;
+[5.491s]       |                                                          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.509s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:56:87:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_zy[m[K’ was not declared in this scope
+[5.509s]    56 |     float ym_cal = xm_off * soft_iron_bias_xy + ym_off * soft_iron_bias_yy + zm_off * [01;31m[Ksoft_iron_bias_zy[m[K;
+[5.509s]       |                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.523s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_xz[m[K’ was not declared in this scope; did you mean ‘[01m[Khard_iron_bias_x[m[K’?
+[5.523s]    57 |     float zm_cal = xm_off * [01;31m[Ksoft_iron_bias_xz[m[K + ym_off * soft_iron_bias_yz + zm_off * soft_iron_bias_zz;
+[5.523s]       |                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.523s]       |                             [32m[Khard_iron_bias_x[m[K
+[5.541s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_yz[m[K’ was not declared in this scope
+[5.541s]    57 |     float zm_cal = xm_off * soft_iron_bias_xz + ym_off * [01;31m[Ksoft_iron_bias_yz[m[K + zm_off * soft_iron_bias_zz;
+[5.541s]       |                                                          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.559s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:57:87:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoft_iron_bias_zz[m[K’ was not declared in this scope
+[5.559s]    57 |     float zm_cal = xm_off * soft_iron_bias_xz + ym_off * soft_iron_bias_yz + zm_off * [01;31m[Ksoft_iron_bias_zz[m[K;
+[5.559s]       |                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.561s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kvoid MagnetometerPublisher::[01;32m[Kpublish_data[m[K()[m[K’:
+[5.561s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:83:5:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K}[m[K’ token
+[5.561s]    83 |     [01;31m[K}[m[K
+[5.561s]       |     [01;31m[K^[m[K
+[5.561s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:82:15:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+[5.561s]    82 |         return
+[5.561s]       |               [01;31m[K^[m[K
+[5.561s]       |               [32m[K;[m[K
+[5.562s]    83 |     [32m[K}[m[K
+[5.562s]       |     [32m[K~[m[K          
+[5.582s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:86:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kconv_factor[m[K’ was not declared in this scope
+[5.582s]    86 |     float Mx_uT = static_cast<float>(magData.XAxis) * [01;31m[Kconv_factor[m[K;
+[5.582s]       |                                                       [01;31m[K^~~~~~~~~~~[m[K
+[5.616s] [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:108:20:[m[K [01;31m[Kerror: [m[K‘[01m[KheadingDegrees[m[K’ was not declared in this scope
+[5.616s]   108 |     mag_msg.data = [01;31m[KheadingDegrees[m[K;
+[5.616s]       |                    [01;31m[K^~~~~~~~~~~~~~[m[K
+[10.853s] gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1
+[10.853s] gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+[10.853s] gmake: *** [Makefile:146: all] Error 2
+[10.858s] Invoked command in '/home/rohan/spherebot/build/dfr_10_dof_pkg' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/dfr_10_dof_pkg -- -j4 -l4

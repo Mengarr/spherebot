@@ -1,0 +1,8 @@
+[ 14%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o[0m
+[01m[K/home/rohan/spherebot/src/control_lib/src/LowpassFilter.cpp:1:10:[m[K [01;31m[Kfatal error: [m[K../include/control_lib/LowPassFilter.hpp: No such file or directory
+    1 | #include [01;31m[K"../include/control_lib/LowPassFilter.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:146: CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control_interfaces.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

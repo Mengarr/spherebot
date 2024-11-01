@@ -1,0 +1,30 @@
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In constructor ‘[01m[KRemoteControlNode::[01;32m[KRemoteControlNode[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:12:1:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K{[m[K’ token
+   12 | [01;31m[K{[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:14:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor[m[K’ was not declared in this scope
+   14 |     [01;31m[Kmotor[m[K.init();
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:42:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_trajectory_pub_[m[K’ was not declared in this scope
+   42 |     [01;31m[Kjoint_trajectory_pub_[m[K = this->create_publisher<trajectory_msgs::msg::JointTrajectory>(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:45:5:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   45 |     [01;31m[K)[m[K;
+      |     [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KgpsCallback[m[K(sensor_msgs::msg::NavSatFix_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:97:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_lat[m[K’ was not declared in this scope
+   97 |     [01;31m[K_lat[m[K = msg->latitude;
+      |     [01;31m[K^~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:98:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_long[m[K’ was not declared in this scope; did you mean ‘[01m[Kulong[m[K’?
+   98 |     [01;31m[K_long[m[K = msg->longitude;
+      |     [01;31m[K^~~~~[m[K
+      |     [32m[Kulong[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:99:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_alt[m[K’ was not declared in this scope
+   99 |     [01;31m[K_alt[m[K = msg->altitude;
+      |     [01;31m[K^~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:102:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_gps_fix[m[K’ was not declared in this scope
+  102 |     [01;31m[K_gps_fix[m[K = (msg->status.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX);
+      |     [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

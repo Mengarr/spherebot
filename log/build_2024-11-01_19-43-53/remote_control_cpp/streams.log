@@ -1,0 +1,26 @@
+[0.022s] Invoking command in '/home/rohan/spherebot/build/remote_control_cpp': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4
+[0.148s] [ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+[4.136s] In file included from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[4.136s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:38:38:[m[K [01;31m[Kerror: [m[K‘[01m[KBool[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[4.136s]    38 |     rclcpp::Publisher<std_msgs::msg::[01;31m[KBool[m[K>::SharedPtr bool_override_pub_;
+[4.136s]       |                                      [01;31m[K^~~~[m[K
+[4.136s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:38:42:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[4.136s]    38 |     rclcpp::Publisher<std_msgs::msg::Bool[01;31m[K>[m[K::SharedPtr bool_override_pub_;
+[4.136s]       |                                          [01;31m[K^[m[K
+[4.136s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:38:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[4.136s]    38 |     rclcpp::Publisher<std_msgs::msg::Bool>::[01;31m[KSharedPtr[m[K bool_override_pub_;
+[4.137s]       |                                             [01;31m[K^~~~~~~~~[m[K
+[4.137s]       |                                                      [32m[K;[m[K
+[4.142s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:38:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbool_override_pub_[m[K’ does not name a type
+[4.143s]    38 |     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr [01;31m[Kbool_override_pub_[m[K;
+[4.143s]       |                                                       [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[4.356s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[4.356s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:196:22:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KMotorState[m[K’ to ‘[01m[Kstd_msgs::msg::Int8_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Ksigned char[m[K’} in assignment
+[4.356s]   196 |     state_msg.data = [01;31m[Kstatic_cast<MotorState>(MotorState::MANUAL)[m[K;
+[4.356s]       |                      [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.356s]       |                      [01;31m[K|[m[K
+[4.356s]       |                      [01;31m[KMotorState[m[K
+[13.298s] gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+[13.298s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+[13.299s] gmake: *** [Makefile:146: all] Error 2
+[13.302s] Invoked command in '/home/rohan/spherebot/build/remote_control_cpp' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4

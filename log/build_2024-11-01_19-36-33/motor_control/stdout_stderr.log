@@ -1,0 +1,26 @@
+[ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o[0m
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In constructor ‘[01m[KMotorControlNode::[01;32m[KMotorControlNode[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:32:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kstate_sub[m[K’ was not declared in this scope; did you mean ‘[01m[Kstate_sub_[m[K’?
+   32 |     [01;31m[Kstate_sub[m[K = this->create_subscription<std_msgs::msg::Int8>(
+      |     [01;31m[K^~~~~~~~~[m[K
+      |     [32m[Kstate_sub_[m[K
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::[01;32m[KjointTrajectoryCallback[m[K(trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:96:39:[m[K [01;31m[Kerror: [m[K‘[01m[KK_u_d_[m[K’ was not declared in this scope
+   96 |         u_PID_.setGains(Kp_u_, Ki_u_, [01;31m[KK_u_d_[m[K);
+      |                                       [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::[01;32m[KcontrolLoop[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:189:1:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+  189 | [01;31m[K{[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:194:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  194 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:127:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+  127 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+[01m[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:129:99:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  129 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alphadot_ref_, udot_ref_[01;36m[K)[m[K;
+      |                                                                                                   [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

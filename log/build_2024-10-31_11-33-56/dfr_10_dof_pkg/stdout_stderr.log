@@ -1,0 +1,58 @@
+[ 40%] [32mBuilding CXX object CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o[0m
+[ 70%] Built target environmental_node
+[ 80%] Built target imu_data_node
+In file included from [01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:34:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kfloat[m[K’
+   34 |         [01;31m[Kfloat[m[K hard_iron_bias_y =  -2.1566405156685073
+      |         [01;31m[K^~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:47:20:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kstd::vector<float> MagnetometerPublisher::[01;32m[KgetCalibratedValues[m[K(float, float, float)[m[K’
+   47 | std::vector<float> [01;31m[KMagnetometerPublisher[m[K::getCalibratedValues(float Mx, float My, float Mz)
+      |                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:47:20:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kstd::vector<float> MagnetometerPublisher::[01;32m[KgetCalibratedValues[m[K(float, float, float)[m[K’
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:15:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass MagnetometerPublisher[m[K’ defined here
+   15 | class [01;36m[KMagnetometerPublisher[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kvoid MagnetometerPublisher::[01;32m[Kpublish_data[m[K()[m[K’:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:83:5:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K}[m[K’ token
+   83 |     [01;31m[K}[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:82:15:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+   82 |         return
+      |               [01;31m[K^[m[K
+      |               [32m[K;[m[K
+   83 |     [32m[K}[m[K
+      |     [32m[K~[m[K          
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:86:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kconv_factor[m[K’ was not declared in this scope
+   86 |     float Mx_uT = static_cast<float>(magData.XAxis) * [01;31m[Kconv_factor[m[K;
+      |                                                       [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:90:43:[m[K [01;31m[Kerror: [m[K‘[01m[KgetCalibratedValues[m[K’ was not declared in this scope; did you mean ‘[01m[KcalibratedValues[m[K’?
+   90 |     std::vector<float> calibratedValues = [01;31m[KgetCalibratedValues[m[K(Mx_uT, My_uT, Mz_uT);
+      |                                           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+      |                                           [32m[KcalibratedValues[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:95:28:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K_AccelY[m[K’
+   95 |         calibratedValues[2]
+      |                            [01;31m[K^[m[K
+      |                            [32m[K)[m[K
+   96 |         [32m[K_AccelY[m[K,
+      |         [32m[K~~~~~~~[m[K             
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:92:51:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+   92 |     compensatedHeading_ = tilt_compensated_heading[01;36m[K([m[K
+      |                                                   [01;36m[K^[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:92:27:[m[K [01;31m[Kerror: [m[K‘[01m[Ktilt_compensated_heading[m[K’ was not declared in this scope; did you mean ‘[01m[KcompensatedHeading_[m[K’?
+   92 |     compensatedHeading_ = [01;31m[Ktilt_compensated_heading[m[K(
+      |                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                           [32m[KcompensatedHeading_[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:108:20:[m[K [01;31m[Kerror: [m[K‘[01m[KheadingDegrees[m[K’ was not declared in this scope
+  108 |     mag_msg.data = [01;31m[KheadingDegrees[m[K;
+      |                    [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K At global scope:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:114:7:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kfloat MagnetometerPublisher::[01;32m[Ktilt_compensated_heading[m[K(float, float, float, float, float, float)[m[K’
+  114 | float [01;31m[KMagnetometerPublisher[m[K::tilt_compensated_heading(float Mx, float My, float Mz, float ax, float ay, float az)
+      |       [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:114:7:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kfloat MagnetometerPublisher::[01;32m[Ktilt_compensated_heading[m[K(float, float, float, float, float, float)[m[K’
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/../include/dfr_10_dof_pkg/magnetometer_data_node.hpp:15:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass MagnetometerPublisher[m[K’ defined here
+   15 | class [01;36m[KMagnetometerPublisher[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/magneometer_node.dir/build.make:76: CMakeFiles/magneometer_node.dir/src/magnetometer_data_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/magneometer_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

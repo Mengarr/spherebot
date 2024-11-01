@@ -1,0 +1,9 @@
+[ 33%] [32mBuilding CXX object CMakeFiles/gps_read.dir/src/gps_read.cpp.o[0m
+In file included from [01m[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/gps_read_cpp/src/../include/gps_read_cpp/gps_read.h:13:10:[m[K [01;31m[Kfatal error: [m[Kcontrol_lib/geodeticConverter.hpp: No such file or directory
+   13 | #include [01;31m[K"control_lib/geodeticConverter.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/gps_read.dir/build.make:76: CMakeFiles/gps_read.dir/src/gps_read.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_read.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,19 @@
+[0.022s] Invoking command in '/home/rohan/spherebot/build/remote_control_cpp': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/autonomous_control_pid:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4
+[0.125s] [ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+[4.242s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[4.242s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:108:14:[m[K [01;31m[Kerror: [m[K‘[01m[Ku_meas_[m[K’ was not declared in this scope
+[4.242s]   108 |     if (fabs([01;31m[Ku_meas_[m[K) > 45) {
+[4.242s]       |              [01;31m[K^~~~~~~[m[K
+[4.257s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:109:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kalphadot_ref_[m[K’ was not declared in this scope
+[4.257s]   109 |         [01;31m[Kalphadot_ref_[m[K = 0.0;
+[4.257s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[4.267s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:110:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ku_ref_[m[K’ was not declared in this scope
+[4.267s]   110 |         [01;31m[Ku_ref_[m[K = 0.0;
+[4.268s]       |         [01;31m[K^~~~~~[m[K
+[4.289s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:111:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpublishJointTrajectory[m[K’ was not declared in this scope
+[4.290s]   111 |         [01;31m[KpublishJointTrajectory[m[K(); // Command Motors
+[4.290s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[10.980s] gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+[10.980s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+[10.981s] gmake: *** [Makefile:146: all] Error 2
+[10.984s] Invoked command in '/home/rohan/spherebot/build/remote_control_cpp' returned '2': CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/home/rohan/spherebot/install/remote_control_cpp:/home/rohan/spherebot/install/motor_control:/home/rohan/spherebot/install/joystick_reader:/home/rohan/spherebot/install/gps_read_cpp:/home/rohan/spherebot/install/dfr_10_dof_pkg:/home/rohan/spherebot/install/autonomous_control_pid:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/rohan/spherebot/install/data_logger_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4

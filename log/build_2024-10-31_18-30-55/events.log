@@ -1,0 +1,114 @@
+[0.000000] (-) TimerEvent: {}
+[0.000643] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.001252] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.001587] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.001640] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.001997] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.002228] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.002275] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.002318] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.002368] (-) JobUnselected: {'identifier': 'motor_control'}
+[0.002411] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.002487] (gps_read_cpp) JobQueued: {'identifier': 'gps_read_cpp', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.002585] (gps_read_cpp) JobStarted: {'identifier': 'gps_read_cpp'}
+[0.022141] (gps_read_cpp) JobProgress: {'identifier': 'gps_read_cpp', 'progress': 'cmake'}
+[0.023176] (gps_read_cpp) JobProgress: {'identifier': 'gps_read_cpp', 'progress': 'build'}
+[0.024105] (gps_read_cpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/gps_read_cpp', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/gps_read_cpp', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 50328 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan/spherebot/src', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '53', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'DISPLAY': 'localhost:11.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/gps_read_cpp', 'SSH_CONNECTION': '192.168.0.19 50328 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099325] (-) TimerEvent: {}
+[0.140145] (gps_read_cpp) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/gps_read.dir/src/gps_read.cpp.o\x1b[0m\n'}
+[0.199444] (-) TimerEvent: {}
+[0.299832] (-) TimerEvent: {}
+[0.400296] (-) TimerEvent: {}
+[0.500808] (-) TimerEvent: {}
+[0.601205] (-) TimerEvent: {}
+[0.701684] (-) TimerEvent: {}
+[0.802095] (-) TimerEvent: {}
+[0.902584] (-) TimerEvent: {}
+[1.003015] (-) TimerEvent: {}
+[1.103526] (-) TimerEvent: {}
+[1.203994] (-) TimerEvent: {}
+[1.304556] (-) TimerEvent: {}
+[1.404995] (-) TimerEvent: {}
+[1.505497] (-) TimerEvent: {}
+[1.605911] (-) TimerEvent: {}
+[1.706416] (-) TimerEvent: {}
+[1.806828] (-) TimerEvent: {}
+[1.907354] (-) TimerEvent: {}
+[2.007801] (-) TimerEvent: {}
+[2.108342] (-) TimerEvent: {}
+[2.208727] (-) TimerEvent: {}
+[2.309145] (-) TimerEvent: {}
+[2.409646] (-) TimerEvent: {}
+[2.510066] (-) TimerEvent: {}
+[2.610558] (-) TimerEvent: {}
+[2.710999] (-) TimerEvent: {}
+[2.811489] (-) TimerEvent: {}
+[2.911912] (-) TimerEvent: {}
+[3.012434] (-) TimerEvent: {}
+[3.112864] (-) TimerEvent: {}
+[3.213383] (-) TimerEvent: {}
+[3.313814] (-) TimerEvent: {}
+[3.414322] (-) TimerEvent: {}
+[3.514742] (-) TimerEvent: {}
+[3.615303] (-) TimerEvent: {}
+[3.715731] (-) TimerEvent: {}
+[3.816263] (-) TimerEvent: {}
+[3.916671] (-) TimerEvent: {}
+[4.017194] (-) TimerEvent: {}
+[4.117600] (-) TimerEvent: {}
+[4.218122] (-) TimerEvent: {}
+[4.318491] (-) TimerEvent: {}
+[4.418872] (-) TimerEvent: {}
+[4.519293] (-) TimerEvent: {}
+[4.619777] (-) TimerEvent: {}
+[4.720199] (-) TimerEvent: {}
+[4.820690] (-) TimerEvent: {}
+[4.921125] (-) TimerEvent: {}
+[5.021617] (-) TimerEvent: {}
+[5.122033] (-) TimerEvent: {}
+[5.201376] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid GPSread::\x1b[01;32m\x1b[Kpublish_data\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.201723] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:82:61:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kinit_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.201850] (gps_read_cpp) StderrLine: {'line': b'   82 |     _geodeticConverter.setReferenceOrigin(_lat, _long, _alt)\n'}
+[5.201967] (gps_read_cpp) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.202063] (gps_read_cpp) StderrLine: {'line': b'      |                                                             \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[5.202148] (gps_read_cpp) StderrLine: {'line': b'   83 |     \x1b[32m\x1b[Kinit_\x1b[m\x1b[K = true;\n'}
+[5.202231] (gps_read_cpp) StderrLine: {'line': b'      |     \x1b[32m\x1b[K~~~~~\x1b[m\x1b[K                                                    \n'}
+[5.222111] (-) TimerEvent: {}
+[5.322469] (-) TimerEvent: {}
+[5.422968] (-) TimerEvent: {}
+[5.523374] (-) TimerEvent: {}
+[5.623852] (-) TimerEvent: {}
+[5.724233] (-) TimerEvent: {}
+[5.824630] (-) TimerEvent: {}
+[5.925125] (-) TimerEvent: {}
+[6.025549] (-) TimerEvent: {}
+[6.126065] (-) TimerEvent: {}
+[6.226496] (-) TimerEvent: {}
+[6.326984] (-) TimerEvent: {}
+[6.427352] (-) TimerEvent: {}
+[6.527752] (-) TimerEvent: {}
+[6.628284] (-) TimerEvent: {}
+[6.728762] (-) TimerEvent: {}
+[6.829167] (-) TimerEvent: {}
+[6.929645] (-) TimerEvent: {}
+[7.030046] (-) TimerEvent: {}
+[7.130539] (-) TimerEvent: {}
+[7.230974] (-) TimerEvent: {}
+[7.331453] (-) TimerEvent: {}
+[7.431868] (-) TimerEvent: {}
+[7.532418] (-) TimerEvent: {}
+[7.632849] (-) TimerEvent: {}
+[7.733367] (-) TimerEvent: {}
+[7.833764] (-) TimerEvent: {}
+[7.934261] (-) TimerEvent: {}
+[8.034661] (-) TimerEvent: {}
+[8.135172] (-) TimerEvent: {}
+[8.235533] (-) TimerEvent: {}
+[8.335943] (-) TimerEvent: {}
+[8.436368] (-) TimerEvent: {}
+[8.448886] (gps_read_cpp) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/gps_read.dir/build.make:76: CMakeFiles/gps_read.dir/src/gps_read.cpp.o] Error 1\n'}
+[8.449276] (gps_read_cpp) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_read.dir/all] Error 2\n'}
+[8.449753] (gps_read_cpp) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[8.452615] (gps_read_cpp) CommandEnded: {'returncode': 2}
+[8.514092] (gps_read_cpp) JobEnded: {'identifier': 'gps_read_cpp', 'rc': 2}
+[8.524714] (-) EventReactorShutdown: {}

@@ -1,0 +1,25 @@
+[1.180s] Invoking command in '/home/rohan/spherebot/src/data_logger_pkg': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/rohan/spherebot/build/data_logger_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rohan/spherebot/install/data_logger_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/data_logger_pkg build --build-base /home/rohan/spherebot/build/data_logger_pkg/build install --record /home/rohan/spherebot/build/data_logger_pkg/install.log --single-version-externally-managed install_data
+[1.542s] running egg_info
+[1.568s] writing ../../build/data_logger_pkg/data_logger_pkg.egg-info/PKG-INFO
+[1.568s] writing dependency_links to ../../build/data_logger_pkg/data_logger_pkg.egg-info/dependency_links.txt
+[1.569s] writing entry points to ../../build/data_logger_pkg/data_logger_pkg.egg-info/entry_points.txt
+[1.570s] writing requirements to ../../build/data_logger_pkg/data_logger_pkg.egg-info/requires.txt
+[1.571s] writing top-level names to ../../build/data_logger_pkg/data_logger_pkg.egg-info/top_level.txt
+[1.625s] reading manifest file '../../build/data_logger_pkg/data_logger_pkg.egg-info/SOURCES.txt'
+[1.625s] adding license file 'LICENSE'
+[1.626s] writing manifest file '../../build/data_logger_pkg/data_logger_pkg.egg-info/SOURCES.txt'
+[1.626s] running build
+[1.626s] running build_py
+[1.626s] copying data_logger_pkg/data_logger_node.py -> /home/rohan/spherebot/build/data_logger_pkg/build/lib/data_logger_pkg
+[1.627s] running install
+[1.636s] running install_lib
+[1.662s] copying /home/rohan/spherebot/build/data_logger_pkg/build/lib/data_logger_pkg/data_logger_node.py -> /home/rohan/spherebot/install/data_logger_pkg/lib/python3.12/site-packages/data_logger_pkg
+[1.663s] byte-compiling /home/rohan/spherebot/install/data_logger_pkg/lib/python3.12/site-packages/data_logger_pkg/data_logger_node.py to data_logger_node.cpython-312.pyc
+[1.666s] running install_data
+[1.666s] running install_egg_info
+[1.694s] removing '/home/rohan/spherebot/install/data_logger_pkg/lib/python3.12/site-packages/data_logger_pkg-0.0.0-py3.12.egg-info' (and everything under it)
+[1.694s] Copying ../../build/data_logger_pkg/data_logger_pkg.egg-info to /home/rohan/spherebot/install/data_logger_pkg/lib/python3.12/site-packages/data_logger_pkg-0.0.0-py3.12.egg-info
+[1.695s] running install_scripts
+[1.876s] Installing data_logger_node script to /home/rohan/spherebot/install/data_logger_pkg/lib/data_logger_pkg
+[1.877s] writing list of installed files to '/home/rohan/spherebot/build/data_logger_pkg/install.log'
+[1.955s] Invoked command in '/home/rohan/spherebot/src/data_logger_pkg' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/rohan/spherebot/build/data_logger_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rohan/spherebot/install/data_logger_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/data_logger_pkg build --build-base /home/rohan/spherebot/build/data_logger_pkg/build install --record /home/rohan/spherebot/build/data_logger_pkg/install.log --single-version-externally-managed install_data

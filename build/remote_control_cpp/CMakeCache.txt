@@ -275,7 +275,10 @@ SITE:STRING=rbpi5
 TinyXML2_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/tinyxml2
 
 //Path to a library.
-_lib:FILEPATH=/home/rohan/spherebot/install/control_lib/lib/libcontrol_interfaces.a
+_lib:FILEPATH=/opt/ros/jazzy/lib/libcontrol_msgs__rosidl_typesupport_fastrtps_cpp.so
+
+//The directory containing a CMake configuration file for action_msgs.
+action_msgs_DIR:PATH=/opt/ros/jazzy/share/action_msgs/cmake
 
 //The directory containing a CMake configuration file for ament_cmake.
 ament_cmake_DIR:PATH=/opt/ros/jazzy/share/ament_cmake/cmake
@@ -333,6 +336,9 @@ builtin_interfaces_DIR:PATH=/opt/ros/jazzy/share/builtin_interfaces/cmake
 
 //The directory containing a CMake configuration file for control_lib.
 control_lib_DIR:PATH=/home/rohan/spherebot/install/control_lib/share/control_lib/cmake
+
+//The directory containing a CMake configuration file for control_msgs.
+control_msgs_DIR:PATH=/opt/ros/jazzy/share/control_msgs/cmake
 
 //The directory containing a CMake configuration file for fastcdr.
 fastcdr_DIR:PATH=/opt/ros/jazzy/lib/cmake/fastcdr
@@ -472,8 +478,14 @@ std_msgs_DIR:PATH=/opt/ros/jazzy/share/std_msgs/cmake
 //The directory containing a CMake configuration file for tracetools.
 tracetools_DIR:PATH=/opt/ros/jazzy/share/tracetools/cmake
 
+//The directory containing a CMake configuration file for trajectory_msgs.
+trajectory_msgs_DIR:PATH=/opt/ros/jazzy/share/trajectory_msgs/cmake
+
 //The directory containing a CMake configuration file for type_description_interfaces.
 type_description_interfaces_DIR:PATH=/opt/ros/jazzy/share/type_description_interfaces/cmake
+
+//The directory containing a CMake configuration file for unique_identifier_msgs.
+unique_identifier_msgs_DIR:PATH=/opt/ros/jazzy/share/unique_identifier_msgs/cmake
 
 
 ########################

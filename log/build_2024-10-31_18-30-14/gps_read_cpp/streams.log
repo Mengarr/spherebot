@@ -1,0 +1,13 @@
+[0.022s] Invoking command in '/home/rohan/spherebot/build/gps_read_cpp': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/gps_read_cpp -- -j4 -l4
+[0.140s] [ 33%] [32mBuilding CXX object CMakeFiles/gps_read.dir/src/gps_read.cpp.o[0m
+[5.197s] [01m[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:[m[K In member function ‘[01m[Kvoid GPSread::[01;32m[Kpublish_data[m[K()[m[K’:
+[5.197s] [01m[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:82:61:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kinit_[m[K’
+[5.197s]    82 |     _geodeticConverter.setReferenceOrigin(_lat, _long, _alt)
+[5.197s]       |                                                             [01;31m[K^[m[K
+[5.197s]       |                                                             [32m[K;[m[K
+[5.198s]    83 |     [32m[Kinit_[m[K = true;
+[5.198s]       |     [32m[K~~~~~[m[K                                                    
+[8.467s] gmake[2]: *** [CMakeFiles/gps_read.dir/build.make:76: CMakeFiles/gps_read.dir/src/gps_read.cpp.o] Error 1
+[8.467s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_read.dir/all] Error 2
+[8.467s] gmake: *** [Makefile:146: all] Error 2
+[8.471s] Invoked command in '/home/rohan/spherebot/build/gps_read_cpp' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/gps_read_cpp -- -j4 -l4

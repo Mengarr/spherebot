@@ -1,0 +1,208 @@
+[0.000000] (-) TimerEvent: {}
+[0.000575] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.000764] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.000791] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.000812] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.001006] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.001028] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.001047] (-) JobUnselected: {'identifier': 'gps_read_cpp'}
+[0.001158] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001177] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001195] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.001219] (motor_control) JobQueued: {'identifier': 'motor_control', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.001266] (motor_control) JobStarted: {'identifier': 'motor_control'}
+[0.016120] (motor_control) JobProgress: {'identifier': 'motor_control', 'progress': 'cmake'}
+[0.016999] (motor_control) JobProgress: {'identifier': 'motor_control', 'progress': 'build'}
+[0.017750] (motor_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/motor_control', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/motor_control', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.112.109 55934 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/motor_control', 'SSH_CONNECTION': '192.168.112.109 55934 192.168.112.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099605] (-) TimerEvent: {}
+[0.134222] (motor_control) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o\x1b[0m\n'}
+[0.199719] (-) TimerEvent: {}
+[0.300095] (-) TimerEvent: {}
+[0.400487] (-) TimerEvent: {}
+[0.500889] (-) TimerEvent: {}
+[0.601275] (-) TimerEvent: {}
+[0.701668] (-) TimerEvent: {}
+[0.802197] (-) TimerEvent: {}
+[0.902588] (-) TimerEvent: {}
+[1.002968] (-) TimerEvent: {}
+[1.103336] (-) TimerEvent: {}
+[1.203716] (-) TimerEvent: {}
+[1.304094] (-) TimerEvent: {}
+[1.404468] (-) TimerEvent: {}
+[1.504850] (-) TimerEvent: {}
+[1.605216] (-) TimerEvent: {}
+[1.705617] (-) TimerEvent: {}
+[1.806008] (-) TimerEvent: {}
+[1.906411] (-) TimerEvent: {}
+[2.006814] (-) TimerEvent: {}
+[2.107180] (-) TimerEvent: {}
+[2.207580] (-) TimerEvent: {}
+[2.307940] (-) TimerEvent: {}
+[2.408322] (-) TimerEvent: {}
+[2.508721] (-) TimerEvent: {}
+[2.609098] (-) TimerEvent: {}
+[2.709477] (-) TimerEvent: {}
+[2.809870] (-) TimerEvent: {}
+[2.910263] (-) TimerEvent: {}
+[3.010655] (-) TimerEvent: {}
+[3.111013] (-) TimerEvent: {}
+[3.211415] (-) TimerEvent: {}
+[3.311811] (-) TimerEvent: {}
+[3.412190] (-) TimerEvent: {}
+[3.512576] (-) TimerEvent: {}
+[3.612955] (-) TimerEvent: {}
+[3.713347] (-) TimerEvent: {}
+[3.813756] (-) TimerEvent: {}
+[3.914156] (-) TimerEvent: {}
+[4.014525] (-) TimerEvent: {}
+[4.114920] (-) TimerEvent: {}
+[4.159681] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KMotorControlNode::\x1b[01;32m\x1b[KMotorControlNode\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.160025] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:32:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstate_sub\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstate_sub_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.160140] (motor_control) StderrLine: {'line': b'   32 |     \x1b[01;31m\x1b[Kstate_sub\x1b[m\x1b[K = this->create_subscription<std_msgs::msg::Int8>(\n'}
+[4.160231] (motor_control) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.160314] (motor_control) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kstate_sub_\x1b[m\x1b[K\n'}
+[4.197907] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MotorControlNode::\x1b[01;32m\x1b[KjointTrajectoryCallback\x1b[m\x1b[K(trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.198122] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:96:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KK_u_d_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.198212] (motor_control) StderrLine: {'line': b'   96 |         u_PID_.setGains(Kp_u_, Ki_u_, \x1b[01;31m\x1b[KK_u_d_\x1b[m\x1b[K);\n'}
+[4.198297] (motor_control) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.202268] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MotorControlNode::\x1b[01;32m\x1b[KcontrolLoop\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.202428] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:153:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcontinue statement not within a loop\n'}
+[4.202525] (motor_control) StderrLine: {'line': b'  153 |         \x1b[01;31m\x1b[Kcontinue\x1b[m\x1b[K;\n'}
+[4.202627] (motor_control) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.204311] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[4.205168] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27\x1b[m\x1b[K,\n'}
+[4.205299] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171\x1b[m\x1b[K,\n'}
+[4.205390] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:4\x1b[m\x1b[K,\n'}
+[4.205473] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:1\x1b[m\x1b[K:\n'}
+[4.205627] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:163:72:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.205721] (motor_control) StderrLine: {'line': b'  163 |         RCLCPP_ERROR(this->get_logger(), "Received unknown state: %d", \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K->data);\n'}
+[4.205802] (motor_control) StderrLine: {'line': b'      |                                                                        \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.205881] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:163:72:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[4.205961] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:156\x1b[m\x1b[K,\n'}
+[4.206042] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp:7\x1b[m\x1b[K,\n'}
+[4.206121] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:21\x1b[m\x1b[K:\n'}
+[4.206200] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:30:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Krcl_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.206301] (motor_control) StderrLine: {'line': b'   30 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.206437] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.206520] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:23\x1b[m\x1b[K,\n'}
+[4.206617] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:267\x1b[m\x1b[K:\n'}
+[4.206702] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:30:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbuiltin_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.206800] (motor_control) StderrLine: {'line': b'   30 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.206881] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.206960] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:34:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kservice_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.207040] (motor_control) StderrLine: {'line': b'   34 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.207117] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.207255] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:26\x1b[m\x1b[K,\n'}
+[4.207367] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7\x1b[m\x1b[K,\n'}
+[4.207452] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21\x1b[m\x1b[K,\n'}
+[4.207533] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23\x1b[m\x1b[K,\n'}
+[4.207634] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[4.207718] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[4.207797] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[4.207877] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[4.208001] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22\x1b[m\x1b[K,\n'}
+[4.208083] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38\x1b[m\x1b[K,\n'}
+[4.208162] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[4.208242] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[4.208323] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172\x1b[m\x1b[K:\n'}
+[4.208402] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:30:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstatistics_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.208494] (motor_control) StderrLine: {'line': b'   30 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.208586] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.208672] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:23\x1b[m\x1b[K,\n'}
+[4.208795] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/joint_trajectory.hpp:7\x1b[m\x1b[K,\n'}
+[4.208874] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:5\x1b[m\x1b[K:\n'}
+[4.208967] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:34:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.209046] (motor_control) StderrLine: {'line': b'   34 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.209123] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.209200] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:25\x1b[m\x1b[K:\n'}
+[4.209278] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.hpp:34:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Ktrajectory_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.209419] (motor_control) StderrLine: {'line': b'   34 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.209554] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.209658] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:23\x1b[m\x1b[K,\n'}
+[4.209744] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory_point__struct.hpp:23\x1b[m\x1b[K,\n'}
+[4.209840] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/control_msgs/control_msgs/msg/detail/joint_trajectory_controller_state__struct.hpp:33\x1b[m\x1b[K,\n'}
+[4.209925] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/control_msgs/control_msgs/msg/joint_trajectory_controller_state.hpp:7\x1b[m\x1b[K,\n'}
+[4.210005] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:6\x1b[m\x1b[K:\n'}
+[4.210084] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:30:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.210163] (motor_control) StderrLine: {'line': b'   30 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.210241] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.210362] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/control_msgs/control_msgs/msg/detail/joint_trajectory_controller_state__struct.hpp:44:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kcontrol_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.210446] (motor_control) StderrLine: {'line': b'   44 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.210526] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.210618] (motor_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/imu.hpp:7\x1b[m\x1b[K,\n'}
+[4.210702] (motor_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/../include/motor_control/motor_control_node.hpp:11\x1b[m\x1b[K:\n'}
+[4.210781] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp:39:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.210886] (motor_control) StderrLine: {'line': b'   39 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.210967] (motor_control) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.215010] (-) TimerEvent: {}
+[4.315338] (-) TimerEvent: {}
+[4.415734] (-) TimerEvent: {}
+[4.516116] (-) TimerEvent: {}
+[4.616495] (-) TimerEvent: {}
+[4.716890] (-) TimerEvent: {}
+[4.817294] (-) TimerEvent: {}
+[4.917726] (-) TimerEvent: {}
+[5.018092] (-) TimerEvent: {}
+[5.118474] (-) TimerEvent: {}
+[5.218876] (-) TimerEvent: {}
+[5.319283] (-) TimerEvent: {}
+[5.419673] (-) TimerEvent: {}
+[5.520063] (-) TimerEvent: {}
+[5.620451] (-) TimerEvent: {}
+[5.720859] (-) TimerEvent: {}
+[5.821244] (-) TimerEvent: {}
+[5.921637] (-) TimerEvent: {}
+[6.021996] (-) TimerEvent: {}
+[6.122362] (-) TimerEvent: {}
+[6.222743] (-) TimerEvent: {}
+[6.323112] (-) TimerEvent: {}
+[6.423494] (-) TimerEvent: {}
+[6.523916] (-) TimerEvent: {}
+[6.624306] (-) TimerEvent: {}
+[6.724702] (-) TimerEvent: {}
+[6.825081] (-) TimerEvent: {}
+[6.925461] (-) TimerEvent: {}
+[7.025849] (-) TimerEvent: {}
+[7.126232] (-) TimerEvent: {}
+[7.226620] (-) TimerEvent: {}
+[7.326989] (-) TimerEvent: {}
+[7.427364] (-) TimerEvent: {}
+[7.527759] (-) TimerEvent: {}
+[7.628135] (-) TimerEvent: {}
+[7.728507] (-) TimerEvent: {}
+[7.828891] (-) TimerEvent: {}
+[7.929274] (-) TimerEvent: {}
+[8.029681] (-) TimerEvent: {}
+[8.130062] (-) TimerEvent: {}
+[8.230454] (-) TimerEvent: {}
+[8.330850] (-) TimerEvent: {}
+[8.431233] (-) TimerEvent: {}
+[8.531640] (-) TimerEvent: {}
+[8.632021] (-) TimerEvent: {}
+[8.732400] (-) TimerEvent: {}
+[8.832792] (-) TimerEvent: {}
+[8.933168] (-) TimerEvent: {}
+[9.033534] (-) TimerEvent: {}
+[9.133920] (-) TimerEvent: {}
+[9.234312] (-) TimerEvent: {}
+[9.334715] (-) TimerEvent: {}
+[9.435106] (-) TimerEvent: {}
+[9.535466] (-) TimerEvent: {}
+[9.635831] (-) TimerEvent: {}
+[9.736201] (-) TimerEvent: {}
+[9.836592] (-) TimerEvent: {}
+[9.937002] (-) TimerEvent: {}
+[10.037406] (-) TimerEvent: {}
+[10.137824] (-) TimerEvent: {}
+[10.238233] (-) TimerEvent: {}
+[10.316029] (motor_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/motor_control/src/motor_control_node.cpp:127:99:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kparameter passing for argument of type \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float>\x1b[m\x1b[K\xe2\x80\x99 when C++17 is enabled changed to match C++14 \x1b]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_base\x07in GCC 10.1\x1b]8;;\x07\n'}
+[10.316362] (motor_control) StderrLine: {'line': b'  127 |     std::pair<float, float> jointVariableVelocity = computeJointVariables(alphadot_ref_, udot_ref_\x1b[01;36m\x1b[K)\x1b[m\x1b[K;\n'}
+[10.316481] (motor_control) StderrLine: {'line': b'      |                                                                                                   \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[10.338346] (-) TimerEvent: {}
+[10.403402] (motor_control) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o] Error 1\n'}
+[10.403813] (motor_control) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2\n'}
+[10.403974] (motor_control) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[10.407471] (motor_control) CommandEnded: {'returncode': 2}
+[10.438453] (-) TimerEvent: {}
+[10.461931] (motor_control) JobEnded: {'identifier': 'motor_control', 'rc': 2}
+[10.472523] (-) EventReactorShutdown: {}

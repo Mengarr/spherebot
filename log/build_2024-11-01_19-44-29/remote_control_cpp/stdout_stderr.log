@@ -1,0 +1,18 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+In file included from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:38:38:[m[K [01;31m[Kerror: [m[K‘[01m[KBool[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+   38 |     rclcpp::Publisher<std_msgs::msg::[01;31m[KBool[m[K>::SharedPtr bool_override_pub_;
+      |                                      [01;31m[K^~~~[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:38:42:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   38 |     rclcpp::Publisher<std_msgs::msg::Bool[01;31m[K>[m[K::SharedPtr bool_override_pub_;
+      |                                          [01;31m[K^[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:38:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   38 |     rclcpp::Publisher<std_msgs::msg::Bool>::[01;31m[KSharedPtr[m[K bool_override_pub_;
+      |                                             [01;31m[K^~~~~~~~~[m[K
+      |                                                      [32m[K;[m[K
+[01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:38:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbool_override_pub_[m[K’ does not name a type
+   38 |     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr [01;31m[Kbool_override_pub_[m[K;
+      |                                                       [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,68 @@
+[0.020s] Invoking command in '/home/rohan/spherebot/build/control_lib': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/control_lib -- -j4 -l4
+[0.125s] [ 42%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o[0m
+[0.126s] [ 42%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o[0m
+[0.126s] [ 42%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o[0m
+[0.162s] [01m[K/home/rohan/spherebot/src/control_lib/src/LowpassFilter.cpp:1:10:[m[K [01;31m[Kfatal error: [m[K../include/control_lib/LowPassFilter.hpp: No such file or directory
+[0.163s]     1 | #include [01;31m[K"../include/control_lib/LowPassFilter.hpp"[m[K
+[0.163s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.163s] compilation terminated.
+[0.168s] gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:146: CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o] Error 1
+[0.168s] gmake[2]: *** Waiting for unfinished jobs....
+[0.637s] In file included from [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:1[m[K:
+[0.637s] [01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:17:93:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[0.637s]    17 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::[01;31m[Kstring[m[K, float>& params); // Computes reference u based on rc
+[0.638s]       |                                                                                             [01;31m[K^~~~~~[m[K
+[0.638s] [01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:4:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+[0.638s]     3 | #include <map> // for map
+[0.639s]   +++ |+[32m[K#include <string>[m[K
+[0.639s]     4 | 
+[0.640s] [01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:17:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[0.640s]    17 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::string, float[01;31m[K>[m[K& params); // Computes reference u based on rc
+[0.640s]       |                                                                                                          [01;31m[K^[m[K
+[0.640s] [01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:17:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[0.641s] [01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/kinematic_transforms.hpp:17:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[0.644s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K In function ‘[01m[Kstd::pair<float, float>[01;32m[K computeJointVariables[m[K(float, float)[m[K’:
+[0.644s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:3:67:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+[0.645s]     3 | std::pair<float, float> computeJointVariables(float alpha, float u[01;36m[K)[m[K {
+[0.645s]       |                                                                   [01;36m[K^[m[K
+[0.647s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K At global scope:
+[0.647s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:93:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[0.647s]    36 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::[01;31m[Kstring[m[K, float>& params) {
+[0.647s]       |                                                                                             [01;31m[K^~~~~~[m[K
+[0.648s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:2:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+[0.648s]     1 | #include "../include/control_lib/kinematic_transforms.hpp"
+[0.648s]   +++ |+[32m[K#include <string>[m[K
+[0.648s]     2 | 
+[0.649s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[0.649s]    36 | float calculate_u_ref(float alpha, float theta, float dtheta, float rc, const std::map<std::string, float[01;31m[K>[m[K& params) {
+[0.649s]       |                                                                                                          [01;31m[K^[m[K
+[0.649s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[0.650s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:36:106:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[0.650s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:[m[K In function ‘[01m[Kfloat[01;32m[K calculate_u_ref[m[K(float, float, float, float, const int&)[m[K’:
+[0.650s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:38:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+[0.650s]    38 |     float g = params.[01;31m[Kat[m[K("g");
+[0.651s]       |                      [01;31m[K^~[m[K
+[0.651s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:39:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+[0.651s]    39 |     float r = params.[01;31m[Kat[m[K("r");
+[0.651s]       |                      [01;31m[K^~[m[K
+[0.652s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:40:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+[0.652s]    40 |     float R = params.[01;31m[Kat[m[K("R");
+[0.652s]       |                      [01;31m[K^~[m[K
+[0.653s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:41:23:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+[0.653s]    41 |     float Is = params.[01;31m[Kat[m[K("Is");
+[0.653s]       |                       [01;31m[K^~[m[K
+[0.653s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:42:23:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+[0.654s]    42 |     float mp = params.[01;31m[Kat[m[K("mp");
+[0.654s]       |                       [01;31m[K^~[m[K
+[0.654s] [01m[K/home/rohan/spherebot/src/control_lib/src/kinematic_transforms.cpp:43:23:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kat[m[K’ in ‘[01m[Kparams[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+[0.654s]    43 |     float ms = params.[01;31m[Kat[m[K("ms");
+[0.655s]       |                       [01;31m[K^~[m[K
+[0.724s] gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:118: CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o] Error 1
+[1.010s] In file included from [01m[K/home/rohan/spherebot/src/control_lib/src/auxilary_arduino.cpp:1[m[K:
+[1.011s] [01m[K/home/rohan/spherebot/src/control_lib/src/../include/control_lib/auxilary_arduino.hpp:18:44:[m[K [01;31m[Kerror: [m[K‘[01m[KAuxilaryArduino_I2C_ADDR[m[K’ was not declared in this scope
+[1.011s]    18 |         AuxilaryArduino(uint8_t I2C_ADDR = [01;31m[KAuxilaryArduino_I2C_ADDR[m[K);
+[1.011s]       |                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.103s] gmake[2]: *** [CMakeFiles/control_interfaces.dir/build.make:104: CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o] Error 1
+[1.103s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control_interfaces.dir/all] Error 2
+[1.103s] gmake: *** [Makefile:146: all] Error 2
+[1.107s] Invoked command in '/home/rohan/spherebot/build/control_lib' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/control_lib -- -j4 -l4

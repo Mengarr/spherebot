@@ -1,1 +1,1 @@
-rclcpp;std_msgs;sensor_msgs;i2c_lib;control_lib;launch;launch_ros;ament_lint_auto;ament_lint_common
+rclcpp;sensor_msgs;i2c_lib;trajectory_msgs;control_msgs;control_lib;std_msgs;launch;launch_ros;ament_lint_auto;ament_lint_common

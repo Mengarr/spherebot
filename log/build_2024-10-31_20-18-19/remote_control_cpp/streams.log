@@ -1,0 +1,77 @@
+[0.023s] Invoking command in '/home/rohan/spherebot/build/remote_control_cpp': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4
+[0.073s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.408s] -- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.441s] -- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.453s] -- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.469s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.488s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.576s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.576s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.664s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.744s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.870s] -- Found i2c_lib: 0.0.1 (/home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake)
+[0.875s] -- Found control_lib: 0.0.0 (/home/rohan/spherebot/install/control_lib/share/control_lib/cmake)
+[0.876s] -- Found trajectory_msgs: 5.3.5 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
+[0.901s] -- Found control_msgs: 5.2.0 (/opt/ros/jazzy/share/control_msgs/cmake)
+[1.177s] -- Configuring done (1.1s)
+[1.216s] -- Generating done (0.0s)
+[1.228s] -- Build files have been written to: /home/rohan/spherebot/build/remote_control_cpp
+[1.315s] [ 50%] [32mBuilding CXX object CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o[0m
+[5.717s] In file included from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:1[m[K:
+[5.717s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:27:38:[m[K [01;31m[Kerror: [m[K‘[01m[KBool[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[5.717s]    27 |     rclcpp::Publisher<std_msgs::msg::[01;31m[KBool[m[K>::SharedPtr bool_override_pub_;
+[5.718s]       |                                      [01;31m[K^~~~[m[K
+[5.718s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:27:42:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.718s]    27 |     rclcpp::Publisher<std_msgs::msg::Bool[01;31m[K>[m[K::SharedPtr bool_override_pub_;
+[5.718s]       |                                          [01;31m[K^[m[K
+[5.718s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:27:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[5.718s]    27 |     rclcpp::Publisher<std_msgs::msg::Bool>::[01;31m[KSharedPtr[m[K bool_override_pub_;
+[5.718s]       |                                             [01;31m[K^~~~~~~~~[m[K
+[5.718s]       |                                                      [32m[K;[m[K
+[5.724s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:27:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbool_override_pub_[m[K’ does not name a type
+[5.724s]    27 |     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr [01;31m[Kbool_override_pub_[m[K;
+[5.724s]       |                                                       [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[5.934s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In constructor ‘[01m[KRemoteControlNode::[01;32m[KRemoteControlNode[m[K()[m[K’:
+[5.934s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:43:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kbool_override_pub_[m[K’ was not declared in this scope
+[5.934s]    43 |     [01;31m[Kbool_override_pub_[m[K = this->create_publisher<std_msgs::msg::Bool>(
+[5.935s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[5.935s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:43:64:[m[K [01;31m[Kerror: [m[K‘[01m[KBool[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[5.935s]    43 |     bool_override_pub_ = this->create_publisher<std_msgs::msg::[01;31m[KBool[m[K>(
+[5.936s]       |                                                                [01;31m[K^~~~[m[K
+[5.936s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:43:69:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KRemoteControlNode::create_publisher<<expression error> >(const char [21], int)[m[K’
+[5.936s]    43 |     bool_override_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Bool>([m[K
+[5.936s]       |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[5.936s]    44 | [01;31m[K        "overrides/u_override", 1[m[K
+[5.936s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                    
+[5.936s]    45 | [01;31m[K    )[m[K;
+[5.936s]       |     [01;31m[K~[m[K                                                                
+[5.936s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1663[m[K,
+[5.936s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[5.936s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[5.937s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+[5.937s]                  from [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/../include/remote_control_cpp/remote_control_node.hpp:8[m[K:
+[5.937s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+[5.937s]    73 | [01;36m[KNode[m[K::create_publisher(
+[5.937s]       | [01;36m[K^~~~[m[K
+[5.937s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[5.937s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:43:69:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.937s]    43 |     bool_override_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Bool>([m[K
+[5.937s]       |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[5.937s]    44 | [01;31m[K        "overrides/u_override", 1[m[K
+[5.937s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                    
+[5.937s]    45 | [01;31m[K    )[m[K;
+[5.938s]       |     [01;31m[K~[m[K                                                                
+[5.960s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:[m[K In member function ‘[01m[Kvoid RemoteControlNode::[01;32m[KtimerCallback[m[K()[m[K’:
+[5.961s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:155:20:[m[K [01;31m[Kerror: [m[K‘[01m[KBool[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[5.961s]   155 |     std_msgs::msg::[01;31m[KBool[m[K override_msg;
+[5.961s]       |                    [01;31m[K^~~~[m[K
+[5.973s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:156:5:[m[K [01;31m[Kerror: [m[K‘[01m[Koverride_msg[m[K’ was not declared in this scope
+[5.973s]   156 |     [01;31m[Koverride_msg[m[K.data = true;
+[5.973s]       |     [01;31m[K^~~~~~~~~~~~[m[K
+[6.013s] [01m[K/home/rohan/spherebot/src/remote_control_cpp/src/remote_control_node.cpp:157:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kbool_override_pub_[m[K’ was not declared in this scope
+[6.013s]   157 |     [01;31m[Kbool_override_pub_[m[K->publish(override_msg);
+[6.013s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[12.934s] gmake[2]: *** [CMakeFiles/remote_control_node.dir/build.make:76: CMakeFiles/remote_control_node.dir/src/remote_control_node.cpp.o] Error 1
+[12.935s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/remote_control_node.dir/all] Error 2
+[12.935s] gmake: *** [Makefile:146: all] Error 2
+[12.938s] Invoked command in '/home/rohan/spherebot/build/remote_control_cpp' returned '2': AMENT_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/rohan/spherebot/build/remote_control_cpp -- -j4 -l4

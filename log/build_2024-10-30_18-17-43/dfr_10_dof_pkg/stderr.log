@@ -1,0 +1,4 @@
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:[m[K In member function ‘[01m[Kfloat MagnetometerPublisher::[01;32m[KcalculateAdjustedHeading[m[K(int16_t, int16_t, int16_t, float, float, float)[m[K’:
+[01m[K/home/rohan/spherebot/src/dfr_10_dof_pkg/src/magnetometer_data_node.cpp:120:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmag_z_comp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  120 |         float [01;35m[Kmag_z_comp[m[K = -last_mag_x * cos_roll * sin_pitch +
+      |               [01;35m[K^~~~~~~~~~[m[K

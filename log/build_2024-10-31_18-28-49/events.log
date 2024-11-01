@@ -1,0 +1,254 @@
+[0.000000] (-) TimerEvent: {}
+[0.000410] (-) JobUnselected: {'identifier': 'autonomous_control_lqg'}
+[0.000719] (-) JobUnselected: {'identifier': 'autonomous_control_pid'}
+[0.000747] (-) JobUnselected: {'identifier': 'control_lib'}
+[0.000767] (-) JobUnselected: {'identifier': 'custom_interfaces'}
+[0.000917] (-) JobUnselected: {'identifier': 'data_logger_pkg'}
+[0.000938] (-) JobUnselected: {'identifier': 'dfr_10_dof_pkg'}
+[0.001126] (-) JobUnselected: {'identifier': 'i2c_lib'}
+[0.001146] (-) JobUnselected: {'identifier': 'joystick_reader'}
+[0.001164] (-) JobUnselected: {'identifier': 'motor_control'}
+[0.001279] (-) JobUnselected: {'identifier': 'remote_control_cpp'}
+[0.001309] (gps_read_cpp) JobQueued: {'identifier': 'gps_read_cpp', 'dependencies': OrderedDict({'i2c_lib': '/home/rohan/spherebot/install/i2c_lib', 'control_lib': '/home/rohan/spherebot/install/control_lib'})}
+[0.001367] (gps_read_cpp) JobStarted: {'identifier': 'gps_read_cpp'}
+[0.019779] (gps_read_cpp) JobProgress: {'identifier': 'gps_read_cpp', 'progress': 'cmake'}
+[0.020812] (gps_read_cpp) JobProgress: {'identifier': 'gps_read_cpp', 'progress': 'build'}
+[0.021772] (gps_read_cpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan/spherebot/build/gps_read_cpp', '--', '-j4', '-l4'], 'cwd': '/home/rohan/spherebot/build/gps_read_cpp', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rohan', 'SSH_CLIENT': '192.168.0.19 50328 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rohan/spherebot/install/control_lib/lib:/home/rohan/spherebot/install/i2c_lib/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/rohan', 'OLDPWD': '/home/rohan/spherebot/src', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'rohan', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '53', 'PATH': '/home/rohan/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'DISPLAY': 'localhost:11.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rohan/spherebot/build/gps_read_cpp', 'SSH_CONNECTION': '192.168.0.19 50328 192.168.0.100 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rohan/spherebot/install/control_lib:/home/rohan/spherebot/install/i2c_lib:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.068930] (gps_read_cpp) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099660] (-) TimerEvent: {}
+[0.200013] (-) TimerEvent: {}
+[0.300447] (-) TimerEvent: {}
+[0.400802] (-) TimerEvent: {}
+[0.409982] (gps_read_cpp) StdoutLine: {'line': b'-- Found rclcpp: 28.1.3 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.485935] (gps_read_cpp) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.500912] (-) TimerEvent: {}
+[0.510010] (gps_read_cpp) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.3 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.526085] (gps_read_cpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.544758] (gps_read_cpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.600994] (-) TimerEvent: {}
+[0.640819] (gps_read_cpp) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.645198] (gps_read_cpp) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.701151] (-) TimerEvent: {}
+[0.782004] (gps_read_cpp) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.801225] (-) TimerEvent: {}
+[0.861413] (gps_read_cpp) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[0.901342] (-) TimerEvent: {}
+[0.989972] (gps_read_cpp) StdoutLine: {'line': b'-- Found i2c_lib: 0.0.1 (/home/rohan/spherebot/install/i2c_lib/share/i2c_lib/cmake)\n'}
+[0.992342] (gps_read_cpp) StdoutLine: {'line': b'-- Found control_lib: 0.0.0 (/home/rohan/spherebot/install/control_lib/share/control_lib/cmake)\n'}
+[1.001451] (-) TimerEvent: {}
+[1.101830] (-) TimerEvent: {}
+[1.161005] (gps_read_cpp) StdoutLine: {'line': b'-- Configuring done (1.1s)\n'}
+[1.196767] (gps_read_cpp) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.201910] (-) TimerEvent: {}
+[1.207565] (gps_read_cpp) StdoutLine: {'line': b'-- Build files have been written to: /home/rohan/spherebot/build/gps_read_cpp\n'}
+[1.292168] (gps_read_cpp) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/gps_read.dir/src/gps_read.cpp.o\x1b[0m\n'}
+[1.292559] (gps_read_cpp) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/gps_read.dir/src/TinyGPS++.cpp.o\x1b[0m\n'}
+[1.302104] (-) TimerEvent: {}
+[1.402628] (-) TimerEvent: {}
+[1.503054] (-) TimerEvent: {}
+[1.603597] (-) TimerEvent: {}
+[1.704153] (-) TimerEvent: {}
+[1.804999] (-) TimerEvent: {}
+[1.905523] (-) TimerEvent: {}
+[2.005920] (-) TimerEvent: {}
+[2.106398] (-) TimerEvent: {}
+[2.206780] (-) TimerEvent: {}
+[2.307178] (-) TimerEvent: {}
+[2.407699] (-) TimerEvent: {}
+[2.508073] (-) TimerEvent: {}
+[2.608489] (-) TimerEvent: {}
+[2.708976] (-) TimerEvent: {}
+[2.809387] (-) TimerEvent: {}
+[2.909857] (-) TimerEvent: {}
+[3.010241] (-) TimerEvent: {}
+[3.110668] (-) TimerEvent: {}
+[3.211181] (-) TimerEvent: {}
+[3.311624] (-) TimerEvent: {}
+[3.412040] (-) TimerEvent: {}
+[3.512594] (-) TimerEvent: {}
+[3.613010] (-) TimerEvent: {}
+[3.713527] (-) TimerEvent: {}
+[3.813936] (-) TimerEvent: {}
+[3.914438] (-) TimerEvent: {}
+[4.014848] (-) TimerEvent: {}
+[4.115328] (-) TimerEvent: {}
+[4.215729] (-) TimerEvent: {}
+[4.316205] (-) TimerEvent: {}
+[4.416627] (-) TimerEvent: {}
+[4.517107] (-) TimerEvent: {}
+[4.617498] (-) TimerEvent: {}
+[4.717870] (-) TimerEvent: {}
+[4.818412] (-) TimerEvent: {}
+[4.918894] (-) TimerEvent: {}
+[5.019297] (-) TimerEvent: {}
+[5.119768] (-) TimerEvent: {}
+[5.220168] (-) TimerEvent: {}
+[5.320688] (-) TimerEvent: {}
+[5.421089] (-) TimerEvent: {}
+[5.521606] (-) TimerEvent: {}
+[5.621982] (-) TimerEvent: {}
+[5.722415] (-) TimerEvent: {}
+[5.822901] (-) TimerEvent: {}
+[5.923340] (-) TimerEvent: {}
+[6.023825] (-) TimerEvent: {}
+[6.108815] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid GPSread::\x1b[01;32m\x1b[Kpublish_data\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.109651] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:52:8:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kconflicting declaration \xe2\x80\x98\x1b[01m\x1b[Kauto msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.109784] (gps_read_cpp) StderrLine: {'line': b'   52 |   auto \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K = sensor_msgs::msg::NavSatFix();\n'}
+[6.109877] (gps_read_cpp) StderrLine: {'line': b'      |        \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[6.109962] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:49:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kprevious declaration as \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg::Point_<std::allocator<void> > msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.110092] (gps_read_cpp) StderrLine: {'line': b'   49 |   auto \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K = geometry_msgs::msg::Point();\n'}
+[6.110195] (gps_read_cpp) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[6.110286] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:53:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kheader\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.110392] (gps_read_cpp) StderrLine: {'line': b'   53 |   msg.\x1b[01;31m\x1b[Kheader\x1b[m\x1b[K.stamp = this->get_clock()->now();\n'}
+[6.110478] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.110562] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:54:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kheader\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.110649] (gps_read_cpp) StderrLine: {'line': b'   54 |   msg.\x1b[01;31m\x1b[Kheader\x1b[m\x1b[K.frame_id = "gps_frame";\n'}
+[6.110734] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.110817] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:57:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kstatus\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.110903] (gps_read_cpp) StderrLine: {'line': b'   57 |     msg.\x1b[01;31m\x1b[Kstatus\x1b[m\x1b[K.status = sensor_msgs::msg::NavSatStatus::STATUS_FIX;\n'}
+[6.110985] (gps_read_cpp) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.111064] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:59:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kstatus\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.111181] (gps_read_cpp) StderrLine: {'line': b'   59 |     msg.\x1b[01;31m\x1b[Kstatus\x1b[m\x1b[K.status = sensor_msgs::msg::NavSatStatus::STATUS_NO_FIX;\n'}
+[6.111264] (gps_read_cpp) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.111365] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:61:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kstatus\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.111451] (gps_read_cpp) StderrLine: {'line': b'   61 |   msg.\x1b[01;31m\x1b[Kstatus\x1b[m\x1b[K.service = sensor_msgs::msg::NavSatStatus::SERVICE_GPS;\n'}
+[6.111530] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.111608] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:70:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Klatitude\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.111688] (gps_read_cpp) StderrLine: {'line': b'   70 |   msg.\x1b[01;31m\x1b[Klatitude\x1b[m\x1b[K = _lat;\n'}
+[6.111767] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[6.111925] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:71:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Klongitude\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.112203] (gps_read_cpp) StderrLine: {'line': b'   71 |   msg.\x1b[01;31m\x1b[Klongitude\x1b[m\x1b[K = _long;\n'}
+[6.112322] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[6.112420] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:72:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kaltitude\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.112509] (gps_read_cpp) StderrLine: {'line': b'   72 |   msg.\x1b[01;31m\x1b[Kaltitude\x1b[m\x1b[K = _alt;\n'}
+[6.112592] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[6.112674] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:75:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kposition_covariance\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.112759] (gps_read_cpp) StderrLine: {'line': b'   75 |   msg.\x1b[01;31m\x1b[Kposition_covariance\x1b[m\x1b[K[0] = 0.0;\n'}
+[6.112841] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.112921] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:76:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kposition_covariance\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.113002] (gps_read_cpp) StderrLine: {'line': b'   76 |   msg.\x1b[01;31m\x1b[Kposition_covariance\x1b[m\x1b[K[4] = 0.0;\n'}
+[6.113080] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.113157] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:77:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kposition_covariance\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.113266] (gps_read_cpp) StderrLine: {'line': b'   77 |   msg.\x1b[01;31m\x1b[Kposition_covariance\x1b[m\x1b[K[8] = 0.0;\n'}
+[6.113365] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.113446] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:78:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kposition_covariance_type\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.113532] (gps_read_cpp) StderrLine: {'line': b'   78 |   msg.\x1b[01;31m\x1b[Kposition_covariance_type\x1b[m\x1b[K = sensor_msgs::msg::NavSatFix::COVARIANCE_TYPE_UNKNOWN;\n'}
+[6.113611] (gps_read_cpp) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.113688] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:81:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct geometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kstatus\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.113770] (gps_read_cpp) StderrLine: {'line': b'   81 |   if (!init_ &&  msg.\x1b[01;31m\x1b[Kstatus\x1b[m\x1b[K.status == sensor_msgs::msg::NavSatStatus::STATUS_FIX) {\n'}
+[6.113852] (gps_read_cpp) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.113930] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:82:61:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kinit_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.114011] (gps_read_cpp) StderrLine: {'line': b'   82 |     _geodeticConverter.setReferenceOrigin(_lat, _long, _alt)\n'}
+[6.114091] (gps_read_cpp) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.114177] (gps_read_cpp) StderrLine: {'line': b'      |                                                             \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[6.114258] (gps_read_cpp) StderrLine: {'line': b'   83 |     \x1b[32m\x1b[Kinit_\x1b[m\x1b[K = true;\n'}
+[6.114365] (gps_read_cpp) StderrLine: {'line': b'      |     \x1b[32m\x1b[K~~~~~\x1b[m\x1b[K                                                    \n'}
+[6.122981] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:84:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcoords_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[6.123188] (gps_read_cpp) StderrLine: {'line': b'   84 |     \x1b[01;31m\x1b[Kcoords_msg\x1b[m\x1b[K.x = 0.0;\n'}
+[6.123302] (gps_read_cpp) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.123883] (-) TimerEvent: {}
+[6.134955] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:91:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcoords_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcoords\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[6.135202] (gps_read_cpp) StderrLine: {'line': b'   91 |     \x1b[01;31m\x1b[Kcoords_msg\x1b[m\x1b[K.x = coords.east;\n'}
+[6.135318] (gps_read_cpp) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.135411] (gps_read_cpp) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kcoords\x1b[m\x1b[K\n'}
+[6.135574] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:97:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<sensor_msgs::msg::NavSatFix_<std::allocator<void> > >::publish(geometry_msgs::msg::Point_<std::allocator<void> >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.135705] (gps_read_cpp) StderrLine: {'line': b'   97 |   \x1b[01;31m\x1b[Kgps_publisher_->publish(msg)\x1b[m\x1b[K;\n'}
+[6.135798] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[6.136044] (gps_read_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[6.136131] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[6.136268] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[6.136543] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[6.136645] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[6.136740] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22\x1b[m\x1b[K,\n'}
+[6.136835] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38\x1b[m\x1b[K,\n'}
+[6.136987] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[6.137074] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[6.137155] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172\x1b[m\x1b[K,\n'}
+[6.137233] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/../include/gps_read_cpp/gps_read.h:10\x1b[m\x1b[K,\n'}
+[6.137332] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:1\x1b[m\x1b[K:\n'}
+[6.137418] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:239:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::\x1b[01;32m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::ros_message_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::ros_message_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type> >::type>) \x1b[35m\x1b[K[with MessageT = sensor_msgs::msg::NavSatFix_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.137541] (gps_read_cpp) StderrLine: {'line': b'  239 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<T, ROSMessageTypeDeleter> msg)\n'}
+[6.137624] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[6.137715] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:239:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[6.137795] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:97:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<T, std::default_delete<sensor_msgs::msg::NavSatFix_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.137889] (gps_read_cpp) StderrLine: {'line': b'   97 |   \x1b[01;36m\x1b[Kgps_publisher_->publish(msg)\x1b[m\x1b[K;\n'}
+[6.137969] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[6.138046] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:289:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::\x1b[01;32m\x1b[Kpublish\x1b[m\x1b[K(const T&) \x1b[35m\x1b[K[with MessageT = sensor_msgs::msg::NavSatFix_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.138129] (gps_read_cpp) StderrLine: {'line': b'  289 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const T & msg)\n'}
+[6.138207] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[6.138290] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:289:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[6.138382] (gps_read_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/ratio:39\x1b[m\x1b[K,\n'}
+[6.138462] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/13/bits/chrono.h:37\x1b[m\x1b[K,\n'}
+[6.138539] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/13/chrono:41\x1b[m\x1b[K,\n'}
+[6.138617] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/../include/gps_read_cpp/TinyGPS++.h:31\x1b[m\x1b[K,\n'}
+[6.138695] (gps_read_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/../include/gps_read_cpp/gps_read.h:4\x1b[m\x1b[K:\n'}
+[6.138774] (gps_read_cpp) StderrLine: {'line': b'/usr/include/c++/13/type_traits: In substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<bool _Cond, class _Tp> using std::enable_if_t = typename std::enable_if::type \x1b[35m\x1b[K[with bool _Cond = false; _Tp = void]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.138870] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:289:3:\x1b[m\x1b[K   required by substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, sensor_msgs::msg::NavSatFix_<std::allocator<void> > >::value), void> rclcpp::Publisher<sensor_msgs::msg::NavSatFix_<std::allocator<void> > >::\x1b[01;32m\x1b[Kpublish\x1b[m\x1b[K(const T&) \x1b[35m\x1b[K[with T = geometry_msgs::msg::Point_<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.138964] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:97:26:\x1b[m\x1b[K   required from here\n'}
+[6.139043] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/type_traits:2610:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, void>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.139139] (gps_read_cpp) StderrLine: {'line': b' 2610 |     using \x1b[01;31m\x1b[Kenable_if_t\x1b[m\x1b[K = typename enable_if<_Cond, _Tp>::type;\n'}
+[6.139218] (gps_read_cpp) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.139309] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:319:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::\x1b[01;32m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::custom_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::custom_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type> >::type>) \x1b[35m\x1b[K[with MessageT = sensor_msgs::msg::NavSatFix_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.139426] (gps_read_cpp) StderrLine: {'line': b'  319 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<T, PublishedTypeDeleter> msg)\n'}
+[6.139507] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[6.139586] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:319:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[6.139686] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:97:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<T, std::default_delete<sensor_msgs::msg::NavSatFix_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.139807] (gps_read_cpp) StderrLine: {'line': b'   97 |   \x1b[01;36m\x1b[Kgps_publisher_->publish(msg)\x1b[m\x1b[K;\n'}
+[6.139974] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[6.140158] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:366:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::\x1b[01;32m\x1b[Kpublish\x1b[m\x1b[K(const T&) \x1b[35m\x1b[K[with MessageT = sensor_msgs::msg::NavSatFix_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.140387] (gps_read_cpp) StderrLine: {'line': b'  366 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const T & msg)\n'}
+[6.140586] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[6.140770] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:366:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[6.140956] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:384:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::\x1b[01;32m\x1b[Kpublish\x1b[m\x1b[K(const rcl_serialized_message_t&) \x1b[35m\x1b[K[with MessageT = sensor_msgs::msg::NavSatFix_<std::allocator<void> >; AllocatorT = std::allocator<void>; rcl_serialized_message_t = rcutils_uint8_array_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.141178] (gps_read_cpp) StderrLine: {'line': b'  384 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const rcl_serialized_message_t & serialized_msg)\n'}
+[6.141393] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[6.141612] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:384:44:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst rcl_serialized_message_t&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kconst rcutils_uint8_array_s&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[6.141808] (gps_read_cpp) StderrLine: {'line': b'  384 |   publish(\x1b[01;36m\x1b[Kconst rcl_serialized_message_t & serialized_msg\x1b[m\x1b[K)\n'}
+[6.141996] (gps_read_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.142182] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:390:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::\x1b[01;32m\x1b[Kpublish\x1b[m\x1b[K(const rclcpp::SerializedMessage&) \x1b[35m\x1b[K[with MessageT = sensor_msgs::msg::NavSatFix_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.142407] (gps_read_cpp) StderrLine: {'line': b'  390 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const SerializedMessage & serialized_msg)\n'}
+[6.142608] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[6.142794] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:390:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::SerializedMessage&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.143003] (gps_read_cpp) StderrLine: {'line': b'  390 |   publish(\x1b[01;36m\x1b[Kconst SerializedMessage & serialized_msg\x1b[m\x1b[K)\n'}
+[6.143212] (gps_read_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.143428] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:404:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::\x1b[01;32m\x1b[Kpublish\x1b[m\x1b[K(rclcpp::LoanedMessage<typename rclcpp::TypeAdapter<MessageT>::ros_message_type, AllocatorT>&&) \x1b[35m\x1b[K[with MessageT = sensor_msgs::msg::NavSatFix_<std::allocator<void> >; AllocatorT = std::allocator<void>; typename rclcpp::TypeAdapter<MessageT>::ros_message_type = sensor_msgs::msg::NavSatFix_<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.143633] (gps_read_cpp) StderrLine: {'line': b'  404 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(rclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg)\n'}
+[6.143818] (gps_read_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[6.144000] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/publisher.hpp:404:64:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg::Point_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::LoanedMessage<sensor_msgs::msg::NavSatFix_<std::allocator<void> >, std::allocator<void> >&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.144214] (gps_read_cpp) StderrLine: {'line': b'  404 |   publish(\x1b[01;36m\x1b[Krclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg\x1b[m\x1b[K)\n'}
+[6.144449] (gps_read_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.160165] (gps_read_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan/spherebot/src/gps_read_cpp/src/gps_read.cpp:98:30:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcoords_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[6.160612] (gps_read_cpp) StderrLine: {'line': b'   98 |   coords_publisher_->publish(\x1b[01;31m\x1b[Kcoords_msg\x1b[m\x1b[K);\n'}
+[6.160828] (gps_read_cpp) StderrLine: {'line': b'      |                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.224044] (-) TimerEvent: {}
+[6.324555] (-) TimerEvent: {}
+[6.424929] (-) TimerEvent: {}
+[6.525328] (-) TimerEvent: {}
+[6.625793] (-) TimerEvent: {}
+[6.726176] (-) TimerEvent: {}
+[6.826674] (-) TimerEvent: {}
+[6.927071] (-) TimerEvent: {}
+[7.027589] (-) TimerEvent: {}
+[7.128043] (-) TimerEvent: {}
+[7.228545] (-) TimerEvent: {}
+[7.328946] (-) TimerEvent: {}
+[7.429484] (-) TimerEvent: {}
+[7.529920] (-) TimerEvent: {}
+[7.630442] (-) TimerEvent: {}
+[7.730850] (-) TimerEvent: {}
+[7.831384] (-) TimerEvent: {}
+[7.931987] (-) TimerEvent: {}
+[8.032490] (-) TimerEvent: {}
+[8.132902] (-) TimerEvent: {}
+[8.233396] (-) TimerEvent: {}
+[8.333808] (-) TimerEvent: {}
+[8.434312] (-) TimerEvent: {}
+[8.534705] (-) TimerEvent: {}
+[8.635100] (-) TimerEvent: {}
+[8.712585] (gps_read_cpp) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/gps_read.dir/build.make:76: CMakeFiles/gps_read.dir/src/gps_read.cpp.o] Error 1\n'}
+[8.713874] (gps_read_cpp) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_read.dir/all] Error 2\n'}
+[8.714520] (gps_read_cpp) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[8.718541] (gps_read_cpp) CommandEnded: {'returncode': 2}
+[8.735236] (-) TimerEvent: {}
+[8.773467] (gps_read_cpp) JobEnded: {'identifier': 'gps_read_cpp', 'rc': 2}
+[8.784070] (-) EventReactorShutdown: {}

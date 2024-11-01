@@ -1,0 +1,3 @@
+[ 42%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/LowpassFilter.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/auxilary_arduino.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/control_interfaces.dir/src/kinematic_transforms.cpp.o[0m

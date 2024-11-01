@@ -3,7 +3,7 @@
 AutonomousControlNodePID::AutonomousControlNodePID()
 : Node("autonomous_control_node"),
   _stanley(k_, k_s_, L_, tolerance_),
-  _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/test_path.json"),
+  _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/path_north.json"),
   current_state_(STATES::INITIALIZING),
   next_state_(STATES::INITIALIZING),
   X_BUTTON_(false),

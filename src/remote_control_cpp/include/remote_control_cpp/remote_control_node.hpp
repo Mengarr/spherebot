@@ -9,10 +9,18 @@
 #include <sensor_msgs/msg/joy.hpp>
 #include "sensor_msgs/msg/nav_sat_fix.hpp"
 #include "std_msgs/msg/float32.hpp"
-#include <std_msgs/msg/bool.hpp>
 #include "control_lib/auxilary_arduino.hpp"
 #include <trajectory_msgs/msg/joint_trajectory.hpp>
 #include <control_msgs/msg/joint_trajectory_controller_state.hpp>
+#include "std_msgs/msg/int8.hpp"
+
+
+enum class MotorState : int8_t {
+    MANUAL = 0,       // No phi or u control
+    PHI_CONTROL = 1,  // phi control
+    U_CONTROL = 2     // u control
+};
+
 
 class RemoteControlNode : public rclcpp::Node
 {
@@ -25,8 +33,8 @@ private:
     void jointTrajectoryStateCallback(const control_msgs::msg::JointTrajectoryControllerState::SharedPtr msg);
     void timerCallback();
     
+    rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr state_pub_; // for motor control state
     rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory>::SharedPtr joint_trajectory_pub_;
-    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr bool_override_pub_;
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr mag_sub_;
@@ -58,6 +66,7 @@ private:
 
     AuxilaryArduino arduino;
     
+    double phi_ref_ = 0.0;
     double u_ref_ = 0.0;
     double alphadot_ref_ = 0.0;
     double u_dot_ref = 0.0;

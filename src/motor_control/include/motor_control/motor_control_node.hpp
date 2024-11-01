@@ -8,7 +8,14 @@
 #include "control_lib/kinematic_transforms.hpp"
 #include "control_lib/PID_controller.hpp"
 #include "control_lib/auxilary_arduino.hpp"
-#include <std_msgs/msg/bool.hpp>
+#include "sensor_msgs/msg/imu.hpp" // For smart u and phi control
+#include "std_msgs/msg/int8.hpp"
+
+enum class State : int8_t {
+    MANUAL = 0,       // No phi or u control
+    PHI_CONTROL = 1,  // phi control
+    U_CONTROL = 2     // u control
+};
 
 class MotorControlNode : public rclcpp::Node
 {
@@ -20,15 +27,17 @@ private:
     // Subscriber callback for JointTrajectory messages
     void jointTrajectoryCallback(const trajectory_msgs::msg::JointTrajectory::SharedPtr msg);
 
-    // override callback
-    void uOverrideCallback(const std_msgs::msg::Bool::SharedPtr msg);
+    // state callback
+    void stateCallback(const std_msgs::msg::Int8::SharedPtr msg);
 
     // Timer callback for the 20Hz control loop (prototype, no code needed inside)
     void controlLoop();
     
-    // PID controller
-    double Kp_ = 0.1; double Ki_ = 0.06; double Kd_ = 0;
+    // PID controllers
+    double Kp_u_ = 0.0; double Ki_u_ = 0.0; double Kd_u_ = 0.0;
+    double Kp_phi_ = 0.0; double Ki_phi_ = 0.0; double Kd_phi_ = 0.0;
     PIDController u_PID_;
+    PIDController phi_PID_;
 
     // motor control
     MotorControl motor;
@@ -36,16 +45,24 @@ private:
     // auxilary arduino control
     AuxilaryArduino arduino;
 
+    // Imu stuff for phi control
+    float roll_ = 0.0;
+    void imuCallback(const sensor_msgs::msg::Imu::SharedPtr msg);
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_sub_;
+
     // Subscriber and publisher
+    rclcpp::Subscription<std_msgs::msg::Int8>::SharedPtr state_sub_; // for motor control state
     rclcpp::Subscription<trajectory_msgs::msg::JointTrajectory>::SharedPtr joint_trajectory_sub_;
-    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr bool_override_sub_;
     rclcpp::Publisher<control_msgs::msg::JointTrajectoryControllerState>::SharedPtr joint_state_pub_;
     
     // Timer for the control loop at 20Hz
     rclcpp::TimerBase::SharedPtr control_loop_timer_;
 
-    // u override
-    bool u_override_ = false;
+    // States
+    State current_state_;
+
+    // For phi control
+    double phi_ref_, phidot_ref_;
 
     // Private vars for reference joint state:
     double u_ref_, alpha_ref_;

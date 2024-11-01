@@ -123,9 +123,9 @@ float MagnetometerPublisher::tilt_compensated_heading(float Mx, float My, float 
     const float epsilon = 1e-8;
 
     // Step 1: Calculate Roll (φ) and Pitch (θ)
-    float roll = std::atan2(ay, az + epsilon);
+    float roll = std::atan2(ay, -az + epsilon);
     float pitch = std::atan2(-ax, std::sqrt(ay * ay + az * az) + epsilon);
-    // RCLCPP_INFO(this->get_logger(), "Pitch, Roll: %.2f, %.2f", pitch * (180 / M_PI), roll*(180 / M_PI));
+    //RCLCPP_INFO(this->get_logger(), "Pitch, Roll: %.2f, %.2f", pitch * (180 / M_PI), roll*(180 / M_PI));
 
     // Step 2: Apply Tilt Compensation
     float x_mag_comp = Mx * std::cos(roll) 

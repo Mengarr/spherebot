@@ -9,6 +9,7 @@ RemoteControlNode::RemoteControlNode()
   prev_x_button_(false),
   prev_o_button_(false),
   arduino(AUX_ARDUINO_I2C_ADDR),
+  phi_ref_(0.0),
   u_meas_(0.0),
   alpha_meas_(0.0),
   udot_meas_(0.0),
@@ -50,9 +51,9 @@ RemoteControlNode::RemoteControlNode()
         std::bind(&RemoteControlNode::jointTrajectoryStateCallback, this, std::placeholders::_1)
     );
     
-    // Initalize override publisher to motor control node:
-    bool_override_pub_ = this->create_publisher<std_msgs::msg::Bool>(
-        "overrides/u_override", 1
+    // 
+    state_pub_ = this->create_publisher<std_msgs::msg::Int8>(
+        "motor/motor_control_state", 1
     );
 
     // Initialize a timer that runs at 10 Hz
@@ -60,7 +61,6 @@ RemoteControlNode::RemoteControlNode()
         std::chrono::milliseconds(100),  // 100 ms interval corresponds to 10 Hz
         std::bind(&RemoteControlNode::timerCallback, this)
     );
-
 
     RCLCPP_INFO(this->get_logger(), "Remote Control Node has been started.");
 }
@@ -136,6 +136,7 @@ void RemoteControlNode::publishJointTrajectory()
     // Set the joint names for each joint
     joint_vars_msg.joint_names = {"c_drive"}; 
 
+
     // Create a JointTrajectoryPoint to hold the positions and velocities
     trajectory_msgs::msg::JointTrajectoryPoint point;
 
@@ -155,6 +156,25 @@ void RemoteControlNode::publishJointTrajectory()
     // Add the point to the JointTrajectory message
     joint_vars_msg.points.push_back(point);
 
+    // Create a JointTrajectoryPoint to hold the positions and velocities
+    trajectory_msgs::msg::JointTrajectoryPoint point_phi;
+
+    // Set positions for each joint
+    point_phi.positions.push_back(phi_ref_);         // u_ref_ value
+    point_phi.positions.push_back(0.0);            // alpha_ref value (not used)
+
+    // Set velocities for each joint
+    point_phi.velocities.push_back(0.0);           // Velocity of joint u, must be 0.0
+    point_phi.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
+
+    // Add PID efforts
+    point_phi.effort.push_back(0.0);            // Kd
+    point_phi.effort.push_back(0.1);           // Ki
+    point_phi.effort.push_back(2);            // Kp
+
+
+    // Add the point to the JointTrajectory message
+    joint_vars_msg.points.push_back(point_phi);
     joint_trajectory_pub_->publish(joint_vars_msg);
 }
 
@@ -162,9 +182,10 @@ void RemoteControlNode::timerCallback()
 {   
     if (!X_BUTTON_) {
 
-        if (fabs(u_meas_) > 45) {
+        if (fabs(u_meas_) > 40) {
             alphadot_ref_ = 0.0;
             u_ref_ = 0.0;
+            phi_ref_ = 0.0;
             u_dot_ref = 0.0;
             publishJointTrajectory(); // Command Motors
             RCLCPP_WARN(this->get_logger(), "Motor soft limits reached. haulting robot");
@@ -185,8 +206,6 @@ void RemoteControlNode::timerCallback()
         arduino.setMotorSpeedDir(0x00);
     }
 
-
-
     // Apply deadzone to control inputs (SCALE THE MAPPED AXES HERE SO THAT THE OUTPUT is sensible)
     alphadot_ref_ = (mapped_axes1_ / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
 
@@ -194,10 +213,9 @@ void RemoteControlNode::timerCallback()
 
     publishJointTrajectory(); // Command Motors
 
-
-    std_msgs::msg::Bool override_msg;
-    override_msg.data = true;
-    bool_override_pub_->publish(override_msg);
+    std_msgs::msg::Int8 state_msg;
+    state_msg.data = static_cast<int8_t>(MotorState::MANUAL);
+    state_pub_->publish(state_msg);
 }
 
 

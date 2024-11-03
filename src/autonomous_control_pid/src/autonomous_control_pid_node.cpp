@@ -23,6 +23,10 @@ AutonomousControlNodePID::AutonomousControlNodePID()
     this->declare_parameter<float>("Ki_phi_", 0.1);
     this->declare_parameter<float>("Kd_phi_", 0.0);
 
+    this->declare_parameter<float>("foward_roll_timeout", 4);
+    this->declare_parameter<float>("foward_velocity", 60);
+    
+
     // Retrieve parameters
     this->get_parameter("control_u_", control_u_); // True for controling u, false to control using phi_
     this->get_parameter("k_", k_);
@@ -36,6 +40,10 @@ AutonomousControlNodePID::AutonomousControlNodePID()
     this->get_parameter("Kp_phi_", Kp_phi_);
     this->get_parameter("Ki_phi_", Ki_phi_);
     this->get_parameter("Kd_phi_", Kd_phi_);
+
+    this->get_parameter("foward_roll_timeout", foward_roll_timeout_);
+    this->get_parameter("foward_velocity", foward_vel_);
+    
 
     // Print all parameters and their values
     RCLCPP_INFO(this->get_logger(), "Parameters:");
@@ -53,8 +61,13 @@ AutonomousControlNodePID::AutonomousControlNodePID()
     RCLCPP_INFO(this->get_logger(), "Ki_phi_: %f", Ki_phi_);
     RCLCPP_INFO(this->get_logger(), "Kd_phi_: %f", Kd_phi_);
 
+    RCLCPP_INFO(this->get_logger(), "Fowar Vel: %f", foward_vel_);
+    RCLCPP_INFO(this->get_logger(), "Foward timeout: %f", foward_roll_timeout_);
+
     // Stanley controller ctor
     _stanley.setParams(k_, k_s_, L_, tolerance_);
+
+    alphadot_ref_ = (foward_vel_ / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;
 
     // Motor control state
     motor_state_ = (control_u_ == true) ?  MotorState::U_CONTROL :  MotorState::PHI_CONTROL;
@@ -219,7 +232,7 @@ void AutonomousControlNodePID::publishJointTrajectory()
 
     // Set velocities for each joint
     point.velocities.push_back(0.0);           // Velocity of joint u, must be 0.0
-    point.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
+    point.velocities.push_back(-alphadot_ref_); // Velocity of joint alpha
 
     // Add PID efforts
     point.effort.push_back(Kd_u_);            // Kd
@@ -238,7 +251,7 @@ void AutonomousControlNodePID::publishJointTrajectory()
 
     // Set velocities for each joint
     point_phi.velocities.push_back(0.0);           // Velocity of joint u, must be 0.0
-    point_phi.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
+    point_phi.velocities.push_back(-alphadot_ref_); // Velocity of joint alpha
 
     // Add PID efforts
     point_phi.effort.push_back(Kd_phi_);            // Kd
@@ -280,28 +293,42 @@ void AutonomousControlNodePID::nextStateLogic() {
             if (_gps_fix && X_BUTTON_){ // If button is pressed and gps fix then start!
                 next_state_ = STATES::PATH_FOLLOWING;
                 RCLCPP_INFO(this->get_logger(), "Path Following Begining!");
+                startTime = std::chrono::steady_clock::now();
             }
             break;
         }
         case STATES::PATH_FOLLOWING: {
+
+            auto currentTime = std::chrono::steady_clock::now();
+            std::chrono::duration<float> elapsed = currentTime - startTime;
+            if (elapsed.count() < foward_roll_timeout_){
+                phi_ref_ = 0.0;
+                next_state_ = STATES::PATH_FOLLOWING;
+                publishJointTrajectory();
+                break;
+            }
+
             // Compute steering angle ---
             double heading_error;
             double steering_angle;
 
-            double wrappedHeading =  static_cast<double>(wrapToPi(_heading * (M_PI / 180))); // convert to rad and wrap to +- 180 deg
+            //double wrappedHeading =  static_cast<double>(wrapToPi(_heading * (M_PI / 180))); // convert to rad and wrap to +- 180 deg
 
             // Go foward at set velocity, assumes alphadot_meas_ = theatadot_meas_
-            if (!_stanley.computeSteering(_pos_x, _pos_y, wrappedHeading,  params.at("R") * alphadot_meas_, steering_angle, heading_error)) {
+            if (!_stanley.computeSteering(_pos_x, _pos_y, _heading * (M_PI / 180),  params.at("R") * alphadot_meas_, steering_angle, heading_error)) {
                 RCLCPP_ERROR(this->get_logger(), "Stanley Controller Error has Occured");
             }
             auto stanley_msg = std_msgs::msg::Float32();
             stanley_msg.data = static_cast<float>(steering_angle);
             stanley_heading_ref_pub_->publish(stanley_msg);
 
+            RCLCPP_INFO(this->get_logger(), "Heading Error %.2f", heading_error * (180/M_PI));
             // Determine Reference u ---
             float rc =  - params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture
             u_ref_ = calculate_u_ref(0.0, 0.0, static_cast<float>(alphadot_meas_), rc, params);               // Compute reference u
             phi_ref_ = u_phi_eq(u_ref_, params.at("r"));
+            // phi_ref_: 
+            RCLCPP_INFO(this->get_logger(), "Phi REF: %.2f", phi_ref_ * (180/M_PI));
             publishJointTrajectory(); // Command Motors
 
             // Check if the bot has reached the final waypoint

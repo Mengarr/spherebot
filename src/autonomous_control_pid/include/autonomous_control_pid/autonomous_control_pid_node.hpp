@@ -110,10 +110,12 @@ private:
     // Foward velocity control ----
     double phi_ref_ = 0.0;
     double u_ref_ = 0.0;
-    double alphadot_ref_ = (100 / RPM_TO_RPS) / ALPHA_DOT_SCALE_FACTOR;  // Good foward velocity
+    double alphadot_ref_;  // Good foward velocity
     // Private variables for measured joint state:
     double u_meas_, alpha_meas_;        // Positions
     double udot_meas_, alphadot_meas_;  // Velocities
+    float foward_vel_;
+    float foward_roll_timeout_;
 
     // Data logging variables ----
     // Heading allready comes from mag node

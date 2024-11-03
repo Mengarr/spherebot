@@ -193,7 +193,7 @@ void RemoteControlNode::timerCallback()
         }
     }
 
-    RCLCPP_INFO(this->get_logger(), "Heading Wrapped: %.2f", wrapTo180(heading_));
+    //RCLCPP_INFO(this->get_logger(), "Heading Wrapped: %.2f", wrapTo180(heading_));
 
     if (X_BUTTON_) {
         // Engaged
@@ -216,7 +216,7 @@ void RemoteControlNode::timerCallback()
     publishJointTrajectory(); // Command Motors
 
     std_msgs::msg::Int8 state_msg;
-    state_msg.data = static_cast<int8_t>(MotorState::MANUAL);
+    state_msg.data = static_cast<int8_t>(MotorState::PHI_CONTROL);
     state_pub_->publish(state_msg);
 }
 

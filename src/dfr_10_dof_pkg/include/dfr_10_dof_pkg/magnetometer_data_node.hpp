@@ -20,22 +20,21 @@ class MagnetometerPublisher : public rclcpp::Node
 
         float compensatedHeading_ = 0.0f;
 
-        float hard_iron_bias_x = -9.231161165183828f;
-        float hard_iron_bias_y = 11.958511901460092f;
-        float hard_iron_bias_z = 2.463278088131798f;
+    float hard_iron_bias_x = -9.293616653744394f;
+    float hard_iron_bias_y = 10.357573182856601f;
+    float hard_iron_bias_z = 1.5388180681094008f;
 
-        float soft_iron_bias_xx = 2.5615340163289146f;
-        float soft_iron_bias_xy = -0.022110984866741405f;
-        float soft_iron_bias_xz = -0.01714388180116863f;
+    float soft_iron_bias_xx = 2.582395659431281f;
+    float soft_iron_bias_xy = 0.003499380180901916f;
+    float soft_iron_bias_xz = 0.01771280289939006f;
 
-        float soft_iron_bias_yx = -0.02211098486674125f;
-        float soft_iron_bias_yy = 2.549414766531213f;
-        float soft_iron_bias_yz = 0.0888132393196553f;
+    float soft_iron_bias_yx = 0.0034993801809018463f;
+    float soft_iron_bias_yy = 2.546391727520486f;
+    float soft_iron_bias_yz = 0.13898612615765935f;
 
-        float soft_iron_bias_zx = -0.01714388180116865f;
-        float soft_iron_bias_zy = 0.08881323931965523f;
-        float soft_iron_bias_zz = 2.498477501481151f;
-
+    float soft_iron_bias_zx = 0.017712802899389923f;
+    float soft_iron_bias_zy = 0.13898612615765907f;
+    float soft_iron_bias_zz = 2.5790663103590514f;
 
         // conversion factor to convert +-8g to uT
         const float conv_factor = 0.0244140625;

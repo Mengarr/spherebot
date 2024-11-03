@@ -163,8 +163,11 @@ void MotorControlNode::controlLoop()
         double phi_output = phi_PID_.compute(roll_);     // Compute based on roll
         // RCLCPP_INFO(this->get_logger(), "Ref, Roll, Cmd  %.2f, %.2f, %.2f", phi_ref_, roll_, phi_output);
         jointVariableVelocity.first = jointVariableVelocity.first + phi_output;
+        //RCLCPP_INFO(this->get_logger(), "State: %d, Roll %.2f, Ref Phi, %.2f, PID_OUT %.2f", static_cast<int>(current_state_), roll_, phi_ref_, phi_output);
+
     }
-    
+    //RCLCPP_INFO(this->get_logger(), "PID GAINS %.2f, %.2f, %.2f", Kp_phi_, Ki_phi_, Kd_phi_);
+
     // Apply hard constraintss
     std::pair<bool, bool> limit_switch_states;
     arduino.readLimitSwitches(&limit_switch_states);

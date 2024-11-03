@@ -104,13 +104,13 @@ void MagnetometerPublisher::publish_data()
         calibratedValues[2],
         _AccelY,
         _AccelX,
-        -_AccelZ
+        _AccelZ
     );
 
     // Low pass filter to remove high frequency noise
-    float filtered_heading = lpf_heading_.filter(compensatedHeading_);
+    // float filtered_heading = lpf_heading_.filter(compensatedHeading_);
 
-    mag_msg.data = filtered_heading;
+    mag_msg.data = compensatedHeading_;
 
     //RCLCPP_INFO(this->get_logger(), "Un filtered Heading: %.2f", compensatedHeading_);
     
@@ -121,6 +121,21 @@ void MagnetometerPublisher::publish_data()
     // float headingDegrees = magnetometer.getHeadingDegrees();
     // RCLCPP_INFO(this->get_logger(), "Adjusted Heading : %.4f", adjustedHeading);
     // RCLCPP_INFO(this->get_logger(), "Unajusted Heading : %.4f", headingDegrees);
+}
+
+float wrapTo360(float value, float m) {
+    // Shift the value by subtracting the starting range m
+    float mapped_value = value - m;
+    
+    // Use the fmod function to wrap the mapped value within 360
+    mapped_value = fmod(mapped_value, 360.0);
+    
+    // Adjust if the result is negative to stay within the 0 to 360 range
+    if (mapped_value < 0) {
+        mapped_value += 360.0;
+    }
+
+    return mapped_value;
 }
 
 float MagnetometerPublisher::tilt_compensated_heading(float Mx, float My, float Mz, float ax, float ay, float az)
@@ -140,20 +155,22 @@ float MagnetometerPublisher::tilt_compensated_heading(float Mx, float My, float 
 
     float y_mag_comp = My * std::cos(pitch) + Mz * std::sin(pitch);
     //RCLCPP_INFO(this->get_logger(), "Comp values: x,y : %.2f, %.2f",x_mag_comp,y_mag_comp);
+    //    RCLCPP_INFO(this->get_logger(), "declinationAngle_: %.2f", declinationAngle_ * 180 / M_PI);
+    // // Step 3: Calculate Heading
+    //RCLCPP_INFO(this->get_logger(), "Tilt Heading before additions %.2f", std::atan2(y_mag_comp,x_mag_comp)  * (180.0 / M_PI));
+    //RCLCPP_INFO(this->get_logger(), "No Tilt Heading2 %.2f", std::atan2(My,Mx)  * (180.0 / M_PI));
+    // Assuming declination_rad includes all necessary offsets
+    // Apply rotation matrix to magnetometer components
 
-    // Step 3: Calculate Heading
-    float heading_rad = std::atan2(y_mag_comp, x_mag_comp);
-    //RCLCPP_INFO(this->get_logger(), "Rad %.2f",heading_rad);
-    // Step 4: Add magnetic declination
+    float heading_rad = std::atan2(y_mag_comp,-x_mag_comp);
     heading_rad += declinationAngle_;
+    // heading_rad -= M_PI;
+    float heading_deg = heading_rad * (180.0f / M_PI);
+    heading_deg = std::fmod(heading_deg + 180.0f, 360.0f);
+    if (heading_deg < 0)
+        heading_deg += 360.0f;
+    heading_deg -= 180.0f;
 
-    // Convert heading from radians to degrees
-    float heading_deg = heading_rad * (180.0 / M_PI);
-
-    // Normalize heading to 0-360 degrees
-    if (heading_deg < 0) {
-        heading_deg += 360;
-    }
 
     return heading_deg;
 }

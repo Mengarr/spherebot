@@ -78,7 +78,7 @@ def generate_launch_description():
         name='autonomous_control_node',
         output='screen',
         parameters=[
-            {'control_u_': True},        # Bool parameter for controlling u or phi
+            {'control_u_': False},        # Bool parameter for controlling u or phi
             {'k_': 0.1},                 # Double parameter
             {'k_s_': 0.01},              # Double parameter
             {'L_': 1.0},                 # Double parameter
@@ -88,9 +88,12 @@ def generate_launch_description():
             {'Ki_u_': 0.06},             # Float parameter
             {'Kd_u_': 0.0},              # Float parameter
 
-            {'Kp_phi_': 2.0},            # Float parameter
+            {'Kp_phi_': 1.0},            # Float parameter
             {'Ki_phi_': 0.1},            # Float parameter
-            {'Kd_phi_': 0.0}             # Float parameter
+            {'Kd_phi_': 0.0},            # Float parameter
+
+            {"foward_roll_timeout": 3.0},
+            {"foward_velocity": 60.0}
         ]
     )
 

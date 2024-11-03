@@ -25,8 +25,8 @@ class DataLoggerNode(Node):
         # Define the topics to subscribe to and their message types
         # Categorize topics based on desired logging rate
         self.topics_5hz = {
-            '/temp_degrees': Float32,
-            '/pressure_pa': Float32,
+            '/environment_data/temp_degrees': Float32,
+            '/environment_data/pressure_pa': Float32,
             '/gps/point_data': Point
         }
 

@@ -2,14 +2,63 @@
 
 AutonomousControlNodePID::AutonomousControlNodePID()
 : Node("autonomous_control_node"),
-  _stanley(k_, k_s_, L_, tolerance_),
+  _stanley(),
   _pathData("/home/rohan/spherebot/src/autonomous_control_pid/data/path_north.json"),
   current_state_(STATES::INITIALIZING),
   next_state_(STATES::INITIALIZING),
-  motor_state_(MotorState::U_CONTROL),
   X_BUTTON_(false),
   prev_x_button_(false)
 {   
+    // Declare parameters with default variables, K, K_s_, L_, tolerance_, Kp_u_, Ki_u_, Kd_u_, Kp_phi_, Ki_phi_, Kd_phi, control_u_ (bool)
+    this->declare_parameter<bool>("control_u_", true); // True for controling u, false to control using phi_
+    this->declare_parameter<double>("k_", 0.1);
+    this->declare_parameter<double>("k_s_", 0.01);
+    this->declare_parameter<double>("L_", 1);
+    this->declare_parameter<double>("tolerance_", 4);
+
+    this->declare_parameter<float>("Kp_u_", 0.1);
+    this->declare_parameter<float>("Ki_u_", 0.06);
+    this->declare_parameter<float>("Kd_u_", 0.0);
+    this->declare_parameter<float>("Kp_phi_", 2);
+    this->declare_parameter<float>("Ki_phi_", 0.1);
+    this->declare_parameter<float>("Kd_phi_", 0.0);
+
+    // Retrieve parameters
+    this->get_parameter("control_u_", control_u_); // True for controling u, false to control using phi_
+    this->get_parameter("k_", k_);
+    this->get_parameter("k_s_", k_s_);
+    this->get_parameter("L_", L_);
+    this->get_parameter("tolerance_", tolerance_);
+
+    this->get_parameter("Kp_u_", Kp_u_);
+    this->get_parameter("Ki_u_", Ki_u_);
+    this->get_parameter("Kd_u_", Kd_u_);
+    this->get_parameter("Kp_phi_", Kp_phi_);
+    this->get_parameter("Ki_phi_", Ki_phi_);
+    this->get_parameter("Kd_phi_", Kd_phi_);
+
+    // Print all parameters and their values
+    RCLCPP_INFO(this->get_logger(), "Parameters:");
+    RCLCPP_INFO(this->get_logger(), "control_u_: %s", control_u_ ? "true" : "false");
+    RCLCPP_INFO(this->get_logger(), "k_: %f", k_);
+    RCLCPP_INFO(this->get_logger(), "k_s_: %f", k_s_);
+    RCLCPP_INFO(this->get_logger(), "L_: %f", L_);
+    RCLCPP_INFO(this->get_logger(), "tolerance_: %f", tolerance_);
+
+    RCLCPP_INFO(this->get_logger(), "Kp_u_: %f", Kp_u_);
+    RCLCPP_INFO(this->get_logger(), "Ki_u_: %f", Ki_u_);
+    RCLCPP_INFO(this->get_logger(), "Kd_u_: %f", Kd_u_);
+
+    RCLCPP_INFO(this->get_logger(), "Kp_phi_: %f", Kp_phi_);
+    RCLCPP_INFO(this->get_logger(), "Ki_phi_: %f", Ki_phi_);
+    RCLCPP_INFO(this->get_logger(), "Kd_phi_: %f", Kd_phi_);
+
+    // Stanley controller ctor
+    _stanley.setParams(k_, k_s_, L_, tolerance_);
+
+    // Motor control state
+    motor_state_ = (control_u_ == true) ?  MotorState::U_CONTROL :  MotorState::PHI_CONTROL;
+
     // Initialize subscriber to "joy" topic
     joy_sub_ = this->create_subscription<sensor_msgs::msg::Joy>(
         "joy",
@@ -69,7 +118,7 @@ AutonomousControlNodePID::AutonomousControlNodePID()
     // Populate the params map with values
     params["g"] = -9.81f;     // Gravitational constant
     params["r"] = 0.05f;      // CoM to x axes (in m)
-    params["R"] = 0.428f;    // Shell Radius 
+    params["R"] = 0.220f;    // Shell Radius 
     params["Is"] = 1.0f;     // Moment of inertia of the shell
     params["mp"] = 5.5f;     // Mass of inernal pendulum
     params["ms"] = 1.8f;     // Mass of sphere
@@ -142,7 +191,7 @@ void AutonomousControlNodePID::jointTrajectoryStateCallback(const control_msgs::
 
 void AutonomousControlNodePID::controlLoop()
 {  
-    if (fabs(u_meas_) > 45) {
+    if (fabs(u_meas_) > 42) {
         alphadot_ref_ = 0.0;
         u_ref_ = 0.0;
         publishJointTrajectory(); // Command Motors
@@ -165,17 +214,17 @@ void AutonomousControlNodePID::publishJointTrajectory()
     trajectory_msgs::msg::JointTrajectoryPoint point;
 
     // Set positions for each joint
-    point.positions.push_back(u_ref_);         // u_ref_ value
+    point.positions.push_back(u_ref_*1000);         // u_ref_ value, convert to mm from m
     point.positions.push_back(0.0);            // alpha_ref value (not used)
 
     // Set velocities for each joint
-    point.velocities.push_back(u_dot_ref);           // Velocity of joint u, must be 0.0
+    point.velocities.push_back(0.0);           // Velocity of joint u, must be 0.0
     point.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
 
     // Add PID efforts
-    point.effort.push_back(0.0);            // Kd
-    point.effort.push_back(0.06);           // Ki
-    point.effort.push_back(0.1);            // Kp
+    point.effort.push_back(Kd_u_);            // Kd
+    point.effort.push_back(Ki_u_);           // Ki
+    point.effort.push_back(Kp_u_);            // Kp
 
     // Add the point to the JointTrajectory message
     joint_vars_msg.points.push_back(point);
@@ -192,9 +241,9 @@ void AutonomousControlNodePID::publishJointTrajectory()
     point_phi.velocities.push_back(alphadot_ref_); // Velocity of joint alpha
 
     // Add PID efforts
-    point_phi.effort.push_back(0.0);            // Kd
-    point_phi.effort.push_back(0.1);           // Ki
-    point_phi.effort.push_back(2);            // Kp
+    point_phi.effort.push_back(Kd_phi_);            // Kd
+    point_phi.effort.push_back(Ki_phi_);           // Ki
+    point_phi.effort.push_back(Kp_phi_);            // Kp
 
     // Add the point to the JointTrajectory message
     joint_vars_msg.points.push_back(point_phi);
@@ -230,6 +279,7 @@ void AutonomousControlNodePID::nextStateLogic() {
 
             if (_gps_fix && X_BUTTON_){ // If button is pressed and gps fix then start!
                 next_state_ = STATES::PATH_FOLLOWING;
+                RCLCPP_INFO(this->get_logger(), "Path Following Begining!");
             }
             break;
         }
@@ -238,10 +288,10 @@ void AutonomousControlNodePID::nextStateLogic() {
             double heading_error;
             double steering_angle;
 
-            double wrappedHeading =  static_cast<double>(wrapToPi(_heading));
+            double wrappedHeading =  static_cast<double>(wrapToPi(_heading * (M_PI / 180))); // convert to rad and wrap to +- 180 deg
 
             // Go foward at set velocity, assumes alphadot_meas_ = theatadot_meas_
-            if (!_stanley.computeSteering(_pos_x, _pos_y, static_cast<double>(wrappedHeading),  params.at("R") * alphadot_meas_, steering_angle, heading_error)) {
+            if (!_stanley.computeSteering(_pos_x, _pos_y, wrappedHeading,  params.at("R") * alphadot_meas_, steering_angle, heading_error)) {
                 RCLCPP_ERROR(this->get_logger(), "Stanley Controller Error has Occured");
             }
             auto stanley_msg = std_msgs::msg::Float32();
@@ -249,9 +299,9 @@ void AutonomousControlNodePID::nextStateLogic() {
             stanley_heading_ref_pub_->publish(stanley_msg);
 
             // Determine Reference u ---
-            float rc =  params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture
+            float rc =  - params.at("R") * alphadot_meas_ / steering_angle;                 // Compute radius of curviture
             u_ref_ = calculate_u_ref(0.0, 0.0, static_cast<float>(alphadot_meas_), rc, params);               // Compute reference u
-            phi_ref_ = u_phi_eq(u_ref_, param.at("r"));
+            phi_ref_ = u_phi_eq(u_ref_, params.at("r"));
             publishJointTrajectory(); // Command Motors
 
             // Check if the bot has reached the final waypoint

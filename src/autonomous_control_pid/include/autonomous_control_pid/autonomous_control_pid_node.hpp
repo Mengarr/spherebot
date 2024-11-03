@@ -24,13 +24,11 @@
 #include <string>
 #include "std_msgs/msg/int8.hpp"
 
-
 enum class MotorState : int8_t {
     MANUAL = 0,       // No phi or u control
     PHI_CONTROL = 1,  // phi control
     U_CONTROL = 2     // u control
 };
-
 
 typedef enum class STATES {
     INITIALIZING,
@@ -97,7 +95,17 @@ private:
     STATES current_state_;
     STATES next_state_;
     void nextStateLogic();
-    MotorState motor_state_
+    MotorState motor_state_;
+    bool control_u_;
+
+    // PID params
+    float Kp_u_;
+    float Ki_u_;
+    float Kd_u_;
+
+    float Kp_phi_;    
+    float Ki_phi_;   
+    float Kd_phi_;   
 
     // Foward velocity control ----
     double phi_ref_ = 0.0;

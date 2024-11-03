@@ -20,37 +20,22 @@ class MagnetometerPublisher : public rclcpp::Node
 
         float compensatedHeading_ = 0.0f;
 
-        // float hard_iron_bias_x = -6.263105902035311;
-        // float hard_iron_bias_y = 4.292579497477027;
-        // float hard_iron_bias_z = 3.3543842551502108;
+        float hard_iron_bias_x = -9.231161165183828f;
+        float hard_iron_bias_y = 11.958511901460092f;
+        float hard_iron_bias_z = 2.463278088131798f;
 
-        // float soft_iron_bias_xx = 2.3912019992637563;
-        // float soft_iron_bias_xy = -0.017923377264954937;
-        // float soft_iron_bias_xz = -0.06794333395212657;
+        float soft_iron_bias_xx = 2.5615340163289146f;
+        float soft_iron_bias_xy = -0.022110984866741405f;
+        float soft_iron_bias_xz = -0.01714388180116863f;
 
-        // float soft_iron_bias_yx = -0.01792337726495499;
-        // float soft_iron_bias_yy = 2.3365235008621434;
-        // float soft_iron_bias_yz = 0.1252346512198512;
+        float soft_iron_bias_yx = -0.02211098486674125f;
+        float soft_iron_bias_yy = 2.549414766531213f;
+        float soft_iron_bias_yz = 0.0888132393196553f;
 
-        // float soft_iron_bias_zx = -0.06794333395212654;
-        // float soft_iron_bias_zy = 0.12523465121985125;
-        // float soft_iron_bias_zz = 2.2155018362436585;
+        float soft_iron_bias_zx = -0.01714388180116865f;
+        float soft_iron_bias_zy = 0.08881323931965523f;
+        float soft_iron_bias_zz = 2.498477501481151f;
 
-        float hard_iron_bias_x = -4.167842441428256;
-        float hard_iron_bias_y = -9.569898747781659;
-        float hard_iron_bias_z = 25.106024745932398;
-
-        float soft_iron_bias_xx = 2.47922351462819;
-        float soft_iron_bias_xy = -0.032118054883568545;
-        float soft_iron_bias_xz = 0.004917413394485149;
-
-        float soft_iron_bias_yx = -0.0321180548835687;
-        float soft_iron_bias_yy = 2.5356096459546005;
-        float soft_iron_bias_yz = 0.1641655446789155;
-
-        float soft_iron_bias_zx = 0.004917413394485104;
-        float soft_iron_bias_zy = 0.16416554467891525;
-        float soft_iron_bias_zz = 2.3692364611493066;
 
         // conversion factor to convert +-8g to uT
         const float conv_factor = 0.0244140625;

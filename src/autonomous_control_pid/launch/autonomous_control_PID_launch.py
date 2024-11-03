@@ -78,7 +78,19 @@ def generate_launch_description():
         name='autonomous_control_node',
         output='screen',
         parameters=[
-            # You can add parameters here if your node requires them
+            {'control_u_': True},        # Bool parameter for controlling u or phi
+            {'k_': 0.1},                 # Double parameter
+            {'k_s_': 0.01},              # Double parameter
+            {'L_': 1.0},                 # Double parameter
+            {'tolerance_': 4.0},         # Double parameter
+
+            {'Kp_u_': 0.1},              # Float parameter
+            {'Ki_u_': 0.06},             # Float parameter
+            {'Kd_u_': 0.0},              # Float parameter
+
+            {'Kp_phi_': 2.0},            # Float parameter
+            {'Ki_phi_': 0.1},            # Float parameter
+            {'Kd_phi_': 0.0}             # Float parameter
         ]
     )
 

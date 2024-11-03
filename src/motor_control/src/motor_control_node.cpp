@@ -161,7 +161,7 @@ void MotorControlNode::controlLoop()
     } else if (current_state_ == State::PHI_CONTROL) {
         phi_PID_.setSetpoint(phi_ref_);
         double phi_output = phi_PID_.compute(roll_);     // Compute based on roll
-        RCLCPP_INFO(this->get_logger(), "Ref, Roll, Cmd  %.2f, %.2f, %.2f", phi_ref_, roll_, phi_output);
+        // RCLCPP_INFO(this->get_logger(), "Ref, Roll, Cmd  %.2f, %.2f, %.2f", phi_ref_, roll_, phi_output);
         jointVariableVelocity.first = jointVariableVelocity.first + phi_output;
     }
     

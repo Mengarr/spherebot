@@ -21,40 +21,70 @@ void VCM5883L::init(void)
 
 sVector_t VCM5883L::readRaw(void)
 {
-  int16_t val = 0;
-  _i2cBus.readmem(VCM5883L_REG_OUT_X_L, uint8_t(2), _buff);
-  val = _buff[1] << 8 | _buff[0];
-  v.XAxis = val;
-  val = 0;
+  uint8_t vha, vla;
+  _i2cBus.readmem(VCM5883L_REG_OUT_X_H, uint8_t(1), _buff);
+  vha = _buff[0];
+  _i2cBus.readmem(VCM5883L_REG_OUT_X_L, uint8_t(1), _buff);
+  vla = _buff[0];
+  v.XAxis = (((int16_t)vha) << 8) | vla;
 
-  _i2cBus.readmem(VCM5883L_REG_OUT_Y_L, uint8_t(2), _buff);
-  val = _buff[1] << 8 | _buff[0];
-  v.YAxis = val;
+  _i2cBus.readmem(VCM5883L_REG_OUT_Y_H, uint8_t(1), _buff);
+  vha = _buff[0];
+  _i2cBus.readmem(VCM5883L_REG_OUT_Y_L, uint8_t(1), _buff);
+  vla = _buff[0];
+  v.YAxis = (((int16_t)vha) << 8) | vla;
 
-  val = 0;
-  _i2cBus.readmem(VCM5883L_REG_OUT_Z_L, uint8_t(2), _buff);
-  val = _buff[1] << 8 | _buff[0];
-  v.ZAxis = val;
+  _i2cBus.readmem(VCM5883L_REG_OUT_Z_H, uint8_t(1), _buff);
+  vha = _buff[0];
+  _i2cBus.readmem(VCM5883L_REG_OUT_Z_L, uint8_t(1), _buff);
+  vla = _buff[0];
+  v.ZAxis = (((int16_t)vha) << 8) | vla;
+
+  // _i2cBus.readmem(VCM5883L_REG_OUT_X_L, uint8_t(2), _buff);
+  // v.XAxis = (((int16_t)_buff[1]) << 8) | _buff[0];
+  // _i2cBus.readmem(VCM5883L_REG_OUT_Y_L, uint8_t(2), _buff);
+  // v.YAxis = (((int16_t)_buff[1]) << 8) | _buff[0];
+  // _i2cBus.readmem(VCM5883L_REG_OUT_Z_L, uint8_t(2), _buff);
+  // v.ZAxis = (((int16_t)_buff[1]) << 8) | _buff[0];
   // v.AngleXY = (atan2((double)v.YAxis,(double)v.XAxis) * (180 / 3.14159265) + 180);
   // v.AngleXZ = (atan2((double)v.ZAxis,(double)v.XAxis) * (180 / 3.14159265) + 180);
   // v.AngleYZ = (atan2((double)v.ZAxis,(double)v.YAxis) * (180 / 3.14159265) + 180);
   return v;
 }
 
+
+void VCM5883L::setSamples(eSamples_t samples)
+{
+  uint8_t value;
+
+  _i2cBus.readmem(QMC5883_REG_CONFIG_1, uint8_t(1), _buff);
+  value = _buff[0];
+  value &= 0x3f;
+  value |= (samples << 6);
+  _i2cBus.writemem(QMC5883_REG_CONFIG_1, value);
+}
+
+eSamples_t VCM5883L::getSamples(void)
+{
+  uint8_t value;
+
+  _i2cBus.readmem(QMC5883_REG_CONFIG_1, uint8_t(1), _buff);
+  value = _buff[0];
+  value &= 0x3f;
+  value >>= 6;
+
+  return (eSamples_t)value;
+}
+
 // Only returns QMC5883_RANGE_8GA
 eRange_t VCM5883L::getRange(void)
 {
-  eRange_t ret;
-
-  ret = QMC5883_RANGE_8GA;
-
-  return ret;
+  return static_cast<eRange_t>(QMC5883_RANGE_8GA);
 }
 
 void VCM5883L::setMeasurementMode(eMode_t mode)
 {
   uint8_t value;
-
   _i2cBus.readmem(VCM5883L_CTR_REG2, uint8_t(1), _buff);
   value = _buff[0];
   value &= 0xFE;
@@ -108,11 +138,6 @@ float VCM5883L::getHeadingDegrees(void)
   return v.HeadingDegress;
 }
 
-void VCM5883L::setHardIronOffsets(float x, float y, float z){
-  X_offset_ = x;
-  Y_offset_ = y;
-  Z_offset_ = z;
-}
 // void VCM5883L::writeRegister8(uint8_t reg, uint8_t value)
 // {
 //   _pWire->beginTransmission(this->_I2C_addr);

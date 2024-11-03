@@ -11,6 +11,7 @@
 #include "std_msgs/msg/float32.hpp"
 #include "control_lib/auxilary_arduino.hpp"
 #include <trajectory_msgs/msg/joint_trajectory.hpp>
+#include "control_lib/kinematic_transforms.hpp"
 #include <control_msgs/msg/joint_trajectory_controller_state.hpp>
 #include "std_msgs/msg/int8.hpp"
 

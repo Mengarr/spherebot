@@ -193,6 +193,8 @@ void RemoteControlNode::timerCallback()
         }
     }
 
+    RCLCPP_INFO(this->get_logger(), "Heading Wrapped: %.2f", wrapTo180(heading_));
+
     if (X_BUTTON_) {
         // Engaged
         if (O_BUTTON_) {

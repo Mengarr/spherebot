@@ -15,8 +15,8 @@ StanleyController::StanleyController(const std::vector<double>& waypoints_x,
 }
 
 // Default constructor
-StanleyController::StanleyController(double k, double k_s, double L, double max_steer, double tolerance)
-    : k_(k), k_s_(k_s), L_(L), max_steer_(max_steer), tolerance_(tolerance) {}
+StanleyController::StanleyController(double k, double k_s, double L, double tolerance)
+    : k_(k), k_s_(k_s), L_(L), tolerance_(tolerance) {}
 
 // Update waypoints using separate x and y vectors
 void StanleyController::updateWaypoints(const std::vector<double>& waypoints_x,
@@ -29,6 +29,13 @@ void StanleyController::updateWaypoints(const std::vector<double>& waypoints_x,
     for (size_t i = 0; i < waypoints_x.size(); ++i) {
         waypoints_.emplace_back(Point{waypoints_x[i], waypoints_y[i]});
     }
+}
+
+void StanleyController::setParams(double k, double k_s, double L, double tolerance) {
+    k_ = k;
+    k_s_ = k_s;
+    L_ = L;
+    tolerance_ = tolerance;
 }
 
 // Update waypoints using a vector of Point structs
@@ -78,6 +85,8 @@ bool StanleyController::computeSteering(double x, double y, double yaw, double v
 
     // Total steering angle
     steering_angle = heading_error + cross_track_steer;
+
+    steering_angle = v * std::tan(steering_angle) / L_;
 
     return true;
 }

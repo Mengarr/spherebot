@@ -30,6 +30,16 @@ ament_target_dependencies(imu_data_node
   i2c_lib  # Ensure i2c_lib is a dependency
 )
 
+# magnometer calibration node
+add_executable(calibrate_magnetometer_node
+  src/calibrate_magnetometer_node.cpp
+  src/VCM5883L.cpp
+)
+ament_target_dependencies(calibrate_magnetometer_node 
+  rclcpp 
+  i2c_lib  # Ensure i2c_lib is a dependency
+)
+
 # magnometer node
 add_executable(magneometer_node
   src/magnetometer_data_node.cpp
@@ -67,6 +77,12 @@ target_include_directories(magneometer_node PUBLIC
 )
 
 # Specify include directories for your package's own headers
+target_include_directories(calibrate_magnetometer_node PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
+)
+
+# Specify include directories for your package's own headers
 target_include_directories(environmental_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
@@ -77,6 +93,7 @@ install(TARGETS
   imu_data_node
   magneometer_node
   environmental_node
+  calibrate_magnetometer_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
